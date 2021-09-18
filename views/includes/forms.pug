@@ -2,12 +2,19 @@ form(method='get' action='./').grid3.gap.media-s-grid1.media-l-grid2
   fieldset
     legend.h2 Text inputs
     .input
-      label(for='input-text') Type text 
+      label(for='input-text') Type text & regex
         code .input label + input
-      input#input-text(type='text' name='input-text' value='' size='23' placeholder='John' required='required').regex-0.regex-1.regex-2
+      input#input-text(type='text' name='input-text' value='' size='23' placeholder='John Smith' required='required')
+    .input
+      label(for='input-text1') Type text & regex
+        code input.regex-0.regex-1.regex-2
+      input#input-text1(type='text' name='input-text1' value='' size='23' placeholder='John' required='required').regex-0.regex-1.regex-2
     .input
       label(for='input-text2') Type text & regex
       input#input-text2(type='text' name='input-text2' value='' size='23' placeholder='Smith' required='required').regex-0.regex-1.regex-2
+    .input
+      label(for='input-text3') Type text & regex
+      input#input-text3(type='text' name='input-text3' value='' size='23' placeholder='Country' required='required').regex-0.regex-1.regex-2
     //-
       .input
         label(for='input-text3') Text + error

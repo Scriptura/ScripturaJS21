@@ -1509,16 +1509,6 @@ input[type=file]:active {
   -webkit-animation: animInvalidInput 2s ease-in-out infinite !important;
           animation: animInvalidInput 2s ease-in-out infinite !important;
 }
-.input :required,
-.input .required {
-  background-repeat: no-repeat;
-  background-position: right 0.5em center;
-  background-size: 1em 1em;
-}
-.input :required:focus,
-.input .required:focus {
-  background-image: none;
-}
 :root .input-password input {
   padding-right: 3em;
   letter-spacing: 0.4em;
