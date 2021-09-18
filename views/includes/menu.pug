@@ -1,0 +1,64 @@
+button.cmd-nav(type='button' aria-label='Main Menu')
+  svg(viewBox='0 0 1000 1000')
+    rect(x='50' y='200' width='900' height='100')
+    rect(x='50' y='450' width='900' height='100')
+    rect(x='50' y='700' width='900' height='100')
+nav.nav(role='navigation' aria-label='Main')
+  ul
+    li
+      span.active
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/silos/195v.svg#1')
+        | Scriptura
+    li
+      a(href='/login')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#login')
+        | Login
+    li
+      a(href='/register')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#bookmark')
+        | Register
+    li
+      a(href='/user/admin')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#user')
+        | User
+    //-
+      li
+        a(href='/person/1')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#frame')
+          | Person 1
+    li
+      a(href='/place/1')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#location')
+        | Place 1
+    li
+      a(href='/article/1')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#quill')
+        | Article 1
+    //-
+      li
+        a(href='/404')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#warning')
+          | Error 404
+    li
+      a(href='/calendar/2021/04/04')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#calendar')
+        | Calendar
+    li
+      a(href='/styleGuide')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#ampersand')
+        | Style Guide
+    li
+      a(href='//github.com/Scriptura/ScripturaJS20')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#github')
+        | Repository

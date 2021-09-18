@@ -1,0 +1,53 @@
+_accordionColor1 = _color2
+_accordionColor2 = _color5
+
+.accordion
+  box-shadow 0 0 2rem rgba(0, 0, 0, .25)
+
+.accordion summary
+.accordion .accordion-summary
+  padding 1em
+  color _colorT
+  background-color _accordionColor1
+  //background _accordionColor1 linear-gradient(to top, rgba(0, 0, 0, .1), rgba(255, 255, 255, .05))
+  box-shadow inset .5rem .5rem 2rem rgba(255, 255, 255, .15)
+  cursor pointer
+  outline none
+
+.accordion .accordion-summary
+  display block
+  width 100%
+  font-family Arial
+  font-size 1em
+  text-align left
+  border none
+
+.accordion > * > :first-child
+  display flex
+  &:focus
+  &:hover
+  &:active
+    background-color _accordionColor2
+  &::after
+    content '\002B'
+    font-weight bold
+    margin-left auto
+
+.accordion .open button
+  background-color _accordionColor2
+
+.accordion > * > :last-child
+  padding 0 1em
+  //color #555
+  //background-color #f8f7f5
+  overflow hidden
+  transition max-height .5s ease-out
+
+.accordion details[open] summary::after
+.accordion .open .accordion-summary::after
+  content '\2212'
+
+.accordion .accordion-panel
+  max-height 0
+  //border-left solid 1em _color5
+  //border-image linear-gradient(_color5, _color1) 1

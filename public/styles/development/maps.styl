@@ -1,0 +1,52 @@
+.map
+  width 100%
+  height 100vh
+  margin auto
+  background-color #000
+
+:root .map .leaflet-control
+  border none
+  box-shadow _shadow14
+
+:root .map .leaflet-popup-content-wrapper
+  font-size 1rem // @note Unité rem obligatoire pour éviter les conflits sur la carte.
+  color #777
+  border-radius .2em
+  box-shadow _shadow14
+
+.leaflet-popup-tip
+  box-shadow _shadow14
+
+.leaflet-marker-pane:hover
+  animation animBounce .35s ease infinite alternate
+
+.leaflet-marker-pane
+  animation: animDrop 1s ease
+
+.leaflet-shadow-pane
+  animation animHide 1.5s
+
+@keyframes animBounce
+  to
+    transform translate(0, -16px)
+
+@keyframes animDrop
+  0%
+    transform translate(0, -100vh)
+  50%
+    transform translate(0, 0)
+  75%
+    transform translate(0, -40px)
+  100%
+    transform translate(0, 0)
+
+@keyframes animHide
+  0%
+    opacity 0
+  60%
+    opacity 0
+  100%
+    opacity 1
+
+//.leaflet-control-attribution
+//  display none

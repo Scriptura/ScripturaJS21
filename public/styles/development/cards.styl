@@ -1,0 +1,50 @@
+_cardsColor1 = _colorT2
+_cardsColor2 = _colorG + 7%
+
+.card
+  position relative
+  padding 2em
+  //color _cardsColor1
+  background-color _cardsColor2
+  border-radius .5em
+  box-shadow _shadow8
+
+.card::before
+.card::after
+  content ''
+  z-index -1
+  position absolute
+  bottom 2em
+  left 1em
+  width 80%
+  height 1.5em
+  max-width 30em
+  box-shadow _shadow9
+  transform rotate(-3deg) translateZ(0)
+
+.card::after
+  right 1em
+  left auto
+  transform rotate(3deg)
+
+/*
+.card::after
+  content ''
+  position absolute
+  z-index -1
+  bottom 1.5em
+  left 10%
+  width 80%
+  height 1.5em
+  max-width 30em
+  box-shadow 0 1.5rem 2rem rgba(0,0,0,.8)
+  border-radius 50%
+*/
+
+.card .h2
+  text-align center
+
+.card svg
+  height 6em
+  //margin 1em auto
+  color _cardsColor1

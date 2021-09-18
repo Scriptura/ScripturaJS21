@@ -1,0 +1,1107 @@
+{
+  "0000": {
+    "name": "No data"
+  },
+  "0101": {
+    "name": "Sainte Marie, Mère de Dieu"
+  },
+  "0201": {
+    "name": "Saints Basile de Césarée et Grégoire de Nazianze"
+  },
+  "0301": {
+    "name": "Sainte Geneviève"
+  },
+  "0401": {
+    "name": "Sainte Angèle de Foligno"
+  },
+  "0501": {
+    "name": "Saint Jean Népomucène Neumann"
+  },
+  "0601": {
+    "name": "L'Épiphanie du Seigneur"
+  },
+  "0701": {
+    "name": "Saint Raymond de Peñafort"
+  },
+  "0801": {
+    "name": "Saint Lucien de Beauvais"
+  },
+  "0901": {
+    "name": "Bienheureuse Alix Le Clerc"
+  },
+  "1001": {
+    "name": "Saint Grégoire de Nysse"
+  },
+  "1101": {
+    "name": "Saint Paulin d'Aquilée"
+  },
+  "1201": {
+    "name": "Sainte Marguerite Bourgeoys"
+  },
+  "1301": {
+    "name": "Saint Hilaire de Poitiers"
+  },
+  "1401": {
+    "name": "Saint Félix de Nole"
+  },
+  "1501": {
+    "name": "Saint Rémi"
+  },
+  "1601": {
+    "name": "Saints Honorat de Lérins et Venance"
+  },
+  "1701": {
+    "name": "Saint Antoine le Grand"
+  },
+  "1801": {
+    "name": "Sainte Marguerite de Hongrie"
+  },
+  "1901": {
+    "name": "Saint Henri"
+  },
+  "2001": {
+    "name": "Saint Sébastien"
+  },
+  "2101": {
+    "name": "Sainte Agnès"
+  },
+  "2201": {
+    "name": "Saint Vincent de Saragosse"
+  },
+  "2301": {
+    "name": "Saint Barnard"
+  },
+  "2401": {
+    "name": "Saint François de Sales"
+  },
+  "2501": {
+    "name": "La Conversion de Saint Paul apôtre"
+  },
+  "2601": {
+    "name": "Saints Tite et Timothée"
+  },
+  "2701": {
+    "name": "Sainte Angèle Mérici"
+  },
+  "2801": {
+    "name": "Saint Thomas d'Aquin"
+  },
+  "2901": {
+    "name": "Saint Gildas"
+  },
+  "3001": {
+    "name": "Sainte Bathilde"
+  },
+  "3101": {
+    "name": "Saint Jean Bosco"
+  },
+  "0102": {
+    "name": "Sainte Brigitte de Kildare"
+  },
+  "0202": {
+    "name": "Présentation du Seigneur"
+  },
+  "0302": {
+    "name": "Saint Anschaire de Brême"
+  },
+  "0402": {
+    "name": "Sainte Véronique ou Bérénice"
+  },
+  "0502": {
+    "name": "Saint Philippe de Jésus"
+  },
+  "0602": {
+    "name": "Saint Paul Miki"
+  },
+  "0702": {
+    "name": "Bienheureuse Eugénie Smet"
+  },
+  "0802": {
+    "name": "Saint Jérôme Emilien"
+  },
+  "0902": {
+    "name": "Saint Miguel Cordero"
+  },
+  "1002": {
+    "name": "Sainte Scholastique"
+  },
+  "1102": {
+    "name": "Notre-Dame de Lourdes"
+  },
+  "1202": {
+    "name": "Sainte Eulalie"
+  },
+  "1302": {
+    "name": "Bienheureux Jourdain de Saxe"
+  },
+  "1402": {
+    "name": "Saints Cyrille et Méthode"
+  },
+  "1502": {
+    "name": "Saint Claude de la Colombière"
+  },
+  "1602": {
+    "name": "Bienheureux Grégoire X"
+  },
+  "1702": {
+    "name": "Bienheureux Alexis de Falconieri"
+  },
+  "1802": {
+    "name": "Sainte Bernadette"
+  },
+  "1902": {
+    "name": "Saint Mesrop"
+  },
+  "2002": {
+    "name": "Saint Eucher"
+  },
+  "2102": {
+    "name": "Saint Pierre Damien"
+  },
+  "2202": {
+    "name": "Bienheureuse Isabelle de France"
+  },
+  "2302": {
+    "name": "Saint Polycarpe"
+  },
+  "2402": {
+    "name": "Saint Ethelbert"
+  },
+  "2502": {
+    "name": "Bienheureux Sébastien"
+  },
+  "2602": {
+    "name": "Saint Porphyre"
+  },
+  "2702": {
+    "name": "Saint Léandre"
+  },
+  "2802": {
+    "name": "Saints Romain et Lupicin"
+  },
+  "2902": {
+    "name": "Saint Auguste Chapdelaine"
+  },
+  "0103": {
+    "name": "Saint Aubin"
+  },
+  "0203": {
+    "name": "Saint Charles le Bon"
+  },
+  "0303": {
+    "name": "Saint Guénolé"
+  },
+  "0403": {
+    "name": "Saint Casimir"
+  },
+  "0503": {
+    "name": "Saint Virgile"
+  },
+  "0603": {
+    "name": "Sainte Colette"
+  },
+  "0703": {
+    "name": "Saintes Perpétue et Félicité"
+  },
+  "0803": {
+    "name": "Saint Jean de Dieu"
+  },
+  "0903": {
+    "name": "Sainte Françoise Romaine"
+  },
+  "1003": {
+    "name": "Sainte Marie-Eugénie Milleret"
+  },
+  "1103": {
+    "name": "Saint Sophrone"
+  },
+  "1203": {
+    "name": "Saint Pol de Léon"
+  },
+  "1303": {
+    "name": "Saints Rodrigue et Salomon"
+  },
+  "1403": {
+    "name": "Sainte Mathilde"
+  },
+  "1503": {
+    "name": "Sainte Louise de Marillac"
+  },
+  "1603": {
+    "name": "Saint Grégoire Makar"
+  },
+  "1703": {
+    "name": "Saint Patrick"
+  },
+  "1803": {
+    "name": "Saint Cyrille de Jérusalem"
+  },
+  "1903": {
+    "name": "Saint Joseph"
+  },
+  "2003": {
+    "name": "Saint Wulfran"
+  },
+  "2103": {
+    "name": "Saint Nicolas de Flüe"
+  },
+  "2203": {
+    "name": "Saint Basile d'Ancyre"
+  },
+  "2303": {
+    "name": "Saint Toribio de Mogrovejo"
+  },
+  "2403": {
+    "name": "Sainte Catherine de Suède"
+  },
+  "2503": {
+    "name": "Annonciation du Seigneur"
+  },
+  "2603": {
+    "name": "Sainte Larissa"
+  },
+  "2703": {
+    "name": "Saint Robert de Salzbourg"
+  },
+  "2803": {
+    "name": "Saint Gontran"
+  },
+  "2903": {
+    "name": "Saints Barachise et Jonas"
+  },
+  "3003": {
+    "name": "Saint Jean Climaque"
+  },
+  "3103": {
+    "name": "Saint Innocent"
+  },
+  "0104": {
+    "name": "Sainte Marie l'Égyptienne"
+  },
+  "0204": {
+    "name": "Saint François de Paule"
+  },
+  "0304": {
+    "name": "Saint Richard de Chichester"
+  },
+  "0404": {
+    "name": "Saint Isidore de Séville"
+  },
+  "0504": {
+    "name": "Saint Vincent Ferrier"
+  },
+  "0604": {
+    "name": "Saint Marcellin"
+  },
+  "0704": {
+    "name": "Saint Jean-Baptiste de la Salle"
+  },
+  "0804": {
+    "name": "Sainte Julie Billiart"
+  },
+  "0904": {
+    "name": "Saint Acace"
+  },
+  "1004": {
+    "name": "Saint Fulbert de Chartres"
+  },
+  "1104": {
+    "name": "Saint Stanislas de Cracovie"
+  },
+  "1204": {
+    "name": "Saint Jules"
+  },
+  "1304": {
+    "name": "Saint Martin <abbr title=\"premier\">I<sup>er</sup></abbr>"
+  },
+  "1404": {
+    "name": "Saint Maxime"
+  },
+  "1504": {
+    "name": "Bienheureux César de Bus"
+  },
+  "1604": {
+    "name": "Saint Benoît-Joseph Labre"
+  },
+  "1704": {
+    "name": "Saint Etienne Harding"
+  },
+  "1804": {
+    "name": "Bienheureuse Marie de l'Incarnation"
+  },
+  "1904": {
+    "name": "Bienheureux Marcel Callo"
+  },
+  "2004": {
+    "name": "Sainte Odette"
+  },
+  "2104": {
+    "name": "Saint Anselme de Cantorbéry"
+  },
+  "2204": {
+    "name": "Saints Epipode et Alexandre"
+  },
+  "2304": {
+    "name": "Saint Georges"
+  },
+  "2404": {
+    "name": "Saint Fidèle de Sigmaringen"
+  },
+  "2504": {
+    "name": "Saint Marc"
+  },
+  "2604": {
+    "name": "Saint Paschase Radbert"
+  },
+  "2704": {
+    "name": "Sainte Zita"
+  },
+  "2804": {
+    "name": "Saint Louis-Marie Grignion de Montfort"
+  },
+  "2904": {
+    "name": "Sainte Catherine de Sienne"
+  },
+  "3004": {
+    "name": "Saint Pie V"
+  },
+  "0105": {
+    "name": "Saint Joseph"
+  },
+  "0205": {
+    "name": "Saint Athanase d'Alexandrie"
+  },
+  "0305": {
+    "name": "Saints Philippe et Jacques"
+  },
+  "0405": {
+    "name": "Bienheureuse Marie-Léonie Paradis"
+  },
+  "0505": {
+    "name": "Saint Hilaire d'Arles"
+  },
+  "0605": {
+    "name": "Saint Antonin de Florence"
+  },
+  "0705": {
+    "name": "Saint Nil de la Sora"
+  },
+  "0805": {
+    "name": "Saint Pierre de Tarentaise"
+  },
+  "0905": {
+    "name": "Saint Pacôme"
+  },
+  "1005": {
+    "name": "Saint Isidore le Laboureur"
+  },
+  "1105": {
+    "name": "Saint Mayeul"
+  },
+  "1205": {
+    "name": "Saint Germain de Constantinople"
+  },
+  "1305": {
+    "name": "Sainte Agnès de Poitiers"
+  },
+  "1405": {
+    "name": "Saint Matthias"
+  },
+  "1505": {
+    "name": "Sainte Denise"
+  },
+  "1605": {
+    "name": "Saint Eman"
+  },
+  "1705": {
+    "name": "Saint Pascal Baylon"
+  },
+  "1805": {
+    "name": "Saint Eric"
+  },
+  "1905": {
+    "name": "Saint Yves"
+  },
+  "2005": {
+    "name": "Saint Bernardin de Sienne"
+  },
+  "2105": {
+    "name": "Saint Charles Eugène Mazenod"
+  },
+  "2205": {
+    "name": "Sainte Rita"
+  },
+  "2305": {
+    "name": "Saint Didier"
+  },
+  "2405": {
+    "name": "Saint Vincent de Lérins"
+  },
+  "2505": {
+    "name": "Sainte Madeleine-Sophie Barat"
+  },
+  "2605": {
+    "name": "Saint Philippe Neri"
+  },
+  "2705": {
+    "name": "Saint Augustin de Cantorbéry"
+  },
+  "2805": {
+    "name": "Saint Germain de Paris"
+  },
+  "2905": {
+    "name": "Sainte Ursule Ledochowska"
+  },
+  "3005": {
+    "name": "Sainte Jeanne d'Arc"
+  },
+  "3105": {
+    "name": "La Visitation de la Vierge"
+  },
+  "0106": {
+    "name": "Saint Justin"
+  },
+  "0206": {
+    "name": "Saint Pothin et Sainte Blandine"
+  },
+  "0306": {
+    "name": "Saint Charles Lwanga"
+  },
+  "0406": {
+    "name": "Sainte Clotilde"
+  },
+  "0506": {
+    "name": "Saint Boniface, évêque et martyr",
+    "color": "red",
+    "rank": "3"
+  },
+  "0606": {
+    "name": "Saint Norbert"
+  },
+  "0706": {
+    "name": "Bienheureuse Marie-Thérèse de Soubiran"
+  },
+  "0806": {
+    "name": "Saint Médard"
+  },
+  "0906": {
+    "name": "Saint Ephrem"
+  },
+  "1006": {
+    "name": "Saint Landry"
+  },
+  "1106": {
+    "name": "Saint Barnabé"
+  },
+  "1206": {
+    "name": "Bienheureux Guy de Cortone"
+  },
+  "1306": {
+    "name": "Saint Antoine de Padoue"
+  },
+  "1406": {
+    "name": "Saint Méthode"
+  },
+  "1506": {
+    "name": "Sainte Germaine de Pibrac"
+  },
+  "1606": {
+    "name": "Saint Jean-François Régis"
+  },
+  "1706": {
+    "name": "Saint Hervé"
+  },
+  "1806": {
+    "name": "Saint Léonce"
+  },
+  "1906": {
+    "name": "Saint Romuald"
+  },
+  "2006": {
+    "name": "Saint Nicolas Cabasilas"
+  },
+  "2106": {
+    "name": "Saint Louis de Gonzague"
+  },
+  "2206": {
+    "name": "Saint Thomas More"
+  },
+  "2306": {
+    "name": "Bienheureuse Marie d'Oignies"
+  },
+  "2406": {
+    "name": "Saint Jean-Baptiste"
+  },
+  "2506": {
+    "name": "Saint Georges d'Attalia"
+  },
+  "2606": {
+    "name": "Saint Anthelme"
+  },
+  "2706": {
+    "name": "Saint Cyrille d'Alexandrie"
+  },
+  "2806": {
+    "name": "Saint Irénée"
+  },
+  "2906": {
+    "name": "Saints Pierre et Paul"
+  },
+  "3006": {
+    "name": "Saint Georges d'Iviron"
+  },
+  "0107": {
+    "name": "Saint Thierry"
+  },
+  "0207": {
+    "name": "Saint Othon de Bamberg"
+  },
+  "0307": {
+    "name": "Saint Thomas"
+  },
+  "0407": {
+    "name": "Sainte Elisabeth de Portugal"
+  },
+  "0507": {
+    "name": "Saint Antoine-Marie Zaccaria"
+  },
+  "0607": {
+    "name": "Sainte Marietta Goretti"
+  },
+  "0707": {
+    "name": "Saints Ralph et Roger"
+  },
+  "0807": {
+    "name": "Saint Procope d'Antioche"
+  },
+  "0907": {
+    "name": "Stes Martyres d'Orange"
+  },
+  "1007": {
+    "name": "Bienheureux Pacifique"
+  },
+  "1107": {
+    "name": "Saint Benoît"
+  },
+  "1207": {
+    "name": "Saint Michel Maleinos"
+  },
+  "1307": {
+    "name": "Saint Henri"
+  },
+  "1407": {
+    "name": "Saint Camille de Lellis"
+  },
+  "1507": {
+    "name": "Saint Bonaventure"
+  },
+  "1607": {
+    "name": "Sainte Marie Madeleine Postel"
+  },
+  "1707": {
+    "name": "Bienheureuses Carmélites de Compiègne"
+  },
+  "1807": {
+    "name": "Saint Arnoul"
+  },
+  "1907": {
+    "name": "Sainte Macrine"
+  },
+  "2007": {
+    "name": "Saint Elie"
+  },
+  "2107": {
+    "name": "Saint Victor"
+  },
+  "2207": {
+    "name": "Sainte Marie-Madeleine"
+  },
+  "2307": {
+    "name": "Sainte Brigitte de Suède"
+  },
+  "2407": {
+    "name": "Saints Boris et Gleb"
+  },
+  "2507": {
+    "name": "Saint Jacques le Majeur"
+  },
+  "2607": {
+    "name": "Saints Anne et Joachim"
+  },
+  "2707": {
+    "name": "Sainte Nathalie"
+  },
+  "2807": {
+    "name": "Saint Samson"
+  },
+  "2907": {
+    "name": "Sainte Marthe"
+  },
+  "3007": {
+    "name": "Saint Pierre Chrysologue"
+  },
+  "3107": {
+    "name": "Saint Ignace de Loyola"
+  },
+  "0108": {
+    "name": "Saint Alphonse de Liguori"
+  },
+  "0208": {
+    "name": "Saint Pierre Julien Eymard"
+  },
+  "0308": {
+    "name": "Saint Nicodème"
+  },
+  "0408": {
+    "name": "Saint Jean-Marie Vianney"
+  },
+  "0508": {
+    "name": "Saint Jean de Chozeba"
+  },
+  "0608": {
+    "name": "Saint Hormisdas"
+  },
+  "0708": {
+    "name": "Saint Gaétan"
+  },
+  "0808": {
+    "name": "Saint Dominique"
+  },
+  "0908": {
+    "name": "Sainte Thérèse-Bénédicte de la Croix"
+  },
+  "1008": {
+    "name": "Saint Laurent"
+  },
+  "1108": {
+    "name": "Sainte Claire d'Assise"
+  },
+  "1208": {
+    "name": "Sainte Jeanne de Chantal"
+  },
+  "1308": {
+    "name": "Saints Pontien et Hippolyte"
+  },
+  "1408": {
+    "name": "Saint Maximilien Kolbe"
+  },
+  "1508": {
+    "name": "Assomption de la Bienheureuse Vierge Marie"
+  },
+  "1608": {
+    "name": "Saint Étienne"
+  },
+  "1708": {
+    "name": "Saint Dimitrios le Jeune"
+  },
+  "1808": {
+    "name": "Sainte Hélène"
+  },
+  "1908": {
+    "name": "Saint Jean Eudes"
+  },
+  "2008": {
+    "name": "Saint Bernard"
+  },
+  "2108": {
+    "name": "Saint Pie X"
+  },
+  "2208": {
+    "name": "Saint Symphorien"
+  },
+  "2308": {
+    "name": "Sainte Rose de Lima"
+  },
+  "2408": {
+    "name": "Saint Barthélemy"
+  },
+  "2508": {
+    "name": "Saint Louis"
+  },
+  "2608": {
+    "name": "Saint Césaire d'Arles"
+  },
+  "2708": {
+    "name": "Sainte Monique"
+  },
+  "2808": {
+    "name": "Saint Augustin"
+  },
+  "2908": {
+    "name": "Décollation de saint Jean-Baptiste"
+  },
+  "3008": {
+    "name": "Sainte Jeanne Jugan"
+  },
+  "3108": {
+    "name": "Saint Raymond Nonnat"
+  },
+  "0109": {
+    "name": "Saint Gilles"
+  },
+  "0209": {
+    "name": "Bienheureux martyrs des Carmes"
+  },
+  "0309": {
+    "name": "Saint Grégoire le Grand"
+  },
+  "0409": {
+    "name": "Sainte Rosalie"
+  },
+  "0509": {
+    "name": "Saint Laurent Justinien"
+  },
+  "0609": {
+    "name": "Bienheureux Bertrand de Garrigues"
+  },
+  "0709": {
+    "name": "Saint Cloud"
+  },
+  "0809": {
+    "name": "La nativité de la Vierge Marie",
+    "url": "https://www.aelf.org/2020-09-08/romain/messe"
+  },
+  "0909": {
+    "name": "Saint Pierre Claver"
+  },
+  "1009": {
+    "name": "Bienheureux Charles Spinola"
+  },
+  "1109": {
+    "name": "Saint Jean-Gabriel Perboyre"
+  },
+  "1209": {
+    "name": "Saint Nom de la Bienheureuse Vierge Marie, Saint Guy d'Anderlecht"
+  },
+  "1309": {
+    "name": "Saint Jean Chrysostome"
+  },
+  "1409": {
+    "name": "La Croix glorieuse"
+  },
+  "1509": {
+    "name": "Notre-Dame des Sept Douleurs, Sainte Catherine de Gênes"
+  },
+  "1609": {
+    "name": "Saints Cyprien et Corneille, pape",
+    "url": "https://www.aelf.org/2020-09-16/romain/messe"
+  },
+  "1709": {
+    "name": "Sainte Hildegarde de Bingen"
+  },
+  "1809": {
+    "name": "Saint Joseph de Cupertino"
+  },
+  "1909": {
+    "name": "Saint Janvier"
+  },
+  "2009": {
+    "name": "Saint André Kim"
+  },
+  "2109": {
+    "name": "Saint Matthieu"
+  },
+  "2209": {
+    "name": "Saint Maurice"
+  },
+  "2309": {
+    "name": "Saint Constant"
+  },
+  "2409": {
+    "name": "Saint Silouane"
+  },
+  "2509": {
+    "name": "Saint Firmin d'Amiens"
+  },
+  "2609": {
+    "name": "Saints Côme et Damien"
+  },
+  "2709": {
+    "name": "Saint Vincent de Paul"
+  },
+  "2809": {
+    "name": "Saint Venceslas"
+  },
+  "2909": {
+    "name": "Les saints Archanges"
+  },
+  "3009": {
+    "name": "Saint Jérôme"
+  },
+  "0110": {
+    "name": "Sainte Thérèse de l'enfant Jésus"
+  },
+  "0210": {
+    "name": "Les saints Anges gardiens"
+  },
+  "0310": {
+    "name": "Saint Gérard de Brogne"
+  },
+  "0410": {
+    "name": "Saint François d'Assise"
+  },
+  "0510": {
+    "name": "Sainte Fleur"
+  },
+  "0610": {
+    "name": "Saint Bruno"
+  },
+  "0710": {
+    "name": "Saints Serge et Bacchus"
+  },
+  "0810": {
+    "name": "Sainte Réparate"
+  },
+  "0910": {
+    "name": "Saint Denis de Paris"
+  },
+  "1010": {
+    "name": "Sainte Telchide"
+  },
+  "1110": {
+    "name": "Saint Théophane l'Hymnographe"
+  },
+  "1210": {
+    "name": "Saint Wilfrid d'York"
+  },
+  "1310": {
+    "name": "Saint Géraud d'Aurillac"
+  },
+  "1410": {
+    "name": "Saint Callixte"
+  },
+  "1510": {
+    "name": "Sainte Thérèse d'Avila"
+  },
+  "1610": {
+    "name": "Sainte Marguerite-Marie Alacoque"
+  },
+  "1710": {
+    "name": "Saint Ignace d'Antioche"
+  },
+  "1810": {
+    "name": "Saint Luc"
+  },
+  "1910": {
+    "name": "Saints René Goupil et Isaac Jogues"
+  },
+  "2010": {
+    "name": "Sainte Irène de Tomar"
+  },
+  "2110": {
+    "name": "Sainte Célinie"
+  },
+  "2210": {
+    "name": "Sainte Salomé"
+  },
+  "2310": {
+    "name": "Saint Jean de Capistran"
+  },
+  "2410": {
+    "name": "Saint Antoine-Marie Claret"
+  },
+  "2510": {
+    "name": "Saints Crépin et Crépinien"
+  },
+  "2610": {
+    "name": "Saint Dimitri de Thessalonique"
+  },
+  "2710": {
+    "name": "Sainte Antoinette"
+  },
+  "2810": {
+    "name": "Saints Simon et Jude"
+  },
+  "2910": {
+    "name": "Saint Germain de Talloires"
+  },
+  "3010": {
+    "name": "Sainte Hélène d'Anjou"
+  },
+  "3110": {
+    "name": "Saint Quentin"
+  },
+  "0111": {
+    "name": "La fête de tous les Saints"
+  },
+  "0211": {
+    "name": "Les fidèles défunts"
+  },
+  "0311": {
+    "name": "Saint Martin de Porres"
+  },
+  "0411": {
+    "name": "Saint Charles Borromée"
+  },
+  "0511": {
+    "name": "Sainte Sylvie"
+  },
+  "0611": {
+    "name": "Saint Léonard"
+  },
+  "0711": {
+    "name": "Saint Willibrord"
+  },
+  "0811": {
+    "name": "Bienheureuse Elisabeth de la Trinité"
+  },
+  "0911": {
+    "name": "Saint Nectaire d'Egine"
+  },
+  "1011": {
+    "name": "Saint Léon Le Grand"
+  },
+  "1111": {
+    "name": "Saint Martin de Tours"
+  },
+  "1211": {
+    "name": "Saint Josaphat"
+  },
+  "1311": {
+    "name": "Saint Brice"
+  },
+  "1411": {
+    "name": "Saint Grégoire Palamas"
+  },
+  "1511": {
+    "name": "Saint Albert le Grand"
+  },
+  "1611": {
+    "name": "Sainte Marguerite d'Ecosse"
+  },
+  "1711": {
+    "name": "Sainte Elisabeth de Hongrie"
+  },
+  "1811": {
+    "name": "Saint Odon"
+  },
+  "1911": {
+    "name": "Sainte Mechtilde de Hackeborn"
+  },
+  "2011": {
+    "name": "Saint Félix de Valois"
+  },
+  "2111": {
+    "name": "Présentation de la Vierge Marie au Temple"
+  },
+  "2211": {
+    "name": "Sainte Cécile"
+  },
+  "2311": {
+    "name": "Saint Clément de Rome"
+  },
+  "2411": {
+    "name": "Saint Pierre Dumoulin-Borie"
+  },
+  "2511": {
+    "name": "Sainte Catherine d'Alexandrie"
+  },
+  "2611": {
+    "name": "Saint Innocent d'Irkoutsk"
+  },
+  "2711": {
+    "name": "Fête de la Vierge Marie en son icône du Signe"
+  },
+  "2811": {
+    "name": "Sainte Catherine Labouré"
+  },
+  "2911": {
+    "name": "Saint Sernin"
+  },
+  "3011": {
+    "name": "Saint André, le premier appelé"
+  },
+  "0112": {
+    "name": "Saint Eloi"
+  },
+  "0212": {
+    "name": "Bienheureux Jean Ruysbroeck"
+  },
+  "0312": {
+    "name": "Saint François-Xavier"
+  },
+  "0412": {
+    "name": "Saint Jean Damascène"
+  },
+  "0512": {
+    "name": "Saint Sabas"
+  },
+  "0612": {
+    "name": "Saint Nicolas de Myre"
+  },
+  "0712": {
+    "name": "Saint Ambroise"
+  },
+  "0812": {
+    "name": "Immaculée Conception de la Vierge Marie"
+  },
+  "0912": {
+    "name": "Saint Pierre Fourier"
+  },
+  "1012": {
+    "name": "Sainte Léocadie"
+  },
+  "1112": {
+    "name": "Saint Damase"
+  },
+  "1212": {
+    "name": "Notre-Dame de Guadalupe"
+  },
+  "1312": {
+    "name": "Sainte Lucie"
+  },
+  "1412": {
+    "name": "Saint Jean de la Croix"
+  },
+  "1512": {
+    "name": "Bienheureuse Virginie Bracelli"
+  },
+  "1612": {
+    "name": "Saint Modeste"
+  },
+  "1712": {
+    "name": "Sainte Yolande"
+  },
+  "1812": {
+    "name": "Saint Gatien de Tours"
+  },
+  "1912": {
+    "name": "Saints Martyrs du Tonkin"
+  },
+  "2012": {
+    "name": "Saint Jean de Cronstadt"
+  },
+  "2112": {
+    "name": "Saint Pierre Canisius"
+  },
+  "2212": {
+    "name": "Sainte Françoise Xavière"
+  },
+  "2312": {
+    "name": "Saint David d'Arménie"
+  },
+  "2412": {
+    "name": "Saint Charbel Makhlouf"
+  },
+  "2512": {
+    "name": "Saints et Stes Emmanuelle, Emmanuel, Manuela, Manuel"
+  },
+  "2612": {
+    "name": "Saint Etienne"
+  },
+  "2712": {
+    "name": "Saint Jean"
+  },
+  "2812": {
+    "name": "Les Saints Innocents"
+  },
+  "2912": {
+    "name": "Saint Thomas Beckett"
+  },
+  "3012": {
+    "name": "Saint Gédéon"
+  },
+  "3112": {
+    "name": "Saint Silvestre"
+  }
+}

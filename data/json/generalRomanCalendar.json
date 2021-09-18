@@ -1,0 +1,1355 @@
+{
+  "0101": {
+    "key": "maryMotherOfGod",
+    "name": "Sainte Marie, Mère de Dieu",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "0201": {
+    "key": "basilTheGreatAndGregoryNazianzen",
+    "name": "Saint Basile le Grand, évêque de Césarée, docteur de l'Église et Saint Grégoire de Naziance, évêque de Constantinople, docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0301": {
+    "key": "mostHolyNameOfJesus",
+    "name": "Saint Nom de Jésus",
+    "color": "white",
+    "type": 4,
+    "priority": 10
+  },
+  "0601": {
+    "key": "epiphany",
+    "name": "L'Épiphanie du Seigneur",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "0701": {
+    "key": "raymondOfPenyafort",
+    "name": "Saint Raymond de Peñafort, prêtre, dominicain",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1301": {
+    "key": "hilaryOfPoitiers",
+    "name": "Saint Hilaire de Poitiers, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1701": {
+    "key": "anthonyOfEgypt",
+    "name": "Saint Antoine le Grand, abbé en Haute-Égypte",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2001": {
+    "key": "sebastianOfMilan",
+    "name": "Saint Sébastien, martyr de Rome",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2101": {
+    "key": "agnes",
+    "name": "Sainte Agnès, vierge et martyre",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2201": {
+    "key": "vincentOfSaragossa",
+    "name": "Saint Vincent de Saragosse, diacre et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2401": {
+    "key": "francisDeSales",
+    "name": "Saint François de Sales, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2501": {
+    "key": "conversionOfPaulApostle",
+    "name": "Conversion de Saint Paul, apôtre",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "2601": {
+    "key": "timothyAndTitus",
+    "name": "Saints Tite et Timothée, évêques, compagons de Saint Paul",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2701": {
+    "key": "angelaMerici",
+    "name": "Sainte Angèle Mérici, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2801": {
+    "key": "thomasAquinas",
+    "name": "Saint Thomas d'Aquin, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "3101": {
+    "key": "johnBosco",
+    "name": "Saint Jean Bosco, prêtre",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0202": {
+    "key": "presentationOfTheLord",
+    "name": "Présentation du Seigneur au Temple",
+    "color": "white",
+    "type": 2,
+    "priority": 5
+  },
+  "0302": {
+    "key": "ansgarOfHamburg",
+    "name": "Saint Anschaire de Brême, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0502": {
+    "key": "agathaOfSicily",
+    "name": "Sainte Agathe, vierge et martyre",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0602": {
+    "key": "paulMikiAndCompanions",
+    "name": "Saints Paul Miki et ses compagnons, martyrs",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0802": {
+    "key": "josephineBakhita",
+    "name": "Sainte Joséphine Bakhita, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1002": {
+    "key": "scholasticaOfNursia",
+    "name": "Sainte Scholastique, vierge",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1102": {
+    "key": "ourLadyOfLourdes",
+    "name": "Notre-Dame de Lourdes",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1402": {
+    "key": "cyrilOfAlexandria",
+    "name": "Saint Cyrille, moine et Saint Méthode, évêque",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1702": {
+    "key": "sevenFoundersOfTheServiteOrder",
+    "name": "Les Sept Saints fondateurs de l'ordre des Servites",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2102": {
+    "key": "peterDamian",
+    "name": "Saint Pierre Damien, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2202": {
+    "key": "chairOfPeterApostle",
+    "name": "Chaire de Saint Pierre, apôtre",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "2302": {
+    "key": "polycarpOfSmyrna",
+    "name": "Saint Polycarpe de Smyrne, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0403": {
+    "key": "casimirOfPoland",
+    "name": "Saint Casimir, prince de Lituanie",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0703": {
+    "key": "perpetuaOfCarthageAndFelicityOfCarthage",
+    "name": "Sainte Perpétue et Sainte Félicité, martyres",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0803": {
+    "key": "johnOfGod",
+    "name": "Saint Jean de Dieu, religieux, fondateur des frères hospitaliers",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0903": {
+    "key": "francesOfRome",
+    "name": "Sainte Françoise Romaine, mère de famille puis religieuse",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1703": {
+    "key": "patrickOfIreland",
+    "name": "Saint Patrick, évêque d'Irlande",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1803": {
+    "key": "cyrilOfJerusalem",
+    "name": "Saint Cyrille de Jérusalem, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2303": {
+    "key": "turibiusOfMogrovejo",
+    "name": "Saint Toribio de Mogrovejo, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0204": {
+    "key": "francisOfPaola",
+    "name": "Saint François de Paule, ermite italien",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0404": {
+    "key": "isidoreOfSeville",
+    "name": "Saint Isidore de Séville, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0504": {
+    "key": "vincentFerrer",
+    "name": "Saint Vincent Ferrier, prêtre, dominicain espagnol",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0704": {
+    "key": "johnBaptistDeLaSalle",
+    "name": "Saint Jean-Baptiste de la Salle, prêtre, fondateur des Écoles chrétiennes",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1104": {
+    "key": "stanislausOfSzczepanow",
+    "name": "Saint Stanislas de Cracovie, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1304": {
+    "key": "martin",
+    "name": "Saint Martin <abbr title=\"premier\">I<sup>er</sup></abbr>, pape et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2104": {
+    "key": "anselmOfCanterbury",
+    "name": "Saint Anselme de Cantorbéry, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2304": {
+    "key": "georgeOfLydda",
+    "name": "Saint Georges, martyr ; Saint Adalbert, évêque de Prague et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2404": {
+    "key": "fidelisOfSigmaringen",
+    "name": "Saint Fidèle de Sigmaringen, prêtre et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2504": {
+    "key": "markTheEvangelist",
+    "name": "Saint Marc, évangéliste",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2804": {
+    "key": "peterChanel",
+    "name": "Saint Pierre Chanel, prêtre et martyr et Saint Louis-Marie Grignion de Montfort, prêtre",
+    "color": ["red", "white"],
+    "type": 4,
+    "priority": 12
+  },
+  "2904": {
+    "key": "catherineOfSiena",
+    "name": "Sainte Catherine de Sienne, vierge et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "3004": {
+    "key": "piusV",
+    "name": "Saint Pie V, pape",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0105": {
+    "key": "josephTheWorker",
+    "name": "Saint Joseph artisan",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0205": {
+    "key": "athanasiusOfAlexandria",
+    "name": "Saint Athanase d'Alexandrie, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0305": {
+    "key": "philipAndJamesApostles",
+    "name": "Saints Philippe et Jacques, apôtres",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "1205": {
+    "key": "nereusOfTerracinaAndAchilleusOfTerracina",
+    "name": "Saints Nérée et Achillée, martyrs ; ou Saint Pancrace, martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "1305": {
+    "key": "ourLadyOfFatima",
+    "name": "Notre-Dame de Fátima",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1405": {
+    "key": "matthiasApostle",
+    "name": "Saint Matthias, apôtres",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "1805": {
+    "key": "johnI",
+    "name": "Saint Jean <abbr title=\"premier\">I<sup>er</sup></abbr>, pape et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2005": {
+    "key": "bernardineOfSiena",
+    "name": "Saint Bernardin de Sienne, prêtre, franciscain",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2105": {
+    "key": "christopherMagallanesAndCompanions",
+    "name": "Saint Cristóbal Magallanes Jara et ses compagnons, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2205": {
+    "key": "ritaOfCascia",
+    "name": "Sainte Rita de Cascia, religieuse",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2505": {
+    "key": "bedeTheVenerable",
+    "name": "Saint Bède le Vénérable, prêtre, moine et docteur de l'Église, ou saint Grégoire VII, pape, ou sainte Marie-Madeleine de Pazzi, vierge carmélite",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2605": {
+    "key": "philipNeri",
+    "name": "Saint Philippe Neri, prêtre, fondateur de l'Oratoire",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2705": {
+    "key": "augustineOfCanterbury",
+    "name": "Saint Augustin de Cantorbéry, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "3105": {
+    "key": "visitation",
+    "name": "Visitation de la Vierge Marie",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "0106": {
+    "key": "justin",
+    "name": "Saint Justin Martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0206": {
+    "key": "marcellinusOfRome",
+    "name": "Saints Marcellin et Pierre, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "0306": {
+    "key": "charlesLwangaAndCompanions",
+    "name": "Saints Charles Lwanga et ses compagnons, martyrs",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0506": {
+    "key": "bonifaceOfMainz",
+    "name": "Saint Boniface, évêque de Mayence et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0606": {
+    "key": "norbertOfXanten",
+    "name": "Saint Norbert, évêque, fondateur des Prémontrés",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0906": {
+    "key": "ephremTheSyrian",
+    "name": "Saint Ephrem, diacre et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1106": {
+    "key": "barnabasApostle",
+    "name": "Saint Barnabé, apôtre",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1306": {
+    "key": "anthonyOfPadua",
+    "name": "Saint Antoine de Padoue, prêtre et docteur de l'Église, franciscain portugais",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1906": {
+    "key": "romualdOfRavenna",
+    "name": "Saint Romuald, abbé, fondateur des camaldules",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2106": {
+    "key": "aloysiusGonzaga",
+    "name": "Saint Louis de Gonzague, novice jésuite",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2206": {
+    "key": "paulinusOfNola",
+    "name": "Saint Paulin de Nole, évêque ou Saints John Fisher, évêque et martyr et Thomas More, martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2706": {
+    "key": "cyrilOfAlexandria",
+    "name": "Saint Cyrille d'Alexandrie, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2806": {
+    "key": "irenaeusOfLyon",
+    "name": "Saint Irénée de Lyon, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "3006": {
+    "key": "firstMartyrsOfTheRomanChurch",
+    "name": "Premiers martyrs de l'Église de Rome",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "0307": {
+    "key": "thomasApostle",
+    "name": "Saint Thomas, apôtre",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "0407": {
+    "key": "elizabethOfPortugal",
+    "name": "Sainte Elisabeth de Portugal, reine",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0507": {
+    "key": "anthonyZaccaria",
+    "name": "Saint Antoine-Marie Zaccaria, prêtre, fondateur des barnabites",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0607": {
+    "key": "mariaGoretti",
+    "name": "Sainte Maria Goretti, vierge et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "0907": {
+    "key": "augustineZhaoRongAndCompanions",
+    "name": "Saint Augustin Zhao Rong et ses compagnons, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "1107": {
+    "key": "benedictOfNursia",
+    "name": "Saint Benoît, abbé",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1307": {
+    "key": "henryIIEmperor",
+    "name": "Saint Henri",
+    "color": "",
+    "type": 4,
+    "priority": 12
+  },
+  "1407": {
+    "key": "camillusDeLellis",
+    "name": "Saint Camille de Lellis, prêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1507": {
+    "key": "bonaventureOfBagnoregio",
+    "name": "Saint Bonaventure, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 12
+  },
+  "1607": {
+    "key": "ourLadyOfMountCarmel",
+    "name": "Notre-Dame du Mont-Carmel",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2007": {
+    "key": "apollinarisOfRavenna",
+    "name": "Saint Apollinaire, évêque et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2107": {
+    "key": "lawrenceOfBrindisi",
+    "name": "Saint Laurent de Brindisi, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2207": {
+    "key": "maryMagdalene",
+    "name": "Sainte Marie-Madeleine, disciple du Seigneur",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "2307": {
+    "key": "bridgetOfSweden",
+    "name": "Sainte Brigitte de Suède, religieuse",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2407": {
+    "key": "sharbelMakhluf",
+    "name": "Saint Charbel Makhlouf, prêtre et ermite",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2507": {
+    "key": "jamesTheGreatApostle",
+    "name": "Saint Jacques le Majeur, apôtre",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2607": {
+    "key": "joachimAndAnne",
+    "name": "Saints Anne et Joachim, parents de la Vierge Marie",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2907": {
+    "key": "marthaAndMaryAndLazarusOfBethany",
+    "name": "Sainte Marthe, sainte Marie et saint Lazare",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "3007": {
+    "key": "peterChrysologus",
+    "name": "Saint Pierre Chrysologue, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "3107": {
+    "key": "ignatiusOfLoyola",
+    "name": "Saint Ignace de Loyola, prêtre, fondateur des jésuites",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0108": {
+    "key": "alphonsusLiguori",
+    "name": "Saint Alphonse de Liguori, évêque et docteur de l'Église, fondateur des Rédemptoristes",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0208": {
+    "key": "eusebiusOfVercelli",
+    "name": "Saint Eusèbe de Verceil, évêque, ou Saint Pierre-Julien Eymard, prêtre, fondateur de la congrégation du Très-Saint-Sacrement",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0408": {
+    "key": "johnMaryVianney",
+    "name": "Saint Jean-Marie Vianney, prêtre",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0508": {
+    "key": "dedicationOfTheBasilicaOfSaintMaryMajor",
+    "name": "Dédicace de la Basilique Sainte-Marie-Majeure",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0608": {
+    "key": "transfiguration",
+    "name": "Transfiguration du Seigneur",
+    "color": "white",
+    "type": 2,
+    "priority": 5
+  },
+  "0708": {
+    "key": "sixtusIIAndCompanions",
+    "name": "Saint Sixte II, pape, et ses compagnons, martyrs, ou Saint Cajetan, prêtre",
+    "color": "red, white",
+    "type": 4,
+    "priority": 12
+  },
+  "0808": {
+    "key": "dominicDeGuzman",
+    "name": "Saint Dominique, prêtre, fondateur des Frères Prêcheurs",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0908": {
+    "key": "teresaBenedictaOfTheCross",
+    "name": "Sainte Thérèse-Bénédicte de la Croix (Édith Stein), vierge et martyre, carmélite",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "1008": {
+    "key": "lawrenceOfRome",
+    "name": "Saint Laurent, diacre et martyr",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "1108": {
+    "key": "clareOfAssisi",
+    "name": "Sainte Claire d'Assise, vierge, fondatrice des Pauvres Dames ou Clarisses",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1208": {
+    "key": "janeFrancesDeChantal",
+    "name": "Sainte Jeanne-Françoise de Chantal, religieuse, fondatrice de la Visitation",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1308": {
+    "key": "pontianIAndHippolytusOfRome",
+    "name": "Saints Pontien, pape, et Hippolyte, prêtre, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "1408": {
+    "key": "maximilianKolbe",
+    "name": "Saint Maximilien Kolbe, prêtre et martyr, franciscain",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1508": {
+    "key": "assumption",
+    "name": "Assomption de la Bienheureuse Vierge Marie",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "1608": {
+    "key": "stephenIOfHungar",
+    "name": "Saint Étienne de Hongrie",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1908": {
+    "key": "johnEudes",
+    "name": "Saint Jean Eudes, prêtre, fondateur",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2008": {
+    "key": "bernardOfClairvaux",
+    "name": "Saint Bernard, abbé de Clairvaux et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2108": {
+    "key": "piusX",
+    "name": "Saint Pie X, pape",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2208": {
+    "key": "queenshipOfMary",
+    "name": "Bienheureuse Vierge Marie Reine de l'univers",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2308": {
+    "key": "roseOfLima",
+    "name": "Sainte Rose de Lima, vierge, tertiaire dominicaine",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2408": {
+    "key": "bartholomewApostle",
+    "name": "Saint Barthélemy, apôtre",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2508": {
+    "key": "louisIX",
+    "name": "Saint Louis, roi de France, ou Saint Joseph Calasanz, prêtre, fondateur",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2708": {
+    "key": "monicaOfHippo",
+    "name": "Sainte Monique",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2808": {
+    "key": "monicaOfHippo",
+    "name": "Saint Augustin, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2908": {
+    "key": "johnTheBaptistMartyr",
+    "name": "Décollation de Saint Jean-Baptiste, martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0309": {
+    "key": "gregoryTheGreat",
+    "name": "Saint Grégoire le Grand, pape et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0809": {
+    "key": "birthOfMary",
+    "name": "Nativité de la Vierge Marie",
+    "color": "white",
+    "link": "https://www.aelf.org/2020-09-08/romain/messe",
+    "type": 2,
+    "priority": 7
+  },
+  "0909": {
+    "key": "peterClaver",
+    "name": "Saint Pierre Claver, prêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1209": {
+    "key": "mostHolyNameOfMary",
+    "name": "Saint Nom de la Bienheureuse Vierge Marie",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1309": {
+    "key": "johnChrysostom",
+    "name": "Saint Jean Chrysostome, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1409": {
+    "key": "exaltationOfTheHolyCross",
+    "name": "La Croix glorieuse",
+    "color": "red",
+    "type": 2,
+    "priority": 5
+  },
+  "1509": {
+    "key": "ourLadyOfSorrows",
+    "name": "Notre-Dame des Sept Douleurs",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1609": {
+    "key": "corneliusIAndCyprianOfCarthage",
+    "name": "Saints Corneille, pape, et Cyprien, évêque, martyrs",
+    "color": "red",
+    "link": "https://www.aelf.org/2020-09-16/romain/messe",
+    "type": 3,
+    "priority": 10
+  },
+  "1709": {
+    "key": "robertBellarmine",
+    "name": "Saint Robert Bellarmin, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1909": {
+    "key": "januariusIOfBenevento",
+    "name": "Saint Janvier, évêque et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2009": {
+    "key": "andrewKimTaeGonPaulChongHaSangAndCompanions",
+    "name": "Saint André Kim Taegon, prêtre, et Paul Chong Hasang et ses compagnons, martyrs",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2109": {
+    "key": "matthewEvangelist",
+    "name": "Saint Matthieu, apôtre et évangéliste",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2309": {
+    "key": "piusOfPietrelcina",
+    "name": "Saint Padre Pio, prêtre",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2609": {
+    "key": "cosmasOfCiliciaAndDamianOfCilicia",
+    "name": "Saints Côme et Damien, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2709": {
+    "key": "vincentDePaul",
+    "name": "Saint Vincent de Paul, prêtre",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2809": {
+    "key": "wenceslausIOfBohemia",
+    "name": "Saint Venceslas, martyr ou Saints Lorenzo Ruiz et ses compagnons, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "2909": {
+    "key": "michaelGabrielAndRaphaelArchangels",
+    "name": "Saints Michel, Gabriel et Raphaël, Archanges",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "3009": {
+    "key": "jeromeOfStridon",
+    "name": "Saint Jérôme, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0110": {
+    "key": "thereseOfTheChildJesusAndTheHolyFace",
+    "name": "Sainte Thérèse de l'enfant Jésus et de la Sainte Face, vierge et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0210": {
+    "key": "guardianAngels",
+    "name": "Les Saints Anges gardiens",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0410": {
+    "key": "francisOfAssisi",
+    "name": "Saint François d'Assise, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0510": {
+    "key": "faustinaKowalska",
+    "name": "Sainte Faustine Kowalska, vierge, † 1938 à Cracovie",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0610": {
+    "key": "brunoOfCologne",
+    "name": "Saint Bruno, prêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0710": {
+    "key": "ourLadyOfTheRosary",
+    "name": "Notre Dame du Rosaire",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0910": {
+    "key": "denisOfParis",
+    "name": "Saint Denis de Paris et ses compagnons, martyrs et Saint Jean Leonardi, prêtre",
+    "color": "red, white",
+    "type": 4,
+    "priority": 12
+  },
+  "1110": {
+    "key": "john23",
+    "name": "Saint Jean XXIII, pape",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1410": {
+    "key": "callistus1",
+    "name": "Saint Callixte <abbr title=\"premier\">I<sup>er</sup></abbr>, pape et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "1510": {
+    "key": "teresaOfJesusOfAvila",
+    "name": "Sainte Thérèse de Jésus (d'Avila), vierge et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1610": {
+    "key": "hedwigOfSilesiaAndMargaretMaryAlacoque",
+    "name": "Sainte Hedwige, religieuse et Sainte Marguerite-Marie Alacoque, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1710": {
+    "key": "ignatiusOfAntioch",
+    "name": "Saint Ignace d'Antioche, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1810": {
+    "key": "lukeTheEvangelist",
+    "name": "Saint Luc, évangéliste",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "1910": {
+    "key": "johnDeBrebeufIsaacJoguesAndCompanionsAndPaulOfTheCross",
+    "name": "Saints Jean de Brébeuf et Isaac Jogues, prêtres et martyrs, et leurs compagnons, martyrs et Saint Paul de la Croix, prêtre",
+    "color": "red, white",
+    "type": 4,
+    "priority": 12
+  },
+  "2210": {
+    "key": "johnPaul2",
+    "name": "Saint Jean-Paul II, pape",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2310": {
+    "key": "johnOfCapistrano",
+    "name": "Saint Jean de Capistran, pêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2410": {
+    "key": "anthonyMaryClaret",
+    "name": "Saint Antoine-Marie Claret, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2810": {
+    "key": "simonAndJudeApostles",
+    "name": "Saint Simon et Saint Jude, apôtres",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "0111": {
+    "key": "allSaints",
+    "name": "La Toussaint, fête de tous les saints",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "0211": {
+    "key": "allSouls",
+    "name": "Commémoration de tous les fidèles défunts",
+    "color": "black",
+    "type": 0,
+    "priority": 3
+  },
+  "0311": {
+    "key": "martinDePorres",
+    "name": "Saint Martin de Porres, dominicain",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0411": {
+    "key": "charlesBorromeo",
+    "name": "Saint Charles Borromée, évêque de Milan et cardinal",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0911": {
+    "key": "dedicationOfTheLateranBasilica",
+    "name": "Dédicace de la Basilique Saint-Jean-de-Latran",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "1011": {
+    "key": "leoITheGreat",
+    "name": "Saint Léon Le Grand, pape et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1111": {
+    "key": "martinOfTours",
+    "name": "Saint Martin de Tours, évêque",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1211": {
+    "key": "josaphatKuntsevych",
+    "name": "Saint Josaphat, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1511": {
+    "key": "albertTheGreat",
+    "name": "Saint Albert le Grand, dominicain, évêque de Ratisbonne et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1611": {
+    "key": "margaretOfScotland",
+    "name": "Sainte Marguerite d'Ecosse, reine et Sainte Gertrude, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1711": {
+    "key": "elizabethOfHungary",
+    "name": "Sainte Elisabeth de Hongrie, duchesse de Thuringe et tertiaire franciscaine",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1811": {
+    "key": "dedicationOfTheBasilicasOfSaintsPeterAndPaul",
+    "name": "Dédicace des Basiliques de Saint Pierre et Saint Paul, apôtres",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2111": {
+    "key": "presentationOfMary",
+    "name": "Présentation de la Bienheureuse Vierge Marie au Temple",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2211": {
+    "key": "ceciliaOfRome",
+    "name": "Sainte Cécile, vierge et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2311": {
+    "key": "clementIOfRome",
+    "name": "Saint Clément de Rome, pape et martyr et Saint Colomban, religieux",
+    "color": "red, white",
+    "type": 4,
+    "priority": 12
+  },
+  "2411": {
+    "key": "andrewDungLacPriestAndCompanions",
+    "name": "Saint André Dũng-Lạc et ses compagnons, martyrs",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2511": {
+    "key": "catherineOfAlexandria",
+    "name": "Sainte Catherine d'Alexandrie, vierge et martyre",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "3011": {
+    "key": "andrewApostle",
+    "name": "Saint André, le premier apôtre",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "0312": {
+    "key": "francisXavier",
+    "name": "Saint François-Xavier, prêtre, jésuite",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0412": {
+    "key": "johnDamascene",
+    "name": "Saint Jean Damascène, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0612": {
+    "key": "nicholasOfMyra",
+    "name": "Saint Nicolas de Myre, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0712": {
+    "key": "nicholasOfMyra",
+    "name": "Saint Ambroise de Milan, évêque et docteur de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0912": {
+    "key": "juanDiegoCuauhtlatoatzin",
+    "name": "Saint Juan Diego Cuauhtlatoatzin",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1012": {
+    "key": "ourLadyOfLorette",
+    "name": "Notre-Dame de Lorette",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1112": {
+    "key": "damasusI",
+    "name": "Saint Damase, pape",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1212": {
+    "key": "ourLadyOfGuadalupe",
+    "name": "Notre-Dame de Guadaloupé",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1312": {
+    "key": "lucyOfSyracuse",
+    "name": "Sainte Lucie, vierge et martyre",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "1412": {
+    "key": "johnOfTheCross",
+    "name": "Saint Jean de la Croix, prêtre et docteur de l'Église, carme",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "2112": {
+    "key": "peterCanisius",
+    "name": "Saint Pierre Canisius, prêtre et docteur de l'Église",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2312": {
+    "key": "johnOfKanty",
+    "name": "Saint Jean de Kenty, prêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "2512": {
+    "key": "christmas",
+    "name": "Nativité du Seigneur",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "2612": {
+    "key": "stephenTheFirstMartyr",
+    "name": "Saint Etienne, premier martyr",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2712": {
+    "key": "johnEvangelist",
+    "name": "Saint Jean, apôtre et évangéliste",
+    "color": "white",
+    "type": 2,
+    "priority": 7
+  },
+  "2812": {
+    "key": "holyInnocents",
+    "name": "Les Saints Innocents, martyrs",
+    "color": "red",
+    "type": 2,
+    "priority": 7
+  },
+  "2912": {
+    "key": "thomasBecket",
+    "name": "Saint Thomas Beckett, évêque et martyr",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "3112": {
+    "key": "sylvesterI",
+    "name": "Saint Sylvestre, pape",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  }
+}

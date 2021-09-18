@@ -1,0 +1,28 @@
+_demoColor1 = _colorG + 7%
+
+[class*=demo-items] > *
+  box-sizing border-box
+  padding 0 .5em
+  background-color _demoColor1
+  //border 1px solid #000
+  box-shadow _shadow5
+
+.demo-items > *
+  padding 1em
+
+.demo-items-empty > *
+  min-height 2em
+  line-height 2
+
+[class*=demo-items] > * code
+  background-color rgba(0, 0, 0, .2)
+
+.demo-counter > *
+  counter-increment div
+
+.demo-counter > ::before
+  display inline
+  content counter(div) '.'
+
+.demo-counter > * :first-child
+  display inline

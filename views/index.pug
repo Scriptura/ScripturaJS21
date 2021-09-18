@@ -1,0 +1,29 @@
+extends layout
+
+block main
+  main
+    h1.main-heading #{_name} 
+      span un framework pour le web
+    .grid2.gap
+      div
+        h2 Serveur :
+        ul
+          //-li Url du site : #{_site_url}
+          li Version de Node.js : #{_node_version}
+          li Hostname : #{_hostname}
+          li Adresse IP locale : #{_ip}
+          li Architecture du processeur : #{_arch}
+          li Mémoire RAM : #{_totalmem} Go
+          li Système d'exploitation : #{_release}
+          li Os : #{_type} (#{_platform})
+          li Chemin du répertoire personnel de l'utilisateur actuel : #{_homedir}
+          li Chemin des fichiers temporaires : #{_tmpdir}
+        h2 Client :
+        ul
+          li Os : #{_user_os} (#{_user_platform})
+          li Navigateur : #{_user_browser} (#{_user_version})
+      .center
+        svg.size25.decorative-svg(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/silos/195v.svg#1')
+    hr
+    include includes/links

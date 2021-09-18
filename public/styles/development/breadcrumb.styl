@@ -1,0 +1,61 @@
+_breadcrumbSize = 2.5em
+_breadcrumbColor = _colorT2
+_breadcrumbColor1 = _colorG - 34%
+_breadcrumbColor2 = _color2
+
+.breadcrumb
+  background-color _breadcrumbColor1
+
+.breadcrumb ol
+  display flex
+  //flex-wrap wrap // @note Pour les versions mobiles. @todo A supprimer peut-être...
+  margin 0
+  padding 0
+
+.breadcrumb li
+  margin-right -1em
+  list-style none
+  filter drop-shadow(_shadow4)
+
+.breadcrumb li:nth-child(1)
+  z-index 2
+
+.breadcrumb li:nth-child(2)
+  z-index 1
+
+@media (max-width _sizeXS)
+
+  .breadcrumb ol > :last-child // @note Pour éviter les effets de bord sur portable quand fil d'ariane trop long @todo Non optimal car il vaux mieux contrôler à partir du contenu.
+    display none
+
+.breadcrumb a
+  position relative
+  display block
+  //height _breadcrumbSize
+  line-height _breadcrumbSize // @todo enlever les unités
+  padding 0 (_breadcrumbSize * .75)
+  font-size 1em //(_breadcrumbSize / 3)
+  text-decoration none
+  background-size cover
+  background-repeat no-repeat
+  color _breadcrumbColor
+  background-color _breadcrumbColor1
+  transition background-color .3s ease-in-out
+  clip-path polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%)
+
+.breadcrumb li:first-child a
+  padding-left 1em
+
+.breadcrumb li:last-child a
+  color _colorT
+/*
+.breadcrumb li a:focus
+.breadcrumb li a:hover
+.breadcrumb li a:active
+  color #777
+*/
+.breadcrumb li a:focus
+.breadcrumb li a:hover
+.breadcrumb li a:active
+  color #fff
+  background-color _breadcrumbColor2

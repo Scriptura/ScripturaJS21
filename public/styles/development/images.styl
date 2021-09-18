@@ -1,0 +1,137 @@
+_imagesColor1 = _colorG + 7%
+
+svg
+  max-width 100%
+  fill currentColor // Pour les polices d'icônes par défaut.
+
+.decorative-svg
+  //height 10em // @note Modifier la taille de l'image avec la classe utilitaire .zoom
+  fill _colorT2 // rgba(210,180,140, .8)
+
+.icon
+  display inline-block
+  vertical-align sub
+  height 1.2em
+  width 1.2em
+  margin-right .5em
+  fill curentColor
+
+//.svg-mask
+  //mask-border url(public/medias/masks/mask.svg) 30 repeat
+
+img
+  vertical-align middle // Évite un décalage possible de l'élément suivant
+  //width 100% // @bugfix @todo Depuis l'introduction des attributs 'srcset' et 'sizes' la largeur ne doit plus dépendre de l'image par défaut
+  height auto
+  max-width 100%
+  border-style none // @bugfix Remove the border on images inside links @affected IE 10.
+
+figure
+  margin 0 // @bugfix @affected All browers
+
+[class*=figure]
+  //vertical-align middle
+  width 100%
+  padding .5em
+  color _colorT
+  background-color _imagesColor1
+  box-shadow _shadow11
+
+[class*=figure] figcaption
+  padding-top .5em
+  text-align center
+
+[class*=figure] + [class*=figure]
+  margin-top 2em
+
+[class*=-thumbnail]
+  width 100% // Important à appliquer pour le responsive si le width n'est pas définit préalablement
+
+@media (min-width _sizeXS)
+
+  [class*=-thumbnail]
+    max-width (_wrap / 4)
+
+@media (min-width _sizeS)
+
+  [class*=-alignleft]
+    float left
+    margin-right 1em
+
+  [class*=-alignright]
+    float right
+    margin-left 1em
+
+  [class*=-align] ~ h2
+  [class*=-align] ~ h3
+  [class*=-align] ~ hr
+  [class*=-align] ~ aside
+    clear both // @Note Ciblage de certains éléments faisants suite à une image flotante @todo Le margin-top de ces éléments n'est pas pris en compte sous l'image...
+
+.js [class*=-focus]
+  position relative
+  cursor zoom-in
+  transition .15s transform
+
+.js [class*=-focus]:focus-within
+.js [class*=-focus]:hover
+//.js [class*=-focus]:active
+  //z-index 30
+  box-shadow _shadow12
+  transform scale(1.01)
+
+.js [class*=-focus]:focus-within
+  background-color Orange
+
+.js [class*=-focus]:focus-within svg
+  fill Orange
+
+[class*=-focus] button
+.focus-off button
+  position absolute
+  z-index 1
+  padding 0
+  color #aaa
+  background-color Transparent
+  border none
+  outline none
+  cursor zoom-in
+
+[class*=-focus] button
+  top _gap
+  right _gap
+  width 1.2em
+  height 1.2em
+
+.focus-off
+  position fixed
+  display flex
+  align-items center
+  //justify-content center // @todo Nécessité de cette règle à évaluer...
+  z-index 4001 // @note Doit passer au dessus de tout autre élément, notamment le scroll top
+  top 0
+  left 0
+  bottom 0
+  right 0
+  padding 0 // @note Annule une règle du template
+  //color #aaa
+  //background-color #222 // @bugfix @affected Chrome mobile @note box-shadox sur l'image plutôt qu'un background sur le conteneur afin d'éviter un décalage d'environ 1px en bottom.
+  cursor zoom-out
+
+.focus-off img
+  margin auto
+  max-height 100vh
+  background-color #000 // @note Pour les .png transparents
+  box-shadow _shadow13
+
+.focus-off button
+  bottom _gap
+  right _gap
+  width 2em
+  height 2em
+  cursor zoom-out
+
+[class*=-focus] button svg
+.focus-off button svg
+  width 100%
+  height 100%

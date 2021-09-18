@@ -1,0 +1,28 @@
+extends layout
+
+block main
+  main
+    h1.main-heading= _display_name
+    .grid2.gap.media-s-grid1
+      ul
+        li Id : #{_id}
+        li Username : #{_username}
+        li Password : #{_password}
+        if _email
+          li Email : #{_email}
+        li Inscrit depuis le : #{_creation}
+        if _revision
+          li Dernière revision du profil le : #{_revision}
+        if _last_login
+          li Dernière connexion le : #{_last_login}
+      .center
+        svg.size25.decorative-svg(role='img' focusable='false' style='height:12em')
+          use(xlink:href='/medias/sprites/silos/79v-d2.svg#1')
+    hr
+    ul.list-stripe-links.grid3
+      li
+        a(href='/user/admin') User admin
+      li
+        a(href='/user/test') User test (request failed)
+      li
+        a(href='/user/123') User xyz (incorrect path)

@@ -1,0 +1,78 @@
+{
+  "0301": {
+    "key": "mostHolyNameOfJesusOrGenevieveOfParis",
+    "name": "Saint Nom de Jésus ou Sainte Geneviève, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0601": {
+    "key": "epiphany",
+    "name": ""
+  },
+  "1501": {
+    "key": "remigiusOfReims",
+    "name": "Saint Rémi, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1802": {
+    "key": "bernadetteSoubirous",
+    "name": "Sainte Bernadette Soubirous",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1905": {
+    "key": "ivoOfKermartin",
+    "name": "Saint Yves, prêtre",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "3005": {
+    "key": "joanOfArc",
+    "name": "Sainte Jeanne d'Arc, vierge",
+    "extra": "patronne secondaire de la France",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0206": {
+    "key": "pothinusOfLyon",
+    "name": "Saint Pothin, évêque, Sainte Blandine, vierge, et leurs compagnons, martyrs",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
+  "0406": {
+    "key": "clotildeOfBurgundy",
+    "name": "Sainte Clotilde, reine des Francs",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1508": {
+    "key": "assumption",
+    "extra": "patronne principale de la France"
+  },
+  "2608": {
+    "key": "caesariusOfArles",
+    "name": "Saint Césaire d'Arles, évêque",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "1909": {
+    "key": "OurLadyOfLaSalette",
+    "name": "Notre-Dame de La Salette",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0110": {
+    "key": "thereseOfTheChildJesusAndTheHolyFace",
+    "extra": "patronne secondaire de la France"
+  }
+}

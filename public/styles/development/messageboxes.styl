@@ -1,0 +1,57 @@
+_messageBoxesColor0 = _colorG + 7%
+_messageBoxesColor1 = _colorG + 20%
+_messageBoxesColor2 = _messageBoxesColor0
+_messageBoxesColor3 = _color6
+_messageBoxesColor4 = _color4
+_messageBoxesColor5 = _color2
+_messageBoxesColor6 = _color5
+
+.message
+[class*=alert]
+  margin-bottom 1em
+  padding 1em
+  background-color _messageBoxesColor0
+  box-shadow _shadow5
+  border-radius _r2
+
+[class*=alert]
+  color #fff
+
+[class*=alert] svg
+  display inline-block
+  vertical-align sub
+  height 1.2em
+  width 1.2em
+  margin-right .5em
+
+.alert-primary
+  background-color _messageBoxesColor1
+
+.alert-secondary
+  background-color _messageBoxesColor2
+
+.alert-info
+  background-color _messageBoxesColor3
+
+.alert-success
+  background-color _messageBoxesColor4
+
+.alert-danger
+  background-color _messageBoxesColor5
+
+.alert-warning
+  background-color _messageBoxesColor6
+
+/*
+.alert-warning
+  position relative
+  background-color _color5
+  &::before
+  &::after
+    content ''
+    position absolute
+  position relative
+  &::after
+    bottom 0
+    border-radius 0 0 _r2 _r2
+*/

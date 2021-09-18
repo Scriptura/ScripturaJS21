@@ -1,0 +1,77 @@
+extends layout
+
+block main
+  main
+    h1.main-heading #{_full_name}
+    .grid2.gap.media-s-grid1
+      div
+        ul
+          li Id : #{_id}
+          if _user_id
+            li User id : #{_user_id}
+          li Sexe : 
+            if _sexe == NULL
+              | non renseigné
+            if _sexe == '0'
+              | inconnu
+            if _sexe == '1'
+              | homme
+            else if _sexe == '2'
+              | femme
+            else if _sexe == '9'
+              | non applicable
+          if _given_name
+            li= _given_name
+          if _middle_name
+            li= _middle_name
+          if _family_name
+            li= _family_name
+          if _usual_name
+            li= _usual_name
+          if _nickname
+            li= _nickname
+          if _prefix
+            li= _prefix
+          if _suffix
+            li= _suffix
+          if _birth_date
+            li
+              if _sexe != 2
+                | Né
+              else
+                | Née
+              |  le #{_birth_date}
+              if _birth_place_id
+                |  à #{_birth_place_id}
+          if _death_date
+            li
+              if _sexe == ('1' || '9')
+                | Décédé
+              else 
+                | Décédée
+              |  le #{_death_date}
+          if _nationality
+            li Pays : #{_nationality}
+          if _phone
+            li Téléphone : #{_phone}
+          if _devise
+            li Devise : 
+              em "#{_devise}"
+        p!= _description
+      .center
+        svg.size25.reverse.decorative-svg(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/silos/126r-d1.svg#1')
+    hr
+    ul.list-stripe-links.grid2
+      li
+        a(href='/person/1') Person 1
+      li
+        a(href='/person/2') Person 2
+      li
+        a(href='/person/3') Person 3
+      li
+        a(href='/person/4') Person 4
+      li
+        a(href='/person/5') Person 5 (request failed)
+      li
+        a(href='/person/xyz') Person xyz (incorrect path)

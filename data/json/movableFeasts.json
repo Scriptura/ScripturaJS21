@@ -1,0 +1,322 @@
+{
+  "firstAdventSunday": {
+    "key": "firstAdventSunday",
+    "name": "Premier dimanche de l'Avent, <em>Levavi</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "secondAdventSunday": {
+    "key": "secondAdventSunday",
+    "name": "Deuxième dimanche de l'Avent, <em>Populus Sion</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "thirdAdventSunday": {
+    "key": "thirdAdventSunday",
+    "name": "Troisième dimanche de l'Avent, <em>Gaudete</em>",
+    "color": "pink",
+    "type": 1,
+    "priority": 2
+  },
+  "fourthAdventSunday": {
+    "key": "fourthAdventSunday",
+    "name": "Quatrième dimanche de l'Avent, <em>Rorate</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "immaculateConception": {
+    "key": "immaculateConception",
+    "name": "Immaculée Conception de la Bienheureuse Vierge Marie",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "holyFamily": {
+    "key": "holyFamily",
+    "name": "La Sainte Famille",
+    "color": "white",
+    "type": 2,
+    "priority": 5
+  },
+  "epiphany": {
+    "key": "epiphany",
+    "name": "Épiphanie du Seigneur",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "baptismOfTheLord": {
+    "key": "baptismOfTheLord",
+    "name": "Le Baptême du Seigneur",
+    "color": "white",
+    "type": 2,
+    "priority": 5
+  },
+  "josephHusbandOfMary": {
+    "key": "josephHusbandOfMary",
+    "name": "Saint Joseph, chaste Époux de la Bienheureuse Vierge Marie",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "annunciation": {
+    "key": "annunciation",
+    "name": "Annonciation du Seigneur",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "ashWednesday": {
+    "key": "ashWednesday",
+    "name": "Mercredi des Cendres",
+    "color": "purple",
+    "type": null,
+    "priority": 2
+  },
+  "firstLentSunday": {
+    "key": "firstLentSunday",
+    "name": "Premier dimanche de Carême, <em>Invocabit</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "secondLentSunday": {
+    "key": "secondLentSunday",
+    "name": "Deuxième dimanche de Carême, <em>Reminiscere</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "thirdLentSunday": {
+    "key": "thirdLentSunday",
+    "name": "Troisième dimanche de Carême, <em>Oculi</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "fourthLentSunday": {
+    "key": "fourthLentSunday",
+    "name": "Quatrième dimanche de Carême, <em>Laetare</em>",
+    "color": "pink",
+    "type": 1,
+    "priority": 2
+  },
+  "fiveLentSunday": {
+    "key": "fiveLentSunday",
+    "name": "Cinquième dimanche de Carême, <em>Judica</em>",
+    "color": "purple",
+    "type": 1,
+    "priority": 2
+  },
+  "palmSunday": {
+    "key": "palmSunday",
+    "name": "Dimanche des Rameaux et de la Passion du Seigneur",
+    "color": "red",
+    "type": 1,
+    "priority": 2
+  },
+  "holyMonday": {
+    "key": "holyMonday",
+    "name": "Lundi Saint",
+    "color": "purple",
+    "type": null,
+    "priority": 2
+  },
+  "holyTuesday": {
+    "key": "holyTuesday",
+    "name": "Mardi Saint",
+    "color": "purple",
+    "type": null,
+    "priority": 2
+  },
+  "holyWednesday": {
+    "key": "holyWednesday",
+    "name": "Mercredi Saint",
+    "color": "purple",
+    "type": null,
+    "priority": 2
+  },
+  "holyThursday": {
+    "key": "holyThursday",
+    "name": "Jeudi Saint",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "goodFriday": {
+    "key": "goodFriday",
+    "name": "Vendredi Saint",
+    "color": "red",
+    "type": 1,
+    "priority": 1
+  },
+  "holySaturday": {
+    "key": "holySaturday",
+    "name": "Samedi Saint",
+    "color": "purple",
+    "type": 1,
+    "priority": 1
+  },
+  "easter": {
+    "key": "easter",
+    "name": "Résurrection du Seigneur",
+    "extra": "Dimanche de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 1
+  },
+  "easterMonday": {
+    "key": "easterMonday",
+    "name": "Lundi dans l'octave Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "easterTuesday": {
+    "key": "easterTuesday",
+    "name": "Mardi dans l'octave de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "easterWednesday": {
+    "key": "easterWednesday",
+    "name": "Mercredi dans l'octave de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "easterThursday": {
+    "key": "easterThursday",
+    "name": "Jeudi dans l'octave de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "easterFriday": {
+    "key": "easterFriday",
+    "name": "Vendredi dans l'octave de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "easterSaturday": {
+    "key": "easterSaturday",
+    "name": "Samedi dans l'octave de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "divineMercySunday": {
+    "key": "divineMercySunday",
+    "name": "Dimanche de la divine Miséricorde",
+    "extra": "Deuxième dimanche de Pâques, <em>in albis</em>",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "thirdSundayEaster": {
+    "key": "thirdSundayEaster",
+    "name": "Troisième dimanche de Pâques, <em>Jubilate</em>",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "fourthSundayEaster": {
+    "key": "fourthSundayEaster",
+    "name": "Quatrième dimanche de Pâques, <em>Cantate</em>",
+    "extra": "Ou dimanche \"du Bon Pasteur\"",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "fiveSundayEaster": {
+    "key": "fiveSundayEaster",
+    "name": "Cinquième dimanche de Pâques",
+    "extra": "Ou dimanche dit \"des Rogations\"",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "sixSundayEaster": {
+    "key": "sixSundayEaster",
+    "name": "Sixième dimanche de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "ascension": {
+    "key": "ascension",
+    "name": "Ascension",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
+  "pentecost": {
+    "key": "pentecost",
+    "name": "Pentecôte",
+    "color": "red",
+    "type": 1,
+    "priority": 2
+  },
+  "maryMotherOfTheChurch": {
+    "key": "maryMotherOfTheChurch",
+    "name": "Bienheureuse Vierge Marie, Mère de l'Église",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "holyTrinity": {
+    "key": "holyTrinity",
+    "name": "Sainte Trinité",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "corpusChristi": {
+    "key": "corpusChristi",
+    "name": "Le Saint Sacrement du Corps et du Sang du Christ",
+    "extra": "Fête-Dieu",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "sacredHeart": {
+    "key": "sacredHeart",
+    "name": "Sacré-Cœur de Jésus",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "immaculateHeartOfMary": {
+    "key": "immaculateHeartOfMary",
+    "name": "Cœur Immaculé de Marie",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "nativityOfJohnTheBaptist": {
+    "key": "nativityOfJohnTheBaptist",
+    "name": "Nativité de Saint Jean-Baptiste",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  },
+  "peterAndPaul": {
+    "key": "peterAndPaul",
+    "name": "Saints Pierre et Paul, apôtres",
+    "color": "red",
+    "type": 1,
+    "priority": 3
+  },
+  "christKingOfTheUniverse": {
+    "key": "christKingOfTheUniverse",
+    "name": "Notre Seigneur Jésus Christ Roi de l'Univers",
+    "color": "white",
+    "type": 1,
+    "priority": 3
+  }
+}

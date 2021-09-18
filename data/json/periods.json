@@ -1,0 +1,63 @@
+{
+  "advent": {
+    "key": "advent",
+    "name": "Temps de l'Avent",
+    "color": "purple",
+    "priority": 13
+  },
+  "christmastide": {
+    "key": "christmastide",
+    "name": "Temps de Noël",
+    "color": "white",
+    "priority": 13
+  },
+  "lent": {
+    "key": "lent",
+    "name": "Carême",
+    "color": "purple",
+    "priority": 9
+  },
+  "eastertide": {
+    "key": "eastertide",
+    "name": "Temps Pascal",
+    "color": "white",
+    "priority": 13
+  },
+  "ordinaryTime": {
+    "key": "ordinaryTime",
+    "name": "Temps ordinaire",
+    "color": "green",
+    "priority": 13
+  },
+  "sub": {
+    "advent17_24": {
+      "key": "advent17_24",
+      "name": "Temps de l'Avent",
+      "priority": 9
+    },
+    "octaveOfChristmas": {
+      "key": "octaveOfChristmas",
+      "name": "Octave de la Nativité du Seigneur",
+      "priority": 9
+    },
+    "epiphanyTide": {
+      "key": "epiphanyTide",
+      "name": "Après l'Épiphanie"
+    },
+    "holyWeek": {
+      "key": "holyWeek",
+      "name": "Semaine Sainte",
+      "priority": 2
+    },
+    "easterTriduum": {
+      "key": "easterTriduum",
+      "name": "Triduum pascal",
+      "priority": 1
+    },
+    "octaveOfEaster": {
+      "key": "octaveOfEaster",
+      "name": "Octave de Pâques",
+      "priority": 2
+    }
+  }
+}

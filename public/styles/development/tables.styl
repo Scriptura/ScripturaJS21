@@ -1,0 +1,71 @@
+_tablesSize = 5px
+_tablesColor = #444
+_tablesColor2 = _color2
+_tablesColor3 = _colorG - 30%
+
+.table
+  width 100%
+  border-collapse collapse // separate
+  //border-spacing .2em
+  font-weight normal
+  word-wrap break-word
+  text-align left
+  & th
+    font-weight normal
+
+.table-fixed
+  table-layout fixed
+
+@media (max-width _sizeS)
+
+  .table
+    border-collapse separate
+    border-spacing 0 1em
+    background-color _tablesColor
+    & thead
+    & tfoot
+      display none
+    & th
+    & td
+      display block
+    & tr > :first-child
+      padding-top 1em
+    & td:last-child
+      padding-bottom 1em
+    & tfoot :empty
+      display none
+    & tbody tr
+      border-radius _r2
+      box-shadow _shadow1
+      & > *
+        padding 0 1em
+    & tbody th::before
+    & tbody td::before
+      content attr(data-thead) ' ' // '\00a0: '
+      color _colorT2
+    & tbody td:empty::before
+      content attr(data-thead) ' ● ● ●' // ' ...'
+    & tbody th
+      background-image none !important
+
+@media (min-width _sizeS)
+
+  .table
+    box-shadow _shadow5
+    & th
+    & td
+      vertical-align top
+      padding .5em 1em
+      box-shadow _shadow16
+    & thead th
+      position sticky
+      top 0
+      z-index 1
+      background-color _tablesColor2
+    & tbody th
+    & tfoot
+      background-color _tablesColor3
+    & tbody tr:nth-child(odd)
+      background-color rgba(255, 255, 255, .04)
+    & tbody :empty
+      background-image repeating-linear-gradient(-45deg, transparent 0 _tablesSize, rgba(255, 255, 255, .05) _tablesSize _tablesSize * 2)

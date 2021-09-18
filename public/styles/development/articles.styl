@@ -1,0 +1,33 @@
+_articlesColor = _colorG
+
+.article
+  max-width 50em
+  //text-align justify
+  background-color _articlesColor
+  & [class*=grid] > *
+    margin-top 0
+  & [class*=grid]
+    margin-bottom -.75em
+
+@media (min-width _sizeXS)
+
+  .article
+    padding 4em 6em
+    box-shadow 0 0 1.5rem rgba(0, 0, 0, .15)
+
+/*
+.keywords
+  display flex
+  gap .5em
+  padding 1em 0 0
+
+.keywords li
+  list-style none
+  filter drop-shadow(_shadow4)
+
+.keywords a
+  padding .5em 1em .5em 1.5em
+  background-color _color0
+  clip-path polygon(1em 0, 100% 0, 100% 100%, 1em 100%, 0 50%)
+  box-shadow _shadow6
+*/

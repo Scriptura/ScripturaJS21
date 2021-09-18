@@ -1,0 +1,18 @@
+h2 Images
+p
+  code .figure-focus
+.grid4.gap.media-xs-grid2
+  - var items = [['LotusTest', 'Lotus test'], ['FlowerMacro', 'Flower'], ['LotusMacro', 'Lotus'], ['ColorfulLeaf', 'Colorful leaf'], ['GrassLeaf', 'Grass leaf'], ['PacificCity', 'Pacific city'], ['FlowerMacro', 'Flower'], ['LotusMacro', 'Lotus'], ['ColorfulLeaf', 'Colorful leaf'], ['GrassLeaf', 'Grass leaf'], ['PacificCity', 'Pacific city'], ['FlowerMacro', 'Flower']] //['OldMechanism', 'Old Mechanism']
+  - for (var i = 0; i < items.length; i++)
+    div
+      figure.figure-focus
+        - var img = '/medias/images/demo/' + items[i][0]
+        - var alt = items[i][1]
+        include ../helpers/picture
+        figcaption Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  //-
+    div
+      figure.figure-focus
+        - var img = '/medias/images/demo/LotusTest'
+        - var alt = 'Lotus'
+        include ../helpers/picture

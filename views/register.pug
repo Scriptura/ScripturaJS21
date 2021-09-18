@@ -1,0 +1,20 @@
+extends layout
+
+block main
+  main
+    h1.main-heading= _name
+    form(action='/register' method='post')
+      .input
+        label Créez un nom d'utilisateur
+        input(type='text' name='username' placeholder='user' autocorrect='off' autocapitalize='off' spellcheck='false' required='required')
+      .input
+        label Créez votre mot de passe
+        input(type='password' name='password' placeholder='• • • • • • • •' required='required')
+      .input
+        label Réentrez votre mot de passe
+        input(type='password' name='password2' placeholder='• • • • • • • •' required='required')
+      div
+        button.button.zoom120
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#bookmark')
+          | Enregistrer

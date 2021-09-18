@@ -1,0 +1,11 @@
+extends layout
+
+block main
+  main
+    h1.main-heading Error 500
+      //-#{error.status}
+      //-span #{error.message}
+    pre
+      code(translate='no' data-select='Select and copy') #{error.stack}
+    hr
+    include includes/links

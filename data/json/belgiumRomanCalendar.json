@@ -1,0 +1,72 @@
+{
+  "3001": {
+    "key": "mutienMarieWiaux",
+    "name": "Saint Mutien-Marie Wiaux, religieux",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0602": {
+    "key": "amandOfMaastricht",
+    "name": "Saint Amand, évêque, missionnaire",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1703": {
+    "key": "gertrudeOfNivelles",
+    "name": "Sainte Gertrude de Nivelles, vierge",
+    "color": "white",
+    "type": 4,
+    "priority": 12
+  },
+  "0804": {
+    "key": "julieBilliart",
+    "name": "Sainte Julie Billiart",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "1005": {
+    "key": "damienDeVeuster",
+    "name": "Saint Père Damien",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "0708": {
+    "key": "julianaOfLiege",
+    "name": "Sainte Julienne du Mont-Cornillon",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "3108": {
+    "key": "ourLadyMediatrixOfAllGrace",
+    "name": "Marie, Médiatrice de toute grâce",
+    "color": "white",
+    "type": 2,
+    "priority": 8
+  },
+  "1709": {
+    "key": "lambertOfMaastricht",
+    "name": "Saint Lambert, évêque et martyr",
+    "color": "red",
+    "type": 3,
+    "priority": 10
+  },
+  "0311": {
+    "key": "hubertOfLiege",
+    "name": "Saint Hubert, évêque de Liège",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  },
+  "2611": {
+    "key": "johnBerchmans",
+    "name": "Saint Jean Berchmans",
+    "color": "white",
+    "type": 3,
+    "priority": 10
+  }
+}

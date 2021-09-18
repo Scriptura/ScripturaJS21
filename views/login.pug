@@ -1,0 +1,17 @@
+extends layout
+
+block main
+  main
+    h1.main-heading= _name
+    form(action='/login' method='post')
+      .input
+        label Utilisateur :
+        input(type='text' name='username' placeholder='user' autocorrect='off' autocapitalize='off' spellcheck='false' required='required')
+      .input
+        label Mot de passe :
+        input(type='password' name='password' placeholder='• • • • • • • •' required='required')
+      div
+        button.button.zoom120
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#checkmark')
+          | Connexion

@@ -1,0 +1,33 @@
+doctype html
+html.no-js(lang='fr')
+  head
+    meta(charset='utf-8')
+    title= _title
+    meta(name='description' content='' + _description + '')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='theme-color' content='#333333')
+    //-meta(name='theme-color' content=' + themeColor + ')
+    link(rel='stylesheet' href='/styles/main.css', media='screen')
+    link(rel='stylesheet' href='/styles/print.css', media='print')
+    //-link(rel='apple-touch-icon', sizes='180x180', href='/images/favicons/apple-touch-icon.png')
+    //-link(rel='icon', type='image/png', sizes='32x32', href='/images/favicons/favicon-32x32.png')
+    //-link(rel='icon', type='image/png', sizes='16x16', href='/images/favicons/favicon-16x16.png')
+    //-link(rel='mask-icon', href='/images/favicons/safari-pinned-tab.svg', color='#5bbad5')
+    //-link(rel='manifest', href='/site.webmanifest')
+    //-meta(name='msapplication-TileColor', content='#da532c')
+    //-meta(name='theme-color' content='#ff6f7d')
+    if _location
+      link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
+      script(src='/libraries/leaflet/leaflet.js')
+  body
+    block menu
+      include includes/menu
+    block breadcrumb
+      include includes/breadcrumb
+    block main
+    //-block aside
+      //-aside.aside aside
+      //-include aside
+    block footer
+      include includes/footer
+    script(src='/scripts/development/main.js' async)

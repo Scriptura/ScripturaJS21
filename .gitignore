@@ -1,0 +1,34 @@
+# private
+.env
+variables.js
+private/
+
+# npm
+.npm
+node_modules/
+npm-debug.log
+
+# Yarn
+yarn-debug.log
+yarn-error.log
+# yarn.lock # à commit absolument si l'on veut profiter du verrouillage du versioning des packages
+
+# Mac os
+.DS_Store
+*.cfg
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Other
+tmp/
+*.log
+*.tmp
+.cache
