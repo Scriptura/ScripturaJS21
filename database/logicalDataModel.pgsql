@@ -64,7 +64,7 @@ CREATE TABLE __person (
   _user_id            BIGINT            NULL,     -- référence éventuelle à __user
   _sexe               CHAR(1)           NULL,     -- selon la norme ISO/IEC 5218 ; inconnu : 0, homme : 1, femme : 2, non applicable : 9
   _given_name         VARCHAR(32)       NULL,     -- prénom
-  _middle_name        VARCHAR(32)       NULL,     -- deuxième prénom
+  _additional_name    VARCHAR(32)       NULL,     -- deuxième prénom
   _family_name        VARCHAR(32)       NULL,     -- nom de famille
   _usual_name         VARCHAR(32)       NULL,     -- nom d'usage, nom d'épouse
   _nickname           VARCHAR(32)       NULL,     -- surnom

@@ -1375,6 +1375,20 @@ select {
 :focus::placeholder {
   color: transparent;
 }
+.invalid + [class*=alert] {
+  position: relative;
+}
+.invalid + [class*=alert]::before {
+  content: '';
+  position: absolute;
+  top: -0.7em;
+  left: 0.8em;
+  width: 1.6em;
+  height: 0.8em;
+  background-color: #ffa500;
+  -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
 form > .input,
 form fieldset > .input {
   width: 100%;
@@ -2152,6 +2166,7 @@ html,
 .article,
 .message,
 [class*=alert],
+[class*=alert]::before,
 [class*=demo-items] > *,
 [class*=list-stripe] > :not([class*=-links]),
 [class*=figure],

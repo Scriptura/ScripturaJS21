@@ -39,34 +39,16 @@ const getScript = url => new Promise((resolve, reject) => { // @see https://stac
   document.body.appendChild(script)
 })
 
-/*
-function getScript(scriptUrl) { // @see https://gist.github.com/kevinchisholm/e0f01f4c18b13de06c0d2922e9445a0a
-  const script = document.createElement('script')
-  script.src = scriptUrl
-  document.body.appendChild(script)
-  script.onload = () => {console.log('The script load is done.')}
-}
-*/
 
-/*
-function getScript(source, callback) { // @see https://stackoverflow.com/questions/16839698#28002292
-  const script = document.createElement('script')
-  script.async = 'async'
-  script.onload = script.onreadystatechange = function( _, isAbort ) {
-      if(isAbort || !script.readyState || /loaded|complete/.test(script.readyState) ) {
-        script.onload = script.onreadystatechange = null
-        script = undefined
-        if(!isAbort && callback) setTimeout(callback, 0)
-      }
-  }
-  script.src = source
-  document.body.appendChild(script)
-}
-*/
+// -----------------------------------------------------------------------------
+// @section     Form validation
+// @description Validation des formulaires
+// -----------------------------------------------------------------------------
 
-const forms = (() => {
+const formValidation = (() => {
   if (document.querySelector('[class*=regex]')) getScript('/scripts/forms.js')
 })()
+
 
 // -----------------------------------------------------------------------------
 // @section     Utilities
