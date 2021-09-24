@@ -18,7 +18,7 @@ function removeMessageError(input, el) {
 const regexName = (() => {
   document.querySelectorAll('.regex-name').forEach(input => {
     input.addEventListener('keyup', e => regexInit(input), false)
-    input.addEventListener('change', e => input.value = input.value.replace(/  +/g, ' '), false) // Supprimer les espaces internes
+    input.addEventListener('change', e => input.value = input.value.replace(/  +/g, ' '), false) // Réduire les espaces internes dupliqués à un seul.
     input.addEventListener('change', e => input.value = input.value.trim(), false)
     input.addEventListener('change', e => input.value = input.value.replace(/^\p{CWU}/u, char => char.toLocaleUpperCase()), false)
     input.addEventListener('change', e => regexInit(input), false)
@@ -42,22 +42,31 @@ const regexName = (() => {
 
 const regexEmail = (() => {
   document.querySelectorAll('.regex-email').forEach(input => {
-    //input.addEventListener('keyup', e => regexInit(input), false)
-    //input.addEventListener('change', e => input.value = input.value.trim(), false)
-    input.addEventListener('change', e => regexInit(input), false)
+    input.addEventListener('keyup', e => regexInit(input), false)
+    input.addEventListener('change', e => input.value = input.value.replace(/ +/g, ''), false) // Supprimer les espaces internes.
+    input.addEventListener('change', e => input.value = input.value.trim(), false)
+    input.addEventListener('change', e => regexExit(input), false)
   })
   function regexInit(input) {
     const el = input.parentNode.querySelector('.alert-warning')
-    if (input.value.match(/[@]{2,}/)) {
+    if (input.value.match(/@.*@/)) {
       let text = "Entrée invalide\u00a0: présence de plusieurs arobases."
       createMessageError(input, el, text)
+    } else {
+      removeMessageError(input, el)
+    }
+  }
+  function regexExit(input) {
+    const el = input.parentNode.querySelector('.alert-warning')
+    if (!input.value) {
+      removeMessageError(input, el)
+    } else if (!input.value.match(/\S+@\S+\.\S+/)) {
+      let text = "Entrée invalide\u00a0: addresse mail non conforme."
+      createMessageError(input, el, text)
     } else if (!input.value.match(/@/)) {
-        let text = "Entrée invalide\u00a0: absence du caractère arobase obligatoire."
-        createMessageError(input, el, text)
-      } else if (input.value.match(/\S+@\S+\.\S+/)) {
-          let text = "Entrée invalide\u00a0: addresse mail non conforme."
-          createMessageError(input, el, text)
-      } else {
+      let text = "Entrée invalide\u00a0: absence du caractère arobase obligatoire."
+      createMessageError(input, el, text)
+    } else {
       removeMessageError(input, el)
     }
   }
