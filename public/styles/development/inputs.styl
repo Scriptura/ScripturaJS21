@@ -7,9 +7,10 @@ _inputColor4 = #222
 _inputSize = 3px
 _inputBoxShadow1 = 0 1.5rem 2rem rgba(0, 0, 0, .2)
 
+//.input // ciblage trop général pose problème pour les élemnts imbriqués
 form > .input
 form fieldset > .input
-//[class*="columns"] > .input
+form > [class*="grid"] > .input
   width 100%
   margin 1em 0
 
