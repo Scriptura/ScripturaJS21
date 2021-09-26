@@ -284,11 +284,11 @@ const colorInput = (() => {
     input.after(output)
     const outputSelector = input.parentElement.querySelector('output')
 		output.textContent = input.value
-    outputSelector.style.color = input.value
+    //outputSelector.style.color = input.value
 		input.oninput = function() {
       this.value = this.value
 			output.textContent = this.value
-      outputSelector.style.color = this.value
+      //outputSelector.style.color = this.value
 		}
   }
 })()
