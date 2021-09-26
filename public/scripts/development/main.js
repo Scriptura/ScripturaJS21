@@ -45,7 +45,7 @@ const getScript = url => new Promise((resolve, reject) => { // @see https://stac
 // @description Validation des formulaires
 // -----------------------------------------------------------------------------
 
-const formValidation = (() => {
+const getFormValidation = (() => {
   if (document.querySelector('[class*=regex]')) getScript('/scripts/forms.js')
 })()
 
@@ -202,7 +202,7 @@ const readablePassword = (() => {
     const button = document.createElement('button')
     button.type = 'button'
     button.title = 'See password'
-    input.parentElement.appendChild(button)
+    input.after(button)
     injectSvgSprite(button, 'eye')
     button.addEventListener('click', () => {
       button.removeChild(button.querySelector('svg'))
@@ -281,7 +281,7 @@ const colorInput = (() => {
   const inputs = document.querySelectorAll('.color-output input')
   for (const input of inputs) {
     const output = document.createElement('output')
-    input.parentElement.appendChild(output)
+    input.after(output)
     const outputSelector = input.parentElement.querySelector('output')
 		output.textContent = input.value
     outputSelector.style.color = input.value
@@ -397,7 +397,7 @@ const accordion = (() => {
       if (details.open) {
         substitute.classList.add('open') // 1
       }
-      details.parentElement.insertBefore(substitute, details)
+      details.after(substitute, details)
       substitute.appendChild(details).insertAdjacentHTML('afterend', html)
       details.parentElement.removeChild(details)
     }
@@ -414,7 +414,7 @@ const accordion = (() => {
       substitute.classList.add('accordion-summary')
       substitute.setAttribute('role', 'tab')
       substitute.setAttribute('aria-controls', 'accordion-panel-' + i)
-      summary.parentElement.insertBefore(substitute, summary)
+      summary.after(substitute, summary)
       substitute.appendChild(summary).insertAdjacentHTML('afterend', html)
       summary.parentElement.removeChild(summary)
     }
@@ -515,7 +515,7 @@ const imageFocus = (() => {
   const wrapClone = el => {
     const wrapper = document.createElement('div')
     wrapper.classList.add('focus-off')
-    el.parentNode.insertBefore(wrapper, el)
+    el.after(wrapper, el)
     wrapper.appendChild(el)
     addButtonShrink()
   }
@@ -524,7 +524,7 @@ const imageFocus = (() => {
     const el = document.querySelector('.focus-off')
           //, button = document.querySelector('.focus-off button')
     el.addEventListener('click', () => {
-      el.parentNode.removeChild(el)
+      el.parentElement.removeChild(el)
       document.body.removeAttribute('style') // document.body.style.overflow = ''
       image.querySelector('button').focus() // focus sur l'image cliquée au départ
     })

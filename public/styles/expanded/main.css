@@ -1408,8 +1408,7 @@ form > [class*="grid"] > .input {
   border: 1px solid #444;
   box-shadow: 0 1.5rem 2rem rgba(0,0,0,0.2) !important;
 }
-.input input:not([type=button],
-[type=color]),
+.input input:not([type=button]),
 .input select:not([multiple]) {
   height: 2.2em;
   padding: 0.4em 1em;

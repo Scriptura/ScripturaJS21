@@ -27,7 +27,7 @@ form(method='get' action='./').grid3.gap.media-s-grid1.media-l-grid2
     //-.grid2.gap
     .input
       label(for='input-email') Type email
-      input#input-email(type='email' name='input-email' value='' size='23' placeholder='pseudo@email.com' required='required' pattern='^[a-z0-9._-]{3,50}@[a-z0-9._-]{2,}\.[a-z]{2,4}')
+      input#input-email(type='email' name='input-email' value='' size='23' placeholder='pseudo@email.com' required='required' pattern='^[a-z0-9._-]{3,50}@[a-z0-9._-]{2,}\.[a-z]{2,4}').regex-email
     .input
       label(for='input-tel') Type tel
       input#input-tel(type='tel' name='input-tel' value='' size='23' placeholder='0477446677')
@@ -53,7 +53,7 @@ form(method='get' action='./').grid3.gap.media-s-grid1.media-l-grid2
       input#input-file(type='file' name='input-file' size='23')
     .input
       label(for='input-url') Type url
-      input#input-url(type='url' name='input-url' placeholder='https://example.com/')
+      input#input-url(type='url' name='input-url' placeholder='https://example.com/').regex-url
       p.message Ce type de champ est à éviter car les critères de validation dépendent du navigateur utilisé. Exemple : pour l'instant Chrome n'accepte pas les urls sans schema (http, https).
     .input.hidden
       label(for='input-test') Type hidden
