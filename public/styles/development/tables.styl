@@ -1,7 +1,8 @@
 _tablesSize = 5px
-_tablesColor = #444
+_tablesColor1 = _colorG + 7%
 _tablesColor2 = _color2
 _tablesColor3 = _colorG - 30%
+_tablesColor4 = _colorG - 10%
 
 .table
   width 100%
@@ -21,13 +22,13 @@ _tablesColor3 = _colorG - 30%
   .table
     border-collapse separate
     border-spacing 0 1em
-    background-color _tablesColor
     & thead
     & tfoot
       display none
     & th
     & td
       display block
+      background-color _tablesColor1
     & tr > :first-child
       padding-top 1em
     & td:last-child
@@ -44,9 +45,7 @@ _tablesColor3 = _colorG - 30%
       content attr(data-thead) ' ' // '\00a0: '
       color _colorT2
     & tbody td:empty::before
-      content attr(data-thead) ' ● ● ●' // ' ...'
-    & tbody th
-      background-image none !important
+      content attr(data-thead) ' ● ● ●'
 
 @media (min-width _sizeS)
 
@@ -66,6 +65,9 @@ _tablesColor3 = _colorG - 30%
     & tfoot
       background-color _tablesColor3
     & tbody tr:nth-child(odd)
-      background-color rgba(255, 255, 255, .04)
-    & tbody :empty
-      background-image repeating-linear-gradient(-45deg, transparent 0 _tablesSize, rgba(255, 255, 255, .05) _tablesSize _tablesSize * 2)
+      background-color _tablesColor1
+    & tbody tr:nth-child(even)
+      background-color _tablesColor4
+    & tbody :empty::after
+      content '● ● ●'
+      //background-image repeating-linear-gradient(-45deg, transparent 0 _tablesSize, rgba(255, 255, 255, .05) _tablesSize _tablesSize * 2)

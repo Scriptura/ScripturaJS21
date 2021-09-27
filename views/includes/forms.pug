@@ -1,27 +1,25 @@
 form(method='get' action='./').grid3.gap.media-s-grid1.media-l-grid2
   fieldset
     legend.h2 Text inputs
-    .input
-      label(for='input-text') Type text & regex
-      input#input-text(type='text' name='input-text' value='' size='23' placeholder='John Smith' required='required' autocomplete='off')
-    .input
-      label(for='input-text1') Type text & regex name
-      input#input-text1(type='text' name='input-text1' value='' size='23' placeholder='John' required='required' autocomplete='given-name').regex-name
-    .input
-      label(for='input-text2') Type text & regex name
-      input#input-text2(type='text' name='input-text2' value='' size='23' placeholder='Smith' required='required' autocomplete='family-name').regex-name
-    .input
-      label(for='input-text3') Type text & regex name
-      input#input-text3(type='text' name='input-text3' value='' size='23' placeholder='Country' required='required' autocomplete='country').regex-name
-    .input
-      label(for='input-text4') Type text & regex email
-      input#input-text4(type='text' name='input-text4' value='' size='23' placeholder='mymail@mail.com' required='required' autocomplete='email').regex-email
-    .input
-      label(for='input-text5') Type text & regex url
-      input#input-text5(type='text' name='input-text5' value='' size='23' placeholder='https://test.com' required='required' autocomplete='url').regex-url
-    .input.disabled
-      label(for='input-text0') Disabled Attribute
-      input#input-text0(type='text' name='input-text0' value='' size='23' placeholder=':disabled' required='' disabled='')
+    .grid2.gap.media-l-grid1
+      .input
+        label(for='input-text') Type text & regex
+        input#input-text(type='text' name='input-text' value='' size='23' placeholder='John Smith' required='required' autocomplete='off')
+      .input
+        label(for='input-text3') Type text & regex name
+        input#input-text3(type='text' name='input-text3' value='' size='23' placeholder='Country' required='required' autocomplete='country').regex-name
+      .input
+        label(for='input-text1') Type text & regex name
+        input#input-text1(type='text' name='input-text1' value='' size='23' placeholder='John' required='required' autocomplete='given-name').regex-name
+      .input
+        label(for='input-text2') Type text & regex name
+        input#input-text2(type='text' name='input-text2' value='' size='23' placeholder='Smith' required='required' autocomplete='family-name').regex-name
+      .input
+        label(for='input-text4') Type text & regex email
+        input#input-text4(type='text' name='input-text4' value='' size='23' placeholder='mymail@mail.com' required='required' autocomplete='email').regex-email
+      .input.disabled
+        label(for='input-text0') Disabled Attribute
+        input#input-text0(type='text' name='input-text0' value='' size='23' placeholder=':disabled' required='' disabled='')
   fieldset
     legend.h2 Various inputs
     .grid2.gap
@@ -45,12 +43,12 @@ form(method='get' action='./').grid3.gap.media-s-grid1.media-l-grid2
         label(for='input-color3')
           code .color-output
         input#input-color3(type='color' name='input-color3' value='#ffa500')
-    .input
-      label(for='input-password') Type password
-      input#input-password(type='password' name='input-password' placeholder='••••••••')
-    .input
-      label(for='input-file') Type file
-      input#input-file(type='file' name='input-file' size='23')
+      .input
+        label(for='input-password') Type password
+        input#input-password(type='password' name='input-password' placeholder='••••••••')
+      .input
+        label(for='input-file') Type file
+        input#input-file(type='file' name='input-file' size='23')
     .input
       label(for='input-url') Type url
       input#input-url(type='url' name='input-url' placeholder='https://example.com/').regex-url

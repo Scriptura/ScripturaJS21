@@ -236,7 +236,7 @@ body {
 }
 main {
   grid-area: main;
-  padding: 1em;
+  padding: 1em 0;
   word-break: break-word;
 }
 .header {
@@ -1115,7 +1115,6 @@ audio:not([controls]) {
   .table {
     border-collapse: separate;
     border-spacing: 0 1em;
-    background-color: #444;
   }
   .table thead,
   .table tfoot {
@@ -1124,6 +1123,7 @@ audio:not([controls]) {
   .table th,
   .table td {
     display: block;
+    background-color: #515151;
   }
   .table tr > :first-child {
     padding-top: 1em;
@@ -1149,9 +1149,6 @@ audio:not([controls]) {
   .table tbody td:empty::before {
     content: attr(data-thead) ' ● ● ●';
   }
-  .table tbody th {
-    background-image: none !important;
-  }
 }
 @media (min-width: 50.01em) {
   .table {
@@ -1174,10 +1171,13 @@ audio:not([controls]) {
     background-color: #303030;
   }
   .table tbody tr:nth-child(odd) {
-    background-color: rgba(255,255,255,0.04);
+    background-color: #515151;
   }
-  .table tbody :empty {
-    background-image: repeating-linear-gradient(-45deg, transparent 0 5px, rgba(255,255,255,0.05) 5px 10px);
+  .table tbody tr:nth-child(even) {
+    background-color: #3d3d3d;
+  }
+  .table tbody :empty::after {
+    content: '● ● ●';
   }
 }
 fieldset {
@@ -1194,8 +1194,9 @@ legend {
   white-space: normal;
   font-weight: bold;
 }
-legend + [class*=grid] {
+form [class*=grid] {
   margin-top: 1em;
+  margin-bottom: 1em;
 }
 label:focus,
 label:hover,
@@ -2177,10 +2178,10 @@ html,
 [class*=figure],
 [class*=button],
 .search button,
-.table,
 .table thead th,
 .table tfoot,
 .table tbody th,
+.table tbody td,
 .switch + label::after,
 .accordion summary,
 .accordion-summary,

@@ -1,3 +1,5 @@
+// @note En raison de leurs éventails d'utilisations les inputs ne sont pas stylés par défaut. N'ont lieux d'être ici que les règles d'harmonisation.
+
 _formsColor1 = _colorG - 20%
 _formsColor2 = _formsColor1 + 40%
 _formsColor3 = #222
@@ -18,8 +20,9 @@ legend
   white-space normal // @bugfix Correct the text wrapping @affected Edge and IE.
   font-weight bold
 
-legend + [class*=grid]
-  margin-top 1em // @note Alignement sur les champs sans grille.
+form [class*=grid]
+  margin-top _gap //_gap // @note Alignement sur les champs sans grille.
+  margin-bottom _gap
 
 label:focus
 label:hover
