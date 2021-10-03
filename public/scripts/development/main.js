@@ -46,7 +46,7 @@ const getScript = url => new Promise((resolve, reject) => { // @see https://stac
 // -----------------------------------------------------------------------------
 
 const getFormValidation = (() => {
-  if (document.querySelector('[class*=regex]')) getScript('/scripts/formValidation.js')
+  if (document.querySelector('[class*=validation]')) getScript('/scripts/formValidation.js')
 })()
 
 

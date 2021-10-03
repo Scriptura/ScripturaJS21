@@ -440,7 +440,9 @@ main {
   text-align: center;
 }
 .card svg {
+  display: block;
   height: 6em;
+  margin: 2em auto;
   color: #d2b48c;
 }
 .nav {
@@ -2525,7 +2527,7 @@ html,
 }
 .loader {
   position: relative;
-  border-color: #222;
+  border-color: transparent;
   border-top-color: #ff6347;
   border-left-color: #ff6347;
   -webkit-animation-duration: 3s;
