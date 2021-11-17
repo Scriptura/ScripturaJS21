@@ -74,7 +74,7 @@ h2 Lists
       - for (var i = 1; i < 8; i++)
         li
           svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#quill')
+            use(xlink:href='/medias/sprites/utils.svg#quill')
           | List item #{i}
   div
     p
@@ -89,4 +89,7 @@ h2 Lists
     ul.list-stripe-large-links
       - for (var i = 1; i < 8; i++)
         li
-          a(href='#') List item #{i}
+          a(href='#')
+            svg.icon(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/utils.svg#link')
+            | List item #{i}
