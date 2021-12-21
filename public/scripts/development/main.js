@@ -111,10 +111,9 @@ const injectSvgSprite = (targetElement, spriteId, svgFile) => {
 // @note Par défaut tous les liens externes conduisent à l'ouverture d'un nouvel onglet, sauf les liens internes
 
 const externalLinks = (() => {
-  const anchors = document.querySelectorAll('a')
-  for (const anchor of anchors) {
-    if (anchor.hostname !== window.location.hostname) anchor.setAttribute('target', '_blank')
-  }
+  document.querySelectorAll('a').forEach(a => {
+    if (a.hostname !== window.location.hostname) a.setAttribute('target', '_blank')
+  })
 })()
 
 
@@ -124,7 +123,7 @@ const externalLinks = (() => {
 // -----------------------------------------------------------------------------
 
 const cmdPrint = (() => {
-  const prints = document.getElementsByClassName('cmd-print'),
+  const prints = document.querySelectorAll('.cmd-print'),
         startPrint = () => window.print()
   for (const print of prints) print.onclick = startPrint
 })()
@@ -155,8 +154,7 @@ const selectText = node => {
 }
 
 const selectAndCopy = (() => {
-  const els = document.querySelectorAll('[data-select]')
-  for (const el of els) {
+  document.querySelectorAll('[data-select]').forEach(el => {
     el.parentElement.classList.add('pre')
     const button = document.createElement('button'),
           text = el.dataset.select
@@ -169,12 +167,11 @@ const selectAndCopy = (() => {
       selectText(el)
       document.execCommand('copy')
     })
-  }
+  })
 })()
 
 const addTitleCodeBlock = (() => {
-  const els = document.querySelectorAll('.pre')
-  for (const el of els) {
+  document.querySelectorAll('.pre').forEach(el => {
     const item = document.createElement('div'),
           span = document.createElement('span'),
           reqText = el.children[0].dataset.code,
@@ -186,7 +183,7 @@ const addTitleCodeBlock = (() => {
       span.appendChild(text)
       item.appendChild(span)
     }
-  }
+  })
 })()
 
 
