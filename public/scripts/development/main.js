@@ -226,11 +226,7 @@ const readablePassword = (() => {
 // -----------------------------------------------------------------------------
 
 const dateInputToday = (() => { // @note Date du jour si présence de la classe 'today-date' @see https://css-tricks.com/prefilling-date-input/
-  const today = new Date()
-  const els = document.querySelectorAll('input[type="date"].today-date')
-  for(const el of els) {
-    el.valueAsDate = today
-  }
+  document.querySelectorAll('input[type="date"].today-date').forEach(e => e.valueAsDate = new Date())
 })()
 
 
@@ -240,8 +236,7 @@ const dateInputToday = (() => { // @note Date du jour si présence de la classe 
 // -----------------------------------------------------------------------------
 
 const multipleSelectCustom = (() => {
-  const selects = document.querySelectorAll('.input select[multiple]')
-  for (const select of selects) {
+  document.querySelectorAll('.input select[multiple]').forEach(select => {
     const maxLength = 7,
           length = select.length
     if(length < maxLength) { // @note Permet d'afficher toutes les options du sélecteur multiple à l'écran (pour les desktops)
@@ -250,7 +245,7 @@ const multipleSelectCustom = (() => {
     } else {
       select.size = maxLength
     }
-  }
+  })
 })()
 
 
@@ -260,15 +255,14 @@ const multipleSelectCustom = (() => {
 // -----------------------------------------------------------------------------
 
 const rangeInput = (() => {
-  const ranges = document.querySelectorAll('.range')
-  for (const range of ranges) {
+  document.querySelectorAll('.range').forEach(range => {
 	  const input = range.querySelector('input')
 	  const output = range.querySelector('output')
 		output.textContent = input.value
 		input.oninput = function() {
 			output.textContent = this.value
 		}
-  }
+  })
 })()
 
 
@@ -278,8 +272,7 @@ const rangeInput = (() => {
 // -----------------------------------------------------------------------------
 
 const colorInput = (() => {
-  const inputs = document.querySelectorAll('.color-output input')
-  for (const input of inputs) {
+  document.querySelectorAll('.color-output input').forEach(input => {
     const output = document.createElement('output')
     input.after(output)
     const outputSelector = input.parentElement.querySelector('output')
@@ -290,7 +283,7 @@ const colorInput = (() => {
 			output.textContent = this.value
       //outputSelector.style.color = this.value
 		}
-  }
+  })
 })()
 
 
@@ -382,15 +375,9 @@ window.scrollTo({top: 0})
 // @see http://accessibility.athena-ict.com/aria/examples/tabpanel2.shtml
 
 const accordion = (() => {
-  const transformationOfAccordions = (() => {
-    const accordions = document.querySelectorAll('.accordion')
-    for (const accordion of accordions) {
-      accordion.setAttribute('role', 'tablist')
-    }
-  })()
+  document.querySelectorAll('.accordion').forEach(e => e.setAttribute('role', 'tablist'))
   const transformationOfDetails = (() => {
-    const detailss = document.querySelectorAll('.accordion details')
-    for (const details of detailss) {
+    document.querySelectorAll('.accordion details').forEach(details => {
       const html = details.innerHTML,
             substitute = document.createElement('div')
       substitute.classList.add('accordion-details')
@@ -400,12 +387,11 @@ const accordion = (() => {
       details.after(substitute, details)
       substitute.appendChild(details).insertAdjacentHTML('afterend', html)
       details.parentElement.removeChild(details)
-    }
-  })()
+    })
+ })()
   const transformationOfSummarys = (() => {
-    const summarys = document.querySelectorAll('.accordion summary')
     let i = 0
-    for (const summary of summarys) {
+    document.querySelectorAll('.accordion summary').forEach(summary => {
       i++
       const html = summary.innerHTML,
             substitute = document.createElement('button')
@@ -417,22 +403,20 @@ const accordion = (() => {
       summary.after(substitute, summary)
       substitute.appendChild(summary).insertAdjacentHTML('afterend', html)
       summary.parentElement.removeChild(summary)
-    }
+    })
   })()
   const transformationOfPannels = (() => {
-    const panels = document.querySelectorAll('.accordion > * > :last-child')
     let i = 0
-    for (const panel of panels) {
+    document.querySelectorAll('.accordion > * > :last-child').forEach(panel => {
       i++
       panel.id = 'accordion-panel-' + i
       panel.classList.add('accordion-panel')
       panel.setAttribute('role', 'tabpanel')
       panel.setAttribute('aria-labelledby', 'accordion-summary-' + i)
-    }
+    })
   })()
   const stateManagement = (() => {
-    const detailss = document.querySelectorAll('.accordion-details')
-    for (const details of detailss) {
+    document.querySelectorAll('.accordion-details').forEach(details => {
       const accordionSummary = details.children[0],
             accordionPanel = details.children[1]
       if (details.classList.contains('open')) {
@@ -445,25 +429,26 @@ const accordion = (() => {
         accordionSummary.setAttribute('aria-expanded', 'false')
         accordionPanel.setAttribute('aria-hidden', 'true')
       }
-    }
-    const accordionSummarys = document.querySelectorAll('.accordion-summary')
-    for (const accordionSummary of accordionSummarys) accordionSummary.addEventListener('click', () => {
-      const singleTab = accordionSummary.parentElement.parentElement.dataset.singletab // 3
-      accordionSummary.parentElement.classList.toggle('open')
-      if (accordionSummary.parentElement.classList.contains('open'))
-        accordionSummary.setAttribute('aria-expanded', 'true')
-      else
-        accordionSummary.setAttribute('aria-expanded', 'false')
-      if (singleTab) siblingStateManagement(accordionSummary.parentElement)
-      const accordionPanel = accordionSummary.nextElementSibling
-      if (accordionPanel.style.maxHeight) {
-        accordionPanel.style.maxHeight = null
-        accordionPanel.setAttribute('aria-hidden', 'true')
-      }
-      else {
-        accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
-        accordionPanel.setAttribute('aria-hidden', 'false')
-      }
+    })
+    document.querySelectorAll('.accordion-summary').forEach(accordionSummary => {
+      accordionSummary.addEventListener('click', () => {
+        const singleTab = accordionSummary.parentElement.parentElement.dataset.singletab // 3
+        accordionSummary.parentElement.classList.toggle('open')
+        if (accordionSummary.parentElement.classList.contains('open'))
+          accordionSummary.setAttribute('aria-expanded', 'true')
+        else
+          accordionSummary.setAttribute('aria-expanded', 'false')
+        if (singleTab) siblingStateManagement(accordionSummary.parentElement)
+        const accordionPanel = accordionSummary.nextElementSibling
+        if (accordionPanel.style.maxHeight) {
+          accordionPanel.style.maxHeight = null
+          accordionPanel.setAttribute('aria-hidden', 'true')
+        }
+        else {
+          accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
+          accordionPanel.setAttribute('aria-hidden', 'false')
+        }
+      })
     })
   })()
   const siblingStateManagement = el => {
@@ -489,18 +474,20 @@ const imageFocus = (() => {
   const images = document.querySelectorAll('[class*=-focus]')
 
   const addButtonEnlarge = (() => {
-    for (const image of images) {
+    images.forEach(e => {
       const button = document.createElement('button')
       injectSvgSprite(button, 'enlarge')
-      image.appendChild(button)
+      e.appendChild(button)
       button.classList.add('icon-enlarge')
-    }
+    })
   })()
 
   const clickImage = (() => {
-    for (const image of images) image.addEventListener('click', () => {
-      cloneImage(image)
+    images.forEach(e => {
+      e.addEventListener('click', () => {
+      cloneImage(e)
       document.body.style.overflow = 'hidden'
+      })
     })
   })()
 
@@ -593,7 +580,7 @@ const addDropCap = (() => {
 
 // -----------------------------------------------------------------------------
 // @section     Line marks
-// @description Création de lettrines
+// @description Création de marqueurs
 // -----------------------------------------------------------------------------
 
 const lineMarks = (el => {
