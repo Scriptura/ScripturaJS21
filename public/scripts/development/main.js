@@ -641,7 +641,7 @@ const audioPlayer = (() => {
 
   const audioDuration = (audio, i) => {
     const output = document.querySelector('.audio-player-duration')
-    console.log(secondsToTime(audio.duration))
+    //console.log(secondsToTime(audio.duration))
     output.value = secondsToTime(audio.duration)
   }
 
@@ -666,32 +666,11 @@ const audioPlayer = (() => {
 
 const progressBar = (() => {
   const progressBars = document.querySelectorAll('.progress-bar')
-  console.log(progressBars)
-  const valueProgress = (() => {
-    for (const progressBar of progressBars) {
-      const value = progressBar.dataset.value
-      progressBar.insertAdjacentHTML('afterbegin', '<div></div>')
-      progressBar.querySelector('div').style.width = value + '%'
-    }
-  })()
+  progressBars.forEach(e => {
+    e.insertAdjacentHTML('afterbegin', '<div></div>')
+    e.querySelector('div').style.width = e.dataset.value + '%'
+  })
 })()
-
-/*
-( function( $ ) {
-	// @note Demo :
-	var bar = $( '#progress-test' );
-	$( '#progress-start' ).on( 'click', function() {
-	  var value = bar.data( 'value' );
-	  setInterval( frame, 10 );
-	  function frame() {
-	    if ( value < 100 ) {
-	      value++;
-	      bar.css( 'width', value + '%' );
-	    }
-	  }
-	} );
-} )( jQuery );
-*/
 
 
 // -----------------------------------------------------------------------------
