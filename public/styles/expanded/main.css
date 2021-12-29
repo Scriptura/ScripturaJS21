@@ -229,7 +229,7 @@ hr[data-hr]::after,
 body {
   display: grid;
   grid-template-rows: repeat(3, auto) 1fr;
-  grid-template-columns: 1fr minmax(0, 92em) 1fr;
+  grid-template-columns: minmax(1em, 1fr) minmax(0, 92em) minmax(1em, 1fr);
   grid-template-areas: 'nav nav nav' '. header .' 'breadcrumb breadcrumb breadcrumb' '. main .' 'aside aside aside' 'footer footer footer';
   min-height: 100vh;
   margin: 0;
@@ -239,19 +239,17 @@ main {
   padding: 1em 0;
   word-break: break-word;
 }
-.header {
-  grid-area: header;
-  background-color: Orange;
-}
-.aside {
-  grid-area: aside;
-  background-color: #448aff;
-}
 .nav {
   grid-area: nav;
 }
+.header {
+  grid-area: header;
+}
 .breadcrumb {
   grid-area: breadcrumb;
+}
+.aside {
+  grid-area: aside;
 }
 .footer {
   grid-area: footer;
