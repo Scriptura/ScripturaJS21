@@ -409,39 +409,36 @@ main {
 [class^=columns].gap > :not(hr) {
   margin-bottom: 1em;
 }
-.card {
-  position: relative;
-  padding: 2em;
+.card svg:hover,
+.card:focus-within svg {
+  fill: #ffa500;
+  background-color: #393939;
+}
+.card h2,
+.card p {
+  margin: 0;
+  padding: 2rem;
   background-color: #515151;
-  border-radius: 0.5em;
   box-shadow: 0 0 2rem rgba(0,0,0,0.1);
 }
-.card::before,
-.card::after {
-  content: '';
-  z-index: -1;
-  position: absolute;
-  bottom: 2em;
-  left: 1em;
-  width: 80%;
-  height: 1.5em;
-  max-width: 30em;
-  box-shadow: 0 1.5rem 2rem rgba(0,0,0,0.4);
-  transform: rotate(-3deg) translateZ(0);
-}
-.card::after {
-  right: 1em;
-  left: auto;
-  transform: rotate(3deg);
-}
-.card .h2 {
+.card h2 {
+  margin-bottom: 0;
   text-align: center;
+  border-radius: 0.5rem 0.5rem 0.2rem 0.2rem;
 }
-.card svg {
+.card p {
+  margin-top: 0;
+  border-radius: 0.2rem 0.2rem 0.5rem 0.5rem;
+}
+.card a svg {
   display: block;
-  height: 6em;
-  margin: 2em auto;
+  width: calc(100% - 0.4rem);
+  height: 8em;
+  margin: 0 auto;
+  padding: 1em 0;
   color: #d2b48c;
+  background-color: #515151;
+  box-shadow: 0 0 2rem rgba(0,0,0,0.1);
 }
 .nav {
   position: relative;
@@ -2169,7 +2166,8 @@ html,
 .breadcrumb ol,
 .breadcrumb a,
 .footer,
-.card,
+.card > *,
+.card svg,
 .article,
 .message,
 [class*=alert],
@@ -2202,10 +2200,11 @@ html,
   padding: 1em;
 }
 .demo-items-empty > * {
-  min-height: 2em;
-  line-height: 2;
+  min-height: 5em;
+  padding: 1em;
 }
 [class*=demo-items] > * code {
+  margin-left: 0.2em;
   background-color: rgba(0,0,0,0.2);
 }
 .demo-counter > * {

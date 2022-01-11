@@ -1,6 +1,38 @@
 _cardsColor1 = _colorT2
 _cardsColor2 = _colorG + 7%
+_cardsR1 = .5rem
+_cardsR2 = .2rem
 
+.card
+  & svg:hover
+  &:focus-within svg
+    fill orange
+    background-color _cardsColor2 - 30%
+  & h2
+  & p
+    margin 0
+    padding 2rem // @note Les em faussent les résultats entre titres et paragraphes
+    background-color _cardsColor2
+    box-shadow _shadow8
+  & h2
+    margin-bottom 0
+    text-align center
+    border-radius _cardsR1 _cardsR1 _cardsR2 _cardsR2
+  & p
+    margin-top 0
+    border-radius _cardsR2 _cardsR2 _cardsR1 _cardsR1
+  & a
+    & svg
+      display block
+      width 'calc(100% - %s)' % (_cardsR2 * 2)
+      height 8em
+      margin 0 auto
+      padding 1em 0
+      color _cardsColor1
+      background-color _cardsColor2 // - 15%
+      box-shadow _shadow8
+
+/*
 .card
   position relative
   padding 2em
@@ -27,20 +59,6 @@ _cardsColor2 = _colorG + 7%
   left auto
   transform rotate(3deg)
 
-/*
-.card::after
-  content ''
-  position absolute
-  z-index -1
-  bottom 1.5em
-  left 10%
-  width 80%
-  height 1.5em
-  max-width 30em
-  box-shadow 0 1.5rem 2rem rgba(0,0,0,.8)
-  border-radius 50%
-*/
-
 .card .h2
   text-align center
 
@@ -49,3 +67,4 @@ _cardsColor2 = _colorG + 7%
   height 6em
   margin 2em auto
   color _cardsColor1
+*/
