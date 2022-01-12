@@ -5,8 +5,10 @@ p
 .columns4.gap.demo-items.demo-counter
   - for (var i = 0; i < items.length; i++)
     div
-      p= items[i]
+      p= ' ' + items[i]
 p.alert-info(role='alert')
   svg(role='img' focusable='false')
     use(xlink:href='/medias/sprites/utils.svg#info')
-  | Les styles CSS ne permettent pas encore une implémentation de type masonry. Columns est pour l'instant ce qui s'en approche le plus, mais la distribution des items est ici verticale et non horizontale comme pour masonry.
+  | Les styles CSS ne permettent pas encore une implémentation de type masonry, avec une distribution des items horizontale, et non verticale comme ici. Mais 
+  code .columns
+  |  est pour l'instant la solution full CSS qui s'en approche le plus.

@@ -1,7 +1,7 @@
 _cardsColor1 = _colorT2
 _cardsColor2 = _colorG + 7%
-_cardsR1 = .5rem
-_cardsR2 = .2rem
+_cardsR1 = .5rem // @note [1] Mettre des unités fixes en raison de la nature différentes des éléments
+_cardsR2 = 2px // Idem [1]
 
 .card
   & svg:hover
@@ -11,7 +11,7 @@ _cardsR2 = .2rem
   & h2
   & p
     margin 0
-    padding 2rem // @note Les em faussent les résultats entre titres et paragraphes
+    padding 2rem // @note Idem [1]
     background-color _cardsColor2
     box-shadow _shadow8
   & h2
