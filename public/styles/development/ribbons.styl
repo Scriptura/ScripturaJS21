@@ -2,7 +2,7 @@
 
 _ribbonsSize = 2
 _ribbonsSize2 = _ribbonsSize * 5em
-_ribbonsCornerSize = (_ribbonsSize * 1em) / 4
+_ribbonsCornerSize = _ribbonsSize / 4 * 1em
 _ribbonsSewingStitchesSize = 2px
 _ribbonsSewingStitches = _ribbonsSewingStitchesSize dotted rgba(0, 0, 0, .3)
 
@@ -27,7 +27,7 @@ _ribbonsSewingStitches = _ribbonsSewingStitchesSize dotted rgba(0, 0, 0, .3)
     line-height _ribbonsSize
     text-align center
     color _colorT
-    background _color2 linear-gradient(to top, #555 _ribbonsCornerSize, rgba(0, 0, 0, .1) _ribbonsCornerSize, rgba(255, 255, 255, .05))
+    background _color2 'linear-gradient(to top, #555 calc(%s + 2px), rgba(0, 0, 0, .1) calc(%s + 2px), rgba(255, 255, 255, .05))' % (_ribbonsCornerSize _ribbonsCornerSize)
     padding 0 0 _ribbonsCornerSize
     box-shadow _shadow11 //0 .3em 1em -.5em rgba(0, 0, 0, 1)
     transform-origin bottom left
@@ -35,9 +35,9 @@ _ribbonsSewingStitches = _ribbonsSewingStitchesSize dotted rgba(0, 0, 0, .3)
     clip-path 'polygon(0 0, calc(100% - 1px) 0, calc(100% - 1px) calc(100% - 1px), calc(calc(100% - 1px) - %s) calc(calc(100% - 1px) - %s), %s calc(calc(100% - 1px) - %s) , 0 calc(100% - 1px))' % (_ribbonsCornerSize _ribbonsCornerSize _ribbonsCornerSize _ribbonsCornerSize) // @Bugfixed @affected All Browsers @note La valeur `-1px` supprime un effet de bord.
     // @note Avec un élément parent en overflow hidden, les lignes suivantes ne sont pas nécessaires :
     // @affected Firefox @note Le rendu n'est pas optimal sous ce navigateur avec ces styles.
-    //-webkit-mask 'linear-gradient(135deg, transparent calc(50% - %s * 0.707),#fff 0) bottom left, linear-gradient(-135deg, transparent calc(50% - %s * 0.707), #fff 0) bottom right' % (_ribbonsCornerSize _ribbonsCornerSize)
-    //-webkit-mask-size 100vmax 100vmax
-    //-webkit-mask-composite destination-in
+    -webkit-mask 'linear-gradient(135deg, transparent calc(50% - %s * 0.707),#fff 0) bottom left, linear-gradient(-135deg, transparent calc(50% - %s * 0.707), #fff 0) bottom right' % (_ribbonsCornerSize _ribbonsCornerSize)
+    -webkit-mask-size 100vmax 100vmax
+    -webkit-mask-composite destination-in
     mask-composite intersect
     &::before
     &::after
