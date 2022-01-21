@@ -1,4 +1,5 @@
-_rangeColor1 = _colorT2
+_rangeColor1 = rgba(255, 255, 255, .1)
+_rangeColor2 = #333
 _rangeColor3 = rgba(255, 255, 255, .1)
 _rangeColor5 = _color2
 _rangeColor6 = _color2
@@ -18,13 +19,13 @@ _rangeSize3 = 3px
 .range input
   -webkit-appearance none
   width 100%
-  height .2em
+  height 3px //.2em
   max-width 100%
   cursor pointer
-  background-color rgba(255,255,255,0.1) //_rangeColor1
+  background-color _rangeColor1
 
 .range input:disabled
-  background-color #333
+  background-color _rangeColor2
   cursor not-allowed
 
 .range input:disabled + output
