@@ -2203,16 +2203,16 @@ html,
   background-color: #515151;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
 }
+[class*=demo-items] > * code {
+  margin-left: 0.2em;
+  background-color: rgba(0,0,0,0.2);
+}
 .demo-items > * {
   padding: 1em;
 }
 .demo-items-empty > * {
   min-height: var(--itemHeight);
   padding: 1em;
-}
-[class*=demo-items] > * code {
-  margin-left: 0.2em;
-  background-color: rgba(0,0,0,0.2);
 }
 .demo-counter > * {
   counter-increment: div;
@@ -2585,14 +2585,14 @@ html,
   position: absolute;
   top: -0.5em;
   right: -0.5em;
-  width: 10em;
-  height: 10em;
+  width: 7.5em;
+  height: 7.5em;
 }
 .ribbon-hook > [class*=ribbon] a {
   position: relative;
   display: block;
   top: 0.5em;
-  right: 0.5em;
+  right: 3em;
   width: 10em;
   line-height: 2;
   text-align: center;
