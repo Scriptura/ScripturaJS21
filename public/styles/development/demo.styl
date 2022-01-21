@@ -1,17 +1,19 @@
 _demoColor1 = _colorG + 7%
 
-[class*=demo-items] > *
-  box-sizing border-box
-  padding 0 .5em
-  background-color _demoColor1
-  //border 1px solid #000
-  box-shadow _shadow5
+[class*=demo-items]
+  --itemHeight 2em
+  & > *
+    box-sizing border-box
+    padding 0 .5em
+    background-color _demoColor1
+    //border 1px solid #000
+    box-shadow _shadow5
 
 .demo-items > *
   padding 1em
 
 .demo-items-empty > *
-  min-height 5em
+  min-height var(--itemHeight)
   padding 1em
 
 [class*=demo-items] > * code

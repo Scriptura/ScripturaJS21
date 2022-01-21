@@ -2194,6 +2194,9 @@ html,
   background-size: 58px 61px;
   background-repeat: repeat;
 }
+[class*=demo-items] {
+  --itemHeight: 2em;
+}
 [class*=demo-items] > * {
   box-sizing: border-box;
   padding: 0 0.5em;
@@ -2204,7 +2207,7 @@ html,
   padding: 1em;
 }
 .demo-items-empty > * {
-  min-height: 5em;
+  min-height: var(--itemHeight);
   padding: 1em;
 }
 [class*=demo-items] > * code {
@@ -2601,10 +2604,8 @@ html,
   transform: translate(29.29%, -100%) rotate(45deg);
   -webkit-clip-path: polygon(0 0, calc(100% - 1px) 0, calc(100% - 1px) calc(100% - 1px), calc(calc(100% - 1px) - 0.5em) calc(calc(100% - 1px) - 0.5em), 0.5em calc(calc(100% - 1px) - 0.5em) , 0 calc(100% - 1px));
           clip-path: polygon(0 0, calc(100% - 1px) 0, calc(100% - 1px) calc(100% - 1px), calc(calc(100% - 1px) - 0.5em) calc(calc(100% - 1px) - 0.5em), 0.5em calc(calc(100% - 1px) - 0.5em) , 0 calc(100% - 1px));
-  -webkit-mask: linear-gradient(135deg, transparent calc(50% - 0.5em * 0.707),#fff 0) bottom left, linear-gradient(-135deg, transparent calc(50% - 0.5em * 0.707), #fff 0) bottom right;
-  -webkit-mask-size: 100vmax 100vmax;
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
+  -webkit-mask-composite: source-in, xor;
+          mask-composite: intersect;
 }
 .ribbon-hook > [class*=ribbon] a::before,
 .ribbon-hook > [class*=ribbon] a::after {
