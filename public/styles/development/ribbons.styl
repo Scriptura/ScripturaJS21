@@ -33,7 +33,6 @@ _ribbonsSewingStitches = _ribbonsSewingStitchesSize dotted rgba(0, 0, 0, .3)
     transform-origin bottom left
     transform translate(29.29%, -100%) rotate(45deg)
     clip-path 'polygon(0 0, calc(100% - 1px) 0, calc(100% - 1px) calc(100% - 1px), calc(calc(100% - 1px) - %s) calc(calc(100% - 1px) - %s), %s calc(calc(100% - 1px) - %s) , 0 calc(100% - 1px))' % (_ribbonsCornerSize _ribbonsCornerSize _ribbonsCornerSize _ribbonsCornerSize) // @Bugfixed @affected All Browsers @note La valeur `-1px` supprime un effet de bord.
-    // @note Avec un élément parent en overflow hidden, les lignes suivantes ne sont pas nécessaires :
     // @affected Firefox @note Le rendu n'est pas optimal sous ce navigateur avec ces styles.
     -webkit-mask 'linear-gradient(135deg, transparent calc(50% - %s * 0.707),#fff 0) bottom left, linear-gradient(-135deg, transparent calc(50% - %s * 0.707), #fff 0) bottom right' % (_ribbonsCornerSize _ribbonsCornerSize)
     -webkit-mask-size 100vmax 100vmax
