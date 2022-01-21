@@ -8,7 +8,7 @@ _ribbonsSewingStitches = _ribbonsSewingStitchesSize dotted rgba(0, 0, 0, .3)
 
 .ribbon-hook
   position relative
-  //min-height 7em // @note Minimum de hauteur nécessaire pour contenir un ribbon
+  min-height _ribbonsSize2 * .7 + _ribbonsCornerSize // @note Minimum de hauteur nécessaire pour contenir un ribbon (prise en compte de la diagonale + hauteur d'une cornière comme marge)
 
 .ribbon-hook > [class*=ribbon]
   overflow hidden // règle nécessaire pour éviter les effets de dépassement (barre de scroll horizontale)

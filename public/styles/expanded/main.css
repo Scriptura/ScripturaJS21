@@ -2575,6 +2575,7 @@ html,
 }
 .ribbon-hook {
   position: relative;
+  min-height: 7.5em;
 }
 .ribbon-hook > [class*=ribbon] {
   overflow: hidden;
