@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Scriptura",
+    "short_name": "Scriptura",
     "icons": [
         {
             "src": "/medias/favicons/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
+    "theme_color": "#ff6347",
+    "background_color": "#ff6347",
     "display": "standalone"
 }

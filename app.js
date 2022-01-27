@@ -45,7 +45,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public'))) // Gestion des fichiers statiques.
-app.use(favicon(path.join(__dirname, 'public', 'medias', 'favicons', 'favicon.ico'))) // addresse de la favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicons', 'favicon.ico'))) // addresse de la favicon
 app.use(compression()) // Compression deflate et gzip.
 app.use(useragent.express())
 
