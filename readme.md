@@ -27,7 +27,13 @@ exports.user = 'yourusername'
 exports.password = 'yourpassword'
 ```
 
-Démarez une session postgres, puis créez et configurez une base de donnée (nommée pour le dev `scriptruradb`) à l'aide du fichier de modèle logiques de données fourni :
+Démarez une session postgres :
+
+```
+sudo -s -u postgres
+```
+
+Puis créez et configurez une base de donnée (nommée par exemple ici `scriptruradb`) à l'aide du fichier de modèle logiques de données fourni :
 
 ```
 $ psql postgres

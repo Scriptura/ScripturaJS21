@@ -743,13 +743,6 @@ samp {
 [class*=alert] {
   color: #fff;
 }
-[class*=alert] svg {
-  display: inline-block;
-  vertical-align: sub;
-  height: 1.2em;
-  width: 1.2em;
-  margin-right: 0.5em;
-}
 .alert-primary {
   background-color: #696969;
 }

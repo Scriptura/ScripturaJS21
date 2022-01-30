@@ -10,9 +10,6 @@
 
 -- Les lignes de commande suivantes sont pour le dev :
 DROP DATABASE IF EXISTS scripturadb;
-DROP EXTENSION pgcrypto;
-
-
 CREATE DATABASE scripturadb;
 
 
@@ -38,7 +35,7 @@ CREATE TABLE __preference (
 
 CREATE TABLE __user (
   _id                 UUID              NOT NULL,
-  -- _id                 UUID              DEFAULT gen_random_uuid(), -- pour la v12 la fonction fait appel au module pgcrypto, en v13 la fonction sera native
+  -- _id                 UUID              DEFAULT gen_random_uuid(),
   _person_id          BIGINT            NULL,     -- référence éventuelle à __person
   _username           VARCHAR(32)       NOT NULL, -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
   _password           CHAR(40)          NOT NULL, -- mot de passe crypté en SHA1
