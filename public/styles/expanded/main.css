@@ -732,33 +732,32 @@ samp {
   color: Orange;
   outline: none;
 }
-.message,
-[class*=alert] {
+[class*=message] {
   margin-bottom: 1em;
   padding: 1em;
   background-color: #515151;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
   border-radius: 0.2em;
 }
-[class*=alert] {
+[class*=message-] {
   color: #fff;
 }
-.alert-primary {
+.message-primary {
   background-color: #696969;
 }
-.alert-secondary {
+.message-secondary {
   background-color: #515151;
 }
-.alert-info {
+.message-info {
   background-color: #628099;
 }
-.alert-success {
+.message-success {
   background-color: #629940;
 }
-.alert-danger {
+.message-danger {
   background-color: #ff6347;
 }
-.alert-warning {
+.message-warning {
   background-color: #ffa500;
 }
 ul {

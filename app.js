@@ -23,6 +23,8 @@ const vv = require('./settings/variables'),
       // imagemin-webp
       app = express() // Instantiation
 
+      const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
+
 // Protection des en-têtes HTTP
 //@see https://helmetjs.github.io/
 

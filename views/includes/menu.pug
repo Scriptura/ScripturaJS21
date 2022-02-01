@@ -47,7 +47,8 @@ nav.nav(role='navigation' aria-label='Main')
             use(xlink:href='/medias/sprites/utils.svg#warning')
           | Error 404
     li
-      a(href='/calendar/2021/04/04')
+      - const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
+      a(href='/calendar/' + currentDate + '')
         svg.icon(role='img' focusable='false')
           use(xlink:href='/medias/sprites/utils.svg#calendar')
         | Calendar
