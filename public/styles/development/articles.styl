@@ -1,8 +1,7 @@
 _articlesColor = _colorG
 
 .article
-  max-width 50em
-  //text-align justify
+  display grid
   background-color _articlesColor
   & [class*=grid] > *
     margin-top 0
@@ -11,9 +10,36 @@ _articlesColor = _colorG
 
 @media (min-width _sizeXS)
 
+  .article > section
+      display grid
+      padding 4em 6em
+      box-shadow 0 0 1.5rem rgba(0, 0, 0, .15)
+
+@media (min-width _sizeS) and (max-width _sizeL)
+
+  .article > section
+    max-width 55em
+
+@media (max-width _sizeL)
+
   .article
-    padding 4em 6em
-    box-shadow 0 0 1.5rem rgba(0, 0, 0, .15)
+    & > section
+      order 2
+    & > footer > :first-child
+      margin-top 0
+
+@media (min-width _sizeL)
+
+  .article
+    gap 0 _gap
+    grid-template-columns repeat(5, minmax(0, 1fr))
+    & > header
+      grid-column span 5
+    & > section
+      grid-column span 3
+    & > footer
+      grid-column span 2
+      padding-top 4em
 
 /*
 .keywords

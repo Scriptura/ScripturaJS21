@@ -2,27 +2,10 @@ extends layout
 
 block main
   main
-    article.grid
+    article.article
       header
         h1.main-heading= _name
-        p
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#quill')
-          |  Jacques de Voragine, o. p.
-        p
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#calendar')
-          |  Contenu publié le 5 mai 2021, modifié le 11 mai 2021.
-        p.keywords
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#old-key')
-          |  
-          a(href='http://localhost:9001/article/1') Lion
-          |  • 
-          a(href='http://localhost:9001/article/1') Antilope
-          |  • 
-          a(href='http://localhost:9001/article/1') Crocodile
-      .article.add-line-marks.add-drop-cap.decorative-hr
+      section.add-line-marks.add-drop-cap.decorative-hr
         p!= _content
         .grid2.gap.media-s-grid1
           p(lang='grc')
@@ -78,3 +61,21 @@ block main
           p
             a(href='#r3' id='n3') #3
             |  Troisième note. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis.
+      footer
+        p
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#quill')
+          |  Jacques de Voragine, o. p.
+        p
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#calendar')
+          |  Contenu publié le 5 mai 2021, modifié le 11 mai 2021.
+        p.keywords
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#old-key')
+          |  
+          a(href='http://localhost:9001/article/1') Lion
+          |  • 
+          a(href='http://localhost:9001/article/1') Antilope
+          |  • 
+          a(href='http://localhost:9001/article/1') Crocodile

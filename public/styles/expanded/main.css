@@ -2071,7 +2071,7 @@ form > [class*="grid"] > .input {
   }
 }
 .article {
-  max-width: 50em;
+  display: grid;
   background-color: #444;
 }
 .article [class*=grid] > * {
@@ -2081,9 +2081,39 @@ form > [class*="grid"] > .input {
   margin-bottom: -0.75em;
 }
 @media (min-width: 36.01em) {
-  .article {
+  .article > section {
+    display: grid;
     padding: 4em 6em;
     box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
+  }
+}
+@media (min-width: 50.01em) and (max-width: 90.01em) {
+  .article > section {
+    max-width: 55em;
+  }
+}
+@media (max-width: 90.01em) {
+  .article > section {
+    order: 2;
+  }
+  .article > footer > :first-child {
+    margin-top: 0;
+  }
+}
+@media (min-width: 90.01em) {
+  .article {
+    gap: 0 1em;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .article > header {
+    grid-column: span 5;
+  }
+  .article > section {
+    grid-column: span 3;
+  }
+  .article > footer {
+    grid-column: span 2;
+    padding-top: 4em;
   }
 }
 .drop-cap,
