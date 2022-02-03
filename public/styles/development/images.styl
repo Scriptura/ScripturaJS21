@@ -23,6 +23,7 @@ img
   vertical-align middle // Évite un décalage possible de l'élément suivant
   //width 100% // @bugfix @todo Depuis l'introduction des attributs 'srcset' et 'sizes' la largeur ne doit plus dépendre de l'image par défaut
   height auto
+  //min-height 10em // @note En attendant le chargement.
   max-width 100%
   border-style none // @bugfix Remove the border on images inside links @affected IE 10.
 
@@ -36,10 +37,9 @@ figure
   color _colorT
   background-color _imagesColor1
   box-shadow _shadow11
-
-[class*=figure] figcaption
-  padding-top .5em
-  text-align center
+  & figcaption
+    padding-top .5em
+    text-align center
 
 [class*=figure] + [class*=figure]
   margin-top 2em

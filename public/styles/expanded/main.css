@@ -489,7 +489,7 @@ main {
   background-repeat: no-repeat;
   border-radius: 50% 50%;
 }
-@media (max-width: 80.01em) {
+@media (max-width: 88.01em) {
   .nav ul {
     position: absolute;
     z-index: 800;
@@ -511,37 +511,43 @@ main {
     background-size: 1.2em 1.2em;
   }
   .nav li:nth-child(1) {
-    transition-delay: 0.1s;
+    transition-delay: 0.083333333333333s;
   }
   .nav li:nth-child(2) {
-    transition-delay: 0.2s;
+    transition-delay: 0.166666666666667s;
   }
   .nav li:nth-child(3) {
-    transition-delay: 0.3s;
+    transition-delay: 0.25s;
   }
   .nav li:nth-child(4) {
-    transition-delay: 0.4s;
+    transition-delay: 0.333333333333333s;
   }
   .nav li:nth-child(5) {
-    transition-delay: 0.5s;
+    transition-delay: 0.416666666666667s;
   }
   .nav li:nth-child(6) {
-    transition-delay: 0.6s;
+    transition-delay: 0.5s;
   }
   .nav li:nth-child(7) {
-    transition-delay: 0.7s;
+    transition-delay: 0.583333333333333s;
   }
   .nav li:nth-child(8) {
-    transition-delay: 0.8s;
+    transition-delay: 0.666666666666667s;
   }
   .nav li:nth-child(9) {
-    transition-delay: 0.9s;
+    transition-delay: 0.75s;
   }
   .nav li:nth-child(10) {
+    transition-delay: 0.833333333333333s;
+  }
+  .nav li:nth-child(11) {
+    transition-delay: 0.916666666666667s;
+  }
+  .nav li:nth-child(12) {
     transition-delay: 1s;
   }
 }
-@media (min-width: 80.01em) {
+@media (min-width: 88.01em) {
   .nav ul {
     display: flex;
   }
@@ -578,7 +584,7 @@ main {
     }
 }
 }
-@media (max-width: 80.01em) {
+@media (max-width: 88.01em) {
   .cmd-nav {
     position: absolute;
     right: 0;
@@ -618,7 +624,7 @@ main {
     transform: translate(-177px, -177px) rotate(-45deg);
   }
 }
-@media (min-width: 80.01em) {
+@media (min-width: 88.01em) {
   .cmd-nav {
     display: none;
   }

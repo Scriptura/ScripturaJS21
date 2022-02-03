@@ -26,7 +26,7 @@ router.use(
 )
 router.use(
   '/',
-  require(path.join(__dirname, 'pictureGallery'))
+  require(path.join(__dirname, 'imageGallery'))
 )
 router.use(
   '/',

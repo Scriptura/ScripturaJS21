@@ -24,12 +24,11 @@ nav.nav(role='navigation' aria-label='Main')
         svg.icon(role='img' focusable='false')
           use(xlink:href='/medias/sprites/utils.svg#user')
         | User
-    //-
-      li
-        a(href='/person/1')
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#frame')
-          | Person 1
+    li
+      a(href='/person/1')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#frame')
+        | Person 1
     li
       a(href='/place/1')
         svg.icon(role='img' focusable='false')
@@ -41,16 +40,10 @@ nav.nav(role='navigation' aria-label='Main')
           use(xlink:href='/medias/sprites/utils.svg#quill')
         | Article 1
     li
-      a(href='/pictureGallery')
+      a(href='/imageGallery')
         svg.icon(role='img' focusable='false')
           use(xlink:href='/medias/sprites/utils.svg#picture')
-        | Pictures
-    //-
-      li
-        a(href='/404')
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#warning')
-          | Error 404
+        | Images
     li
       - const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
       a(href='/calendar/' + currentDate + '')

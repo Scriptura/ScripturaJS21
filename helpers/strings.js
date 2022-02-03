@@ -9,9 +9,9 @@ const uppercaseToFirstLetter = (str, locale) => str.replace(/^\p{CWU}/u, char =>
 const lowercaseToFirstLetter = (str, locale) => str.replace(/^\p{CWL}/u, char => char.toLocaleLowerCase(locale))
 
 const constructFullName = (data, id = 0) => {
-  if (data._given_name || data._middle_name || data._family_name) data._full_name = [data._given_name, data._middle_name, data._family_name].filter(Boolean).join(' ')
+  if (data._given_name || data._additional_name || data._family_name) data._full_name = [data._given_name, data._additional_name, data._family_name].filter(Boolean).join(' ')
   else data._full_name = 'Anonyme ' + id
-  if (!data._given_name && !data._middle_name && data._family_name) data._full_name = uppercaseToFirstLetter(data._family_name)
+  if (!data._given_name && !data._additional_name && data._family_name) data._full_name = uppercaseToFirstLetter(data._family_name)
   return data._full_name
 }
 
