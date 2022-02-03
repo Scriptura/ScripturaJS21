@@ -489,7 +489,7 @@ main {
   background-repeat: no-repeat;
   border-radius: 50% 50%;
 }
-@media (max-width: 72.01em) {
+@media (max-width: 80.01em) {
   .nav ul {
     position: absolute;
     z-index: 800;
@@ -541,7 +541,7 @@ main {
     transition-delay: 1s;
   }
 }
-@media (min-width: 72.01em) {
+@media (min-width: 80.01em) {
   .nav ul {
     display: flex;
   }
@@ -578,7 +578,7 @@ main {
     }
 }
 }
-@media (max-width: 72.01em) {
+@media (max-width: 80.01em) {
   .cmd-nav {
     position: absolute;
     right: 0;
@@ -618,7 +618,7 @@ main {
     transform: translate(-177px, -177px) rotate(-45deg);
   }
 }
-@media (min-width: 72.01em) {
+@media (min-width: 80.01em) {
   .cmd-nav {
     display: none;
   }
