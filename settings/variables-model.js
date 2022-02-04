@@ -14,6 +14,6 @@ exports.themeColor = '#333333'
 // database :
 exports.host = 'localhost'
 exports.port = 5432
-exports.database = 'database'
-exports.user = 'user'
-exports.password = 'password'
+exports.database = 'scriptura_db'
+exports.user = 'scriptura_user'
+exports.password = 'root'

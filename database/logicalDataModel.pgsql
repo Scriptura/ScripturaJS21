@@ -9,11 +9,13 @@
 -- \i /../database/logicalDataModel.pgsql
 
 -- Les lignes de commande suivantes sont pour le dev :
-DROP DATABASE IF EXISTS scripturadb;
-CREATE DATABASE scripturadb;
+CREATE USER scriptura_user WITH ENCRYPTED PASSWORD 'root';
+DROP DATABASE IF EXISTS scriptura_db;
+CREATE DATABASE scriptura_db OWNER scriptura_user;
+-- CREATE DATABASE scriptura_db;
+-- GRANT ALL PRIVILEGES ON DATABASE scriptura_db TO scriptura_user;
 
-
-\c scripturadb;
+\c scriptura_db;
 
 
 CREATE TABLE __preference (
@@ -251,7 +253,7 @@ CREATE TABLE __text_option (
 );
 
 
--- Supprimer la restriction aux droits d'accès par une autorisation générale sur toutes les tables @toto Solution de contournement à revoir par la suite.
+-- Supprimer la restriction aux droits d'accès par une autorisation générale sur toutes les tables @todo Solution de contournement à revoir par la suite.
 GRANT SELECT ON __preference TO PUBLIC;
 GRANT SELECT ON __user TO PUBLIC;
 GRANT SELECT ON __person TO PUBLIC;

@@ -8,15 +8,15 @@ Scriptura est une application web sous Node.js utilisant :
 
 ## Configuration requise :
 
-* PostgreSQL 13.3
-* Node.js 16.0.0
-* Yarn 1.22.5
+* PostgreSQL 14.1
+* Node.js 17.4.0
+* Yarn 1.22.17
 
 ## Pour démarer
 
 ### Postgres
 
-Dans `settings/` copiez/collez le fichier `variables-model.js`, renommez-le `variables.js` et configurez ses variables. Et notamment :
+Dans `settings/` copiez/collez le fichier `variables-model.js`, renommez-le `variables.js` et configurez ses variables. Notamment :
 
 ```
 // database :
@@ -30,13 +30,12 @@ exports.password = 'yourpassword'
 Démarez une session postgres :
 
 ```
-sudo -s -u postgres
+$ sudo -i -u postgres psql
 ```
 
 Puis créez et configurez une base de donnée (nommée par exemple ici `scriptruradb`) à l'aide du fichier de modèle logiques de données fourni :
 
 ```
-$ psql postgres
 postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 ```
 
@@ -45,13 +44,13 @@ postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 Dans le dossier racine du projet, en ligne de commande :
 
 ```
-yarn install
+$ yarn install
 ```
 
 Et pour lancer le projet en mode développement :
 
 ```
-yarn dev
+$ yarn dev
 ```
 
 Une fenêtre s'ouvre alors dans votre navigateur. L'application est consultables sur smatphone avec le même port si vous disposez du wifi.

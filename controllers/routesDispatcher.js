@@ -26,6 +26,10 @@ router.use(
 )
 router.use(
   '/',
+  require(path.join(__dirname, 'keyword'))
+)
+router.use(
+  '/',
   require(path.join(__dirname, 'imageGallery'))
 )
 router.use(
