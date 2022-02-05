@@ -12,6 +12,9 @@ main
   padding _gap 0
   word-break break-word // @note Évite d'exploser le design sur les mots insécables, raison pour laquelle cette règle est située au niveau du layout. @todo En test.
 
+main.main-bottom-none // @note notammment lorsque .columns est utilisé en élément enfant @todo Solution temporaire en attendant le support de :has() :`main:has(> .columns)`
+  padding-bottom 0
+
 .nav
   grid-area nav
 

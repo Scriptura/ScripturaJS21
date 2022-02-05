@@ -6,9 +6,9 @@ const express = require('express'),
 
 router.get('/keyword', function(req, res, next) {
   res.render('keyword', {
-    _title: 'Keyword | ' + vv.siteName,
-    _name: 'Keyword',
-    _description: 'Keyword for ' + vv.siteName,
+    _title: 'Keyword Lion | ' + vv.siteName,
+    _name: 'Lion',
+    _description: 'Keyword Lion for ' + vv.siteName,
   })
 })
 

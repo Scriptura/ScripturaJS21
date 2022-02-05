@@ -239,6 +239,9 @@ main {
   padding: 1em 0;
   word-break: break-word;
 }
+main.main-bottom-none {
+  padding-bottom: 0;
+}
 .nav {
   grid-area: nav;
 }

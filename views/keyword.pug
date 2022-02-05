@@ -1,8 +1,9 @@
 extends layout
 
 block main
-  main
-    h1.main-heading #{_name}
+  main.main-bottom-none
+    h1.main-heading #{_name} 
+      span keyword
     .columns4.gap
       - for (var i = 0; i < 5; i++)
         article.card
