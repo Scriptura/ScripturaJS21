@@ -10,7 +10,15 @@ router.use(
 )
 router.use(
   '/',
+  require(path.join(__dirname, 'articles'))
+)
+router.use(
+  '/',
   require(path.join(__dirname, 'article'))
+)
+router.use(
+  '/',
+  require(path.join(__dirname, 'persons'))
 )
 router.use(
   '/',

@@ -42,7 +42,7 @@ block main
                 | Née
               |  le #{_birth_date}
               if _birth_place_id
-                |  à #{_birth_place_id}
+                |  à {#{_birth_place_id}}
           if _death_date
             li
               if _sexe == ('1' || '9')
@@ -50,6 +50,8 @@ block main
               else 
                 | Décédée
               |  le #{_death_date}
+              if _death_place_id
+                |  à {#{_death_place_id}}
           if _nationality
             li Pays : #{_nationality}
           if _phone

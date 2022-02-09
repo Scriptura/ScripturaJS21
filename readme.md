@@ -30,7 +30,7 @@ exports.password = 'yourpassword'
 Démarez une session postgres :
 
 ```
-$ sudo -i -u postgres psql
+$ sudo -u postgres psql
 ```
 
 Puis créez et configurez une base de donnée (nommée par exemple ici `scriptruradb`) à l'aide du fichier de modèle logiques de données fourni :
