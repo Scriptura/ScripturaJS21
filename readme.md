@@ -30,10 +30,10 @@ exports.password = 'yourpassword'
 Démarez une session postgres :
 
 ```
-$ sudo -u postgres psql
+$ sudo -i -u postgres psql
 ```
 
-Puis créez et configurez une base de donnée (nommée par exemple ici `scriptruradb`) à l'aide du fichier de modèle logiques de données fourni :
+Puis créez et configurez un utilisateur et une base de donnée (nommée dans notre exemple `scriptrura_db`) à l'aide du fichier de modèle logiques de données fourni :
 
 ```
 postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
@@ -62,9 +62,9 @@ Le point d'entrée de l'application se fait à partir du fichier `bin/www` qui l
 Le dossier `controllers/` est composé de fichiers chargés de capter les routes et de mettre en lien les requêtes avec des données et une vue. Les données dynamiques sont appelées via des fichiers contenus dans le dossier `models/`. Enfin les informations obtenues sont passées à la vue via des fichiers contenus dans le dossier `views`.
 
 Par convention les fichiers travaillant au sein de la même logique MVC se doivent de tous porter le même nom :
-- `controllers/index.js`
-- `models/index.js`
-- `views/index.js`
+- `controllers/article.js`
+- `models/article.js`
+- `views/article.js`
 
 Il existe deux dossiers de fonctions utilitaires à la racine du projet :
 - `helpers/` rassemble les fonctions travaillant sur les données,

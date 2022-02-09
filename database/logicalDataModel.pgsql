@@ -1,18 +1,19 @@
 -- ------------------------------------------------------------------------------
 -- @name        Logical Data Model
--- @description Modèle logique des données pour PostgreSQL
+-- @description Modèle logique des données pour une base sous PostgreSQL
 -- @note        Sémantique des tables et colonnes principalement inspirée de schema.org
 -- @note        Les underscores évitent d'utiliser un mot réservé par SQL
 -- ------------------------------------------------------------------------------
 
-
+-- Appeler le fichier via le client psql de la manière suivante :
 -- \i /../database/logicalDataModel.pgsql
+
 
 DROP USER IF EXISTS scriptura_user;
 DROP DATABASE IF EXISTS scriptura_db;
 CREATE USER scriptura_user WITH ENCRYPTED PASSWORD 'root';
 CREATE DATABASE scriptura_db OWNER scriptura_user;
--- CREATE DATABASE scriptura_db;
+
 
 \c scriptura_db
 \conninfo
@@ -36,8 +37,8 @@ CREATE TABLE __preference (
 
 
 CREATE TABLE __user (
-  _id                 UUID              NOT NULL,
-  -- _id                 UUID              DEFAULT gen_random_uuid(),
+  _id                 UUID              NOT NULL, -- si UUID généré par l'application cliente
+  -- _id                 UUID              DEFAULT gen_random_uuid(), -- si UUID généré par PostgreSQL
   _person_id          BIGINT            NULL,     -- référence éventuelle à __person
   _username           VARCHAR(32)       NOT NULL, -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
   _password           CHAR(40)          NOT NULL, -- mot de passe crypté en SHA1
