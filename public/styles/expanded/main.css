@@ -2161,6 +2161,10 @@ form > [class*="grid"] > .input {
     color: #777;
     outline: none;
     transition: color 0.2s ease-in-out;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
   .line-mark:focus,
   .line-mark:hover,
@@ -2317,9 +2321,6 @@ html,
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.push {
-  margin-left: auto;
 }
 .rotate90 {
   transform: rotate(90deg);

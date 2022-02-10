@@ -7,7 +7,6 @@
   "main": "./bin/www",
   "private": true,
   "dependencies": {
-    "-": "^0.0.1",
     "argon2": "^0.28.2",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",

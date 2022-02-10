@@ -9,7 +9,7 @@ const vv = require('../settings/variables'),
       { uppercaseToFirstLetter } = require('../helpers/strings')
 
 
-const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM public.__post WHERE _id = $1', '1')
+const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM __post WHERE _id = $1', '1')
   .then(data => {
     const date = [day, month, year]
     const lc = liturgicalCalendar(DateTime.fromFormat(day + month + year, 'ddMMyyyy'), 'france')
@@ -29,7 +29,7 @@ const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM p
   .catch(error => console.log(error.message || error))
 
 
-const getCalendarMonth = async (year, month) => await db.one('SELECT * FROM public.__post WHERE _id = $1', '1')
+const getCalendarMonth = async (year, month) => await db.one('SELECT * FROM __post WHERE _id = $1', '1')
   .then(data => {
     const dateTest = DateTime.fromFormat(month + year, 'MMyyyy')
     const daysInMonth = dateTest.daysInMonth

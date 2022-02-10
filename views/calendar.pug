@@ -31,7 +31,7 @@ block main
               p= 'Mots clefs : ' + [_calendar.key, _calendar.p.key].filter(Boolean).join(', ')
           if (_moonPhase || _moonPhase === 0)
             .center
-              svg.size4.push(role='img' focusable='false')
+              svg.size4(role='img' focusable='false')
                 use(xlink:href='/medias/sprites/moons.svg#' + _moonPhase)
       .center
         svg.size25.decorative-svg(role='img' focusable='false')
