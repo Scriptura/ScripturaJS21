@@ -2,7 +2,7 @@ extends layout
 
 block main
   main
-    h1.main-heading #{_name}
+    h1.main-heading!= _name
     ul
       if _street && _postal_code && _locality
         li Adresse : #{_street}, #{_postal_code}, #{_locality}

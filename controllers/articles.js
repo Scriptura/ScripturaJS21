@@ -7,7 +7,7 @@ const express = require('express'),
 router.get('/articles', function(req, res, next) {
   res.render('articles', {
     _title: 'Articles list | ' + vv.siteName,
-    _name: 'Articles',
+    _name: 'Articles <span>list</span>',
     _description: 'Articles list of ' + vv.siteName,
   })
 })

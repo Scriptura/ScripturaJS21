@@ -2,14 +2,13 @@ extends layout
 
 block main
   main
-    h1.main-heading Style Guide 
-      span documentation
+    h1.main-heading !{_name}
     section
       include includes/typography
     //-
       hr
       section
-        include includes/sprites
+      include includes/sprites
     hr
     section
       include includes/lists

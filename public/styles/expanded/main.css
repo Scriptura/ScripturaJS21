@@ -698,6 +698,7 @@ samp {
 }
 .pre {
   position: relative;
+  min-height: 3em;
   padding: 1em;
   background-color: #252525;
   border-radius: 0.2em;
@@ -710,21 +711,23 @@ samp {
 .pre code:focus-within {
   color: #fff;
 }
+.pre code:empty::after {
+  content: '# no content...';
+}
 .pre div {
   position: absolute;
-  display: block;
   top: 1em;
   right: 1em;
+  display: flex;
   font-size: 1em;
   color: #777;
+  gap: 0.5em;
 }
 .pre svg {
+  display: block;
   width: 1em;
   height: 1em;
   fill: #777;
-}
-.pre div span {
-  margin-left: 0.5em;
 }
 .pre button {
   position: absolute;
@@ -740,6 +743,9 @@ samp {
 .pre button:active {
   color: Orange;
   outline: none;
+}
+.pre code:empty + button {
+  display: none;
 }
 [class*=message] {
   margin-bottom: 1em;

@@ -2,36 +2,12 @@ extends layout
 
 block main
   main
-    h1.main-heading #{_name} 
-      span list
+    h1.main-heading!= _name
     ul.list-stripe-links.grid3
-      li
-        a(href='/person/3') Charles André Joseph Marie de Gaulle
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/2') Jeanne d'Arc
-      li
-        a(href='/person/4') El Comandante
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
-      li
-        a(href='/person/1') Henri Sonier de Lubac
+    //- console.log(test)
+    //-
+      each i in [data]
+        li
+          a(href='/person/' + i)= i._given_name
+    pre.pre
+      code= _nameFF

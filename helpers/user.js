@@ -10,6 +10,7 @@ const userFormat = (data) => { // Travaille sur l'initialisateur d'objet envoyé
   data._description = [data._entitled, data._display_name].join(' : ')
   data._display_name = [data._entitled, data._display_name].join(' ')
   data._title = [data._display_name, vv.siteName].join(' | ') // respecter l'ordre de déclarations de cette variable pour garder l'héritage des configurations précédentes des variables qu'elle utilise
+  data._name = data._display_name + ' - <span>utilisateur</span>'
   data._creation = dateTimeFormat(data._creation)
   data._revision = dateTimeFormat(data._revision)
   data._last_login = dateTimeFormat(data._last_login)

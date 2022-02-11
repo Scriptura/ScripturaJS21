@@ -15,6 +15,7 @@ const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM _
     const lc = liturgicalCalendar(DateTime.fromFormat(day + month + year, 'ddMMyyyy'), 'france')
     if (lc.type) lc.type = lc.type.toLowerCase()
     data._title = `Le ${date.join('.')} | ${vv.siteName}`
+    data._name = 'Calendrier liturgique'
     data._description = `Date du ${date.join('/')}. ${[lc.name, lc.type].filter(Boolean).join(', ')}`
     data._description = data._description.replace(/<[^>]*>?/gm, '') // @todo Regex à convertir éventuellement à l'avenir par npm sanitize-html
     //console.log(lc) // retourne les données du calendrier

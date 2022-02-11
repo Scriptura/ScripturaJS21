@@ -2,14 +2,16 @@
 
 const express = require('express'),
       router = express.Router(),
-      vv = require('../settings/variables')
+      { getPersons } = require('../models/persons')
 
-router.get('/persons', function(req, res, next) {
-  res.render('persons', {
-    _title: 'Persons list | ' + vv.siteName,
-    _name: 'Persons',
-    _description: 'Persons list of ' + vv.siteName,
-  })
+router.get('/persons', async (req, res, next) => {
+  const data = await getPersons()
+    .then(data => {
+      console.log(data)
+      if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
+      res.render('persons', data)
+    })
+    .catch(error => next())
 })
 
 module.exports = router

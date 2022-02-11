@@ -2,8 +2,7 @@ extends layout
 
 block main
   main
-    h1.main-heading #{_name} 
-      span un framework pour le web
+    h1.main-heading!= _name
     .grid2.gap
       div
         h2 Serveur :

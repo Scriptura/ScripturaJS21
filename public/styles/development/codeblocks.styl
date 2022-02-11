@@ -1,6 +1,6 @@
 _codeBlocksColor1 = _colorG
-_codeBlocksColor2 = lighten(_colorG, 20)
-_codeBlocksColor3 = darken(_colorG, 12) // _colorG - 45%
+_codeBlocksColor2 = _colorG + 27.5% // Oui c'est trivial : c'est pour étalonner sur #777.
+_codeBlocksColor3 = _colorG - 45%
 
 code
 kbd
@@ -19,52 +19,48 @@ samp
 
 // @note Pas de style par défaut pour la balise `pre`
 
-// pre
-
 .pre
   position relative
+  min-height 3em // @note Si pas de contenu. Remplacé par .pre code:empty::after
   padding 1em
   background-color _codeBlocksColor3
   border-radius _r2
   box-shadow _shadow1
-
-.pre code
-  color _codeBlocksColor2
-  transition color .5s ease-in-out
-
-.pre code:focus-within
-  color _colorW
-
-.pre div
-  position absolute
-  display block
-  top 1em
-  right 1em
-  font-size 1em
-  color _codeBlocksColor2
-
-.pre svg
-  width 1em
-  height 1em
-  fill _codeBlocksColor2
-
-.pre div span
-  margin-left .5em
-
-.pre button
-  position absolute
-  bottom 1em
-  right 1em
-  padding 0
-  border none
-  color _codeBlocksColor2
-  background-color transparent
-
-.pre button:focus
-.pre button:hover
-.pre button:active
-  color Orange
-  outline none
+  & code
+    color _codeBlocksColor2
+    transition color .5s ease-in-out
+    &:focus-within
+      color _colorW
+    &:empty::after
+      content '# no content...'
+  & div
+    position absolute
+    top 1em
+    right 1em
+    display flex
+    font-size 1em
+    color _codeBlocksColor2
+    gap .5em
+  & svg
+    display block
+    width 1em
+    height 1em
+    fill _codeBlocksColor2
+  & button
+    position absolute
+    bottom 1em
+    right 1em
+    padding 0
+    border none
+    color _codeBlocksColor2
+    background-color transparent
+    &:focus
+    &:hover
+    &:active
+      color Orange
+      outline none
+  & code:empty + button // @todo À évaluer...
+    display none
 
 /*
 .pre button:focus::before

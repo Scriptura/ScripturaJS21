@@ -4,7 +4,7 @@ block main
   main
     article.article
       header
-        h1.main-heading= _name
+        h1.main-heading!= _name
       section.add-line-marks.add-drop-cap.decorative-hr
         p!= _content
         .grid2.gap.media-s-grid1

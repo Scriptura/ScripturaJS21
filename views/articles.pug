@@ -2,8 +2,7 @@ extends layout
 
 block main
   main.main-bottom-none
-    h1.main-heading #{_name} 
-      span list
+    h1.main-heading!= _name
     .columns4.gap
       - for (var i = 0; i < 5; i++)
         article.card

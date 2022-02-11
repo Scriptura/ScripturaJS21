@@ -155,11 +155,11 @@ const selectText = node => {
 
 const selectAndCopy = (() => {
   document.querySelectorAll('[data-select]').forEach(el => {
-    el.parentElement.classList.add('pre')
+    //el.parentElement.classList.add('pre')
     const button = document.createElement('button'),
           text = el.dataset.select
     button.type = 'button'
-    el.appendChild(button)
+    el.parentElement.appendChild(button)
     button.title = text
     button.ariaLabel = text
     injectSvgSprite(button, 'copy')
