@@ -744,8 +744,8 @@ samp {
   color: Orange;
   outline: none;
 }
-.pre code:empty + button {
-  display: none;
+.copy-offset {
+  right: 2.5em !important;
 }
 [class*=message] {
   margin-bottom: 1em;

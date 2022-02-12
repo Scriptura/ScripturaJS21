@@ -16,6 +16,7 @@ const personsFormat = (data, id) => { // Travaille sur l'initialisateur d'objet 
   if (data._nationality) data._nationality = displayCountrie(data._nationality)
   */
   //data._test = { _child: Object.values(data)} //data.map(x => [x])
+  data._e = Object.entries(data)
   return data
 }
 

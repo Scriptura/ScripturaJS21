@@ -154,11 +154,11 @@ const selectText = node => {
 }
 
 const selectAndCopy = (() => {
-  document.querySelectorAll('[data-select]').forEach(el => {
-    //el.parentElement.classList.add('pre')
+  document.querySelectorAll('[data-select]:not(:empty)').forEach(el => {
     const button = document.createElement('button'),
           text = el.dataset.select
     button.type = 'button'
+    if (el.offsetHeight < 30) button.classList.add('copy-offset')
     el.parentElement.appendChild(button)
     button.title = text
     button.ariaLabel = text
@@ -176,7 +176,6 @@ const addTitleCodeBlock = (() => {
           span = document.createElement('span'),
           reqText = el.children[0].dataset.code,
           text = document.createTextNode(reqText)
-    //item.classList.add('pre-title')
     el.appendChild(item)
     injectSvgSprite(item, 'code')
     if (reqText) {

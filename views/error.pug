@@ -2,10 +2,17 @@ extends layout
 
 block main
   main
-    h1.main-heading Error 500
+    h1.main-heading Error 500 
+      span Internal Server Error
       //-#{error.status}
-      //-span #{error.message}
-    pre
-      code(translate='no' data-select='Select and copy') #{error.stack}
+      //-#{error.message}
+    if _dev
+      pre.pre
+        code(translate='no' data-select='Select and copy')= error.stack
+    else
+      p.message-warning(role='alert')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#warning')
+        | Le serveur a rencontré un problème inattendu qui l'empêche de répondre à la requête.
     hr
     include includes/links

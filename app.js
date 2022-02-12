@@ -65,7 +65,7 @@ app.use((err, req, res, next) => { // Gestionnaire d'erreurs.
   res.locals.error = req.app.get('env') === 'development' ? err : {}
 
   res.status(err.status || 500)
-  res.render('error', {_title: 'Error 500 | ' + vv.siteName})
+  res.render('error', {_title: 'Error 500 | ' + vv.siteName, _dev: vv.dev})
 })
 
 module.exports = app
