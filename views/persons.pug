@@ -2,12 +2,8 @@ extends layout
 
 block main
   main
-    h1.main-heading!= _name
+    h1.main-heading!= data._name
     ul.list-stripe-links.grid3
-    //- console.log(test)
-    //-
-      each i in [data]
+      each e, i in data
         li
-          a(href='/person/' + i)= i._given_name
-    pre.pre
-      code= _e._name
+          a(href='/person/' + (i + 1))= e._given_name

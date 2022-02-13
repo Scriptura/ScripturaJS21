@@ -2,25 +2,25 @@ extends layout
 
 block main
   main
-    h1.main-heading!= _name
+    h1.main-heading!= data._name
     .grid2.gap
       div
         h2 Serveur :
         ul
-          //-li Url du site : #{_site_url}
-          li Version de Node.js : #{_node_version}
-          li Hostname : #{_hostname}
-          li Adresse IP locale : #{_ip}
-          li Architecture du processeur : #{_arch}
-          li Mémoire RAM : #{_totalmem} Go
-          li Système d'exploitation : #{_release}
-          li Os : #{_type} (#{_platform})
-          li Chemin du répertoire personnel de l'utilisateur actuel : #{_homedir}
-          li Chemin des fichiers temporaires : #{_tmpdir}
+          //-li Url du site : #{data.site_url}
+          li Version de Node.js : #{data._node_version}
+          li Hostname : #{data._hostname}
+          li Adresse IP locale : #{data._ip}
+          li Architecture du processeur : #{data._arch}
+          li Mémoire RAM : #{data._totalmem} Go
+          li Système d'exploitation : #{data._release}
+          li Os : #{data._type} (#{data._platform})
+          li Chemin du répertoire personnel de l'utilisateur actuel : #{data._homedir}
+          li Chemin des fichiers temporaires : #{data._tmpdir}
         h2 Client :
         ul
-          li Os : #{_user_os} (#{_user_platform})
-          li Navigateur : #{_user_browser} (#{_user_version})
+          li Os : #{data._user_os} (#{data._user_platform})
+          li Navigateur : #{data._user_browser} (#{data._user_version})
       .center
         svg.size25.decorative-svg(role='img' focusable='false')
           use(xlink:href='/medias/sprites/silos/195v.svg#1')

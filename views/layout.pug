@@ -2,8 +2,8 @@ doctype html
 html.no-js(lang='fr')
   head
     meta(charset='utf-8')
-    title= _title
-    meta(name='description' content='' + _description + '')
+    title= data._title
+    meta(name='description' content='' + data._description + '')
     meta(name='viewport' content='width=device-width, initial-scale=1')
     meta(name='theme-color' content='#333333')
     link(rel='stylesheet' href='/styles/main.css', media='screen')
@@ -19,7 +19,7 @@ html.no-js(lang='fr')
     meta(name='msapplication-TileColor', content='#da532c')
     //-#ff7a54
     meta(name='msapplication-config' content='/browserconfig.xml')
-    if _location
+    if data._location
       link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
       script(src='/libraries/leaflet/leaflet.js')
   body

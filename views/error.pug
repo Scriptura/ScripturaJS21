@@ -6,7 +6,7 @@ block main
       span Internal Server Error
       //-#{error.status}
       //-#{error.message}
-    if _dev
+    if data._dev
       pre.pre
         code(translate='no' data-select='Select and copy')= error.stack
     else

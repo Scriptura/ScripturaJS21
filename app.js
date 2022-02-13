@@ -55,7 +55,12 @@ app.use('/', require(path.join(__dirname, 'controllers', 'routesDispatcher'))) /
 
 app.use((req, res, next) => {
   res.status(404)
-  res.render('404', {_title: 'Error 404 | ' + vv.siteName, _description: 'Erreur 404, page non trouvée'})
+  res.render('404', {
+    data: {
+      _title: 'Error 404 | ' + vv.siteName,
+      _description: 'Erreur 404, page non trouvée'
+    }
+  })
   //next(createError(404)) // catch 404 and forward to error handler
 })
 
@@ -65,7 +70,12 @@ app.use((err, req, res, next) => { // Gestionnaire d'erreurs.
   res.locals.error = req.app.get('env') === 'development' ? err : {}
 
   res.status(err.status || 500)
-  res.render('error', {_title: 'Error 500 | ' + vv.siteName, _dev: vv.dev})
+  res.render('error', {
+    data: {
+    _title: 'Error 500 | ' + vv.siteName,
+    _dev: vv.dev
+    }
+  })
 })
 
 module.exports = app

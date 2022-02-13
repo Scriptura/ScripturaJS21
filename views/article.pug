@@ -4,9 +4,9 @@ block main
   main
     article.article
       header
-        h1.main-heading!= _name
+        h1.main-heading!= data._name
       section.add-line-marks.add-drop-cap.decorative-hr
-        p!= _content
+        p!= data._content
         .grid2.gap.media-s-grid1
           p(lang='grc')
             span.verse 1
@@ -42,14 +42,6 @@ block main
           - var alt = 'Old Mechanism'
           include helpers/picture
         include helpers/loremipsum
-        ul
-          li Description : #{_description}
-          li
-            em
-              | Article créé le #{_creation}
-              if _revision
-                |, révisé le #{_revision}
-              |.
         hr
         .footnotes
           p
@@ -69,7 +61,7 @@ block main
         p
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#calendar')
-          |  Contenu publié le 5 mai 2021, modifié le 11 mai 2021.
+          |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
         p.keywords
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#old-key')
@@ -79,3 +71,7 @@ block main
           a(href='http://localhost:9001/keyword') Antilope
           |  • 
           a(href='http://localhost:9001/keyword') Crocodile
+        p
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#info')
+          != data._description

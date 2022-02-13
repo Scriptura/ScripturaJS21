@@ -9,7 +9,7 @@ router.get('/place/:id([0-9]{1,7})', async (req, res, next) => { // @example '/p
   .then(data => {
     //console.log(data)
     if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
-    res.render('place', data)
+    res.render('place', {data: data})
   })
     .catch(error => next())
 })

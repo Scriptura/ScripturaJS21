@@ -2,19 +2,19 @@ extends layout
 
 block main
   main
-    h1.main-heading!= _name
+    h1.main-heading!= data._name
     .grid2.gap.media-s-grid1
       ul
-        li Id : #{_id}
-        li Username : #{_username}
-        li Password : #{_password}
-        if _email
-          li Email : #{_email}
-        li Inscrit depuis le : #{_creation}
-        if _revision
-          li Dernière revision du profil le : #{_revision}
-        if _last_login
-          li Dernière connexion le : #{_last_login}
+        li Id : #{data._id}
+        li Username : #{data._username}
+        li Password : #{data._password}
+        if data._email
+          li Email : #{data._email}
+        li Inscrit depuis le : #{data._creation}
+        if data._revision
+          li Dernière revision du profil le : #{data._revision}
+        if data._last_login
+          li Dernière connexion le : #{data._last_login}
       .center
         svg.size25.decorative-svg(role='img' focusable='false' style='height:12em')
           use(xlink:href='/medias/sprites/silos/79v-d2.svg#1')

@@ -2,21 +2,21 @@ extends layout
 
 block main
   main
-    h1.main-heading!= _name
+    h1.main-heading!= data._name
     ul
-      if _street && _postal_code && _locality
-        li Adresse : #{_street}, #{_postal_code}, #{_locality}
-      else if _locality
-        li Ville : #{_locality}
-      if _location
-        li Latitude : #{_location.y}
-      if _location
-        li Longitude : #{_location.x}
-      if _elevation
-        li Altitude : #{_elevation}
-    if _location
+      if data._street && data._postal_code && data._locality
+        li Adresse : #{data._street}, #{data._postal_code}, #{data._locality}
+      else if data._locality
+        li Ville : #{data._locality}
+      if data._location
+        li Latitude : #{data._location.y}
+      if data._location
+        li Longitude : #{data._location.x}
+      if data._elevation
+        li Altitude : #{data._elevation}
+    if data._location
       .gap-bottom
-        #map.map(style='height:50vh' data-name='Basilique Notre-Dame-de-la-Garde' data-coords='[' + _location.y + ',' + _location.x + ']', data-zoom='15', data-color='#ff654f', data-tileserver = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2xpdmllcmMiLCJhIjoiY2s5dnNnZWoyMDIzNDNzb2Y1dmQ4MGNtMCJ9.m4U-wYcS4EPcKe9nVXIbUA', data-attribution = '<a href="//www.openstreetmap.org/">OSM</a> | <a href="//www.mapbox.com/">Mapbox</a>')
+        #map.map(style='height:50vh' data-name='Basilique Notre-Dame-de-la-Garde' data-coords='[' + data._location.y + ',' + data._location.x + ']', data-zoom='15', data-color='#ff654f', data-tileserver = 'https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2xpdmllcmMiLCJhIjoiY2s5dnNnZWoyMDIzNDNzb2Y1dmQ4MGNtMCJ9.m4U-wYcS4EPcKe9nVXIbUA', data-attribution = '<a href="//www.openstreetmap.org/">OSM</a> | <a href="//www.mapbox.com/">Mapbox</a>')
         //- Serveurs de tuiles disponibles @see https://wiki.openstreetmap.org/wiki/Tile_servers
         //- Alternative : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
         //- Zoom de 0 à 18
