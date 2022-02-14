@@ -43,7 +43,7 @@ block main
           include helpers/picture
         include helpers/loremipsum
         hr
-        .footnotes(data-hr='✻ ✻ ✻')
+        .footnotes
           p
             a(href='#r1' id='n1') #1
             |  Première note. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
@@ -65,6 +65,7 @@ block main
         p.keywords
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#old-key')
+          |  Mots clefs : 
           |  
           a(href='/keyword/lion') Lion
           |  • 

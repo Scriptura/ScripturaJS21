@@ -2104,8 +2104,8 @@ form > [class*="grid"] > .input {
   margin-bottom: -0.75em;
 }
 @media (max-width: 36.01em) {
-  .article .footnotes[data-hr]::after {
-    content: attr(data-hr);
+  .article .footnotes::after {
+    content: '✻ ✻ ✻';
     display: block;
     width: 100%;
     height: 2em;

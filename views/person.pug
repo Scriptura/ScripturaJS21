@@ -10,7 +10,7 @@ block main
           if data._user_id
             li User id : #{data._user_id}
           li Sexe : 
-            if data._sexe === null
+            if !data._sexe
               | non renseigné
             if data._sexe == 0
               | inconnu
