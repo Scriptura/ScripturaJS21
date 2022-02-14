@@ -8,6 +8,18 @@ _articlesColor = _colorG
   & [class*=grid]
     margin-bottom -.75em
 
+@media (max-width _sizeXS)
+
+  .article .footnotes[data-hr]::after
+    content attr(data-hr)
+    display block
+    width 100%
+    height 2em
+    margin-top 1em
+    font-size 2em
+    text-align center
+    color rgba(255, 255, 255, .2)
+
 @media (min-width _sizeXS)
 
   .article > section
@@ -15,16 +27,23 @@ _articlesColor = _colorG
       padding 4em 6em
       box-shadow 0 0 1.5rem rgba(0, 0, 0, .15)
 
+@media (min-width _sizeXS) and (max-width _sizeL)
+
+  .article > footer
+    padding 2em 6em 0
+
 @media (min-width _sizeS) and (max-width _sizeL)
 
-  .article > section
-    max-width 55em
+  .article
+    & > section
+    & > footer
+      max-width 55em
 
 @media (max-width _sizeL)
 
   .article
-    & > section
-      order 2
+    //& > section
+    //  order 2
     & > footer > :first-child
       margin-top 0
 

@@ -43,7 +43,7 @@ block main
           include helpers/picture
         include helpers/loremipsum
         hr
-        .footnotes
+        .footnotes(data-hr='✻ ✻ ✻')
           p
             a(href='#r1' id='n1') #1
             |  Première note. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
@@ -66,11 +66,11 @@ block main
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#old-key')
           |  
-          a(href='http://localhost:9001/keyword') Lion
+          a(href='/keyword/lion') Lion
           |  • 
-          a(href='http://localhost:9001/keyword') Antilope
+          a(href='/keyword/lion') Antilope
           |  • 
-          a(href='http://localhost:9001/keyword') Crocodile
+          a(href='/keyword/lion') Crocodile
         p
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#info')

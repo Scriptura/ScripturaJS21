@@ -5,5 +5,6 @@ block main
     h1.main-heading!= data._name
     ul.list-stripe-links.grid3
       each e, i in data
+        - if (e._given_name === null) e._given_name = 'Anonyme ' + (i + 1)
         li
-          a(href='/person/' + (i + 1))= e._given_name
+          a(href='/person/' + (i + 1)) #{e._given_name} #{e._family_name}

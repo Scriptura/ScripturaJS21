@@ -204,9 +204,7 @@ hr[data-hr],
   width: 100%;
   height: 2em;
   margin: 2em 0;
-  text-align: center;
   line-height: 1;
-  color: rgba(255,255,255,0.2);
   background-image: none;
 }
 hr[data-hr]::after,
@@ -216,6 +214,8 @@ hr[data-hr]::after,
   width: 100%;
   height: 100%;
   font-size: 2em;
+  text-align: center;
+  color: rgba(255,255,255,0.2);
 }
 .decorative-hr hr::after {
   content: '✻ ✻ ✻';
@@ -749,10 +749,14 @@ samp {
 }
 [class*=message] {
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 0 1em;
   background-color: #515151;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
   border-radius: 0.2em;
+  overflow: hidden;
+}
+p[class*=message] {
+  padding: 1em;
 }
 [class*=message-] {
   color: #fff;
@@ -854,6 +858,10 @@ figure {
   color: #e9dac5;
   background-color: #515151;
   box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 [class*=figure] figcaption {
   padding-top: 0.5em;
@@ -2095,6 +2103,18 @@ form > [class*="grid"] > .input {
 .article [class*=grid] {
   margin-bottom: -0.75em;
 }
+@media (max-width: 36.01em) {
+  .article .footnotes[data-hr]::after {
+    content: attr(data-hr);
+    display: block;
+    width: 100%;
+    height: 2em;
+    margin-top: 1em;
+    font-size: 2em;
+    text-align: center;
+    color: rgba(255,255,255,0.2);
+  }
+}
 @media (min-width: 36.01em) {
   .article > section {
     display: grid;
@@ -2102,15 +2122,18 @@ form > [class*="grid"] > .input {
     box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
   }
 }
+@media (min-width: 36.01em) and (max-width: 90.01em) {
+  .article > footer {
+    padding: 2em 6em 0;
+  }
+}
 @media (min-width: 50.01em) and (max-width: 90.01em) {
-  .article > section {
+  .article > section,
+  .article > footer {
     max-width: 55em;
   }
 }
 @media (max-width: 90.01em) {
-  .article > section {
-    order: 2;
-  }
   .article > footer > :first-child {
     margin-top: 0;
   }

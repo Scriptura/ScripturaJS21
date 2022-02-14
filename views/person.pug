@@ -10,15 +10,15 @@ block main
           if data._user_id
             li User id : #{data._user_id}
           li Sexe : 
-            if data._sexe == NULL
+            if data._sexe === null
               | non renseigné
-            if data._sexe == '0'
+            if data._sexe == 0
               | inconnu
-            if data._sexe == '1'
+            if data._sexe == 1
               | homme
-            else if data._sexe == '2'
+            else if data._sexe == 2
               | femme
-            else if data._sexe == '9'
+            else if data._sexe == 9
               | non applicable
           if data._given_name
             li= data._given_name

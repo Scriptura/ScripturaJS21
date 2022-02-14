@@ -9,7 +9,7 @@ router.get('/user/:username([0-9a-zA-Z]{1,20})', async (req, res, next) => { // 
     .then(data => {
       //console.log(data)
       if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
-      res.render('user', {data: data})
+      res.render('user', {data})
     })
     .catch(error => next())
 })

@@ -8,10 +8,14 @@ _messageBoxesColor6 = _color5
 
 [class*=message]
   margin-bottom 1em
-  padding 1em
+  padding 0 1em
   background-color _messageBoxesColor0
   box-shadow _shadow5
   border-radius _r2
+  overflow hidden // @note Evite un conflit avec les margins et padding des éléments enfants.
+
+p[class*=message]
+  padding 1em
 
 [class*=message-]
   color #fff

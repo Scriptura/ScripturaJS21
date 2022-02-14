@@ -9,7 +9,7 @@ router.get('/calendar/:year([0-9]{1,4})/:month(0[1-9]|1[0-2])', async (req, res,
     .then(data => {
       //console.log(data)
       if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
-      res.render('calendarMonth', {data: data})
+      res.render('calendarMonth', {data})
     })
     .catch(error => next())
 })
