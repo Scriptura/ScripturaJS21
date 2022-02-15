@@ -4,7 +4,7 @@ const express = require('express'),
       router = express.Router(),
       vv = require('../settings/variables'),
       db = require('../database/db'),
-      User = require('../models/user'),
+      account = require('../models/account'),
       session = require('express-session'),
       flash = require('connect-flash'),
       passport = require('passport'),
@@ -17,7 +17,7 @@ router.use(flash()) // @todo
 // https://stackoverflow.com/questions/51086775/passportjs-and-user-creation-with-postgres
 passport.use(new LocalStrategy(
   function(req, username, password, done) {
-    User.getUser({ username: username }, function(err, user) {
+    account.getAccount({ username: username }, function(err, user) {
       if (err) { return done(err); }
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });

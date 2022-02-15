@@ -32,31 +32,31 @@ CREATE TABLE __preference (
   CONSTRAINT __preference_pkey PRIMARY KEY (_id)
 );
 
-CREATE TABLE __user (
-  _id                 UUID              NOT NULL,                  -- si UUID généré par l'application cliente
-  -- _id                 UUID              DEFAULT gen_random_uuid(), -- si UUID généré par PostgreSQL
+CREATE TABLE __account ( -- __user
+  _id                 UUID              DEFAULT gen_random_uuid(), -- si UUID généré par PostgreSQL
+  -- _id                 UUID              NOT NULL,                  -- si UUID généré par l'application cliente
   _person_id          BIGINT            NULL,                      -- référence éventuelle à __person
   _username           VARCHAR(32)       NOT NULL,                  -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
   _password           CHAR(40)          NOT NULL,                  -- mot de passe crypté en SHA1
   _email              VARCHAR(128)      NULL,                      -- facultatif car comptes sans email pour mineurs
-  _status             SMALLINT          NULL,                      -- rôle (ex : administrateur, abonné)
+  _role               SMALLINT          NULL,                      -- ex : administrateur, abonné
   _display_name       SMALLINT          NULL,                      -- nom public choisi dans la table __person
   _language           VARCHAR(5)        NULL,                      -- choix de la langue (format code langue : ISO639-1 alpha-2 + ISO3166-1 alpha-2 ; ex : fr_FR)
   _visibility         BOOLEAN           NULL,                      -- visibilité en ligne (pour un forum)
-  _community          VARCHAR(40)       NULL,                      -- appartenance à une communauté ou cercle
+  _community          VARCHAR(40)       NULL,                      -- appartenance à une communauté, groupe ou cercle
   _site_style         BOOLEAN           NULL,                      -- option de préférence graphique pour le site__contributorpe/Paris)
   _time_zone          TIMESTAMP         NULL,                      -- selon préférence utilisateur
   _private_message    BOOLEAN           NULL,                      -- autoriser les messages privés
   _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création du profil
   _revision           TIMESTAMP         NULL,                      -- date de révision du profil
   _last_login         TIMESTAMP         NULL,                      -- dernière connection
-  CONSTRAINT __user_pkey PRIMARY KEY (_id)
-  -- CONSTRAINT __person_user_id_fkey FOREIGN KEY (_person_id) REFERENCES __person(_id)
+  CONSTRAINT __account_pkey PRIMARY KEY (_id)
+  -- CONSTRAINT __person_account_id_fkey FOREIGN KEY (_person_id) REFERENCES __person(_id)
 );
 
 CREATE TABLE __person (
   _id                 BIGSERIAL         NOT NULL,                  -- UUID ?
-  _user_id            BIGINT            NULL,                      -- référence éventuelle à __user
+  _user_id            BIGINT            NULL,                      -- référence éventuelle à __account
   _sexe               CHAR(1)           NULL,                      -- selon la norme ISO/IEC 5218 ; inconnu : 0, homme : 1, femme : 2, non applicable : 9
   _given_name         VARCHAR(32)       NULL,                      -- prénom
   _additional_name    VARCHAR(32)       NULL,                      -- deuxième prénom
@@ -242,9 +242,9 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO scriptura_user;
 -- TRUNCATE TABLE __post;
 
 -- Données de remplissage à des fins de test :
-INSERT INTO __user (_id, _person_id, _username, _password, _email, _status, _display_name, _language, _visibility, _community, _site_style, _time_zone, _private_message, _creation, _revision, _last_login)
+INSERT INTO __account (_id, _person_id, _username, _password, _email, _role, _display_name, _language, _visibility, _community, _site_style, _time_zone, _private_message, _creation, _revision, _last_login)
 VALUES
-  ('110e8400-e29b-11d4-a716-446655440000', 4, 'admin', 'root', 'admin@gmail.com', NULL, 4, 'fr_FR', true, NULL, NULL, NULL, NULL, '2005-05-07 19:37:25-07', '2017-07-17 07:08:25-07', '2020-05-03 10:10:25-07');
+  ('110e8400-e29b-11d4-a716-446655440000', 4, 'admin', 'root', 'admin@gmail.com', 1, NULL, 'fr_FR', true, NULL, NULL, NULL, NULL, '2005-05-07 19:37:25-07', '2017-07-17 07:08:25-07', '2020-05-03 10:10:25-07');
 
 INSERT INTO __person (_id, _user_id, _sexe, _given_name, _additional_name, _family_name, _usual_name, _nickname, _prefix, _suffix, _birth_date, _birth_place_id, _death_date, _death_place_id, _nationality, _place_id, _phone, _phone2, _email, _fax, _url, _occupation, _bias, _hobby, _organization_id, _award, _media_id, _devise, _description)
 VALUES

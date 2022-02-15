@@ -10,6 +10,8 @@ block main
         li Password : #{data._password}
         if data._email
           li Email : #{data._email}
+        if data._role
+          li Rôle : #{data._role}
         li Inscrit depuis le : #{data._creation}
         if data._revision
           li Dernière revision du profil le : #{data._revision}

@@ -26,7 +26,7 @@ router.use(
 )
 router.use(
   '/',
-  require(path.join(__dirname, 'user'))
+  require(path.join(__dirname, 'account'))
 )
 router.use(
   '/',
