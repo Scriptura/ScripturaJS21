@@ -6,53 +6,7 @@ block main
       header
         h1.main-heading!= data._name
       section.add-line-marks.add-drop-cap.decorative-hr
-        p!= data._content
-        .grid2.gap.media-s-grid1
-          p(lang='grc')
-            span.verse 1
-            |  Ὃ ἦν ἀπ᾽ ἀρχῆς, ὃ ἀκηκόαμεν, ὃ ἑωράκαμεν τοῖς ὀφθαλμοῖς ἡμῶν, ὃ ἐθεασάμεθα καὶ αἱ χεῖρες ἡμῶν ἐψηλάφησαν περὶ τοῦ λόγου τῆς ζωῆς – 
-            span.verse 2
-            |  καὶ ἡ ζωὴ ἐφανερώθη, καὶ ἑωράκαμεν καὶ μαρτυροῦμεν καὶ ἀπαγγέλλομεν ὑμῖν τὴν ζωὴν τὴν αἰώνιον ἥτις ἦν πρὸς τὸν πατέρα καὶ ἐφανερώθη ἡμῖν – 
-            span.verse 3
-            |  ὃ ἑωράκαμεν καὶ ἀκηκόαμεν, ἀπαγγέλλομεν καὶ ὑμῖν, ἵνα καὶ ὑμεῖς κοινωνίαν ἔχητε μεθ᾽ ἡμῶν. καὶ ἡ κοινωνία δὲ ἡ ἡμετέρα μετὰ τοῦ πατρὸς καὶ μετὰ τοῦ υἱοῦ αὐτοῦ Ἰησοῦ Χριστοῦ. 
-            span.verse 4
-            |  καὶ ταῦτα γράφομεν ἡμεῖς, ἵνα ἡ χαρὰ ἡμῶν ᾖ πεπληρωμένη. 
-            span.verse 5
-            |  Καὶ ἔστιν αὕτη ἡ ἀγγελία ἣν ἀκηκόαμεν ἀπ᾽ αὐτοῦ καὶ ἀναγγέλλομεν ὑμῖν, ὅτι ὁ θεὸς φῶς ἐστιν καὶ σκοτία ἐν αὐτῷ οὐκ ἔστιν οὐδεμία.
-          p
-            span.verse 1
-            |  Ce qui était dès le commencement, ce que nous avons entendu, ce que nous avons vu de nos yeux, ce que nous avons contemplé et (que) nos mains ont palpé du Logos de vie - 
-            span.verse 2
-            |  et la vie a été manifestée, et nous avons vu, et nous témoignons et nous vous annonçons la vie éternelle qui était auprès du Père et nous fut manifestée - 
-            span.verse 3
-            |  ce que nous avons vu et entendu, nous vous l'annonçons à vous aussi, afin que vous aussi soyez en communion avec nous. Et notre communion à nous (est) avec le Père et avec son Fils Jésus Christ. 
-            span.verse 4
-            |  Et cela nous l'écrivons, nous, afin que notre joie soit en plénitude. 
-            span.verse 5
-            |  Et tel est le message que nous avons entendu de lui et (que) nous vous annonçons : Dieu est lumière et de ténèbres en lui il n'en est aucune.
-        p Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar (note 1 : 
-          a(href='#n1' id='r1') #1
-          | ). Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis. Curabitur aliquet pellentesque diam. Integer quis metus vitae elit lobortis egestas (note 2 : 
-          a(href='#n2' id='r2') #2
-          | ). Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi vel erat non mauris convallis vehicula. Nulla et sapien. Integer tortor tellus, aliquam faucibus, convallis id, congue eu, quam. Mauris ullamcorper felis vitae erat. Proin feugiat, augue non elementum posuere, metus purus iaculis lectus, et tristique ligula justo vitae magna (note 3 : 
-          a(href='#n3' id='r3') #3
-          | ).
-        figure.figure-focus-thumbnail
-          - var img = '/medias/images/demo/OldMechanism'
-          - var alt = 'Old Mechanism'
-          include helpers/picture
-        include helpers/loremipsum
-        hr
-        .footnotes
-          p
-            a(href='#r1' id='n1') #1
-            |  Première note. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat.
-          p
-            a(href='#r2' id='n2') #2
-            |  Deuxième note. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula.
-          p
-            a(href='#r3' id='n3') #3
-            |  Troisième note. Ut velit mauris, egestas sed, gravida nec, ornare ut, mi. Aenean ut orci vel massa suscipit pulvinar. Nulla sollicitudin. Fusce varius, ligula non tempus aliquam, nunc turpis ullamcorper nibh, in tempus sapien eros vitae ligula. Pellentesque rhoncus nunc et augue. Integer id felis.
+        != data._content
       footer
         p
           svg.icon(role='img' focusable='false')
@@ -72,6 +26,7 @@ block main
           a(href='/keyword/lion') Antilope
           |  • 
           a(href='/keyword/lion') Crocodile
+          |  #{data._keywords}
         p
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#info')
