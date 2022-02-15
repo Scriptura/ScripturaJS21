@@ -2118,6 +2118,9 @@ form > [class*="grid"] > .input {
     text-align: center;
     color: rgba(255,255,255,0.2);
   }
+  .article > footer {
+    margin-top: 0.5em;
+  }
 }
 @media (min-width: 36.01em) {
   .article > section {
