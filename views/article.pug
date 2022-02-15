@@ -5,8 +5,7 @@ block main
     article.article
       header
         h1.main-heading!= data._name
-      section.add-line-marks.add-drop-cap.decorative-hr
-        != data._content
+      section.add-line-marks.add-drop-cap.decorative-hr!= data._content
       footer
         p
           svg.icon(role='img' focusable='false')

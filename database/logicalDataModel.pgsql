@@ -18,72 +18,72 @@ CREATE DATABASE scriptura_db OWNER scriptura_user;
 
 CREATE TABLE __preference (
   _id                 SMALLSERIAL       NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom du site
-  _url                VARCHAR(255)      NOT NULL, -- url du site
-  _creation           TIMESTAMP         NULL,     -- date de création du site
-  _manager_id         BIGINT            NULL,     -- id du responsable éditorial (_persons)
-  _analytics          VARCHAR(16)       NULL,     -- compte google analytics
-  _style              SMALLINT          NULL,     -- choix du style css
-  _logo_id            BIGINT            NULL,     -- logo du site (id _medias)
-  _favicon            VARCHAR(255)      NULL,     -- url de la favicon
-  _background         VARCHAR(255)      NULL,     -- url de l'image de fond
-  _default_thumbnail  VARCHAR(255)      NULL,     -- url de la miniature par défaut
-  _snowstorm          BOOLEAN           NULL,     -- effet tempête de neige sur le site
+  _name               VARCHAR(64)       NOT NULL,                  -- nom du site
+  _url                VARCHAR(255)      NOT NULL,                  -- url du site
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création du site
+  _manager_id         BIGINT            NULL,                      -- id du responsable éditorial (_persons)
+  _analytics          VARCHAR(16)       NULL,                      -- compte google analytics
+  _style              SMALLINT          NULL,                      -- choix du style css
+  _logo_id            BIGINT            NULL,                      -- logo du site (id _medias)
+  _favicon            VARCHAR(255)      NULL,                      -- url de la favicon
+  _background         VARCHAR(255)      NULL,                      -- url de l'image de fond
+  _default_thumbnail  VARCHAR(255)      NULL,                      -- url de la miniature par défaut
+  _snowstorm          BOOLEAN           NULL,                      -- effet tempête de neige sur le site
   CONSTRAINT __preference_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __user (
-  _id                 UUID              NOT NULL, -- si UUID généré par l'application cliente
+  _id                 UUID              NOT NULL,                  -- si UUID généré par l'application cliente
   -- _id                 UUID              DEFAULT gen_random_uuid(), -- si UUID généré par PostgreSQL
-  _person_id          BIGINT            NULL,     -- référence éventuelle à __person
-  _username           VARCHAR(32)       NOT NULL, -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
-  _password           CHAR(40)          NOT NULL, -- mot de passe crypté en SHA1
-  _email              VARCHAR(128)      NULL,     -- facultatif car comptes sans email pour mineurs
-  _status             SMALLINT          NULL,     -- rôle (ex : administrateur, abonné)
-  _display_name       SMALLINT          NULL,     -- nom public choisi dans la table __person
-  _language           VARCHAR(5)        NULL,     -- choix de la langue (format code langue : ISO639-1 alpha-2 + ISO3166-1 alpha-2 ; ex : fr_FR)
-  _visibility         BOOLEAN           NULL,     -- visibilité en ligne (pour un forum)
-  _community          VARCHAR(40)       NULL,     -- appartenance à une communauté ou cercle
-  _site_style         BOOLEAN           NULL,     -- option de préférence graphique pour le site__contributorpe/Paris)
-  _time_zone          TIMESTAMP         NULL,
-  _private_message    BOOLEAN           NULL,     -- autoriser les messages privés
-  _creation           TIMESTAMP         NOT NULL, -- date de création du profil -- DEFAULT CURRENT_DATE
-  _revision           TIMESTAMP         NULL,     -- date de révision du profil
-  _last_login         TIMESTAMP         NULL,     -- dernière connection
+  _person_id          BIGINT            NULL,                      -- référence éventuelle à __person
+  _username           VARCHAR(32)       NOT NULL,                  -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
+  _password           CHAR(40)          NOT NULL,                  -- mot de passe crypté en SHA1
+  _email              VARCHAR(128)      NULL,                      -- facultatif car comptes sans email pour mineurs
+  _status             SMALLINT          NULL,                      -- rôle (ex : administrateur, abonné)
+  _display_name       SMALLINT          NULL,                      -- nom public choisi dans la table __person
+  _language           VARCHAR(5)        NULL,                      -- choix de la langue (format code langue : ISO639-1 alpha-2 + ISO3166-1 alpha-2 ; ex : fr_FR)
+  _visibility         BOOLEAN           NULL,                      -- visibilité en ligne (pour un forum)
+  _community          VARCHAR(40)       NULL,                      -- appartenance à une communauté ou cercle
+  _site_style         BOOLEAN           NULL,                      -- option de préférence graphique pour le site__contributorpe/Paris)
+  _time_zone          TIMESTAMP         NULL,                      -- selon préférence utilisateur
+  _private_message    BOOLEAN           NULL,                      -- autoriser les messages privés
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création du profil
+  _revision           TIMESTAMP         NULL,                      -- date de révision du profil
+  _last_login         TIMESTAMP         NULL,                      -- dernière connection
   CONSTRAINT __user_pkey PRIMARY KEY (_id)
   -- CONSTRAINT __person_user_id_fkey FOREIGN KEY (_person_id) REFERENCES __person(_id)
 );
 
 CREATE TABLE __person (
-  _id                 BIGSERIAL         NOT NULL, -- UUID ?
-  _user_id            BIGINT            NULL,     -- référence éventuelle à __user
-  _sexe               CHAR(1)           NULL,     -- selon la norme ISO/IEC 5218 ; inconnu : 0, homme : 1, femme : 2, non applicable : 9
-  _given_name         VARCHAR(32)       NULL,     -- prénom
-  _additional_name    VARCHAR(32)       NULL,     -- deuxième prénom
-  _family_name        VARCHAR(32)       NULL,     -- nom de famille
-  _usual_name         VARCHAR(32)       NULL,     -- nom d'usage, nom d'épouse
-  _nickname           VARCHAR(32)       NULL,     -- surnom
-  _prefix             VARCHAR(32)       NULL,     -- titres et civilité
-  _suffix             VARCHAR(32)       NULL,     -- abréviation typographique postname (ex : s.j., o.p.)
-  _birth_date         DATE              NULL,     -- date de naissance
-  _birth_place_id     BIGINT            NULL,     -- lieu de naissance (id de _places)
-  _death_date         DATE              NULL,     -- date du décès
-  _death_place_id     BIGINT            NULL,     -- lieu du décès (id de _places)
-  _nationality        VARCHAR(2)        NULL,     -- nationnalité, ISO 3166-1 alpha-2
-  _place_id           BIGINT            NULL,     -- addresse (id de _places)
-  _phone              VARCHAR(32)       NULL,     -- numéro de téléphone
-  _phone2             VARCHAR(32)       NULL,     -- numéro de téléphone alternatif
-  _email              VARCHAR(128)      NULL,     -- peut être différent du email de la table _users
-  _fax                VARCHAR(32)       NULL,     -- numéro de fax
-  _url                VARCHAR(255)      NULL,     -- url représentant l'utilisateur (Linkedin, son site web...) ; limitation la longeur : une url non optimisée n'a pas de sens de nos jours
-  _occupation         VARCHAR(30)       NULL,     -- métier, profession
-  _bias               VARCHAR(30)       NULL,     -- tendance, inclinaison, alignement
-  _hobby              VARCHAR(64)       NULL,     -- centre d'intéret, passe-temps
-  _organization_id    BIGINT            NULL,     -- organisation d'appartenance (id de _organizations)
-  _award              VARCHAR(128)      NULL,     -- prix, distinction
-  _media_id           VARCHAR(255)      NULL,     -- url de l'avatar (en plus d'un gravatar sur le mail)
-  _devise             VARCHAR(100)      NULL,     -- 100 caractères max
-  _description        TEXT              NULL,     -- 800 caractères max
+  _id                 BIGSERIAL         NOT NULL,                  -- UUID ?
+  _user_id            BIGINT            NULL,                      -- référence éventuelle à __user
+  _sexe               CHAR(1)           NULL,                      -- selon la norme ISO/IEC 5218 ; inconnu : 0, homme : 1, femme : 2, non applicable : 9
+  _given_name         VARCHAR(32)       NULL,                      -- prénom
+  _additional_name    VARCHAR(32)       NULL,                      -- deuxième prénom
+  _family_name        VARCHAR(32)       NULL,                      -- nom de famille
+  _usual_name         VARCHAR(32)       NULL,                      -- nom d'usage, nom d'épouse
+  _nickname           VARCHAR(32)       NULL,                      -- surnom
+  _prefix             VARCHAR(32)       NULL,                      -- titres et civilité
+  _suffix             VARCHAR(32)       NULL,                      -- abréviation typographique postname (ex : s.j., o.p.)
+  _birth_date         DATE              NULL,                      -- date de naissance
+  _birth_place_id     BIGINT            NULL,                      -- lieu de naissance (id de _places)
+  _death_date         DATE              NULL,                      -- date du décès
+  _death_place_id     BIGINT            NULL,                      -- lieu du décès (id de _places)
+  _nationality        VARCHAR(2)        NULL,                      -- nationnalité, ISO 3166-1 alpha-2
+  _place_id           BIGINT            NULL,                      -- addresse (id de _places)
+  _phone              VARCHAR(32)       NULL,                      -- numéro de téléphone
+  _phone2             VARCHAR(32)       NULL,                      -- numéro de téléphone alternatif
+  _email              VARCHAR(128)      NULL,                      -- peut être différent du email de la table _users
+  _fax                VARCHAR(32)       NULL,                      -- numéro de fax
+  _url                VARCHAR(255)      NULL,                      -- url représentant l'utilisateur (Linkedin, son site web...) ; limitation la longeur : une url non optimisée n'a pas de sens de nos jours
+  _occupation         VARCHAR(30)       NULL,                      -- métier, profession
+  _bias               VARCHAR(30)       NULL,                      -- tendance, inclinaison, alignement
+  _hobby              VARCHAR(64)       NULL,                      -- centre d'intéret, passe-temps
+  _organization_id    BIGINT            NULL,                      -- organisation d'appartenance (id de _organizations)
+  _award              VARCHAR(128)      NULL,                      -- prix, distinction
+  _media_id           VARCHAR(255)      NULL,                      -- url de l'avatar (en plus d'un gravatar sur le mail)
+  _devise             VARCHAR(100)      NULL,                      -- 100 caractères max
+  _description        TEXT              NULL,                      -- 800 caractères max
   CONSTRAINT __person_pkey PRIMARY KEY (_id)
 );
 
@@ -91,78 +91,78 @@ CREATE TABLE __person (
 
 CREATE TABLE __organization (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom de l'organisation
-  _type               VARCHAR(30)       NULL,     -- entreprise, association, organisme publique
-  _purpose            VARCHAR(30)       NULL,     -- but de l'organisation
-  _duns               SMALLINT          NULL,     -- numéro international D-U-N-S®
-  _siret              SMALLINT          NULL,     -- pour l'Europe (le numéro TVA est référé au SIRET)
-  _brand              VARCHAR(255)      NULL,     -- marques associées
-  _place_id           BIGINT            NULL,     -- addresse
-  _email              VARCHAR(128)      NULL,     -- mail de contact
-  _phone              VARCHAR(30)       NULL,     -- numéro de téléphone
-  _phone_2            VARCHAR(30)       NULL,     -- numéro de téléphone alternatif
-  _fax                VARCHAR(30)       NULL,     -- numéro de fax
-  _url                VARCHAR(255)      NULL,     -- url représentant l'organisation
-  _media_id           BIGINT            NULL,     -- id du logo
-  _person_id          VARCHAR(255)      NULL,     -- id de personnes membre
-  _parent_id          BIGINT            NULL,     -- id d'une organisation mère le cas échéant
-  _lft                BIGINT            NULL,     -- représentation intervalaire valeur de gauche
-  _rgt                BIGINT            NULL,     -- représentation intervalaire valeur de droite
+  _name               VARCHAR(64)       NOT NULL,                  -- nom de l'organisation
+  _type               VARCHAR(30)       NULL,                      -- entreprise, association, organisme publique
+  _purpose            VARCHAR(30)       NULL,                      -- but de l'organisation
+  _duns               SMALLINT          NULL,                      -- numéro international D-U-N-S®
+  _siret              SMALLINT          NULL,                      -- pour l'Europe (le numéro TVA est référé au SIRET)
+  _brand              VARCHAR(255)      NULL,                      -- marques associées
+  _place_id           BIGINT            NULL,                      -- addresse
+  _email              VARCHAR(128)      NULL,                      -- mail de contact
+  _phone              VARCHAR(30)       NULL,                      -- numéro de téléphone
+  _phone_2            VARCHAR(30)       NULL,                      -- numéro de téléphone alternatif
+  _fax                VARCHAR(30)       NULL,                      -- numéro de fax
+  _url                VARCHAR(255)      NULL,                      -- url représentant l'organisation
+  _media_id           BIGINT            NULL,                      -- id du logo
+  _person_id          VARCHAR(255)      NULL,                      -- id de personnes membre
+  _parent_id          BIGINT            NULL,                      -- id d'une organisation mère le cas échéant
+  _lft                BIGINT            NULL,                      -- représentation intervalaire valeur de gauche
+  _rgt                BIGINT            NULL,                      -- représentation intervalaire valeur de droite
   CONSTRAINT __organization_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __place (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(60)       NULL,     -- nom pour un marker ; ne pas rendre cette donnée obligatoire (_place peut référencer un simple point de coordonnées GPS)
-  _street             VARCHAR(60)       NULL,     -- adresse
-  _postal_code        VARCHAR(16)       NULL,     -- code postal, internationaux compris
-  _locality           VARCHAR(64)       NULL,     -- localité
-  _region             VARCHAR(64)       NULL,     -- département français, cantons suisses...
-  _country            VARCHAR(64)       NULL,     -- pays
-  _location           POINT             NULL,     -- coordonnées GPS, par convention les bases de donnée utilisent (longitude, latitude) sous forme x,y et non (latitude, longitude) comme traditionnellement en cartographie, le respect de cette norme facilite les calculs sur la base @see https://postgis.net/2013/08/18/tip_lon_lat/ @note type REAL peu précis mais utilisé par OpenStreetMap sous l'alias FLOAT8, utilise aussi INT4
-  _elevation          SMALLINT          NULL,     -- altitude en mètre
-  _type               VARCHAR(30)       NULL,     -- Restaurant, bar...
-  _description        VARCHAR           NULL,     -- Informations sur l'adresse
+  _name               VARCHAR(60)       NULL,                      -- nom pour un marker ; ne pas rendre cette donnée obligatoire (_place peut référencer un simple point de coordonnées GPS)
+  _street             VARCHAR(60)       NULL,                      -- adresse
+  _postal_code        VARCHAR(16)       NULL,                      -- code postal, internationaux compris
+  _locality           VARCHAR(64)       NULL,                      -- localité
+  _region             VARCHAR(64)       NULL,                      -- département français, cantons suisses...
+  _country            VARCHAR(64)       NULL,                      -- pays
+  _location           POINT             NULL,                      -- coordonnées GPS, par convention les bases de donnée utilisent (longitude, latitude) sous forme x,y et non (latitude, longitude) comme traditionnellement en cartographie, le respect de cette norme facilite les calculs sur la base @see https://postgis.net/2013/08/18/tip_lon_lat/ @note type REAL peu précis mais utilisé par OpenStreetMap sous l'alias FLOAT8, utilise aussi INT4
+  _elevation          SMALLINT          NULL,                      -- altitude en mètre
+  _type               VARCHAR(30)       NULL,                      -- Restaurant, bar...
+  _description        VARCHAR           NULL,                      -- Informations sur l'adresse
   CONSTRAINT __place_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __post (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(255)      NOT NULL, -- titre
-  _content            TEXT              NULL,     -- contenu
-  _creation           TIMESTAMP         NOT NULL, -- date de création -- DEFAULT CURRENT_DATE
-  _revision           TIMESTAMP         NULL,     -- date de révision
-  _type               VARCHAR(255)      NULL,     -- article, page, etc...
-  _slug               VARCHAR(255)      NULL,     -- slug propre à l'article, différent de l'url canonique, celle-ci étant reconstituée à partir le l'index par exemple
-  _description        VARCHAR           NULL,     -- contenu utilisé pour la balise meta description
-  _author_id          BIGINT            NOT NULL, -- créateur du post (contributeur principal)
-  _status             SMALLINT          NOT NULL, -- publié, brouillon, refusé, poubelle
-  _comments_status    BOOLEAN           NULL,     -- commentaires activés ou non
-  _keywords           VARCHAR(255)      NULL,     -- mots-clefs pour le post
-  _medias             VARCHAR(255)      NULL,     -- medias en lien avec le post
+  _name               VARCHAR(255)      NOT NULL,                  -- titre
+  _content            TEXT              NULL,                      -- contenu
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création -- DEFAULT CURRENT_DATE
+  _revision           TIMESTAMP         NULL,                      -- date de révision
+  _type               VARCHAR(255)      NULL,                      -- article, page, etc...
+  _slug               VARCHAR(255)      NULL,                      -- slug propre à l'article, différent de l'url canonique, celle-ci étant reconstituée à partir le l'index par exemple
+  _description        VARCHAR           NULL,                      -- contenu utilisé pour la balise meta description
+  _author_id          BIGINT            NOT NULL,                  -- créateur du post (contributeur principal)
+  _status             SMALLINT          NOT NULL,                  -- publié, brouillon, refusé, poubelle
+  _comments_status    BOOLEAN           NULL,                      -- commentaires activés ou non
+  _keywords           VARCHAR(255)      NULL,                      -- mots-clefs pour le post
+  _medias             VARCHAR(255)      NULL,                      -- medias en lien avec le post
   CONSTRAINT __post_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __media (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(255)      NULL,     -- titre du media
-  _creation           TIMESTAMP         NOT NULL, -- date de création
-  _revision           TIMESTAMP         NULL,     -- date de révision
-  _type               VARCHAR(255)      NULL,     -- .jpg, .ico, .svg, .mp3, .mp4
-  _url                VARCHAR(255)      NULL,     -- url du fichier
-  _author_id          BIGINT            NOT NULL, -- auteur de l'upload
-  _posts_id           BIGINT            NULL,     -- posts en lien (id de _posts)
+  _name               VARCHAR(255)      NULL,                      -- titre du media
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création
+  _revision           TIMESTAMP         NULL,                      -- date de révision
+  _type               VARCHAR(255)      NULL,                      -- .jpg, .ico, .svg, .mp3, .mp4
+  _url                VARCHAR(255)      NULL,                      -- url du fichier
+  _author_id          BIGINT            NOT NULL,                  -- auteur de l'upload
+  _posts_id           BIGINT            NULL,                      -- posts en lien (id de _posts)
   _description        VARCHAR(255)      NULL,
   CONSTRAINT __media_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __comment (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(255)      NULL,     -- titre du commentaire
-  _creation           TIMESTAMP         NOT NULL, -- date de création -- DEFAULT CURRENT_DATE
-  _revision           TIMESTAMP         NULL,     -- date de révision
+  _name               VARCHAR(255)      NULL,                      -- titre du commentaire
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création -- DEFAULT CURRENT_DATE
+  _revision           TIMESTAMP         NULL,                      -- date de révision
   -- _author             SMALLINT          NOT NULL,
-  _post_id            SMALLINT          NOT NULL, -- post concerné
+  _post_id            SMALLINT          NOT NULL,                  -- post concerné
   CONSTRAINT __comment_pkey PRIMARY KEY (_id)
 );
 
@@ -176,62 +176,62 @@ CREATE TABLE __author ( -- table de lien entre un item et son auteur ou ses cont
 
 CREATE TABLE __keyword (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom du mot clef
+  _name               VARCHAR(64)       NOT NULL,                  -- nom du mot clef
   _slug               VARCHAR(255)      NULL,
-  _parent_id          BIGINT            NULL,     -- id du mot clef parent dans la hierarchie
-  _lft                BIGINT            NULL,     -- représentation intervalaire valeur de gauche
-  _rgt                BIGINT            NULL,     -- représentation intervalaire valeur de droite
-  _value              BIGINT            NOT NULL, -- nombre d'items concernés par le tag
+  _parent_id          BIGINT            NULL,                      -- id du mot clef parent dans la hierarchie
+  _lft                BIGINT            NULL,                      -- représentation intervalaire valeur de gauche
+  _rgt                BIGINT            NULL,                      -- représentation intervalaire valeur de droite
+  _value              BIGINT            NOT NULL,                  -- nombre d'items concernés par le tag
   CONSTRAINT __keyword_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __product (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom du produit
-  _price              SMALLINT          NULL,     -- prix du produit
-  _iso                VARCHAR(255)      NULL,     -- Numéro IBSN ou Code-barres EAN
-  _description        TEXT              NULL,     -- description du produit
-  _keywords           VARCHAR(255)      NULL,     -- mots clefs pour le produit
-  _medias             BIGINT            NULL,     -- medias en lien avec le produit
+  _name               VARCHAR(64)       NOT NULL,                  -- nom du produit
+  _price              SMALLINT          NULL,                      -- prix du produit
+  _iso                VARCHAR(255)      NULL,                      -- Numéro IBSN ou Code-barres EAN
+  _description        TEXT              NULL,                      -- description du produit
+  _keywords           VARCHAR(255)      NULL,                      -- mots clefs pour le produit
+  _medias             BIGINT            NULL,                      -- medias en lien avec le produit
   CONSTRAINT __product_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __transaction (
   _id                 BIGSERIAL         NOT NULL,
-  _name               BIGINT            NOT NULL, -- numéro de la transaction (différent de l'id)
-  _client_id          BIGINT            NOT NULL, -- client (id de _users)
-  _organization_id    BIGINT            NOT NULL, -- organisation marchande pour le produit (id de _organizations)
-  _list               VARCHAR(255)      NULL,     -- liste de l'id des produits (NULL si en cours de commande)
-  _creation           TIMESTAMP         NOT NULL, -- date de la transaction -- DEFAULT CURRENT_DATE
-  _revision           TIMESTAMP         NULL,     -- date de révision de la transaction
-  _purchase           TIMESTAMP         NULL,     -- date de validation de la transaction
-  _billing            BIGINT            NULL,     -- id de l'adresse de facturation
-  _description        TEXT              NULL,     -- description de la transaction
+  _name               BIGINT            NOT NULL,                  -- numéro de la transaction (différent de l'id)
+  _client_id          BIGINT            NOT NULL,                  -- client (id de _users)
+  _organization_id    BIGINT            NOT NULL,                  -- organisation marchande pour le produit (id de _organizations)
+  _list               VARCHAR(255)      NULL,                      -- liste de l'id des produits (NULL si en cours de commande)
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de la transaction
+  _revision           TIMESTAMP         NULL,                      -- date de révision de la transaction
+  _purchase           TIMESTAMP         NULL,                      -- date de validation de la transaction
+  _billing            BIGINT            NULL,                      -- id de l'adresse de facturation
+  _description        TEXT              NULL,                      -- description de la transaction
   CONSTRAINT __transaction_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __event (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom de l'événement
-  _begin              TIMESTAMP         NOT NULL, -- début de l'événement
-  _end                TIMESTAMP         NULL,     -- fin de l'événement
-  _description        TEXT              NULL,     -- description de l'événement
-  _creation           TIMESTAMP         NOT NULL, -- date de création de l'événement -- DEFAULT CURRENT_DATE
-  _revision           TIMESTAMP         NULL,     -- date de révision de l'événement
+  _name               VARCHAR(64)       NOT NULL,                  -- nom de l'événement
+  _begin              TIMESTAMP         NOT NULL,                  -- début de l'événement
+  _end                TIMESTAMP         NULL,                      -- fin de l'événement
+  _description        TEXT              NULL,                      -- description de l'événement
+  _creation           TIMESTAMP         DEFAULT CURRENT_TIMESTAMP, -- date de création de l'événement
+  _revision           TIMESTAMP         NULL,                      -- date de révision de l'événement
   CONSTRAINT __event_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __number_option (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom de l'option
-  _value              INT               NULL,     -- valeur
+  _name               VARCHAR(64)       NOT NULL,                  -- nom de l'option
+  _value              INT               NULL,                      -- valeur
   CONSTRAINT __number_option_pkey PRIMARY KEY (_id)
 );
 
 CREATE TABLE __text_option (
   _id                 BIGSERIAL         NOT NULL,
-  _name               VARCHAR(64)       NOT NULL, -- nom de l'option
-  _value              TEXT              NULL,     -- valeur
+  _name               VARCHAR(64)       NOT NULL,                  -- nom de l'option
+  _value              TEXT              NULL,                      -- valeur
   CONSTRAINT __text_option_pkey PRIMARY KEY (_id)
 );
 
