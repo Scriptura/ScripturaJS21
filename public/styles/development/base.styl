@@ -130,40 +130,27 @@ em
   font-style italic
 
 blockquote
-  position relative
   margin 0
   padding-left 2em
-  padding-bottom 1.5em
-  //background-color rgba(255, 255, 255, .1)
   background repeating-linear-gradient(-45deg, transparent 0 _hrSize, rgba(255, 255, 255, .1) _hrSize _hrSize * 2) no-repeat
   background-size .5em 100%
-  //border-left .5em solid rgba(255, 255, 255, .1)
-
-blockquote::after
-  content '\201C' // '\201C' '\275D' '\201D' '\275E'
-  position absolute
-  z-index -1
-  bottom -.8rem
-  left 0
-  margin-left 1.5rem
-  width 3rem
-  height 3rem
-  line-height 1
-  font-size 6em
-  color rgba(255, 255, 255, .1) //_color2
-  font-family _fontList2
-  //background-color rgba(255, 255, 255, .1)
-
-blockquote footer
-  margin-top .75em
-  margin-bottom .75em
-  //text-align right
-
-blockquote footer::before
-  content '\2014 \00A0'
-
-blockquote footer::after
-  content '.'
+  &::after
+    content '\201C' // '\201C' '\275D' '\201D' '\275E'
+    display block
+    width 3rem
+    height 3rem
+    line-height 1
+    font-size 6em
+    color rgba(255, 255, 255, .1) //_color2
+    font-family _fontList2
+  & footer
+    margin-top .75em
+    margin-bottom .75em
+    //text-align right
+    &::before
+      content '\2014 \00A0'
+    &::after
+      content '.'
 
 q
   quotes '\201C' '\201D' '\2018' '\2019' // Harmonisation des citations.

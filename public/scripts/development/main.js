@@ -572,7 +572,7 @@ const separatorSvgForHr = (() => {
 
 const addDropCap = (() => {
   const paragraphs = document.querySelectorAll('.add-drop-cap > p:first-child')
-  paragraphs.forEach(e => e.innerHTML = e.innerHTML.replace(/^(<([^>]+)>|[A-Z0-9«»"]|&amp;)/, '<span class="drop-cap">$1</span>')) // [A-Za-z0-9"]
+  paragraphs.forEach(e => e.innerHTML = e.innerHTML.replace(/([\p{Letter}])/u, '<span class="drop-cap">$1</span>'))
 })()
 
 
