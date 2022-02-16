@@ -8,7 +8,6 @@ const vv = require('../settings/variables'),
       { monthsInHumanLanguage } = require('../helpers/dates'),
       { uppercaseToFirstLetter } = require('../helpers/strings')
 
-
 const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM __post WHERE _id = $1', '1')
   .then(data => {
     const date = [day, month, year]
@@ -24,7 +23,6 @@ const getCalendarDay = async (year, month, day) => await db.one('SELECT * FROM _
   })
   .catch(error => console.log(error.message || error))
 
-
 const getCalendarMonth = async (year, month) => await db.one('SELECT * FROM __post WHERE _id = $1', '1')
   .then(data => {
     data._title = `${uppercaseToFirstLetter(monthsInHumanLanguage(month))} ${year} | ${vv.siteName}`
@@ -35,8 +33,4 @@ const getCalendarMonth = async (year, month) => await db.one('SELECT * FROM __po
   })
   .catch(error => console.log(error.message || error))
 
-
-module.exports = {
-  getCalendarDay: getCalendarDay,
-  getCalendarMonth: getCalendarMonth
-}
+module.exports = { getCalendarDay, getCalendarMonth }

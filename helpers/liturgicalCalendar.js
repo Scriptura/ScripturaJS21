@@ -268,4 +268,4 @@ const lc = liturgicalCalendar(DateTime.fromFormat('32032021', 'ddMMyyyy'), 'fran
 console.log(lc)
 */
 
-module.exports = { liturgicalCalendar: liturgicalCalendar }
+module.exports = { liturgicalCalendar }

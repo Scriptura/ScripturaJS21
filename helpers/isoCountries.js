@@ -10,4 +10,4 @@ const countries = require('i18n-iso-countries')
 
 const displayCountrie = (countrie, locale = 'fr') => countries.getName(countrie, locale)
 
-module.exports = { displayCountrie: displayCountrie }
+module.exports = { displayCountrie }

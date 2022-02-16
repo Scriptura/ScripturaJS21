@@ -44,7 +44,4 @@ const julian = year => {
   return parseInt(('0' + day).slice(-2) + ('0' + month).slice(-2), 10) // ajouter 13 jours pour la date Orthodoxe basée sur le nouveau calendrier
 }
 
-module.exports = {
-  gregorian: gregorian,
-  julian: julian
-}
+module.exports = { gregorian, julian }

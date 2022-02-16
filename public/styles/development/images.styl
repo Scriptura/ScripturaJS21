@@ -26,6 +26,7 @@ img
   //min-height 10em // @note En attendant le chargement.
   max-width 100%
   border-style none // @bugfix Remove the border on images inside links @affected IE 10.
+  user-select none // @note N'a pas pour vocation ici de "protéger" l'image, mais d'éviter la surbrillance non attendue suite à une sélection involontaire.
 
 figure
   margin 0 // @bugfix @affected All browers
@@ -124,7 +125,6 @@ figure
   max-height 100vh
   background-color #000 // @note Pour les .png transparents
   box-shadow _shadow13
-  user-select none // @note N'a pas pour vocation ici de "protéger" l'image, mais d'éviter la surbrillance non attendue suite à une sélection involontaire.
 
 .focus-off button
   bottom _gap

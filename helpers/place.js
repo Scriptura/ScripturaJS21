@@ -14,4 +14,4 @@ const placeFormat = data => {
   return data
 }
 
-module.exports = { placeFormat: placeFormat }
+module.exports = { placeFormat }

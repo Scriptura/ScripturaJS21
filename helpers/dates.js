@@ -17,8 +17,4 @@ const monthsInHumanLanguage = month => { // @todo En attendant le remplacement p
   return month
 }
 
-module.exports = {
-  dateFormat: dateFormat,
-  dateTimeFormat: dateTimeFormat,
-  monthsInHumanLanguage: monthsInHumanLanguage
-}
+module.exports = { dateFormat, dateTimeFormat, monthsInHumanLanguage }

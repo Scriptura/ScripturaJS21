@@ -22,9 +22,4 @@ const constructPrefixFullNameSuffix = (data, id) => {
   return data._prefix_full_name_suffix
 }
 
-module.exports = {
-  uppercaseToFirstLetter: uppercaseToFirstLetter,
-  lowercaseToFirstLetter: lowercaseToFirstLetter,
-  constructFullName: constructFullName,
-  constructPrefixFullNameSuffix: constructPrefixFullNameSuffix
-}
+module.exports = { uppercaseToFirstLetter, lowercaseToFirstLetter, constructFullName, constructPrefixFullNameSuffix }

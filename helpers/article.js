@@ -14,4 +14,4 @@ const articleFormat = (data) => { // Travaille sur l'initialisateur d'objet envo
   return data
 }
 
-module.exports = { articleFormat: articleFormat }
+module.exports = { articleFormat }

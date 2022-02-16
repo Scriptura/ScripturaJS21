@@ -11,7 +11,4 @@ const getAccount = async username => await db.one('SELECT * FROM __account WHERE
   .then(data => data)
   .catch(error => console.log(error.message || error))
 
-module.exports = {
-  getAccount: getAccount,
-  postAccount: postAccount
-}
+module.exports = { getAccount, postAccount }

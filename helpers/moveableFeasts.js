@@ -49,4 +49,4 @@ const moveableFeasts = data => {
   return data
 }
 
-module.exports = { moveableFeasts: moveableFeasts }
+module.exports = { moveableFeasts }

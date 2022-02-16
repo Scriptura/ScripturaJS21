@@ -19,4 +19,4 @@ const getArticle = async id => await db.one('SELECT * FROM __post WHERE _id = $1
   .then(data => articleFormat(data))
   .catch(error => console.log(error.message || error))
 
-module.exports = { getArticle: getArticle }
+module.exports = { getArticle }

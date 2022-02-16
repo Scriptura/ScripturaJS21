@@ -16,4 +16,4 @@ const personsFormat = (data, id) => { // Travaille sur l'initialisateur d'objet 
   return data
 }
 
-module.exports = { personsFormat: personsFormat }
+module.exports = { personsFormat }

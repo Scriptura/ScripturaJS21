@@ -848,6 +848,10 @@ img {
   height: auto;
   max-width: 100%;
   border-style: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 figure {
   margin: 0;
@@ -944,10 +948,6 @@ figure {
   max-height: 100vh;
   background-color: #000;
   box-shadow: 0 0 0 1000em #222;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 .focus-off button {
   bottom: 1em;

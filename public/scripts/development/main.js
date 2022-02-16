@@ -292,7 +292,7 @@ const colorInput = (() => {
 // 2. Scrool sur la demi-hauteur d'une fenêtre avant apparition de la flèche.
 
 const scrollToTop = (() => {
-  const footer = document.querySelector('footer'),
+  const footer = document.querySelector('.footer'),
         button = document.createElement('button')
   button.type = 'button'
   button.classList.add('scroll-top')
@@ -524,6 +524,7 @@ const imageFocus = (() => {
 
 })()
 
+
 // -----------------------------------------------------------------------------
 // @section     Main menu
 // @description Menu principal
@@ -559,6 +560,7 @@ const separatorSvgForHr = (() => {
   }
 })()
 */
+
 
 // -----------------------------------------------------------------------------
 // @section     Drop cap
@@ -598,6 +600,7 @@ const lineMarks = (el => {
     lineMarksAdd(el)
   }
 })()
+
 
 // -----------------------------------------------------------------------------
 // @section     Seconds to time
