@@ -4,7 +4,7 @@ const vv = require('../settings/variables')
 
 const placeFormat = data => {
   data._title = [data._name, vv.siteName].join(' | ')
-  data._name = data._name + ' <span>- localisation</span>'
+  data._name = data._name + ' <span>. localisation</span>'
   if (!data._description) {
     if (data._name) data._description = data._name // donnée obligatoire pour une page web
     if (data._postal_code) data._description = [data._description, data._postal_code].join(', ')
