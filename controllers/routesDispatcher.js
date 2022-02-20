@@ -34,6 +34,10 @@ router.use(
 )
 router.use(
   '/',
+  require(path.join(__dirname, 'keywords'))
+)
+router.use(
+  '/',
   require(path.join(__dirname, 'keyword'))
 )
 router.use(

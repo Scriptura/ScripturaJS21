@@ -8,9 +8,10 @@ block main
       section.add-line-marks.add-drop-cap.decorative-hr!= data._content
       footer
         p
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#quill')
-          |  Jacques de Voragine, o. p.
+          if (data._given_name || data._family_name)
+            svg.icon(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/utils.svg#quill')
+            | Auteur&nbsp;: #{data._given_name} #{data._family_name}
         p
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#calendar')
@@ -18,7 +19,7 @@ block main
         p.keywords
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#old-key')
-          |  Mots clefs : 
+          |  Mots clefs&nbsp;: 
           |  
           a(href='/keyword/lion') Lion
           |  • 

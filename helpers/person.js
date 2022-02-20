@@ -8,7 +8,7 @@ const vv = require('../settings/variables'),
 const personFormat = (data, id) => { // Travaille sur l'initialisateur d'objet envoyé par la db et retourne des résultats formatés pour les besoins de la page.
   data._full_name = constructFullName(data, id)
   data._title = [data._full_name, vv.siteName].join(' | ')
-  data._name = data._full_name + ' <span>. personnalité</span>'
+  data._name = data._full_name + ' <span>.&nbsp;Personnalité</span>'
   if (data._birth_date) data._birth_date = dateFormat(data._birth_date)
   if (data._death_date) data._death_date = dateFormat(data._death_date)
   if (!data._description) data._description = data._full_name // @ inclure préfixes, suffixes, date et lieu de naissance

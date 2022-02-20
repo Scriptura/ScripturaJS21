@@ -418,6 +418,9 @@ main.main-bottom-none {
   text-align: center;
   border-radius: 0.5rem 0.5rem 2px 2px;
 }
+.card h2 span {
+  color: #ff6347;
+}
 .card p {
   margin-top: 0;
   border-radius: 2px 2px 0.5rem 0.5rem;

@@ -1,0 +1,9 @@
+extends layout
+
+block main
+  main
+    h1.main-heading!= data._name
+    ul.list-stripe-links.grid3
+      each e in data
+        li
+          a(href='/keyword/' + e._slug)= e._name

@@ -2,14 +2,14 @@
 
 const express = require('express'),
       router = express.Router(),
-      { getKeyword } = require('../models/keyword')
+      { getKeywords } = require('../models/keywords')
 
-router.get('/keyword/lion', async (req, res, next) => {
-  const data = await getKeyword()
+router.get('/keywords', async (req, res, next) => {
+  const data = await getKeywords()
     .then(data => {
       console.log(data)
       if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
-      res.render('keyword', {data})
+      res.render('keywords', {data})
     })
     .catch(error => next())
 })

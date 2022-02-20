@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => { // GET home page
   res.render('index', {
     data: {
       _title: vv.siteName,
-      _name: vv.siteName + ' <span>un framework pour le web</span>',
+      _name: vv.siteName + ' <span>.&nbsp;Un framework pour le web</span>',
       _description: vv.siteName + ', page d\'accueil',
       //_site_url: process.env.PORT,
       _node_version: process.version.replace('v', ''),
