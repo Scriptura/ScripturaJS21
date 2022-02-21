@@ -448,6 +448,10 @@ main.main-bottom-none {
   display: flex;
   z-index: 1000;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .nav ul {
   width: 100%;
@@ -631,6 +635,10 @@ main.main-bottom-none {
 }
 .breadcrumb {
   background-color: #2d2d2d;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .breadcrumb ol {
   display: flex;
@@ -2158,7 +2166,7 @@ form > [class*="grid"] > .input {
   }
 }
 .drop-cap,
-.no-js .add-drop-cap > p:first-child::first-letter {
+.no-js .add-drop-cap > :not(*) + p:first-child::first-letter {
   float: left;
   margin-right: 0.2em;
   padding: 0.28em 0.2em 0.12em;

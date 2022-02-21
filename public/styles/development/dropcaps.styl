@@ -6,7 +6,7 @@ _dropCapColor2 = rgba(255, 255, 255, .05)
 // @note Les propriétés applicables au sélecteur ::first-letter varient d'un navigateur à l'autre ; la solution retenue est un wrapper en javascript 'span.dropcap' sur la première lettre.
 
 .drop-cap
-.no-js .add-drop-cap > p:first-child::first-letter
+.no-js .add-drop-cap > :not(*) + p:first-child::first-letter
   float left
   margin-right .2em
   padding .28em .2em .12em // .2em @todo Valeur spécifique à la font utilisée, à évaluer
