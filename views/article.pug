@@ -8,10 +8,10 @@ block main
       section.add-line-marks.add-drop-cap.decorative-hr!= data._content
       footer
         p
-          if (data._given_name || data._family_name)
+          if data._author
             svg.icon(role='img' focusable='false')
               use(xlink:href='/medias/sprites/utils.svg#quill')
-            | Auteur&nbsp;: #{data._given_name} #{data._family_name}
+            | Auteur&nbsp;: #{data._author}
         p
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#calendar')
