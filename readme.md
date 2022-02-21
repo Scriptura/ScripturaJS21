@@ -27,7 +27,7 @@ exports.user = 'scriptura_user'
 exports.password = 'root'
 ```
 
-Démarrez une session postgres :
+Démarrez une session postgres via le client psql :
 
 ```
 $ sudo -i -u postgres psql
@@ -40,7 +40,7 @@ Pour créez et configurez un utilisateur et une base de donnée un fichier de mo
 ```
 postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 ```
-2/ si cette méthode échoue pour un problème de droit vous pouver copier/coller directement les instructions dans un terminal connecté à postgres. Pour ce dernier cas il vosu faut découper les copier/coller selon les commandes liées à psql de celles en SQL pur.
+2/ si cette méthode échoue pour un problème de droit vous pouver copier/coller directement les instructions dans un terminal connecté à postgres via le client psql. Pour ce dernier cas il vous faut découper les copier/coller selon les commandes liées à psql de celles en SQL pur.
 
 ### Node.js/Express
 
