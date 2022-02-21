@@ -16,15 +16,15 @@ Scriptura est une application web sous Node.js utilisant :
 
 ### Postgres
 
-Dans `settings/` copiez/collez le fichier `variables-model.js`, renommez-le `variables.js` et configurez ses variables. Notamment :
+Dans `settings/` copiez/collez le fichier `variables-model.js`, renommez-le `variables.js` et vérifier/modifier ses variables en fonction de vos préférences, notamment celle liées à la base de données :
 
 ```
 // database :
 exports.host = 'localhost'
 exports.port = 5432
-exports.database = 'scripturadb'
-exports.user = 'yourusername'
-exports.password = 'yourpassword'
+exports.database = 'scriptura_db'
+exports.user = 'scriptura_user'
+exports.password = 'root'
 ```
 
 Démarrez une session postgres :
@@ -33,11 +33,14 @@ Démarrez une session postgres :
 $ sudo -i -u postgres psql
 ```
 
-Puis créez et configurez un utilisateur et une base de donnée (nommée dans notre exemple `scriptrura_db`) à l'aide du fichier de modèle logiques de données fourni :
+Pour créez et configurez un utilisateur et une base de donnée un fichier de modèle logiques de données fourni (`/database/logicalDataModel.pgsql`) là encore, vérifier et modifier le nom de la base de données et le nom de l'utilisateur selon vos préférences, ensuite vous avez deux solutions :
+
+1/ importez le fichier sous postgres avec la commande `\i` :
 
 ```
 postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 ```
+2/ si cette méthode échoue pour un problème de droit vous pouver copier/coller directement les instructions dans un terminal connecté à postgres. Pour ce dernier cas il vosu faut découper les copier/coller selon les commandes liées à psql de celles en SQL pur.
 
 ### Node.js/Express
 
