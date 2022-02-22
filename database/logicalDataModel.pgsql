@@ -155,7 +155,7 @@ CREATE TABLE __keyword (
   CONSTRAINT __keyword_pkey PRIMARY KEY (_id)
 );
 
-CREATE TABLE __post_keyword_relationship (
+CREATE TABLE __post_keyword_relationship ( -- @see https://stackoverflow.com/questions/9789736/how-to-implement-a-many-to-many-relationship-in-postgresql
   _post_id            BIGINT            NOT NULL,
   _keyword_id         BIGINT            NOT NULL,
   CONSTRAINT __post_keyword_relationship_pkey PRIMARY KEY (_post_id, _keyword_id)

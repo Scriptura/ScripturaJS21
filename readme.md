@@ -33,7 +33,7 @@ Démarrez une session postgres via le client psql :
 $ sudo -i -u postgres psql
 ```
 
-Pour créez et configurez un utilisateur et une base de donnée un fichier de modèle logiques de données fourni (`/database/logicalDataModel.pgsql`) là encore, vérifier et modifier le nom de la base de données et le nom de l'utilisateur selon vos préférences, ensuite vous avez deux solutions :
+Il vous faut créer et configurer un utilisateur et une base de donnée. Pour cela un fichier `logicalDataModel.pgsql` est fourni dans le dossier `database`. Là encore, vérifier et modifier le nom de la base de données et le nom de l'utilisateur selon vos préférences. Ensuite vous avez deux solutions :
 
 1/ importez le fichier sous postgres avec la commande `\i` :
 
@@ -58,11 +58,11 @@ $ yarn dev
 
 Une fenêtre s'ouvre alors dans votre navigateur. L'application est consultables avec un smatphone sur le port `localhost:9001` si vous disposez du wifi.
 
+Bonne exploration !
+
 ### Notes sur l'architecture
 
-Le point d'entrée de l'application se fait à partir du fichier `bin/www` qui lance la configuration de démarrage. Il renvoie ensuite au fichier `app.js` qui charge et instantie les modules communs puis renvoie les requêtes vers le dossier `controllers/`. Il récupère aussi les routes sans réponses (erreur 404) et les traite lui-même.
-
-Le dossier `controllers/` est composé de fichiers chargés de capter les routes et de mettre en lien les requêtes avec des données et une vue. Les données dynamiques sont appelées via des fichiers contenus dans le dossier `models/`. Enfin les informations obtenues sont passées à la vue via des fichiers contenus dans le dossier `views`.
+Le point d'entrée de l'application se fait à partir de `bin/www` qui lance la configuration de démarrage. Ensuite, `app.js` charge et instantie les modules communs, renvoie les requêtes vers `controllers/routesDispatcher.js` et récupère les routes sans réponses (erreur 404). Le dossier `controllers` est composé de fichiers chargés de capter les routes et de mettre en lien les requêtes avec des données et une vue. Les données dynamiques sont appelées via des fichiers contenus dans le dossier `models`. Enfin les informations obtenues sont passées à la vue via des fichiers contenus dans le dossier `views`.
 
 Par convention les fichiers travaillant au sein de la même logique MVC se doivent de tous porter le même nom :
 - `controllers/article.js`
@@ -70,7 +70,5 @@ Par convention les fichiers travaillant au sein de la même logique MVC se doive
 - `views/article.js`
 
 Il existe deux dossiers de fonctions utilitaires à la racine du projet :
-- `helpers/` rassemble les fonctions travaillant sur les données,
-- `middlewares/` rassemble les fonctions modifiant les informations des routes (err, req, res, next).
-
-Bonne exploration !
+- `helpers` rassemble les fonctions travaillant sur les données au niveau de l'application cliente (`models/` manipule les données au niveau de la base de données),
+- `middlewares` rassemble les fonctions modifiant les informations des routes (err, req, res, next).

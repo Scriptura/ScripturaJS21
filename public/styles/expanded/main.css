@@ -1940,6 +1940,10 @@ form > [class*="grid"] > .input {
   transition: all 0.2s linear;
   transition-property: translate box-shadow;
   outline: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 [class*=button]:focus-visible,
 [class*=button]:hover {
