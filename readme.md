@@ -62,7 +62,11 @@ Bonne exploration !
 
 ### Notes sur l'architecture
 
-Le point d'entrée de l'application se fait à partir de `bin/www` qui lance la configuration de démarrage. Ensuite, `app.js` charge et instantie les modules communs, renvoie les requêtes vers `controllers/routesDispatcher.js` et récupère les routes sans réponses (erreur 404). Le dossier `controllers` est composé de fichiers chargés de capter les routes et de mettre en lien les requêtes avec des données et une vue. Les données dynamiques sont appelées via des fichiers contenus dans le dossier `models`. Enfin les informations obtenues sont passées à la vue via des fichiers contenus dans le dossier `views`.
+- `bin/www`  est le point d'entrée de l'application, il lance la configuration de démarrage,
+- `app.js` charge et instantie les modules communs, renvoie les requêtes vers `controllers/routesDispatcher.js` et récupère les routes sans réponses (erreur 404),
+- `controllers` capte les routes et met en lien les requêtes avec des données et une vue,
+- `models` manipule les données au niveau de la base de données via des requêtes postgres,
+- `views` traite les informations obtenues dans des templates via le moteur de rendu pug.
 
 Par convention les fichiers travaillant au sein de la même logique MVC se doivent de tous porter le même nom :
 ```
@@ -71,5 +75,5 @@ models/article.js
 views/article.js
 ```
 Il existe deux dossiers de fonctions utilitaires à la racine du projet :
-- `helpers` rassemble les fonctions travaillant sur les données au niveau de l'application cliente (`models/` manipule les données au niveau de la base de données),
-- `middlewares` rassemble les fonctions modifiant les informations des routes (err, req, res, next).
+- `middlewares` rassemble les fonctions modifiant les informations des routes (err, req, res, next),
+- `helpers` rassemble les fonctions travaillant sur les données au niveau de l'application cliente (`models`).
