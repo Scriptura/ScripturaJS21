@@ -26,7 +26,8 @@ router.get('/', (req, res, next) => { // GET home page
       _user_os: req.useragent.os,
       _user_platform: req.useragent.platform,
       _user_browser: req.useragent.browser,
-      _user_version: req.useragent.version
+      _user_version: req.useragent.version,
+      _current: true
     }
   })
 })

@@ -22,9 +22,8 @@ svg
 img
   vertical-align middle // Évite un décalage possible de l'élément suivant
   //width 100% // @bugfix @todo Depuis l'introduction des attributs 'srcset' et 'sizes' la largeur ne doit plus dépendre de l'image par défaut
-  height auto
-  //min-height 10em // @note En attendant le chargement.
   max-width 100%
+  height auto
   border-style none // @bugfix Remove the border on images inside links @affected IE 10.
   user-select none // @note N'a pas pour vocation ici de "protéger" l'image, mais d'éviter la surbrillance non attendue suite à une sélection involontaire.
 
@@ -39,6 +38,8 @@ figure
   background-color _imagesColor1
   box-shadow _shadow11
   user-select none
+  & img
+    min-height 10vh // @note Rembourrage en attendant le chargement des images @todo Solution très insatisfaisante, en attendant 'aspect-ratio' @see https://developer.mozilla.org/fr/docs/Web/CSS/@media/aspect-ratio
   & figcaption
     padding-top .5em
     text-align center

@@ -850,8 +850,8 @@ svg {
 }
 img {
   vertical-align: middle;
-  height: auto;
   max-width: 100%;
+  height: auto;
   border-style: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -871,6 +871,9 @@ figure {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+}
+[class*=figure] img {
+  min-height: 10vh;
 }
 [class*=figure] figcaption {
   padding-top: 0.5em;

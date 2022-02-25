@@ -11,6 +11,7 @@ const placeFormat = data => {
     if (data._locality) data._description = [data._description, data._locality].join(', ')
     if (data._location) data._description = [data._description, '(latitude: ' + data._location.y + ', longitude: ' + data._location.x + ')'].join(', ')
   }
+  //data._current = true
   return data
 }
 

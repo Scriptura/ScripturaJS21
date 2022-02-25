@@ -6,34 +6,69 @@ button.cmd-nav(type='button' aria-label='Main Menu')
 nav.nav(role='navigation' aria-label='Main')
   ul
     li
-      .active
-        span.logo
-        span Scriptura
+      if data._current == 1
+        .active
+          span.logo
+          span Scriptura
+      else
+        a(href='/')
+          span.logo
+          span Scriptura
     li
-      a(href='/login')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#login')
-        | Login
+      if data._current == 2
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#login')
+          | Login
+      else
+        a(href='/login')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#login')
+          | Login
     li
-      a(href='/register')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#bookmark')
-        | Register
+      if data._current == 3
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#bookmark')
+          | Register
+      else
+        a(href='/register')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#bookmark')
+          | Register
     li
-      a(href='/account/admin')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#user')
-        | Account
+      if data._current == 4
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#user')
+          | Account
+      else
+        a(href='/account/admin')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#user')
+          | Account
     li
-      a(href='/person/1')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#frame')
-        | Person 1
+      if data._current == 5
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#frame')
+          | Person 1
+      else
+        a(href='/person/1')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#frame')
+          | Person 1
     li
-      a(href='/place/1')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#location')
-        | Place 1
+      if data._current == 6
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#location')
+          | Place 1
+      else
+        a(href='/place/1')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#location')
+          | Place 1
     li
       a(href='/article/1')
         svg.icon(role='img' focusable='false')

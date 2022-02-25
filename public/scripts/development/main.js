@@ -46,6 +46,12 @@ const getFormValidation = (() => {
   if (document.querySelector('[class*=validation]')) getScript('/scripts/formValidation.js')
 })()
 
+/*
+const getMapPlace = (() => { // @note Fonction déjà appelée via le template pug dans la partie script @todo À voir pour la page article.
+  if (document.querySelector('#map')) getScript('/scripts/mapPlace.js')
+})()
+*/
+
 
 // -----------------------------------------------------------------------------
 // @section     Utilities

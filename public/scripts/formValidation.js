@@ -5,7 +5,7 @@
 
 const formValidation = (() => {
 
-  const classMessageError = 'alert-warning'
+  const classMessageError = 'message-warning'
 
   function createMessageError(input, el, text) {
     input.classList.add('invalid')
@@ -56,7 +56,7 @@ const formValidation = (() => {
       input.addEventListener('change', e => validationExit(input), false)
     })
     function validationInit(input) {
-      const el = input.parentNode.querySelector('.alert-warning')
+      const el = input.parentNode.querySelector('.' + classMessageError)
       if (input.value.match(/@.*@/)) {
         let text = "Entrée invalide\u00a0: présence de plusieurs arobases."
         createMessageError(input, el, text)
@@ -129,7 +129,7 @@ const formValidation = (() => {
       input.addEventListener('change', e => validationExit(input), false)
     })
     function validationInit(input) {
-      const el = input.parentNode.querySelector('.alert-warning')
+      const el = input.parentNode.querySelector('.' + classMessageError)
       if (!input.value) { // @note Nettoyage du message d'erreur si au final l'utilisateur laisse le champ vide après avoir tenté de le compléter.
         removeMessageError(input, el)
       } else if (input.value.match(/(?!\+)\D/)) {

@@ -14,6 +14,7 @@ const articleFormat = (data) => { // Travaille sur l'initialisateur d'objet envo
   }
   data._creation = dateFormat(data._creation)
   data._revision = dateFormat(data._revision)
+  //data._current = true
   return data
 }
 

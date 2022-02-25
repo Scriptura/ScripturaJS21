@@ -1,18 +1,26 @@
 h2 Images
 p
   code .figure-focus
-.grid4.gap.media-xs-grid2
-  - var items = [['LotusTest', 'Lotus test'], ['FlowerMacro', 'Flower'], ['LotusMacro', 'Lotus'], ['ColorfulLeaf', 'Colorful leaf'], ['GrassLeaf', 'Grass leaf'], ['PacificCity', 'Pacific city'], ['FlowerMacro', 'Flower'], ['LotusMacro', 'Lotus'], ['ColorfulLeaf', 'Colorful leaf'], ['GrassLeaf', 'Grass leaf'], ['PacificCity', 'Pacific city'], ['FlowerMacro', 'Flower']] //['OldMechanism', 'Old Mechanism']
-  - for (var i = 0; i < items.length; i++)
+.columns4.gap.gap-bottom-none
+  -
+    const itemsImg = [
+      ['LotusTest', 'Lotus test', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+      ['OldMechanism', 'Old Mechanism', 'Vel maiores placeat est repudiandae culpa qui eaque amet non magnam asperiores non quis placeat a sunt inventore aut cumque repellendus.'],
+      ['GrassLeaf', 'Grass leaf', 'Non officiis voluptates vel quibusdam laborum non quod ducimus ut iure nulla ut veniam rerum.'],
+      ['PacificCity', 'Pacific city', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+      ['FlowerMacro', 'Flower', 'Ex eveniet consequatur aut expedita incidunt non quaerat galisum et corporis nostrum.'],
+      ['OldMechanism', 'Old Mechanism', 'Cum quisquam voluptatem est tenetur et tempora impedit qui vitae repellendus aut reprehenderit nisi.'],
+      ['PacificCity', 'Pacific city', 'Rem praesentium esse eos eaque incidunt sit doloremque inventore sed natus labore sit sapiente dolor non exercitationem dolor.'],
+      ['LotusMacro', 'Lotus', 'Aut temporibus laborum aut neque dignissimos eum delectus quia et rerum commodi et omnis vitae ab natus dolor hic repellat autem.'],
+      ['ColorfulLeaf', 'Colorful leaf', 'Qui nihil assumenda a incidunt quia ea eligendi quae et ipsam amet ea harum assumenda.'],
+      ['GrassLeaf', 'Grass leaf', 'Sit veritatis commodi et voluptate nisi ut sequi quae in provident aliquam et dolor provident deleniti placeat hic quibusdam quasi.']
+    ]
+  each item in itemsImg
     div
       figure.figure-focus
-        - var img = '/medias/images/demo/' + items[i][0]
-        - var alt = items[i][1]
+        - const img = '/medias/images/demo/' + item[0]
+        - const alt = item[1]
         include ../helpers/picture
-        figcaption Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  //-
-    div
-      figure.figure-focus
-        - var img = '/medias/images/demo/LotusTest'
-        - var alt = 'Lotus'
-        include ../helpers/picture
+        figcaption= item[2]
+
+

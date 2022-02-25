@@ -13,6 +13,7 @@ const personsFormat = (data, id) => { // Travaille sur l'initialisateur d'objet 
   if (data._death_date) data._death_date = dateFormat(data._death_date)
   if (!data._description) data._description = 'Persons list for ' + vv.siteName
   if (data._nationality) data._nationality = displayCountrie(data._nationality)
+  //data._current = true
   return data
 }
 
