@@ -21,7 +21,6 @@ block main
         //- Alternative : 'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
         //- Zoom de 0 à 18
         //- @todo yarn add color -> color.lighten(0.2)
-      script(src='/scripts/mapPlace.js')
     hr
     ul.list-stripe-links.grid3
       li
@@ -52,3 +51,12 @@ block main
         a(href='/place/13') Place 13 (request failed)
       li
         a(href='/place/xyz') Place xyz (incorrect path)
+
+block scriptsHead
+  if data._location
+    link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
+    script(src='/libraries/leaflet/leaflet.js')
+
+block scriptsFooter
+  if data._location
+    script(src='/scripts/mapPlace.js')

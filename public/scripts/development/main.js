@@ -6,17 +6,14 @@
 // -----------------------------------------------------------------------------
 
 // @documentation Performance pour les selecteurs @see https://jsbench.me/d7kbm759bb/1
-const jsDetect = (() => {
-  const html = document.documentElement // 1
-  html.classList.replace('no-js', 'js')
-})()
+const jsDetect = (() => document.documentElement.classList.replace('no-js', 'js'))()
 
 // @see https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
+
 const touchDetect = (() => {
   const html = document.documentElement,
         touch = 'ontouchstart' in window || navigator.msMaxTouchPoints // @todo Condition à réévaluer
-  if (touch) html.classList.add('touch')
-  else html.classList.add('no-touch')
+  touch ? html.classList.add('touch') : html.classList.add('no-touch')
 })()
 
 

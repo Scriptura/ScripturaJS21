@@ -19,9 +19,7 @@ html.no-js(lang='fr')
     meta(name='msapplication-TileColor', content='#da532c')
     //-#ff7a54
     meta(name='msapplication-config' content='/browserconfig.xml')
-    if data._location
-      link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
-      script(src='/libraries/leaflet/leaflet.js')
+    block scriptsHead
   body
     a(href='#main').sr-only Aller au contenu
     block menu
@@ -37,3 +35,4 @@ html.no-js(lang='fr')
       block footer
         include includes/footer
     script(src='/scripts/development/main.js' async)
+    block scriptsFooter
