@@ -23,14 +23,17 @@ html.no-js(lang='fr')
       link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
       script(src='/libraries/leaflet/leaflet.js')
   body
+    a(href='#main').sr-only Aller au contenu
     block menu
       include includes/menu
     block breadcrumb
       include includes/breadcrumb
     block main
+      main#main(role='main')
     //-block aside
       //-aside.aside aside
       //-include aside
-    block footer
-      include includes/footer
+    footer.footer(role='contentinfo')
+      block footer
+        include includes/footer
     script(src='/scripts/development/main.js' async)

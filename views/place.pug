@@ -1,7 +1,7 @@
 extends layout
 
 block main
-  main
+  main#main(role='main')
     h1.main-heading!= data._name
     ul
       if data._street && data._postal_code && data._locality
