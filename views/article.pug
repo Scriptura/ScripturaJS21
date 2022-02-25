@@ -16,6 +16,10 @@ block main
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#calendar')
           |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
+        p
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#info')
+          != data._description
         p.keywords
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#old-key')
@@ -26,8 +30,3 @@ block main
           a(href='/keyword/lion') Antilope
           |  • 
           a(href='/keyword/lion') Crocodile
-          |  #{data._keywords}
-        p
-          svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#info')
-          != data._description
