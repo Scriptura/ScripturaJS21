@@ -4,6 +4,8 @@
 // @see https://github.com/alsacreations/KNACSS/blob/v8/sass/base/_reset.scss
 // @see https://github.com/alsacreations/KNACSS/blob/master/sass/_vendor/_reboot.scss
 
+_hrSize = 5px
+
 :root
   color-scheme dark
   //font-size 1rem // Ability to the value of the root font sizes, affecting the value of `rem`. Null by default, thus nothing is generated.
@@ -51,8 +53,6 @@ a:active
 p
   margin-top .75em
   margin-bottom .75em
-
-_hrSize = 5px
 
 hr
   //clear both
@@ -187,3 +187,9 @@ template
 
 [hidden]
   display none // @bugfix Add the correct display @affected IE 10.
+
+iframe
+  overflow hidden
+  width 100%
+  height 100%
+  border none

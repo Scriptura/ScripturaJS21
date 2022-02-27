@@ -7,7 +7,7 @@ const express = require('express'),
 router.get('/imageGallery', function(req, res, next) {
   res.render('imageGallery', {
     data: {
-      _title: 'Image gallery | ' + vv.siteName,
+      _title: 'Image gallery . ' + vv.siteName,
       _name: 'Image <span>gallery</span>',
       _description: 'Image gallery for ' + vv.siteName
     }

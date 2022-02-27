@@ -470,7 +470,8 @@ const accordion = (() => {
 
 const imageFocus = (() => {
 
-  const images = document.querySelectorAll('[class*=-focus]')
+  const images = document.querySelectorAll('[class*=-focus]'),
+        targetClass = 'focus-off'
 
   const addButtonEnlarge = (() => {
     images.forEach(e => {
@@ -500,14 +501,14 @@ const imageFocus = (() => {
 
   const wrapClone = el => {
     const wrapper = document.createElement('div')
-    wrapper.classList.add('focus-off')
+    wrapper.classList.add(targetClass)
     el.after(wrapper, el)
     wrapper.appendChild(el)
     addButtonShrink()
   }
 
   const clickFocusRemove = image => {
-    const el = document.querySelector('.focus-off')
+    const el = document.querySelector('.' + targetClass)
           //, button = document.querySelector('.focus-off button')
     el.addEventListener('click', () => {
       el.parentElement.removeChild(el)
@@ -517,7 +518,7 @@ const imageFocus = (() => {
   }
 
   const addButtonShrink = () => {
-    const el = document.querySelector('.focus-off'),
+    const el = document.querySelector('.' + targetClass),
           button = document.createElement('button')
     el.appendChild(button)
     injectSvgSprite(button, 'shrink')
@@ -574,8 +575,9 @@ const separatorSvgForHr = (() => {
 // @note Ajout d'une class .dropcap sur le premier caractère du premier paragraphe enfant d'un élément comportant '.add-dropcap'.
 
 const addDropCap = (() => {
-  const paragraphs = document.querySelectorAll('.add-drop-cap > p:first-child')
-  paragraphs.forEach(e => e.innerHTML = e.innerHTML.replace(/^(\w)/, '<span class="drop-cap">$1</span>')) // /([\p{Letter}])/u
+  document.querySelectorAll('.add-drop-cap > p:first-child').forEach(
+    e => e.innerHTML = e.innerHTML.replace(/^(\w)/, '<span class="drop-cap">$1</span>')
+  )
 })()
 
 

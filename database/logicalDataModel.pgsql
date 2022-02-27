@@ -32,7 +32,7 @@ CREATE TABLE __preference (
   _background         VARCHAR(255)      NULL,                            -- url de l'image de fond
   _default_thumbnail  VARCHAR(255)      NULL,                            -- url de la miniature par défaut
   _snowstorm          BOOLEAN           NULL,                            -- effet tempête de neige sur le site
-  CONSTRAINT __preference_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __person (
@@ -64,7 +64,7 @@ CREATE TABLE __person (
   _media_id           VARCHAR(255)      NULL,                            -- url de l'avatar (en plus d'un gravatar sur le mail)
   _devise             VARCHAR(100)      NULL,                            -- 100 caractères max
   _description        TEXT              NULL,                            -- 800 caractères max
-  CONSTRAINT __person_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __account (
@@ -84,7 +84,7 @@ CREATE TABLE __account (
   _creation           TIMESTAMP         DEFAULT transaction_timestamp(), -- date de création du profil
   _revision           TIMESTAMP         NULL,                            -- date de révision du profil
   _last_login         TIMESTAMP         NULL,                            -- dernière connection
-  CONSTRAINT __account_pkey PRIMARY KEY (_id),
+  PRIMARY KEY (_id),
   FOREIGN KEY (_person_id) REFERENCES __person(_id) -- CONSTRAINT __account__person_fkey
 );
 
@@ -110,7 +110,7 @@ CREATE TABLE __organization (
   _parent_id          INT               NULL,                            -- id d'une organisation mère le cas échéant
   _lft                INT               NULL,                            -- représentation intervalaire valeur de gauche
   _rgt                INT               NULL,                            -- représentation intervalaire valeur de droite
-  CONSTRAINT __organization_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __place (
@@ -125,7 +125,7 @@ CREATE TABLE __place (
   _elevation          SMALLINT          NULL,                            -- altitude en mètre
   _type               VARCHAR(30)       NULL,                            -- Restaurant, bar...
   _description        VARCHAR           NULL,                            -- Informations sur l'adresse
-  CONSTRAINT __place_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __post (
@@ -138,11 +138,11 @@ CREATE TABLE __post (
   _slug               VARCHAR(255)      NULL,                            -- slug propre à l'article, différent de l'url canonique, celle-ci étant reconstituée à partir le l'index par exemple
   _description        VARCHAR           NULL,                            -- contenu utilisé pour la balise meta description
   _author_id          INT               NOT NULL,                        -- créateur du post (contributeur principal)
-  _status             SMALLINT          NOT NULL,                        -- publié, brouillon, refusé, poubelle
+  _status             SMALLINT          NOT NULL,                        -- brouillon, publié, refusé, corbeille
   _comments_status    BOOLEAN           NULL,                            -- commentaires activés ou non
   _keywords           VARCHAR(255)      NULL,                            -- mots-clefs pour le post
   _medias             VARCHAR(255)      NULL,                            -- medias en lien avec le post
-  CONSTRAINT __post_pkey PRIMARY KEY (_id),
+  PRIMARY KEY (_id),
   FOREIGN KEY (_author_id) REFERENCES __person(_id) -- CONSTRAINT __post__person_fkey
 );
 
@@ -154,13 +154,15 @@ CREATE TABLE __keyword (
   _lft                INT               NULL,                            -- représentation intervalaire valeur de gauche
   _rgt                INT               NULL,                            -- représentation intervalaire valeur de droite
   -- _value              INT               NOT NULL,                        -- nombre d'items concernés par le tag
-  CONSTRAINT __keyword_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
-CREATE TABLE __post_keyword_relationship ( -- @see https://stackoverflow.com/questions/9789736/#9790225
+CREATE TABLE __keyword_to_post ( -- @see https://stackoverflow.com/questions/9789736/#9790225
   _post_id                 INT            NOT NULL,
   _keyword_id              INT            NOT NULL,
-  CONSTRAINT __post_keyword_relationship_pkey PRIMARY KEY (_post_id, _keyword_id)
+  PRIMARY KEY (_post_id, _keyword_id),
+  FOREIGN KEY (_post_id) REFERENCES __post(_id) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (_keyword_id) REFERENCES __keyword(_id) ON UPDATE CASCADE
 );
 
 CREATE TABLE __media (
@@ -173,7 +175,7 @@ CREATE TABLE __media (
   _author_id          INT               NOT NULL,                        -- auteur de l'upload
   _posts_id           INT               NULL,                            -- posts en lien (id de _posts)
   _description        VARCHAR(255)      NULL,
-  CONSTRAINT __media_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __comment (
@@ -183,7 +185,7 @@ CREATE TABLE __comment (
   _revision           TIMESTAMP         NULL,
   _person_id          INT               NOT NULL,
   _post_id            SMALLINT          NOT NULL,
-  CONSTRAINT __comment_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 CREATE TABLE __product (
@@ -208,7 +210,7 @@ CREATE TABLE __transaction (
   _purchase           TIMESTAMP         NULL,                            -- date de validation de la transaction
   _billing            INT               NULL,                            -- id de l'adresse de facturation
   _description        TEXT              NULL,                            -- description de la transaction
-  CONSTRAINT __transaction_pkey PRIMARY KEY (_id),
+  PRIMARY KEY (_id),
   FOREIGN KEY (_client_id) REFERENCES __person(_id)
 );
 
@@ -220,7 +222,7 @@ CREATE TABLE __event (
   _description        TEXT              NULL,                            -- description de l'événement
   _creation           TIMESTAMP         DEFAULT transaction_timestamp(), -- date de création de l'événement
   _revision           TIMESTAMP         NULL,                            -- date de révision de l'événement
-  CONSTRAINT __event_pkey PRIMARY KEY (_id)
+  PRIMARY KEY (_id)
 );
 
 -- Supprimer la restriction aux droits d'accès par une autorisation générale sur toutes les tables :
@@ -268,7 +270,8 @@ VALUES
   (7, 'Première lettre de saint Jean <span>.&nbsp;Chapitre I', '<div class="grid2 gap media-s-grid1"><p lang="grc"><span class="verse">1</span> Ὃ ἦν ἀπ᾽ ἀρχῆς, ὃ ἀκηκόαμεν, ὃ ἑωράκαμεν τοῖς ὀφθαλμοῖς ἡμῶν, ὃ ἐθεασάμεθα καὶ αἱ χεῖρες ἡμῶν ἐψηλάφησαν περὶ τοῦ λόγου τῆς ζωῆς – <span class="verse">2</span> καὶ ἡ ζωὴ ἐφανερώθη, καὶ ἑωράκαμεν καὶ μαρτυροῦμεν καὶ ἀπαγγέλλομεν ὑμῖν τὴν ζωὴν τὴν αἰώνιον ἥτις ἦν πρὸς τὸν πατέρα καὶ ἐφανερώθη ἡμῖν – <span class="verse">3</span> ὃ ἑωράκαμεν καὶ ἀκηκόαμεν, ἀπαγγέλλομεν καὶ ὑμῖν, ἵνα καὶ ὑμεῖς κοινωνίαν ἔχητε μεθ᾽ ἡμῶν. καὶ ἡ κοινωνία δὲ ἡ ἡμετέρα μετὰ τοῦ πατρὸς καὶ μετὰ τοῦ υἱοῦ αὐτοῦ Ἰησοῦ Χριστοῦ. <span class="verse">4</span> καὶ ταῦτα γράφομεν ἡμεῖς, ἵνα ἡ χαρὰ ἡμῶν ᾖ πεπληρωμένη. <span class="verse">5</span> Καὶ ἔστιν αὕτη ἡ ἀγγελία ἣν ἀκηκόαμεν ἀπ᾽ αὐτοῦ καὶ ἀναγγέλλομεν ὑμῖν, ὅτι ὁ θεὸς φῶς ἐστιν καὶ σκοτία ἐν αὐτῷ οὐκ ἔστιν οὐδεμία. <span class="verse">6</span> Ἐὰν εἴπωμεν ὅτι κοινωνίαν ἔχομεν μετ᾽ αὐτοῦ καὶ ἐν τῷ σκότει περιπατῶμεν, ψευδόμεθα καὶ οὐ ποιοῦμεν τὴν ἀλήθειαν· <span class="verse">7</span> ἐὰν δὲ ἐν τῷ φωτὶ περιπατῶμεν ὡς αὐτός ἐστιν ἐν τῷ φωτί, κοινωνίαν ἔχομεν μετ᾽ ἀλλήλων καὶ τὸ αἷμα Ἰησοῦ τοῦ υἱοῦ αὐτοῦ καθαρίζει ἡμᾶς ἀπὸ πάσης ἁμαρτίας. <span class="verse">8</span> ἐὰν εἴπωμεν ὅτι ἁμαρτίαν οὐκ ἔχομεν, ἑαυτοὺς πλανῶμεν καὶ ἡ ἀλήθεια οὐκ ἔστιν ἐν ἡμῖν. <span class="verse">9</span> ἐὰν ὁμολογῶμεν τὰς ἁμαρτίας ἡμῶν, πιστός ἐστιν καὶ δίκαιος, ἵνα ἀφῇ ἡμῖν τὰς ἁμαρτίας καὶ καθαρίσῃ ἡμᾶς ἀπὸ πάσης ἀδικίας. <span class="verse">10</span> ἐὰν εἴπωμεν ὅτι οὐχ ἡμαρτήκαμεν, ψεύστην ποιοῦμεν αὐτὸν καὶ ὁ λόγος αὐτοῦ οὐκ ἔστιν ἐν ἡμῖν.</p><p><span class="verse">1</span> Ce qui était dès le commencement, ce que nous avons entendu, ce que nous avons vu de nos yeux, ce que nous avons contemplé et (que) nos mains ont palpé du Logos de vie &#8211; <span class="verse">2</span> et la vie a été manifestée, et nous avons vu, et nous témoignons et nous vous annonçons la vie éternelle qui était auprès du Père et nous fut manifestée &#8211; <span class="verse">3</span> ce que nous avons vu et entendu, nous vous l’annonçons à vous aussi, afin que vous aussi soyez en communion avec nous. Et notre communion à nous (est) avec le Père et avec son Fils Jésus Christ. <span class="verse">4</span> Et cela nous l’écrivons, nous, afin que notre joie soit en plénitude. <span class="verse">5</span> Et tel est le message que nous avons entendu de lui et (que) nous vous annonçons&nbsp;: Dieu est lumière et de ténèbres en lui il n’en est aucune. <span class="verse">6</span> Si nous disons que nous sommes en communion avec lui et (que) nous marchons dans les ténèbres nous mentons et nous ne pratiquons pas la vérité&nbsp;; <span class="verse">7</span> mais si nous marchons dans la lumière comme lui-même est dans la lumière, nous sommes en communion les uns avec les autres et le sang de Jésus son Fils nous purifie de tout péché. <span class="verse">8</span> Si nous disons que nous n’avons pas de péché nous nous égarons nous-mêmes et la vérité n’est pas en nous. <span class="verse">9</span> Si nous confessons nos péchés, il est fidèle et juste, afin qu’il remette nos péchés et nous purifie de toute injustice. <span class="verse">10</span> Si nous disons que nous n’avons pas péché, nous faisons (de) lui un menteur et sa parole n’est pas en nous.</p></div>', '2022-04-16 19:10:25-07', '2022-04-16 20:15:22-01', 'Traduction expérimentale pour le projet Testimoni@, testimonia.fr, Saint-Étienne, 2011.', 3, 1),
   (8, 'Ne me touche pas <span>.&nbsp;John Henry Newman</span>', '<blockquote><p>Ne me retiens pas, car je ne suis pas encore monté vers le Père. Va trouver mes frères pour leur dire que je monte vers mon Père et votre Père, vers mon Dieu et votre Dieu.</p><footer><em>Évangile selon saint Jean</em> 20, 17</footer></blockquote><p>Ne me touche pas, car voici que je me hâte de la terre au ciel&#8230; Remonter d’ici-bas, en corps et en âme, jusqu’à mon Père à vous. Alors, je vous serai présent, quoique invisible, plus réellement présent qu’aujourd’hui. Alors, vous pourrez me saisir sans une étreinte visible, mais plus réelle&#8230; Maintenant vous ne me voyez que de temps en temps&#8230; Tu m’as vu, Marie, mais tu n’as pu me retenir. Tu m’as approché, mais juste assez pour me baiser les pieds et être touchée de ma main. Tu as dit : « Oh ! si je pouvais le tenir pour de bon et ne plus le perdre ! » Ton désir se réalise. Quand je serai monté au ciel, tu ne verras plus rien, mais tu auras tout. Je serai près de toi, en toi : Sauveur, Christ, homme, Dieu, moi tout entier je serai en toi, présent toujours, à toi toujours, principe de vie et semence d’immortalité.</p>', '2022-04-16 19:10:25-07', '2022-04-16 20:15:22-01', 'John Henry Newman, Lectures on justification, in Les jours du Seigneur, pp. 186-187, Témoignage Chrétien, Poitiers, 1953.', 1, 1),
   (9, 'Impropères du Vendredi Saint', '<p><strong>R. Choeur&nbsp;: Mon peuple, que t’ai-je fait&nbsp;?<br>En quoi t’ai-je offensé&nbsp;?<br>Réponds-moi&nbsp;!</strong></p><p><strong>Choeur et assemblée&nbsp;: Ô Dieu saint, ô Dieu saint fort.<br>Ô Dieu saint, Dieu fort, immortel, prends pitié de nous.</strong></p><p>1. Mon peuple que t’ai-je fait,<br>En quoi t’ai-je offensé&nbsp;?<br>De l’esclavage d’Égypte moi je t’ai tiré,<br>Mais toi tu prépares une croix pour ton Rédempteur.</p><p>2. Quarante ans je t’ai conduit à travers le désert,<br>Je t’ai nourri de la manne,<br>Et je t’ai fait entrer dans la Terre Promise,<br>Mais toi, tu prépares une croix pour ton Rédempteur.</p><p>3. Qu’aurais-je dû faire pour toi que je n’ai fait&nbsp;?<br>Je t’ai planté moi-même comme une vigne choisie,<br>Mais toi tu m’as nourri d’amertume.<br>J’avais soif, tu m’as abreuvé de vinaigre et d’une lance<br>Tu as percé le cœur de ton Sauveur.</p><p>4. Moi, pour toi j’ai frappé l’Égypte,<br>Mais toi, tu m’as flagellé et tu m’as livré à la mort.<br>Je t’ai fait sortir d’Égypte, j’ai englouti Pharaon,<br>Mais toi, tu m’as livré aux grands prêtres.</p><p>5. Je t’ai ouvert un passage dans la mer,<br>Mais toi tu m’as ouvert le côté avec une lance.<br>J’ai marché devant toi dans une colonne de nuée,<br>Mais toi, tu m’as conduit devant Pilate.</p><p>6. Quand tu étais dans le désert, je t’ai nourri de la manne,<br>Mais toi, tu m’as frappé au visage et flagellé.<br>J’ai fait jaillir l’eau du rocher et je t’ai sauvé,<br>Mais toi, tu m’abreuves de fiel et de vinaigre.</p><p>7. Moi, pour toi j’ai frappé les rois de Canaan,<br>Mais toi, tu m’as frappé d’un roseau.<br>Moi, par ma toute puissance, je t’ai élevé, exalté,<br>Mais toi, tu m’as élevé et cloué sur le bois de la Croix.</p>', '2022-04-16 19:10:25-07', '2022-04-16 20:15:22-01', 'Les Improperia sont une partie de l’office de l’après-midi du Vendredi saint dans l’Église catholique romaine. Le mot latin improperium signifie « reproche ». Les Impropères sont les « reproches » du Christ contre son peuple, qui, en échange de toutes les faveurs accordées par Dieu, et en particulier pour l’avoir délivré de la servitude en Égypte et l’avoir conduit sain et sauf dans la Terre promise, lui a infligé les ignominies de la Passion. Cette thématique a longtemps été rattachée à celle du « peuple déicide ».', 4, 1),
-  (10, 'Éveille-toi, ô toi qui dors', '<h2>Homélie ancienne pour le grand et saint Samedi<a href="#index0" class="anchor"></a><span id="index0"></span></h2><p>Que se passe-t-il&nbsp;? Aujourd’hui, grand silence sur la terre&nbsp;; grand silence et ensuite solitude parce que le roi sommeille. <em>La terre a tremblé et elle s’est apaisée</em>, parce que Dieu s’est endormi dans la chair et il a évéillé ceux qui dorment depuis les origines. Dieu est mort dans la chair et le séjour des morts s’est mis à trembler. [&#8230;]</p><p>C’est le premier homme qu’il va chercher, comme la brebis perdue. Il veut aussi <em>visiter ceux qui demeurent dans les ténèbres et dans l’ombre de la mort</em>. Oui c’est vers Adam captif, en même temps que vers Eve, captive elle aussi, que Dieu se dirige, et son Fils avec lui, pour les délivrer de leurs douleurs. [&#8230;]</p><p>Le Seigneur s’est avancé vers eux, muni de la croix, l’arme de sa victoire. Lorsqu’il le vit, Adam, le premier homme, se frappant la poitrine dans sa stupeur, s’écria vers tous les autres&nbsp;: « Mon Seigneur avec nous tous&nbsp;! » Et le Christ répondit à Adam « Et avec ton esprit&nbsp;». Il le prend par la main et le relève en disant&nbsp;: <em>Éveille-toi, ô toi qui dors, relève-toi d’entre les morts, et le Christ t’illuminera</em>.</p><p>« C’est moi ton Dieu, qui pour toi, suis devenu ton fils&nbsp;; c’est moi qui, pour toi et pour tes descendants, te parle maintenant et qui, par ma puissance, ordonne à ceux qui sont dans tes chaînes&nbsp;: Sortez. À ceux qui sont endormis&nbsp;: Relevez-vous ».</p><p>« Je te l’ordonne&nbsp;: <em>Éveille-toi, ô toi qui dors</em>, je ne t’ai pas crée pour que tu demeures captif du séjour des morts. Relève-toi d’entre les morts&nbsp;: moi, je suis la vie des morts. Lève-toi, œuvre de mes mains&nbsp;; lève-toi, mon semblable, qui as été créé à mon image. Eveille-toi, sortons d’ici. Car tu es en moi, et moi en toi, nous sommes une seule personne indivisible ».</p><p>« C’est pour toi que moi, ton Dieu, je suis devenu ton fils&nbsp;; c’est pour toi que moi, le Maitre, j’ai pris ta forme d’esclavage&nbsp;; c’est pour toi que moi, qui domine les cieux, je suis venu sur la terre, et au-dessous de la terre&nbsp;; c’est pour toi, l’homme, que je suis devenu <em>comme un homme abandonné, libre entre les morts</em>&nbsp;; c’est pour toi, qui es sorti du jardin, que j’ai été livré aux juifs dans un jardin et que j’ai été crucifié dans un jardin ».</p><p>« Vois les crachats sur mon visage&nbsp;; c’est pour toi que je les ai subis afin de te ramener à ton premier souffle de vie. Vois les soufflets sur mes joues&nbsp;: je les ai subis pour rétablir ta forme défigurée afin de la restaurer à mon image ».</p><p>« Vois la flagellation sur mon dos, que j’ai subie pour éloigner le fardeau de tes péchés qui pesait sur ton dos. Vois mes mains solidement clouées au bois, à cause de toi qui as péché en tendant la main vers le bois ». [&#8230;]</p><p>« Je me suis endormi sur la croix, et la lance a pénétré dans mon côté, à cause de toi qui t’es endormi dans le paradis et, de ton côté, tu as donné naissance à Eve. Mon côté a guéri la douleur de ton côté&nbsp;; mon sommeil va te tirer du sommeil des enfers. Ma lance a arrêté la lance qui se tournait vers toi ».</p><p>« <em>Lève-toi, partons d’ici</em>. L’ennemi t’a fait sortir de la terre du paradis&nbsp;; moi je ne t’installerai plus dans le paradis, mais sur un trône célèste. Je t’ai écarté de l’arbre symbolique de la vie&nbsp;; mais voici que moi, qui suis la vie, je ne fais qu’un avec toi. J’ai posté les cherubins pour qu’ils te gardent comme un serviteur&nbsp;; je fais maintenant que les chérubins t’adorent comme un Dieu ». [&#8230;]</p><p>« Le trône des chérubins est préparé, les porteurs sont alertés, le lit nuptial est dressé, les aliments sont apprêtés, les tentes et les demeures éternelles le sont aussi. Les trésors du bonheur sont ouverts et le royaume des cieux est prêt de toute éternité ».</p>', '2022-04-16 19:10:25-07', '2022-04-16 20:15:22-01', 'Office des lectures pour le Samedi Saint, origine inconnue.', 2, 1);
+  (10, 'Éveille-toi, ô toi qui dors', '<h2>Homélie ancienne pour le grand et saint Samedi<a href="#index0" class="anchor"></a><span id="index0"></span></h2><p>Que se passe-t-il&nbsp;? Aujourd’hui, grand silence sur la terre&nbsp;; grand silence et ensuite solitude parce que le roi sommeille. <em>La terre a tremblé et elle s’est apaisée</em>, parce que Dieu s’est endormi dans la chair et il a évéillé ceux qui dorment depuis les origines. Dieu est mort dans la chair et le séjour des morts s’est mis à trembler. [&#8230;]</p><p>C’est le premier homme qu’il va chercher, comme la brebis perdue. Il veut aussi <em>visiter ceux qui demeurent dans les ténèbres et dans l’ombre de la mort</em>. Oui c’est vers Adam captif, en même temps que vers Eve, captive elle aussi, que Dieu se dirige, et son Fils avec lui, pour les délivrer de leurs douleurs. [&#8230;]</p><p>Le Seigneur s’est avancé vers eux, muni de la croix, l’arme de sa victoire. Lorsqu’il le vit, Adam, le premier homme, se frappant la poitrine dans sa stupeur, s’écria vers tous les autres&nbsp;: « Mon Seigneur avec nous tous&nbsp;! » Et le Christ répondit à Adam « Et avec ton esprit&nbsp;». Il le prend par la main et le relève en disant&nbsp;: <em>Éveille-toi, ô toi qui dors, relève-toi d’entre les morts, et le Christ t’illuminera</em>.</p><p>« C’est moi ton Dieu, qui pour toi, suis devenu ton fils&nbsp;; c’est moi qui, pour toi et pour tes descendants, te parle maintenant et qui, par ma puissance, ordonne à ceux qui sont dans tes chaînes&nbsp;: Sortez. À ceux qui sont endormis&nbsp;: Relevez-vous ».</p><p>« Je te l’ordonne&nbsp;: <em>Éveille-toi, ô toi qui dors</em>, je ne t’ai pas crée pour que tu demeures captif du séjour des morts. Relève-toi d’entre les morts&nbsp;: moi, je suis la vie des morts. Lève-toi, œuvre de mes mains&nbsp;; lève-toi, mon semblable, qui as été créé à mon image. Eveille-toi, sortons d’ici. Car tu es en moi, et moi en toi, nous sommes une seule personne indivisible ».</p><p>« C’est pour toi que moi, ton Dieu, je suis devenu ton fils&nbsp;; c’est pour toi que moi, le Maitre, j’ai pris ta forme d’esclavage&nbsp;; c’est pour toi que moi, qui domine les cieux, je suis venu sur la terre, et au-dessous de la terre&nbsp;; c’est pour toi, l’homme, que je suis devenu <em>comme un homme abandonné, libre entre les morts</em>&nbsp;; c’est pour toi, qui es sorti du jardin, que j’ai été livré aux juifs dans un jardin et que j’ai été crucifié dans un jardin ».</p><p>« Vois les crachats sur mon visage&nbsp;; c’est pour toi que je les ai subis afin de te ramener à ton premier souffle de vie. Vois les soufflets sur mes joues&nbsp;: je les ai subis pour rétablir ta forme défigurée afin de la restaurer à mon image ».</p><p>« Vois la flagellation sur mon dos, que j’ai subie pour éloigner le fardeau de tes péchés qui pesait sur ton dos. Vois mes mains solidement clouées au bois, à cause de toi qui as péché en tendant la main vers le bois ». [&#8230;]</p><p>« Je me suis endormi sur la croix, et la lance a pénétré dans mon côté, à cause de toi qui t’es endormi dans le paradis et, de ton côté, tu as donné naissance à Eve. Mon côté a guéri la douleur de ton côté&nbsp;; mon sommeil va te tirer du sommeil des enfers. Ma lance a arrêté la lance qui se tournait vers toi ».</p><p>« <em>Lève-toi, partons d’ici</em>. L’ennemi t’a fait sortir de la terre du paradis&nbsp;; moi je ne t’installerai plus dans le paradis, mais sur un trône célèste. Je t’ai écarté de l’arbre symbolique de la vie&nbsp;; mais voici que moi, qui suis la vie, je ne fais qu’un avec toi. J’ai posté les cherubins pour qu’ils te gardent comme un serviteur&nbsp;; je fais maintenant que les chérubins t’adorent comme un Dieu ». [&#8230;]</p><p>« Le trône des chérubins est préparé, les porteurs sont alertés, le lit nuptial est dressé, les aliments sont apprêtés, les tentes et les demeures éternelles le sont aussi. Les trésors du bonheur sont ouverts et le royaume des cieux est prêt de toute éternité ».</p>', '2022-04-16 19:10:25-07', '2022-04-16 20:15:22-01', 'Office des lectures pour le Samedi Saint, origine inconnue.', 2, 1),
+  (11, 'Vidéo YouTube en shortcode', '{{https://www.youtube.com/watch?v=vw61gCe2oqI}} <hr> {{https://www.youtube.com/watch?v=TJo-xajORwY}}', '2022-02-27 00:43:06.596868+01', '2022-02-27 00:45:37.371197+01', 'Test de shortcodes pour les vidéos YouTube.', '1', '1');
 
 INSERT INTO __keyword (_name, _slug)
 VALUES
@@ -293,7 +296,7 @@ VALUES
   ('Flamant rose', 'flamant-rose'),
   ('Guépard', 'guepard');
 
-INSERT INTO __post_keyword_relationship (_post_id, _keyword_id)
+INSERT INTO __keyword_to_post (_post_id, _keyword_id)
 VALUES
   (1, 1),
   (1, 2),
