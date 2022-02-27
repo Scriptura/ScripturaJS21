@@ -57,6 +57,7 @@ block scriptsHead
     link(rel='stylesheet' href='/libraries/leaflet/leaflet.css')
     script(src='/libraries/leaflet/leaflet.js')
 
-block scriptsFooter
-  if data._location
-    script(src='/scripts/mapPlace.js')
+//-
+  block scriptsFooter
+    if data._location
+      script(src='/scripts/mapPlace.js')

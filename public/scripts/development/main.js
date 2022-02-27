@@ -46,11 +46,13 @@ const getFormValidation = (() => {
   if (document.querySelector('[class*=validation]')) getScript('/scripts/formValidation.js')
 })()
 
-/*
-const getMapPlace = (() => { // @note Fonction déjà appelée via le template pug dans la partie script @todo À voir pour la page article.
+const getMapPlace = (() => {
   if (document.querySelector('#map')) getScript('/scripts/mapPlace.js')
 })()
-*/
+
+const getYoutubeVideo = (() => {
+  if (document.querySelector('.thumbnail-youtube')) getScript('/scripts/youtubeVideo.js')
+})()
 
 
 // -----------------------------------------------------------------------------
@@ -509,10 +511,9 @@ const imageFocus = (() => {
 
   const clickFocusRemove = image => {
     const el = document.querySelector('.' + targetClass)
-          //, button = document.querySelector('.focus-off button')
     el.addEventListener('click', () => {
       el.parentElement.removeChild(el)
-      document.body.removeAttribute('style') // document.body.style.overflow = ''
+      document.body.removeAttribute('style')
       image.querySelector('button').focus() // focus sur l'image cliquée au départ
     })
   }

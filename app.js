@@ -1,7 +1,7 @@
 'use strict'
 
 const vv = require('./settings/variables'),
-      createError = require('http-errors'),
+      //createError = require('http-errors'),
       path = require('path'),
       express = require('express'),
       helmet = require('helmet'),
@@ -27,13 +27,12 @@ const vv = require('./settings/variables'),
 
 // Protection des en-têtes HTTP
 //@see https://helmetjs.github.io/
-
-//app.use(helmet())
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self' 'unsafe-inline' api.mapbox.com"],
-      imgSrc: ["'self' data: api.mapbox.com"] // autorisation des images tierces
+      imgSrc: ["'self' data: api.mapbox.com", "'self' data: img.youtube.com"],
+      frameSrc: ["'self' data: *.youtube.com"]
     },
   })
 )

@@ -1,11 +1,7 @@
--- @note pour le format @see https://codebeautify.org/sqlformatter
+-- @note Pour le format SQL utlisé @see https://codebeautify.org/sqlformatter
+
 -- Sélectionner l'article avec l'ID n°1 :
-SELECT
-    *
-FROM
-    __post
-WHERE
-    _id = 1;
+SELECT * FROM __post WHERE _id = 1;
 
 -- Auteur de l'article :
 SELECT
@@ -37,12 +33,7 @@ FROM
     AND __post._id = 1;
 
 -- Nom d'un mot clé via son slug :
-SELECT
-    _name
-FROM
-    __keyword
-WHERE
-    _slug = 'lion';
+SELECT _name FROM __keyword WHERE _slug = 'lion';
 
 -- Informations de base des 100 derniers articles via le slug "lion" :
 SELECT
@@ -71,10 +62,5 @@ FROM
 WHERE
     LOWER(_given_name) LIKE LOWER('%Jeanne%'); -- @note Suppression de la sensibilité à la case.
 
--- updater le contenu d'un post :
-UPDATE
-    __post
-SET
-    _content = 'nouveauContenu'
-WHERE
-    _id = 11;
+-- updater le contenu d'un article :
+UPDATE __post SET _content = 'nouveauContenu' WHERE _id = 1;
