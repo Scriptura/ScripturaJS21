@@ -2159,7 +2159,7 @@ form > [class*="grid"] > .input {
     padding: 4em 6em;
     box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
   }
-  .article .sticky {
+  .article > footer > div {
     position: -webkit-sticky;
     position: sticky;
     top: 2em;
