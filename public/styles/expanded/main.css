@@ -2159,6 +2159,11 @@ form > [class*="grid"] > .input {
     padding: 4em 6em;
     box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
   }
+  .article .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 2em;
+  }
 }
 @media (min-width: 36.01em) and (max-width: 90.01em) {
   .article > footer {
