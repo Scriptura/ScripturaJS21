@@ -22,7 +22,7 @@ const touchDetect = (() => {
 // @description Appel de scripts
 // -----------------------------------------------------------------------------
 
-const getScript = url => new Promise((resolve, reject) => { // @see https://stackoverflow.com/questions/16839698#61903296
+const getScript = (url, hook = 'footer') => new Promise((resolve, reject) => { // @see https://stackoverflow.com/questions/16839698#61903296
   const script = document.createElement('script')
   script.src = url
   script.async = 1
@@ -33,14 +33,10 @@ const getScript = url => new Promise((resolve, reject) => { // @see https://stac
     script.onload = script.onreadystatechange = null
     resolve()
   }
-  document.body.appendChild(script)
+  if (hook == 'head') document.head.appendChild(script)
+  else if (hook == 'footer') document.body.appendChild(script)
+  else console.log('Error: the choice of the html tag for the hook is not correct.')
 })
-
-
-// -----------------------------------------------------------------------------
-// @section     Form validation
-// @description Validation des formulaires
-// -----------------------------------------------------------------------------
 
 const getFormValidation = (() => {
   if (document.querySelector('[class*=validation]')) getScript('/scripts/formValidation.js')
