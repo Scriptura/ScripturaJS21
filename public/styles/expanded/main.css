@@ -1074,7 +1074,8 @@ audio:not([controls]) {
   width: 100%;
   height: 100vh;
   margin: auto;
-  background-color: #000;
+  background-color: #e6e4e0;
+  overflow: hidden;
 }
 :root .map .leaflet-control {
   border: none;
