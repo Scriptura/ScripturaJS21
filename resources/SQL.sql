@@ -65,4 +65,5 @@ WHERE
 -- updater le contenu d'un article :
 UPDATE __post SET _content = 'nouveauContenu' WHERE _id = 1;
 
+-- updater plusieurs item sur un article :
 UPDATE __post SET _name = 'a nom', _content = 'un contenu', _description='une description' WHERE _id = 1;

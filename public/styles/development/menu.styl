@@ -9,7 +9,7 @@ _menuColor3 = _color2
 .nav
   position relative
   display flex
-  z-index 1000
+  z-index 2000 // @note Permet de passer au-dessus de certains éléments définis par des sources externes, comme les Maps Leaflet.
   //height _menuSize
   //font-size 1em
   box-shadow _shadow2
@@ -112,7 +112,7 @@ _menuColor3 = _color2
     position absolute
     //top 0
     right 0
-    z-index 1001
+    z-index 2001
     width _menuSize
     height _menuSize
     padding (_menuSize / 10)

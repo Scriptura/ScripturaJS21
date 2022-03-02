@@ -45,8 +45,8 @@ const getScripts = (() => {
   if (document.querySelector('[class*=pre]')) getScript('/scripts/codeBlock.js')
   if (document.querySelector('.input [type=password]')) getScript('/scripts/readablePassword.js')
   if (document.querySelector('[class*=add-line-marks]')) getScript('/scripts/lineMark.js')
-  if (document.querySelector('#map')) getScript('/scripts/mapPlace.js')
-  if (document.querySelector('.thumbnail-youtube')) getScript('/scripts/youtubeVideo.js')
+  if (document.querySelector('[class*=map]')) getScript('/scripts/mapPlace.js')
+  if (document.querySelector('[class*=thumbnail-youtube]')) getScript('/scripts/youtubeVideo.js')
 })()
 
 

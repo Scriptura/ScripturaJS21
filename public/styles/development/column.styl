@@ -1,54 +1,54 @@
-[class^=columns]
+[class^=column]
   column-gap 0
   position relative
 
-[class^=columns] > *
+[class^=column] > *
   display inline-block
   width 100%
   word-wrap break-word
 
 @media (max-width _sizeXS)
 
-  .sizeXS-columns2
+  .sizeXS-column2
     column-count 2
 
 @media (min-width _sizeXS)
 
-  .columns2
-  .columns3
-  .columns4
+  .column2
+  .column3
+  .column4
     column-count 2
 
-  .columns5
-  .columns6
+  .column5
+  .column6
     column-count 3
 
 @media (min-width _sizeS)
 
-  .columns3
-  .columns4
+  .column3
+  .column4
     column-count 3
 
-  .columns5
-  .columns6
+  .column5
+  .column6
     column-count 4
 
 @media (min-width _sizeL)
 
-  .columns4
+  .column4
     column-count 4
 
-  .columns5
+  .column5
     column-count 5
 
-  .columns6
+  .column6
     column-count 6
 
-[class^=columns].gap
+[class^=column].gap
   column-gap _gap
 
-[class^=columns].gap > :not(hr) // @todo En test... // [class^=columns].gap > *
+[class^=column].gap > :not(hr) // @todo En test... // [class^=column].gap > *
   margin-bottom _gap
 
-//[class^=columns].vertical-gap
+//[class^=column].vertical-gap
 //  column-gap _gap

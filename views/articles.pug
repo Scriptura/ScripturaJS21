@@ -3,7 +3,7 @@ extends layout
 block main
   main#main(role='main').main-bottom-none
     h1.main-heading!= data._name
-    .columns4.gap
+    .column4.gap
       each e in data
         article.card
           h2.h2!= e._name
