@@ -44,6 +44,7 @@ const getScripts = (() => {
   if (document.querySelector('[class*=accordion]')) getScript('/scripts/accordion.js')
   if (document.querySelector('[class*=pre]')) getScript('/scripts/codeBlock.js')
   if (document.querySelector('.input [type=password]')) getScript('/scripts/readablePassword.js')
+  if (document.querySelector('[class*=add-line-marks]')) getScript('/scripts/lineMark.js')
   if (document.querySelector('#map')) getScript('/scripts/mapPlace.js')
   if (document.querySelector('.thumbnail-youtube')) getScript('/scripts/youtubeVideo.js')
 })()
@@ -271,61 +272,18 @@ const mainMenu = (() => {
 
 
 // -----------------------------------------------------------------------------
-// @section     Separator SVG
-// @description Séparateur pour les balises <hr/>
-// -----------------------------------------------------------------------------
-/*
-const separatorSvgForHr = (() => {
-  const hrs = document.querySelectorAll('hr.hr')
-  let idsprite = '195v'
-  for (const hr of hrs) {
-    if(hr.dataset.id) idsprite = hr.dataset.id
-    const separator = `<svg role="separator" class="separator"><use xlink:href="/medias/sprites/silos.svg#${idsprite}"></use></svg>`
-    hr.insertAdjacentHTML('afterEnd', separator)
-    hr.remove()
-  }
-})()
-*/
-
-
-// -----------------------------------------------------------------------------
 // @section     Drop cap
 // @description Création de lettrines
 // -----------------------------------------------------------------------------
 
 // @note Les propriétés applicables au pseudo-élément ::first-letter varient d'un navigateur à l'autre ; la solution retenue est un wrapper en javascript 'span.dropcap' sur la première lettre.
 // @note Ajout d'une class .dropcap sur le premier caractère du premier paragraphe enfant d'un élément comportant '.add-dropcap'.
+// @todo À convertir côté backend dans un helper.
 
 const addDropCap = (() => {
   document.querySelectorAll('.add-drop-cap > p:first-child').forEach(
     e => e.innerHTML = e.innerHTML.replace(/^(\w)/, '<span class="drop-cap">$1</span>')
   )
-})()
-
-
-// -----------------------------------------------------------------------------
-// @section     Line marks
-// @description Création de marqueurs
-// -----------------------------------------------------------------------------
-
-const lineMarks = (el => {
-  // @note Pour un meilleur contrôle il est préférable de définir explicitement les items plutôt que d'utiliser le sélecteur universel '*' et de procéder par exclusion.
-  const els = document.querySelectorAll('.add-line-marks > p, .add-line-marks > h2, .add-line-marks > h3, .add-line-marks > h4, .add-line-marks > h5, .add-line-marks > h6, .add-line-marks > blockquote, .add-line-marks > ul, .add-line-marks > ol, .add-line-marks > [class*=grid]')
-  const lineMarksAdd = el => {
-    const a = document.createElement('a')
-    a.setAttribute('name', 'mark' + i)
-    a.setAttribute('href', '#mark' + i)
-    const text = document.createTextNode(i)
-    a.appendChild(text)
-    a.classList.add('line-mark')
-    el.appendChild(a)
-  }
-  let i = 0
-  for (const el of els) {
-    i++
-    //if (i % 5 === 0) {}
-    lineMarksAdd(el)
-  }
 })()
 
 
@@ -404,15 +362,3 @@ const footnotes = (() => {
   }
 })()
 */
-
-
-// -----------------------------------------------------------------------------
-// @section     Window onload
-// @description Scripts lancés lorsque le chargement de la page est terminé
-// -----------------------------------------------------------------------------
-
-//window.onload = () => {
-  //accordion()
-  //jsDetect()
-  //touchDetect()
-//}
