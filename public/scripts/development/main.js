@@ -336,8 +336,7 @@ const audioPlayer = (() => {
 // -----------------------------------------------------------------------------
 
 const progressBar = (() => {
-  const progressBars = document.querySelectorAll('.progress-bar')
-  progressBars.forEach(e => {
+  document.querySelectorAll('.progress-bar').forEach(e => {
     e.insertAdjacentHTML('afterbegin', '<div></div>')
     e.querySelector('div').style.width = e.dataset.value + '%'
   })

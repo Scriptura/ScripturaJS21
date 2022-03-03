@@ -1,3 +1,18 @@
+'use strict'
+
+const getLeaflet = (() => {
+  const script = document.createElement('script')
+  script.setAttribute('src', '/libraries/leaflet/leaflet.js')
+  document.head.appendChild(script)
+})()
+
+const getMapStyles = (() => {
+  const styles = document.createElement('link')
+  styles.setAttribute('rel', 'stylesheet')
+  styles.setAttribute('href', '/libraries/leaflet/leaflet.css')
+  document.head.appendChild(styles)
+})()
+
 const map = (() => {
   let markers = [];
 
