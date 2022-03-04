@@ -13,8 +13,16 @@ const getMapStyles = (() => { //
   document.head.appendChild(styles)
 })()
 
+const mapsIdAdd = (() => { // @note Affecter ou réafecter une id pour chaque carte afin d'éviter les conflits.
+  let i = 1
+  document.querySelectorAll('.map').forEach(function(map) {
+    map.id = 'map' + i
+    i++
+  })
+})()
+
 const maps = (() => {
-  document.querySelectorAll('.map').forEach(function(item){
+  document.querySelectorAll('.map').forEach(function(item) {
     const id = item.id
     const map = () => {
       const el = document.getElementById(id),
