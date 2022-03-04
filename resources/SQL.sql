@@ -30,8 +30,8 @@ SELECT
     __keyword._slug AS _keyword_slug
 FROM
     __post
-    INNER JOIN __keyword ON __post._id = __keyword._id
-    LEFT JOIN __keyword_to_post ON _post_id = _keyword_id
+    INNER JOIN __keyword_to_post ON __post._id = __keyword_to_post._post_id
+    INNER JOIN __keyword ON __keyword_to_post._keyword_id = __keyword._id
 WHERE
     __post._id = 1
 ORDER BY
