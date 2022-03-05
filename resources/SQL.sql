@@ -26,6 +26,8 @@ WHERE
 -- Articles et ses mots clés (avec table many to many) :
 SELECT
     __post.*,
+    -- __post._id,
+    -- __post._name,
     __keyword._name AS _keyword_name,
     __keyword._slug AS _keyword_slug
 FROM
@@ -80,7 +82,12 @@ SET
 WHERE
     _id = 1;
 
--- updater l'article n°12 :
+-- insérer un article :
+INSERT INTO __post (_id, _name, _content, _creation, _revision, _description, _author_id, _status)
+VALUES
+  (13, 'Images en shortcodes', '{{http://localhost:9001/medias/images/demo/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/images/demo/OldMechanism.jpg}}', '2020-04-16 19:10:25-07', '2020-04-16 20:15:22-01', 'Test de shortcodes pour les images.', 2, 1);
+
+-- updater un article :
 UPDATE
     __post
 SET
