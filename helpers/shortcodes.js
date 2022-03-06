@@ -4,7 +4,7 @@ const shortcodes = (data) => {
 
   data = data.replace( // Images
     /{{\s*(https?):\/\/(.*?)\/medias\/images\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*?}}/gi,
-   `<figure class="figure-focus-thumbnail"><picture><img src="$1://$2/medias/images/$3.$4" loading="lazy" alt="Old Mechanism"></picture></figure>`
+   `<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/$3.$4" loading="lazy" alt="Old Mechanism"></picture></figure>`
   )
 
   data = data.replace( // Map Leaflet

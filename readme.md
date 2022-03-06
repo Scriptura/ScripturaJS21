@@ -33,14 +33,14 @@ Démarrez une session postgres via le client psql :
 $ sudo -i -u postgres psql
 ```
 
-Il vous faut créer et configurer un utilisateur et une base de donnée. Pour cela un fichier `logicalDataModel.pgsql` est fourni dans le dossier `database`. Là encore, vérifier et modifier le nom de la base de données et le nom de l'utilisateur selon vos préférences. Ensuite vous avez deux solutions :
+Il vous faut créer et configurer un utilisateur et une base de donnée. Pour cela un fichier `logicalDataModel.pgsql` est fourni dans le dossier `database`. Là encore, vérifiez et modifiez le nom de la base de données et le nom de l'utilisateur selon vos préférences. Ensuite vous avez deux solutions :
 
 1. importez le fichier sous postgres avec la commande `\i` :
 
 ```
 postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 ```
-2. si cette méthode échoue pour un problème de droit vous pouver copier/coller directement les instructions dans un terminal connecté à postgres via le client psql. Pour ce dernier cas il vous faut découper les copier/coller selon les commandes liées à psql de celles en SQL pur.
+2. si cette méthode échoue pour un problème de droit vous pouvez copier/coller directement les instructions dans un terminal connecté à postgres via le client psql. Pour ce dernier cas il vous faut découper les copier/coller selon les commandes liées à psql de celles en SQL pur.
 
 ### Node.js/Express
 
