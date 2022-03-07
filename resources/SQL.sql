@@ -85,13 +85,13 @@ WHERE
 -- insérer un article :
 INSERT INTO __post (_id, _name, _content, _creation, _revision, _description, _author_id, _status)
 VALUES
-  (13, 'Images en shortcodes', '{{http://localhost:9001/medias/images/demo/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/images/demo/OldMechanism.jpg}}', '2020-04-16 19:10:25-07', '2020-04-16 20:15:22-01', 'Test de shortcodes pour les images.', 2, 1);
+  (13, 'Images en shortcodes', '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}', '2020-04-16 19:10:25-07', '2020-04-16 20:15:22-01', 'Test de shortcodes pour les images.', 2, 1);
 
 -- updater un article :
 UPDATE
     __post
 SET
-    _name = 'Cartes Leaflet en shorcodes',
-    _content = '{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133,2.349747] zoom=15}}<hr>{{map name="Lyon" coords=[44.853133,3.349747] zoom=5}}<hr><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
+    _name = 'Images Leaflet en shorcodes',
+    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}'
 WHERE
-    _id = 12;
+    _id = 13;

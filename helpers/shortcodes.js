@@ -2,10 +2,16 @@
 
 const shortcodes = (data) => {
 
-  data = data.replace( // Images
-    /{{\s*(https?):\/\/(.*?)\/medias\/images\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*?}}/gi,
-   `<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/$3.$4" loading="lazy" alt="Old Mechanism"></picture></figure>`
+  data = data.replace( // URL d'images internes au site
+    /{{\s*\/medias\/images\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*}}/g, // @note Pas de confusion prévue, le nom de domaine n'est pas nécessaire : ce shortcode ne doit fonctioner que pour les images hébergées par le site. Pas de CDN prévu...
+    '<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/demo/$1.$2" loading="lazy" alt="$2"></picture></figure>'
   )
+
+  /*
+  data = data
+    .replace(/({{img\s+)(.*)(}})/g, '<img $2>')
+    .replace(/(<img.*)\s+caption="(.*?)"(.*?>)/g, '<figure class="figure-focus-thumbnail">$1$3<figcaption>$2</figcaption></figure>')
+  */
 
   data = data.replace( // Map Leaflet
     /{{map[ ]{1}name="(.*?)"[ ]{1}coords=\[(.*?)\][ ]{1}zoom=(\d*?)}}/g,
@@ -13,12 +19,12 @@ const shortcodes = (data) => {
   )
 
   data = data.replace( // Vidéo Youtube
-    /{{https:\/\/www.youtube.com\/watch\?v=(.*?)}}/g,
+    /{{https?:\/\/www.youtube.com\/watch\?v=(.*?)}}/g,
     '<div class="video video-click"><div class="thumbnail-youtube" style="background-image: url(\'https://img.youtube.com/vi/$1/maxresdefault.jpg\')"></div></div>'
   )
 
   return data
 
 }
-  
+
 module.exports = { shortcodes }
