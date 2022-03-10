@@ -2,7 +2,7 @@ body
   display grid
   grid-template-rows repeat(3, auto) 1fr // permet à 'main' (4ème rangée) d'occuper tout l'espace vertical disponible
   grid-template-columns minmax(_gap, 1fr) minmax(0, _wrap) minmax(_gap, 1fr) // @bugfix @affected Chrome & Firefox @note Valeur 1fr définit si minimum car les navigateurs se comportent différement, Chrome affecte la largeur d'une gouttière, Firefox affecte à 0.
-  grid-template-areas 'nav nav nav' '. header .' 'breadcrumb breadcrumb breadcrumb' '. main .' 'aside aside aside' 'footer footer footer'
+  grid-template-areas 'nav nav nav' '. header .' '. main .' 'aside aside aside' 'footer footer footer'
   //gap _gap
   min-height 100vh // Gabarit sur la totalité de la hauteur de la page, même si le contenu ne permet pas d'atteindre le fond de la page
   margin 0 // @bugfix Remove the margin @affected All browser
@@ -21,9 +21,6 @@ main.main-bottom-none // @note notammment lorsque .columns est utilisé en élé
 .header
   grid-area header
   //background-color orange
-
-.breadcrumb
-  grid-area breadcrumb
 
 .aside
   grid-area aside

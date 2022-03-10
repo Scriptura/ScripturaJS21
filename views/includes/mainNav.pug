@@ -3,17 +3,8 @@ button.cmd-nav(type='button' aria-label='Main Menu')
     rect(x='50' y='200' width='900' height='100')
     rect(x='50' y='450' width='900' height='100')
     rect(x='50' y='700' width='900' height='100')
-nav.nav(role='navigation' aria-label='Main')
+.main-nav(role='navigation' aria-label='Main')
   ul
-    li
-      if data._current == 1
-        .active
-          span.logo
-          span Scriptura
-      else
-        a(href='/')
-          span.logo
-          span Scriptura
     li
       if data._current == 2
         .active

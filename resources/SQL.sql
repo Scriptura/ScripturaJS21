@@ -23,6 +23,19 @@ FROM
 WHERE
     __post._id = 1;
 
+-- Selection des mots clés d'un article (avec table many to many) :
+SELECT
+    __keyword._name AS _keyword_name,
+    __keyword._slug AS _keyword_slug
+FROM
+    __post
+    INNER JOIN __keyword_to_post ON __post._id = __keyword_to_post._post_id
+    INNER JOIN __keyword ON __keyword_to_post._keyword_id = __keyword._id
+WHERE
+    __post._id = 1
+ORDER BY
+    __keyword._name;
+
 -- Articles et ses mots clés (avec table many to many) :
 SELECT
     __post.*,
@@ -87,11 +100,22 @@ INSERT INTO __post (_id, _name, _content, _creation, _revision, _description, _a
 VALUES
   (13, 'Images en shortcodes', '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}', '2020-04-16 19:10:25-07', '2020-04-16 20:15:22-01', 'Test de shortcodes pour les images.', 2, 1);
 
--- updater un article :
-UPDATE
+-- Selection des mots clés d'un article :
+SELECT
+    __keyword._name AS _keyword_name,
+    __keyword._slug AS _keyword_slug
+FROM
     __post
-SET
+    INNER JOIN __keyword_to_post ON __post._id = __keyword_to_post._post_id
+    INNER JOIN __keyword ON __keyword_to_post._keyword_id = __keyword._id
+WHERE
+    __post._id = 1
+ORDER BY
+    __keyword._name;
     _name = 'Images Leaflet en shorcodes',
-    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}'
+    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}<hr>{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
 WHERE
     _id = 13;
+
+-- updater le contenu d'un article :
+UPDATE __post SET _content = '{{map data-name="Cathédrale Notre-Dame de Paris" data-coords=[48.853133,2.349747] data-zoom=15 style="height:25vh"}}{{ map data-name="Lyon" data-coords=[44.853133,3.349747] data-zoom=5 style="height:25vh" }}{{map data-name="" data-coords=[48.853133,2.349747] data-zoom=15 style="height:25vh"}}{{map data-coords=[48.853133,2.349747] data-zoom=12 style="height:25vh;max-height:calc(100vw-2em)"}}{{map data-name="Cathédrale Notre-Dame de Paris" data-marker-hidden="true" data-coords=[48.853133,2.349747] data-zoom=7 style="height:25vh;max-height:calc(100vw-2em)"}}' WHERE _id = 12;

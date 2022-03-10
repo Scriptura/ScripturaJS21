@@ -45,7 +45,7 @@ const getScripts = (() => {
   if (document.querySelector('[class*=pre]')) getScript('/scripts/codeBlock.js')
   if (document.querySelector('.input [type=password]')) getScript('/scripts/readablePassword.js')
   if (document.querySelector('[class*=add-line-marks]')) getScript('/scripts/lineMark.js')
-  if (document.querySelector('[class*=map]')) getScript('/scripts/mapPlace.js')
+  if (document.querySelector('[class*=map]')) getScript('/scripts/map.js')
   if (document.querySelector('[class*=thumbnail-youtube]')) getScript('/scripts/youtubeVideo.js')
 })()
 
@@ -259,7 +259,7 @@ window.scrollTo({top: 0})
 
 const mainMenu = (() => {
   const button = document.querySelector('.cmd-nav'),
-        navigation = document.querySelector('.nav')
+        navigation = document.querySelector('.main-nav')
 
   //const pannel = navigation.querySelector('a')
   //if (window.innerWidth < '1372') Array.from(pannel).map(a => a.tabIndex = -1)

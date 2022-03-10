@@ -4,14 +4,11 @@ _breadcrumbColor1 = _colorG - 34%
 _breadcrumbColor2 = _color2
 
 .breadcrumb
-  background-color _breadcrumbColor1
-  user-select none
-
-.breadcrumb ol
   display flex
-  //flex-wrap wrap // @note Pour les versions mobiles. @todo A supprimer peut-être...
+  flex-wrap wrap // @note Évite un éventuel passage à la ligne sur les résolutions mobiles.
   margin 0
   padding 0
+  background-color _breadcrumbColor1
 
 .breadcrumb li
   margin-right -1em
@@ -23,11 +20,6 @@ _breadcrumbColor2 = _color2
 
 .breadcrumb li:nth-child(2)
   z-index 1
-
-@media (max-width _sizeXS)
-
-  .breadcrumb ol > :last-child // @note Pour éviter les effets de bord sur portable quand fil d'ariane trop long @todo Non optimal car il vaux mieux contrôler à partir du contenu.
-    display none
 
 .breadcrumb a
   position relative
@@ -55,8 +47,14 @@ _breadcrumbColor2 = _color2
 .breadcrumb li a:active
   color #777
 */
-.breadcrumb li a:focus
-.breadcrumb li a:hover
-.breadcrumb li a:active
-  color #fff
-  background-color _breadcrumbColor2
+.breadcrumb li a
+  &:focus
+  &:hover
+  &:active
+    color #fff
+    background-color _breadcrumbColor2
+
+@media (max-width _sizeXS)
+
+  .breadcrumb > :last-child // @note Pour éviter les effets de bord sur portable quand fil d'ariane trop long @todo Non optimal car il vaux mieux contrôler à partir du contenu.
+    display none

@@ -1,16 +1,36 @@
-_menuSize = 2.5rem
-_menuFix = 177px
-_menuColor1 = darken(_colorG, 34%)
-_menuColor2 = _colorT2
-_menuColor3 = _color2
+_mainNavSize = 2.5rem
+_mainNavFix = 177px
+_mainNavColor1 = _colorG - 34%
+_mainNavColor2 = _colorT2
+_mainNavColor3 = _color2
+_logoNavSizeWidth = 4em
 
-// Main menu
+.logo-nav
+  grid-row span 2
+  display block
+  background-color _color2 //_mainNavColor1
+  box-shadow _shadow2
+  &:focus
+  &:hover
+  &:active
+    background-color _color2
+  &::after
+    content ''
+    display block
+    width 100%
+    height 100%
+    //background-color _color2
+    background-image url(../medias/images/logo/195v.svg)
+    background-repeat no-repeat
+    background-position 50% 50%
+    background-size auto 70%
+    box-shadow _shadow3
 
-.nav
+.main-nav
   position relative
   display flex
   z-index 2000 // @note Permet de passer au-dessus de certains éléments définis par des sources externes, comme les Maps Leaflet.
-  //height _menuSize
+  //height _mainNavSize
   //font-size 1em
   box-shadow _shadow2
   user-select none
@@ -18,38 +38,37 @@ _menuColor3 = _color2
     width 100%
     margin 0
     padding 0
-    background-color _menuColor1
+    background-color _mainNavColor1
   & li
     list-style none
     & > *
       display block
       padding 0 1em
-      line-height unit(_menuSize, '')
+      line-height unit(_mainNavSize, '')
       box-shadow _shadow3
   & a
-    color _menuColor2
+    color _mainNavColor2
     text-decoration none
     &:focus
     &:hover
     &:active
       color #fff
-      background-color _menuColor3
+      background-color _mainNavColor3
     &:focus svg
     &:hover svg
     &:active svg
       animation animJump .5s ease-in-out
-  & .logo
-    width 2.5em
-    height 2.5em
-    background-image url(/favicons/logo.png)
-    background-size 2em 2em
-    background-position 50% 50%
-    background-repeat no-repeat
-    border-radius 50% 50%
 
 @media (max-width _sizeNav)
 
-  .nav
+
+  .logo-nav
+    position absolute // @todo Solution à revoir.
+    z-index 10
+    width _logoNavSizeWidth
+    height 2.5em
+
+  .main-nav
     & ul
       position absolute
       z-index 800
@@ -57,19 +76,13 @@ _menuColor3 = _color2
       //left -100vw // @bugfix @affected Safari @note Pas de possibilité d'effet de droite à gauche : dépassement des conteneurs, même avec body overflow hidden-x
       //top -100vh
     & li
-      background-color _menuColor1
+      background-color _mainNavColor1
       transform rotate(90deg)
       transition transform .4s ease-in-out
     &.active li
       //left 0
       //margin-left 100vw
       transform translateX(100vw) rotate(0deg)
-    & .logo
-      display inline-block
-      width 1.2em
-      height 1.2em
-      margin-right .5em
-      background-size 1.2em 1.2em
 
   _x = 12
   for _i in 1.._x
@@ -77,13 +90,20 @@ _menuColor3 = _color2
     .nav li:nth-child({_i})
       transition-delay '%ss' % _abstr
 
+  .breadcrumb
+    padding-left _logoNavSizeWidth !important // @todo Solution à revoir.
+
 @media (min-width _sizeNav)
 
-  .nav ul
+  .nav
+    display grid
+    grid-template-columns 5em 1fr
+
+  .main-nav ul
     display flex
     & .active
       position relative
-      background-color _menuColor3
+      background-color _mainNavColor3
       &::after
         content ''
         position absolute
@@ -91,11 +111,8 @@ _menuColor3 = _color2
         left calc(50% - 1em)
         width 2em
         height 1em
-        background-color _menuColor3
+        background-color _mainNavColor3
         clip-path polygon(0 0, 100% 0, 50% 100%)
-    & li:first-child > *
-      display flex
-      gap .5em
 
   @keyframes animJump
     30%
@@ -113,9 +130,9 @@ _menuColor3 = _color2
     //top 0
     right 0
     z-index 2001
-    width _menuSize
-    height _menuSize
-    padding (_menuSize / 10)
+    width _mainNavSize
+    height _mainNavSize
+    padding (_mainNavSize / 10)
     cursor pointer
     background-color transparent
     //fill #000
@@ -127,20 +144,20 @@ _menuColor3 = _color2
     & *
       transform-origin center
       transition transform .3s ease
-      fill _menuColor3
+      fill _mainNavColor3
     &:focus
     &:hover
-      background-color _menuColor3
+      background-color _mainNavColor3
     &:focus svg *
     &:hover svg *
       fill #fff
       //animation: .6s ease-in-out colorChange forwards
     &.active svg :nth-child(1)
-      transform translate(- _menuFix, _menuFix) rotate(45deg)
+      transform translate(- _mainNavFix, _mainNavFix) rotate(45deg)
     &.active svg :nth-child(2)
       transform rotate(-45deg)
     &.active svg :nth-child(3)
-      transform translate(- _menuFix, - _menuFix) rotate(-45deg)
+      transform translate(- _mainNavFix, - _mainNavFix) rotate(-45deg)
 
   /*
   @keyframes colorChange

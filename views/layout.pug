@@ -17,15 +17,15 @@ html.no-js(lang='fr')
     link(rel='mask-icon', href='/favicons/safari-pinned-tab.svg', color='#5bbad5')
     link(rel='manifest', href='/site.webmanifest')
     meta(name='msapplication-TileColor', content='#da532c')
-    //-#ff7a54
     meta(name='msapplication-config' content='/browserconfig.xml')
-    block scriptsHead
   body
     a(href='#main').sr-only Aller au contenu
-    block menu
-      include includes/menu
-    block breadcrumb
-      include includes/breadcrumb
+    block nav
+      nav.nav
+        a(href='/').logo-nav
+          span.sr-only Scriptura
+        include includes/mainNav
+        include includes/breadcrumb
     block main
       main#main(role='main')
     //-block aside
@@ -35,4 +35,3 @@ html.no-js(lang='fr')
       block footer
         include includes/footer
     script(src='/scripts/development/main.js' async)
-    block scriptsFooter
