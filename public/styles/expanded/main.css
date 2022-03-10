@@ -1101,7 +1101,7 @@ audio:not([controls]) {
   -webkit-animation: animBounce 0.35s ease infinite alternate;
           animation: animBounce 0.35s ease infinite alternate;
 }
-.leaflet-marker-pane {
+.start-map .leaflet-marker-pane {
   -webkit-animation: animDrop 1s ease;
           animation: animDrop 1s ease;
 }
