@@ -24,8 +24,12 @@
 .start-map .leaflet-marker-pane
   animation animDrop 1s ease
 
-.leaflet-shadow-pane
-  animation animHide 1.5s
+.map-icon
+  filter drop-shadow(.3em .3em .3em rgba(0, 0, 0, .5))
+  & > :first-child
+    fill coral
+  & > :last-child
+    fill tomato
 
 @keyframes animBounce
   to
@@ -40,14 +44,6 @@
     transform translate(0, -40px)
   100%
     transform translate(0, 0)
-
-@keyframes animHide
-  0%
-    opacity 0
-  60%
-    opacity 0
-  100%
-    opacity 1
 
 //.leaflet-control-attribution
 //  display none

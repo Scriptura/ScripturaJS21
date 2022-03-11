@@ -1105,9 +1105,14 @@ audio:not([controls]) {
   -webkit-animation: animDrop 1s ease;
           animation: animDrop 1s ease;
 }
-.leaflet-shadow-pane {
-  -webkit-animation: animHide 1.5s;
-          animation: animHide 1.5s;
+.map-icon {
+  filter: drop-shadow(0.3em 0.3em 0.3em rgba(0,0,0,0.5));
+}
+.map-icon > :first-child {
+  fill: #ff7f50;
+}
+.map-icon > :last-child {
+  fill: #ff6347;
 }
 @-webkit-keyframes animBounce {
   to {
@@ -1145,28 +1150,6 @@ audio:not([controls]) {
   }
   100% {
     transform: translate(0, 0);
-  }
-}
-@-webkit-keyframes animHide {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes animHide {
-  0% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 .table {
