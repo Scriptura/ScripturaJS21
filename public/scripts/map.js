@@ -1,16 +1,16 @@
 'use strict'
 
-const getLeaflet = (() => {
-  const script = document.createElement('script')
-  script.setAttribute('src', '/libraries/leaflet/leaflet.js')
-  document.head.appendChild(script)
-})()
-
 const getMapStyles = (() => { //
   const styles = document.createElement('link')
   styles.setAttribute('rel', 'stylesheet')
   styles.setAttribute('href', '/libraries/leaflet/leaflet.css')
   document.head.appendChild(styles)
+})()
+
+const getLeaflet = (() => {
+  const script = document.createElement('script')
+  script.setAttribute('src', '/libraries/leaflet/leaflet.js')
+  document.head.appendChild(script)
 })()
 
 const mapsIdAdd = (() => { // @note Affecter ou réafecter une id pour chaque carte afin d'éviter les conflits.
@@ -21,7 +21,7 @@ const mapsIdAdd = (() => { // @note Affecter ou réafecter une id pour chaque ca
   })
 })()
 
-// @note Permet l'animation unique des marqueurs au lancement de la page.
+// @note Permet une animation unique pour les marqueurs au lancement de la page.
 const startPage = (() => {
   const html = document.documentElement,
         c = 'start-map'
@@ -34,31 +34,39 @@ const startPage = (() => {
 })()
 
 const maps = (() => {
+  const titleServerDefault = 'https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png'
+  const svgIcon = '<svg class="marker-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E74C3C" d="M256 14C146 14 57 102 57 211c0 172 199 295 199 295s199-120 199-295c0-109-89-197-199-197zm0 281a94 94 0 1 1 0-187 94 94 0 0 1 0 187z"/><path fill="#C0392B" d="M256 14v94a94 94 0 0 1 0 187v211s199-120 199-295c0-109-89-197-199-197z"/></svg>'
   document.querySelectorAll('.map').forEach(function(item) {
-    const map = () => {
-      const el = document.getElementById(item.id),
-            coords = JSON.parse(el.dataset.coords),
-            map = L.map(item.id).setView(coords, el.dataset.zoom)
-      L.tileLayer(
-        el.dataset.tileserver,
-        {attribution: el.dataset.attribution}
+    const mapInit = () => {
+      const map = L.map(item.id),
+            el = document.getElementById(item.id),
+            P = JSON.parse(el.dataset.places),
+            coords = P[0][1],
+            markers = []
+      L.tileLayer( // attention, certains jeux de tuiles ne sont pas aussi profonds que le disent leur spécifications, il faut tester les modèles implémentés. D'où l'intérêt de définir un maxZoom.
+        el.dataset.tileserver || titleServerDefault, {
+          minZoom: 2,
+          maxZoom: el.dataset.zoom || 18,
+          attribution: el.dataset.attribution || ''
+        }
       ).addTo(map)
-      if (el.dataset.name) {
-        const divIcon = L.divIcon({
-          className: "leaflet-data-marker",
-          html: '<svg class="map-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#E74C3C" d="M256 14C146 14 57 102 57 211c0 172 199 295 199 295s199-120 199-295c0-109-89-197-199-197zm0 281a94 94 0 1 1 0-187 94 94 0 0 1 0 187z"/><path fill="#C0392B" d="M256 14v94a94 94 0 0 1 0 187v211s199-120 199-295c0-109-89-197-199-197z"/></svg>',
-          iconAnchor  : [20, 40],
-          iconSize    : [40, 40],
-          popupAnchor : [0, -60]
-        })
-        const marker = L.marker(coords, {icon: divIcon})
-        marker.bindPopup(el.dataset.name)
-        marker.openPopup()
+      const divIcon = L.divIcon({
+        className: 'leaflet-data-marker',
+        html: svgIcon,
+        iconAnchor: [20, 40],
+        iconSize: [40, 40],
+        popupAnchor: [0, -60]
+      })
+      for (let i = 0; i < P.length; i++) {
+        const marker = L.marker(P[i][1], {icon: divIcon})
+        if (P[i][0]) marker.bindPopup(P[i][0])
+        //marker.openPopup()
         marker.addTo(map)
+        markers.push(marker)
       }
-      }
-    window.addEventListener('load', function() {
-      map()
-    })
+      const group = new L.featureGroup(markers)
+      map.fitBounds(group.getBounds())
+    }
+    window.addEventListener('load', () => mapInit())
   })
 })()

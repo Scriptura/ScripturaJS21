@@ -32,6 +32,7 @@ app.use(
     directives: {
       defaultSrc: ["'self' 'unsafe-inline' api.mapbox.com"],
       imgSrc: ["'self' data: api.mapbox.com", // nécessaire pour les maps Leaflet.
+      "'self' data: *.ign.fr",
       "'self' data: img.youtube.com",
       "'self' data: *.ytimg.com"], // site YouTube pour certaines miniatures du player et notamment l'image par défaut.
       frameSrc: ["'self' data: *.youtube.com"]

@@ -1097,22 +1097,40 @@ audio:not([controls]) {
 .leaflet-popup-tip {
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.1);
 }
-.leaflet-marker-pane:hover {
+.marker-icon:hover {
   -webkit-animation: animBounce 0.35s ease infinite alternate;
           animation: animBounce 0.35s ease infinite alternate;
 }
-.start-map .leaflet-marker-pane {
+.start-map .marker-icon {
   -webkit-animation: animDrop 1s ease;
           animation: animDrop 1s ease;
 }
-.map-icon {
+.marker-icon {
   filter: drop-shadow(0.3em 0.3em 0.3em rgba(0,0,0,0.5));
 }
-.map-icon > :first-child {
-  fill: #ff7f50;
+.marker-icon > :first-child {
+  fill: Coral;
 }
-.map-icon > :last-child {
-  fill: #ff6347;
+.marker-icon > :last-child {
+  fill: Tomato;
+}
+.map:nth-child(2) .marker-icon > :first-child {
+  fill: MediumSeaGreen;
+}
+.map:nth-child(2) .marker-icon > :last-child {
+  fill: #1fa055;
+}
+.map:nth-child(3) .marker-icon > :first-child {
+  fill: CornflowerBlue;
+}
+.map:nth-child(3) .marker-icon > :last-child {
+  fill: MediumSlateBlue;
+}
+.map:nth-child(4) .marker-icon > :first-child {
+  fill: HotPink;
+}
+.map:nth-child(4) .marker-icon > :last-child {
+  fill: DeepPink;
 }
 @-webkit-keyframes animBounce {
   to {

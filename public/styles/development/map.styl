@@ -18,18 +18,36 @@
 .leaflet-popup-tip
   box-shadow _shadow14
 
-.leaflet-marker-pane:hover
+.marker-icon:hover
   animation animBounce .35s ease infinite alternate
 
-.start-map .leaflet-marker-pane
+.start-map .marker-icon
   animation animDrop 1s ease
 
-.map-icon
+.marker-icon
   filter drop-shadow(.3em .3em .3em rgba(0, 0, 0, .5))
   & > :first-child
-    fill coral
+    fill Coral
   & > :last-child
-    fill tomato
+    fill Tomato
+
+.map:nth-child(2) .marker-icon
+  & > :first-child
+    fill MediumSeaGreen
+  & > :last-child
+    fill #1FA055
+
+.map:nth-child(3) .marker-icon
+  & > :first-child
+    fill CornflowerBlue
+  & > :last-child
+    fill MediumSlateBlue
+
+.map:nth-child(4) .marker-icon
+  & > :first-child
+    fill HotPink
+  & > :last-child
+    fill DeepPink
 
 @keyframes animBounce
   to
