@@ -40,9 +40,9 @@ const maps = (() => {
     const mapInit = () => {
       const map = L.map(item.id),
             el = document.getElementById(item.id),
-            P = JSON.parse(el.dataset.places),
-            coords = P[0][1],
+            P = [JSON.parse(el.dataset.places)],
             markers = []
+            console.table(P)
       L.tileLayer( // attention, certains jeux de tuiles ne sont pas aussi profonds que le disent leur spécifications, il faut tester les modèles implémentés. D'où l'intérêt de définir un maxZoom.
         el.dataset.tileserver || titleServerDefault, {
           minZoom: 2,
