@@ -16,7 +16,7 @@ const shortcodes = (data) => {
   data = data.replace( // Map Leaflet
     // /{{map\s+(.+?)?}}/g,
     /{{\s*map\s+(.+?)\s*}}/g,
-   '<div class="map" $1 data-color="#ff654f" data-tileserver="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2xpdmllcmMiLCJhIjoiY2s5dnNnZWoyMDIzNDNzb2Y1dmQ4MGNtMCJ9.m4U-wYcS4EPcKe9nVXIbUA" data-attribution="&lt;a href=&quot;//www.openstreetmap.org/&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;//www.mapbox.com/&quot;&gt;Mapbox&lt;/a&gt;"></div>'
+   '<div class="map" $1 data-color="#ff654f"></div>'
   )
 
   data = data.replace( // URL vidéo Youtube
