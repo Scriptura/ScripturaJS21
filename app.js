@@ -30,16 +30,23 @@ const vv = require('./settings/variables'),
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self' 'unsafe-inline'"],
-      imgSrc: [ // nécessaire pour les tuiles des maps Leaflet.
-      "'self' data: *.openstreetmap.org",
-      "'self' data: *.openstreetmap.fr",
-      "'self' data: api.mapbox.com",
-      "'self' data: *.stadiamaps.com",
-      "'self' data: *.ign.fr",
-      "'self' data: img.youtube.com",
-      "'self' data: *.ytimg.com"], // site YouTube pour certaines miniatures du player et notamment l'image par défaut.
-      frameSrc: ["'self' data: *.youtube.com"]
+      defaultSrc: [
+        "'self' 'unsafe-inline'"
+      ],
+      imgSrc: [
+        // tuiles des maps Leaflet :
+        "'self' data: *.openstreetmap.org",
+        "'self' data: *.openstreetmap.fr",
+        "'self' data: *.mapbox.com",
+        "'self' data: *.stadiamaps.com",
+        "'self' data: *.ign.fr",
+        // YouTube :
+        "'self' data: img.youtube.com",
+        "'self' data: *.ytimg.com" // certaines miniatures du player et notamment l'image par défaut.
+      ],
+      frameSrc: [
+        "'self' data: *.youtube.com"
+      ]
     },
   })
 )
