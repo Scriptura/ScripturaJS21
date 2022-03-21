@@ -1,6 +1,6 @@
 'use strict'
 
-const getMapStyles = (() => { //
+const getMapStyles = (() => { // Recommandation Leaflet de charger les styles avant les scripts.
   const styles = document.createElement('link')
   styles.setAttribute('rel', 'stylesheet')
   styles.setAttribute('href', '/libraries/leaflet/leaflet.css')
@@ -21,7 +21,7 @@ const mapsIdAdd = (() => { // @note Affecter ou réafecter une id pour chaque ca
   })
 })()
 
-// @note Permet une animation unique pour les marqueurs au lancement de la page.
+// @note Permet une animation unique en CSS pour les marqueurs au lancement de la page.
 const startPage = (() => {
   const html = document.documentElement,
         c = 'start-map'
@@ -46,7 +46,7 @@ const maps = (() => {
       L.tileLayer(
         el.dataset.tileserver || titleServerDefault, {
           minZoom: 2,
-          maxZoom: el.dataset.zoom || 18, // Certains jeux de tuiles ne moins profonds que d'autres, d'où l'intérêt de définir un maxZoom.
+          maxZoom: el.dataset.zoom || 18, // Certains jeux de tuiles sont moins profonds que d'autres, d'où l'intérêt de définir un maxZoom.
           attribution: el.dataset.attribution || ''
         }
       ).addTo(map)

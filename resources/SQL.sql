@@ -1,7 +1,11 @@
 -- @note Pour le format SQL utlisé @see https://codebeautify.org/sqlformatter
-
 -- Sélectionner l'article avec l'ID n°1 :
-SELECT * FROM __post WHERE _id = 1;
+SELECT
+    *
+FROM
+    __post
+WHERE
+    _id = 1;
 
 -- Auteur de l'article :
 SELECT
@@ -53,7 +57,12 @@ ORDER BY
     __keyword._name;
 
 -- Nom d'un mot clé via son slug :
-SELECT _name FROM __keyword WHERE _slug = 'lion';
+SELECT
+    _name
+FROM
+    __keyword
+WHERE
+    _slug = 'lion';
 
 -- Informations de base des 100 derniers articles via le slug "lion" :
 SELECT
@@ -64,14 +73,24 @@ SELECT
     __keyword._name
 FROM
     __post
-    INNER JOIN __keyword ON __post._author_id = __keyword._id AND __keyword._slug = 'lion'
+    INNER JOIN __keyword ON __post._author_id = __keyword._id
+    AND __keyword._slug = 'lion'
 ORDER BY
     __post._id DESC
 LIMIT
     100;
 
 -- ID, nom et description des 100 derniers articles :
-SELECT _id, _name, _description FROM __post ORDER BY _id DESC LIMIT 100;
+SELECT
+    _id,
+    _name,
+    _description
+FROM
+    __post
+ORDER BY
+    _id DESC
+LIMIT
+    100;
 
 -- Rechercher un nom de famille à partir d'un prénom :
 SELECT
@@ -80,10 +99,16 @@ SELECT
 FROM
     __person
 WHERE
-    LOWER(_given_name) LIKE LOWER('%Jeanne%'); -- @note Suppression de la sensibilité à la case.
+    LOWER(_given_name) LIKE LOWER('%Jeanne%');
 
+-- @note Suppression de la sensibilité à la case.
 -- updater le contenu d'un article :
-UPDATE __post SET _content = 'nouveauContenu' WHERE _id = 1;
+UPDATE
+    __post
+SET
+    _content = 'nouveauContenu'
+WHERE
+    _id = 1;
 
 -- updater plusieurs item sur un article :
 UPDATE
@@ -96,9 +121,28 @@ WHERE
     _id = 1;
 
 -- insérer un article :
-INSERT INTO __post (_id, _name, _content, _creation, _revision, _description, _author_id, _status)
+INSERT INTO
+    __post (
+        _id,
+        _name,
+        _content,
+        _creation,
+        _revision,
+        _description,
+        _author_id,
+        _status
+    )
 VALUES
-  (13, 'Images en shortcodes', '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}', '2020-04-16 19:10:25-07', '2020-04-16 20:15:22-01', 'Test de shortcodes pour les images.', 2, 1);
+    (
+        13,
+        'Images en shortcodes',
+        '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}',
+        '2020-04-16 19:10:25-07',
+        '2020-04-16 20:15:22-01',
+        'Test de shortcodes pour les images.',
+        2,
+        1
+    );
 
 -- Selection des mots clés d'un article :
 SELECT
@@ -112,10 +156,19 @@ WHERE
     __post._id = 1
 ORDER BY
     __keyword._name;
-    _name = 'Images Leaflet en shorcodes',
-    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}<hr>{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
+
+-- updater le contenu d'un article :
+UPDATE
+    __post
+SET
+_content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{img src="/medias/images/GrassLeaf.jpg" caption="Grass Leaf" class="className"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
 WHERE
     _id = 13;
 
 -- updater le contenu d'un article :
-UPDATE __post SET _content = '{{map data-name="Cathédrale Notre-Dame de Paris" data-places=''["Cathédrale Notre-Dame de Paris", [48.853133,2.349747]]'' data-tileserver="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" style="height: 25vh; max-height: calc(100vw - 2em)"}}{{ map data-name="Lyon" data-places=''["Lyon", [45.764043,4.835659]]'' data-tileserver="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" style="height: 25vh; max-height: calc(100vw - 2em)" }}' WHERE _id = 12;
+UPDATE
+    __post
+SET
+    _content = '{{map data-name="Cathédrale Notre-Dame de Paris" data-places=''["Cathédrale Notre-Dame de Paris", [48.853133,2.349747]]'' data-tileserver="https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png" style="height: 25vh; max-height: calc(100vw - 2em)"}}{{ map data-name="Lyon" data-places=''["Lyon", [45.764043,4.835659]]'' data-tileserver="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png" style="height: 25vh; max-height: calc(100vw - 2em)" }}'
+WHERE
+    _id = 12;

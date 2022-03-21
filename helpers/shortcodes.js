@@ -1,4 +1,6 @@
-  // @todo À développer : SVG, drop-cap...
+'use strict'
+
+// @todo À développer : SVG, drop-cap...
 
 const shortcodes = (data) => {
 
@@ -6,6 +8,22 @@ const shortcodes = (data) => {
     /{{\s*\/medias\/images\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*}}/g, // @note Pas de confusion prévue, le nom de domaine n'est pas nécessaire : ce shortcode ne doit fonctioner que pour les images hébergées par le site. Pas de CDN prévu...
     '<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/demo/$1.$2" loading="lazy" alt="$2"></picture></figure>'
   )
+
+  const shortcodeAttributes = (correspondance, p1, p2) => {
+    let caption = '',
+        keyValue = ''
+      if (p1 === 'caption') caption = `<figcaption>${p2}</figcaption>`
+      keyValue = keyValue + ` ${p1}="${p2}"`
+
+    return `<figure class="figure-focus-thumbnail"><img${keyValue}>${caption}</figure>`
+  }
+  const shortcodeAllAttributes = (correspondance, p1) => p1.replace(/\s+(.+?)="(.*?)"/g, shortcodeAttributes)
+
+  data = data.replace(
+    /{{img(.*?)\s*}}/g,
+    shortcodeAllAttributes
+  )
+
   /*
   data = data.replace( // Map Leaflet
     /{{map\s+name="(.*?)"\s+coords=\[(.*?)\]\s+zoom=(\d*?)}}/g,
