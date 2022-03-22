@@ -10,6 +10,7 @@ const imageFocus = (() => {
       const button = document.createElement('button')
       injectSvgSprite(button, 'enlarge')
       e.appendChild(button)
+      button.ariaLabel = 'enlarge'
       button.classList.add('icon-enlarge')
     })
   })()
@@ -54,6 +55,7 @@ const imageFocus = (() => {
     el.appendChild(button)
     injectSvgSprite(button, 'shrink')
     button.classList.add('icon-shrink')
+    button.ariaLabel = 'shrink'
     button.focus()
   }
 

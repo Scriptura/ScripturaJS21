@@ -3,12 +3,14 @@
   src: url("/fonts/notoSans-Regular.woff2") format('woff2'), url("/fonts/notoSans-Regular.woff") format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif';
   src: url("/fonts/notoSerif-Regular.woff2") format('woff2'), url("/fonts/notoSerif-Regular.woff") format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 :root {
   color-scheme: dark;
@@ -852,6 +854,7 @@ svg {
 }
 .decorative-svg {
   fill: #d2b48c;
+  filter: drop-shadow(0.3em 0.3em 0.3em #000);
 }
 .icon {
   display: inline-block;
