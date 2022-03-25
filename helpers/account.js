@@ -12,7 +12,6 @@ const accountFormat = (data) => { // Travaille sur l'initialisateur d'objet envo
   data._creation = dateTimeFormat(data._creation)
   data._revision = dateTimeFormat(data._revision)
   data._last_login = dateTimeFormat(data._last_login)
-  //data._current = true
   return data
 }
 

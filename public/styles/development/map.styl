@@ -18,8 +18,13 @@
 .leaflet-popup-tip
   box-shadow _shadow14
 
-.marker-icon:hover
-  animation animBounce .35s ease infinite alternate
+.leaflet-marker-icon
+  outline none // pour prévenir l'effet sur :focus et :hover
+
+.leaflet-marker-icon
+  &:focus .marker-icon
+  &:hover .marker-icon
+    animation animBounce .35s ease infinite alternate
 
 .start-map .marker-icon
   animation animDrop 1s ease

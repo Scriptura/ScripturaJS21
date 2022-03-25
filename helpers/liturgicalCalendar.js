@@ -5,7 +5,6 @@ const fs = require('fs'),
       easterDate = require('date-easter'),
       currentDate = DateTime.local(),
       { lowercaseToFirstLetter } = require('./strings')
-      //{ moveableFeasts } = require('./moveableFeasts')
 
 
 /**
@@ -15,6 +14,7 @@ const fs = require('fs'),
 
 /*
 * @todo Option à développer :
+* Implémentation des dimanches du temps ordinaire
 * const locale = locale || 'fr'
 * const epiphanyOnJan6 = epiphanyOnJan6 || false
 * const christmastideIncludesTheSeasonOfEpiphany = christmastideIncludesTheSeasonOfEpiphany || true

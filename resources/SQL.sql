@@ -161,7 +161,8 @@ ORDER BY
 UPDATE
     __post
 SET
-_content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{img src="/medias/images/GrassLeaf.jpg" caption="Grass Leaf" class="className"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
+    _name = 'Images en shorcodes',
+    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{img src="/medias/images/GrassLeaf.jpg" caption="Grass Leaf" class="className"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
 WHERE
     _id = 13;
 

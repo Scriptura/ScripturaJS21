@@ -13,7 +13,6 @@ const personFormat = (data, id) => { // Travaille sur l'initialisateur d'objet e
   if (data._death_date) data._death_date = dateFormat(data._death_date)
   if (!data._description) data._description = data._full_name // @ inclure préfixes, suffixes, date et lieu de naissance
   if (data._nationality) data._nationality = displayCountrie(data._nationality)
-  //data._current = true
   return data
 }
 

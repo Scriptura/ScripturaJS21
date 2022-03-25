@@ -854,7 +854,7 @@ svg {
 }
 .decorative-svg {
   fill: #d2b48c;
-  filter: drop-shadow(0.3em 0.3em 0.3em #000);
+  filter: drop-shadow(0.3em 0.3em 0.3em rgba(34,2,0,0.8));
 }
 .icon {
   display: inline-block;
@@ -1100,7 +1100,11 @@ audio:not([controls]) {
 .leaflet-popup-tip {
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.1);
 }
-.marker-icon:hover {
+.leaflet-marker-icon {
+  outline: none;
+}
+.leaflet-marker-icon:focus .marker-icon,
+.leaflet-marker-icon:hover .marker-icon {
   -webkit-animation: animBounce 0.35s ease infinite alternate;
           animation: animBounce 0.35s ease infinite alternate;
 }

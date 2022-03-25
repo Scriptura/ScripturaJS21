@@ -7,7 +7,6 @@ const keywordFormat = (data, slug) => { // Travaille sur l'initialisateur d'obje
   data._title = ['Articles keyword list', vv.siteName].join(' . ')
   data._name = slug + ' <span>. Articles liés</span>' // @todo En attendant un get SQL du mot clé.
   if (!data._description) data._description = 'Articles in ' + vv.siteName
-  //data._current = true
   return data
 }
 
