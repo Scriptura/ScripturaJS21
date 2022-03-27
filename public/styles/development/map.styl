@@ -22,6 +22,10 @@
   outline none // pour prévenir l'effet sur :focus et :hover
 
 .leaflet-marker-icon
+  &:focus svg
+    border-radius 50%
+    box-shadow 0 0 0 .5em rgba(255, 0, 0, .3)
+    //outline .5rem solid orange
   &:focus .marker-icon
   &:hover .marker-icon
     animation animBounce .35s ease infinite alternate

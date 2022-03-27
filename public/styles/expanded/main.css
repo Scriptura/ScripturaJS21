@@ -448,6 +448,12 @@ main.main-bottom-none {
   fill: #fff;
   background-color: #ff6347;
 }
+.nav {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 .logo-nav {
   grid-row: span 2;
   display: block;
@@ -475,10 +481,6 @@ main.main-bottom-none {
   display: flex;
   z-index: 2000;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 .main-nav ul {
   width: 100%;
@@ -854,7 +856,7 @@ svg {
 }
 .decorative-svg {
   fill: #d2b48c;
-  filter: drop-shadow(0.3em 0.3em 0.3em rgba(34,2,0,0.8));
+  filter: drop-shadow(0.2em 0.2em 0.2em rgba(0,0,0,0.3));
 }
 .icon {
   display: inline-block;
@@ -1102,6 +1104,10 @@ audio:not([controls]) {
 }
 .leaflet-marker-icon {
   outline: none;
+}
+.leaflet-marker-icon:focus svg {
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5em rgba(255,0,0,0.3);
 }
 .leaflet-marker-icon:focus .marker-icon,
 .leaflet-marker-icon:hover .marker-icon {
