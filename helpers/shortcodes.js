@@ -5,31 +5,61 @@
 const shortcodes = (data) => {
 
   data = data.replace( // URL d'images internes au site
-    /{{\s*\/medias\/images\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*}}/g, // @note Pas de confusion prévue, le nom de domaine n'est pas nécessaire : ce shortcode ne doit fonctioner que pour les images hébergées par le site. Pas de CDN prévu...
-    '<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/demo/$1.$2" loading="lazy" alt="$2"></picture></figure>'
+    /{{\s*\/medias\/images\/demo\/(.*?)\.(webp|jpg|jpeg|png|gif)\s*}}/g, // @note Pas de confusion prévue, le nom de domaine n'est pas nécessaire : ce shortcode ne doit fonctioner que pour les images hébergées par le site. Pas de CDN prévu...
+    '<figure class="figure-focus-thumbnail"><picture><img src="/medias/images/demo/$1.$2" loading="lazy" alt="$1"></picture></figure>'
   )
 
-  const shortcodeAttributes = (correspondance, p1, p2) => {
-    let caption = '',
-        keyValue = ''
-      if (p1 === 'caption') caption = `<figcaption>${p2}</figcaption>`
-      keyValue = keyValue + ` ${p1}="${p2}"`
-
-    return `<figure class="figure-focus-thumbnail"><img${keyValue}>${caption}</figure>`
-  }
-  const shortcodeAllAttributes = (correspondance, p1) => p1.replace(/\s+(.+?)="(.*?)"/g, shortcodeAttributes)
-
-  data = data.replace(
-    /{{img(.*?)\s*}}/g,
-    shortcodeAllAttributes
-  )
 
   /*
-  data = data.replace( // Map Leaflet
-    /{{map\s+name="(.*?)"\s+coords=\[(.*?)\]\s+zoom=(\d*?)}}/g,
-   '<div class="map" style="height:50vh" data-name="$1" data-coords="[$2]" data-zoom="$3" data-color="#ff654f" data-tileserver="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoib2xpdmllcmMiLCJhIjoiY2s5dnNnZWoyMDIzNDNzb2Y1dmQ4MGNtMCJ9.m4U-wYcS4EPcKe9nVXIbUA" data-attribution="&lt;a href=&quot;//www.openstreetmap.org/&quot;&gt;OSM&lt;/a&gt; | &lt;a href=&quot;//www.mapbox.com/&quot;&gt;Mapbox&lt;/a&gt;"></div>'
+  const string = data;
+
+  // expression matches case-insensitive "name is"+ any alphabets till period (.)
+  // using named capturing groups
+  const re = /name\sis\s(?<name>[a-zA-Z]+)\./gi;
+  let found = string.matchAll(re);
+
+  for (const match of found){
+    console.log(`Found "${match[0]}" at index ${match.index}. Captured name = ${match.groups['name']}`)
+  }
+  */
+
+
+  /*
+  const shortcodeImages = (...matchs) => {
+    //console.log(matchs)
+    for (let match of [matchs]) {
+      let caption = '',
+          keyValue = ''
+      if (match[1] === 'caption') caption = `<figcaption>${match[2]}</figcaption>`
+      else keyValue = keyValue + match[0]
+      return `<figure class="figure-focus-thumbnail"><img${keyValue}>${caption}</figure>`
+    }
+  }
+
+  const shortcodeAttributes = (...matchs) => matchs[1].replace(/\s+(.+?)="(.*?)"/g, shortcodeImages)
+
+  data = data.replace( // Images
+    /{{img(.*?)\s*}}/g,
+    shortcodeAttributes
   )
   */
+
+  const shortcodes = (...matchs) => {
+    for (let match of [matchs]) {
+      console.log(match)
+      let caption = `<figcaption>${match.replace(/\s+caption="(.*?)"/g, $1)}</figcaption>`
+          //keyValue = ''
+      //keyValue = keyValue + match[0]
+      return `<figure class="figure-focus-thumbnail"><img${keyValue}>${caption}</figure>`
+    }
+  }
+
+  const shortcodeAttributes = (...matchs) => matchs[1].replace(/\s+(.+?)="(.*?)"/g, shortcodeImages)
+
+  data = data.replace( // Images
+    /{{img(.*?)\s*}}/g,
+    shortcodes
+  )
  
   data = data.replace( // Map Leaflet
     // /{{map\s+(.+?)?}}/g,

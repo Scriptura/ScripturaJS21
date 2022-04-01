@@ -136,7 +136,7 @@ VALUES
     (
         13,
         'Images en shortcodes',
-        '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/GrassLeaf.jpg}}<hr>{{ /medias/images/OldMechanism.jpg }}<hr>{{map name="Cathédrale Notre-Dame de Paris" coords=[48.853133, 2.349747] zoom=15}}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/medias/images/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/medias/images/OldMechanism.jpg}}',
+        '{{img src="/medias/images/demo/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}<hr>{{/medias/images/demo/GrassLeaf.jpg}}<hr>{{ /medias/images/demo/OldMechanism.jpg }}<hr>{{map coords=[44.853133, 3.349747] name="Lyon" zoom=5}}{{http://localhost:9001/medias/images/demo/PacificCity.jpg}} <hr> {{http://localhost:9001/medias/images/demo/OldMechanism.jpg}}',
         '2020-04-16 19:10:25-07',
         '2020-04-16 20:15:22-01',
         'Test de shortcodes pour les images.',
@@ -162,7 +162,7 @@ UPDATE
     __post
 SET
     _name = 'Images en shorcodes',
-    _content = '{{img src="/medias/images/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{img src="/medias/images/GrassLeaf.jpg" caption="Grass Leaf" class="className"}}{{/medias/images/GrassLeaf.jpg}}{{ /medias/images/OldMechanism.jpg }}{{/medias/images/PacificCity.jpg}}{{/medias/images/OldMechanism.jpg}}'
+    _content = '{{img src="/medias/images/demo/OldMechanism.jpg" alt="Old Mechanism" caption="Old Mechanism" class="testClass"}}{{img src="/medias/images/demo/GrassLeaf.jpg" caption="Grass Leaf" class="className"}}<hr>{{/medias/images/demo/GrassLeaf.jpg}}{{ /medias/images/demo/OldMechanism.jpg }}{{/medias/images/demo/PacificCity.jpg}}{{/medias/images/demo/OldMechanism.jpg}}'
 WHERE
     _id = 13;
 

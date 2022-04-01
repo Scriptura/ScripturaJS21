@@ -8,7 +8,6 @@ SELECT
     __post._id,
     __post._name,
     __post._description,
-    __keyword._id,
     __keyword._name AS _keyword_name
 FROM
     __post

@@ -1105,9 +1105,15 @@ audio:not([controls]) {
 .leaflet-marker-icon {
   outline: none;
 }
-.leaflet-marker-icon:focus svg {
+.leaflet-marker-icon:focus::after {
+  content: '';
+  box-sizing: border-box;
+  display: block;
+  height: 5em;
+  width: 5em;
   border-radius: 50%;
-  box-shadow: 0 0 0 0.5em rgba(255,0,0,0.3);
+  border: 0.5em solid rgba(255,0,0,0.3);
+  transform: translate(-0.9em, -3em);
 }
 .leaflet-marker-icon:focus .marker-icon,
 .leaflet-marker-icon:hover .marker-icon {
