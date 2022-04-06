@@ -5,9 +5,9 @@ const db = require('../database/db'),
 
 const getKeyword = async slug => await db.any(`
 SELECT
-    __post._id,
-    __post._name,
-    __post._description,
+    __post._id AS _id,
+    __post._name AS _name,
+    __post._description AS _description,
     __keyword._name AS _keyword_name
 FROM
     __post
