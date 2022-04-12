@@ -52,17 +52,19 @@ const tabs = (() => {
           tabpanel.setAttribute('aria-hidden', 'true')
         }
         */
-        for (const tabsummary of tablist.children) {
-          //tabsummary.disabled = true
-          tabsummary.classList.remove('current')
-          tabsummary.setAttribute('aria-selected', 'false')
+        for (const tabsummarySibling of tablist.children) {
+          tabsummarySibling.disabled = false
+          tabsummarySibling.classList.remove('current')
+          tabsummarySibling.setAttribute('aria-selected', 'false')
         }
-        //tabsummary.disabled = false
+        tabsummary.disabled = true
         tabsummary.classList.add('current')
         tabsummary.setAttribute('aria-selected', 'true')
+        /*
         const tabpanel = document.getElementById(tabsummary.getAttribute('aria-controls'))
         tabpanel.classList.add('current')
         tabpanel.setAttribute('aria-hidden', 'false')
+        */
       })
     }
   })()
