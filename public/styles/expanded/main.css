@@ -2102,9 +2102,7 @@ form > [class*="grid"] > .input {
   border-radius: 0.5em 0.5em 0 0;
   cursor: pointer;
 }
-.tabs .tablist button:focus-visible,
-.tabs .tablist button:hover,
-.tabs .tablist button:active {
+.tabs .tablist button:focus-visible {
   outline: none;
   color: #fff;
   background-color: #ff6347;
