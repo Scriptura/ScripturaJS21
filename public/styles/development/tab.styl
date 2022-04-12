@@ -1,0 +1,47 @@
+_tabsColor1 = _colorG + 50%
+_tabsColor2 = _colorG + 20%
+_tabsSize1 = 1px
+
+.tabs
+  & .tablist // @note Cette classe peut aussi servir à styler/commander des onglets en html pur
+    position relative // @note Si .tabs-js-united
+    display flex
+    //flex-wrap wrap // @note Onglets sur plusieurs niveaux si besoin
+    //z-index 2 // @note Idem
+    margin-bottom 0
+    padding 0
+    & button
+      overflow hidden // @note Pour couper les textes longs
+      display block
+      //max-width 12em
+      height 2.5em
+      padding .5em 1em
+      white-space nowrap
+      text-overflow ellipsis
+      text-decoration none
+      font inherit
+      color inherit
+      background-color #444 //inherit
+      border _tabsSize1 solid _tabsColor2
+      border-bottom-color _tabsColor1
+      border-radius .5em .5em 0 0
+      cursor pointer
+      &:focus-visible
+      &:hover
+      &:active
+        outline none // @todo Pour le focus...
+        color #fff
+        background-color _color2
+      &.current
+        border-color _tabsColor1
+        border-bottom none
+        pointer-events none
+  & .tabpanel
+    position relative
+    z-index -1 // @note Passe sous les onglets
+    top - _tabsSize1 // @note Idem
+    padding 'calc(.5em + %s) 1em .5em' % _tabsSize1 // comprensation de la bordure inférieure des onglets.
+    border _tabsSize1 solid _tabsColor1
+    box-shadow .5rem .5rem 2rem rgba(0, 0, 0, .25)
+    & + .tabpanel
+      display none
