@@ -181,6 +181,11 @@ details
 
 summary
   display list-item // @bugfix Add the correct display @affected All browsers.
+  cursor pointer
+  &:focus-visible
+    outline none
+    &::marker
+      color _color5
 
 template
   display none // @bugfix Add the correct display @affected IE 10+.

@@ -1,5 +1,6 @@
-_tabsColor1 = _colorG + 50%
+_tabsColor1 = _colorG + 40%
 _tabsColor2 = _colorG + 20%
+_tabsColor3 = _color2
 _tabsSize1 = 1px
 
 .tabs
@@ -19,24 +20,29 @@ _tabsSize1 = 1px
       text-overflow ellipsis
       text-decoration none
       color inherit
-      background-color #444
+      background-color _colorG + 7%
       border _tabsSize1 solid _tabsColor2
       border-bottom-color _tabsColor1
       border-radius .5em .5em 0 0
       cursor pointer
+      transition .3s background-color ease-in-out
       &:focus-visible
-      //&:hover
+      &:hover
       //&:active
         outline none
-        color _color5
-        border-color _color5
+        color #fff //_tabsColor3
+        background-color _tabsColor3
+        border-color _tabsColor3
         border-bottom-color _tabsColor1
       &.current
         flex-shrink 0
         max-width 60%
+        background-color _color0
         border-color _tabsColor1
         border-bottom none
         pointer-events none
+      &:not(.current)
+        user-select none
   & .tabpanel
     position relative
     z-index -1 // @note Passe sous les onglets
