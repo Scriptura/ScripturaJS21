@@ -39,10 +39,11 @@ const tabs = (() => {
   const currentTab = (() => {
     const firstSummarys = document.querySelectorAll('.tabs .tabsummary:first-child')
     for (const firstSummary of firstSummarys) {
+      firstSummary.disabled = true
       firstSummary.classList.add('current')
       firstSummary.setAttribute('aria-selected', 'true') // TODO : à vérifier
     }
-    for (const tabsummary of document.querySelectorAll('.tabs .tabsummary')) { // TODO : à vérifier
+    for (const tabsummary of document.querySelectorAll('.tabs .tabsummary')) {
       tabsummary.addEventListener('click', () => {
         const tablist = tabsummary.parentElement.parentElement.firstElementChild // .querySelector('.tablist')
         //const tabpanels = tabsummary.parentElement.querySelectorAll('.tabpanel')

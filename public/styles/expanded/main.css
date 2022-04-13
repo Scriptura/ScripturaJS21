@@ -2103,8 +2103,9 @@ form > [class*="grid"] > .input {
 }
 .tabs .tablist button:focus-visible {
   outline: none;
-  color: #fff;
-  background-color: #ff6347;
+  color: #ffa500;
+  border-color: #ffa500;
+  border-bottom-color: #a2a2a2;
 }
 .tabs .tablist button.current {
   flex-shrink: 0;
