@@ -2094,7 +2094,6 @@ form > [class*="grid"] > .input {
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: none;
-  font: inherit;
   color: inherit;
   background-color: #444;
   border: 1px solid #696969;
@@ -2108,6 +2107,8 @@ form > [class*="grid"] > .input {
   background-color: #ff6347;
 }
 .tabs .tablist button.current {
+  flex-shrink: 0;
+  max-width: 60%;
   border-color: #a2a2a2;
   border-bottom: none;
   pointer-events: none;

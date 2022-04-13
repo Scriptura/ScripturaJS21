@@ -11,12 +11,13 @@ _tabsSize1 = 1px
     & button
       overflow hidden // @note Pour couper les textes longs
       display block
+      //width content-box
       height 2.5em
+      //max-width 12em
       padding .5em 1em
       white-space nowrap
       text-overflow ellipsis
       text-decoration none
-      font inherit
       color inherit
       background-color #444
       border _tabsSize1 solid _tabsColor2
@@ -30,6 +31,8 @@ _tabsSize1 = 1px
         color #fff
         background-color _color2
       &.current
+        flex-shrink 0
+        max-width 60%
         border-color _tabsColor1
         border-bottom none
         pointer-events none
