@@ -1,10 +1,11 @@
 _tabsColor1 = _colorG + 40%
 _tabsColor2 = _colorG + 20%
 _tabsColor3 = _color2
+_tabsColor4 = #fff
 _tabsSize1 = 1px
 
 .tabs
-  & .tablist
+  & .tab-list // & > .tablist
     position relative // @note Si .tabs-js-united
     display flex
     margin-bottom 0
@@ -30,10 +31,8 @@ _tabsSize1 = 1px
       &:hover
       //&:active
         outline none
-        color #fff //_tabsColor3
+        color _tabsColor4
         background-color _tabsColor3
-        border-color _tabsColor3
-        border-bottom-color _tabsColor1
       &.current
         flex-shrink 0
         max-width 60%
@@ -43,12 +42,12 @@ _tabsSize1 = 1px
         pointer-events none
       &:not(.current)
         user-select none
-  & .tabpanel
+  & .tab-panel // & > .tabpanel
     position relative
     z-index -1 // @note Passe sous les onglets
     top - _tabsSize1 // @note Idem
     padding 'calc(.5em + %s) 1em .5em' % _tabsSize1 // Compensation de la bordure inférieure des onglets.
     border _tabsSize1 solid _tabsColor1
     box-shadow .5rem .5rem 2rem rgba(0, 0, 0, .25)
-    & + .tabpanel
+    & + .tab-panel
       display none
