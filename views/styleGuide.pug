@@ -4,12 +4,6 @@ block main
   main#main(role='main')
     h1.main-heading!= data._name
     section
-      include includes/tab
-    hr
-    section
-      include includes/detailsSummary
-    hr
-    section
       include includes/typography
     //-
       hr
@@ -54,6 +48,12 @@ block main
     hr
     section
       include includes/loader
+    hr
+    section
+      include includes/detailsSummary
+    hr
+    section
+      include includes/tab
     hr
     section
       include includes/accordion

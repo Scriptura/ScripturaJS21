@@ -1,16 +1,8 @@
 'use strict'
 
-// @documentation pour les rôles et les attributs aria :
-// @see https://www.w3.org/TR/wai-aria-practices-1.1/#tabpanel
-// @see https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html
-// @see https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-2/tabs.html
-// Discution de développeurs sur le W3C :
-// @see https://github.com/whatwg/html/issues/1809
-
 const tabs = (() => {
   const addTablist = (() => {
-    const tabss = document.querySelectorAll('.tabs')
-    for (const tabs of tabss) {
+    for (const tabs of document.querySelectorAll('.tabs')) {
       const tabList = document.createElement('div')
       tabList.classList.add('tab-list')
       tabList.setAttribute('role', 'tablist')
@@ -18,81 +10,65 @@ const tabs = (() => {
       tabs.prepend(tabList)
     }
   })()
-  const transformationIntoTabs = (() => {
+  const transformationOfSummariesIntoTabs = (() => {
     let i = 0
-    document.querySelectorAll('.tabs > details > summary').forEach(summary => {
+    for (const summary of document.querySelectorAll('.tabs summary')) {
       i++
-      const html = summary.innerHTML,
-            tabSummary = document.createElement('button'),
-            tablist = summary.parentElement.parentElement.firstElementChild // .querySelector('.tab-list')
-      tabSummary.id = 'tabsummary-' + i
-      tabSummary.type = 'button'
-      tabSummary.classList.add('tab-summary')
-      tabSummary.setAttribute('role', 'tab')
-      tabSummary.setAttribute('aria-controls', 'tab-panel-' + i)
-      tablist.appendChild(tabSummary) // insertion du bouton
-      tabSummary.insertAdjacentHTML('beforeend', html) // insertion de son contenu
-      summary.parentElement.removeChild(summary) // retrait de l'élément d'origine
-    })
+      const tablist = summary.parentElement.parentElement.firstElementChild,
+            summaryHtml = summary.innerHTML,
+            tab = document.createElement('button')
+      tab.id = 'tab-summary-' + i
+      tab.type = 'button'
+      tab.classList.add('tab-summary')
+      tab.setAttribute('role', 'tab')
+      tab.setAttribute('aria-controls', 'tab-panel-' + i)
+      tablist.appendChild(tab)
+      tab.insertAdjacentHTML('beforeend', summaryHtml)
+      summary.parentElement.removeChild(summary)
+    }
   })()
-  const transformationIntoPannels = (() => {
+  const transformationOfElementsIntoPannels = (() => {
     let i = 0
-    document.querySelectorAll('.tabs > details > div').forEach(panel => {
+    for (const panel of document.querySelectorAll('.tabs details > *')) {
       i++
       panel.id = 'tab-panel-' + i
       panel.classList.add('tab-panel')
       panel.setAttribute('role', 'tabpanel')
       panel.setAttribute('aria-labelledby', 'tabsummary-' + i)
-      panel.parentElement.parentElement.appendChild(panel) // déplacement du contenu du panneau
-      panel.parentElement.querySelector('details').remove() // retrait de l'élément d'origine
-    })
+      panel.parentElement.parentElement.appendChild(panel)
+      panel.parentElement.querySelector('details').remove()
+    }
   })()
   const currentTab = (() => {
-    document.querySelectorAll('.tab-list > .tab-summary:first-child').forEach(firstSummary => {
-      firstSummary.disabled = true
-      firstSummary.classList.add('current')
-      firstSummary.setAttribute('aria-selected', 'true') // TODO : à vérifier
-    })
-    document.querySelectorAll('.tab-list > .tab-summary').forEach(tabSummary => {
-      tabSummary.addEventListener('click', () => {
-        const tabList = tabSummary.parentElement.parentElement.firstElementChild // .querySelector('.tab-list')
-        //const tabpanels = tabSummary.parentElement.querySelectorAll('.tab-panel')
-        /*
-        for (const tabpanel of tabpanels) {
-          tabpanel.classList.remove('current')
-          tabpanel.setAttribute('aria-hidden', 'true')
+    for (const firstTab of document.querySelectorAll('.tab-summary:first-child')) {
+      firstTab.disabled = true
+      firstTab.classList.add('current')
+      firstTab.setAttribute('aria-selected', 'true')
+    }
+    for (const tab of document.querySelectorAll('.tab-summary')) {
+      tab.addEventListener('click', () => {
+        for (const tabSibling of tab.parentElement.children) {
+          tabSibling.disabled = false
+          tabSibling.classList.remove('current')
+          tabSibling.setAttribute('aria-selected', 'false')
         }
-        */
-        for (const tabSummarySibling of tabList.children) {
-          tabSummarySibling.disabled = false
-          tabSummarySibling.classList.remove('current')
-          tabSummarySibling.setAttribute('aria-selected', 'false')
-        }
-        tabSummary.disabled = true
-        tabSummary.classList.add('current')
-        tabSummary.setAttribute('aria-selected', 'true')
-        /*
-        const panel = document.getElementById(tabSummary.getAttribute('aria-controls'))
-        panel.classList.add('current')
-        panel.setAttribute('aria-hidden', 'false')
-        */
+        tab.disabled = true
+        tab.classList.add('current')
+        tab.setAttribute('aria-selected', 'true')
       })
-    })
+    }
   })()
   const currentPanel = (() => {
-    const tabSummarys = document.querySelectorAll('.tab-summary')
-    for (const tabSummary of tabSummarys) tabSummary.addEventListener('click', () => {
-      const panels = tabSummary.parentElement.parentElement.querySelectorAll('.tab-panel') // .firstElementChild.nextSibling.children
-      const currentPanel = document.getElementById(tabSummary.getAttribute('aria-controls'))
-      currentPanel.style.display = 'block'
-      for (const panel of panels) {
-        if (panel === currentPanel) continue
-        panel.style.display = 'none'
-        if (tabSummary !== tabSummary.classList.contains('current')) {
-        } else {
-          tabSummary.classList.remove('current')
+    for (const tab of document.querySelectorAll('.tab-summary')) {
+      tab.addEventListener('click', () => {
+        const currentPanel = document.getElementById(tab.getAttribute('aria-controls'))
+        currentPanel.style.display = 'block'
+        for (const panel of tab.parentElement.parentElement.querySelectorAll('.tab-panel')) {
+          if (panel === currentPanel) continue
+          if(panel.parentElement === tab.parentElement.parentElement) panel.style.display = 'none'
+          if (tab === tab.classList.contains('current')) tab.classList.remove('current')
         }
-      }
-    })
+      })
+    }
   })()
 })()

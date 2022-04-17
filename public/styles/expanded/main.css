@@ -2088,12 +2088,12 @@ form > [class*="grid"] > .input {
   max-height: 0;
 }
 .tabs .tab-list {
-  position: relative;
   display: flex;
-  margin-bottom: 0;
+  margin-top: 0.5em;
   padding: 0;
 }
 .tabs .tab-list button {
+  z-index: 1;
   overflow: hidden;
   display: block;
   height: 2.5em;
@@ -2107,13 +2107,12 @@ form > [class*="grid"] > .input {
   border-bottom-color: #8f8f8f;
   border-radius: 0.5em 0.5em 0 0;
   cursor: pointer;
-  transition: 0.3s background-color ease-in-out;
+  transition: 0.2s box-shadow ease-in-out;
 }
 .tabs .tab-list button:focus-visible,
 .tabs .tab-list button:hover {
   outline: none;
-  color: #fff;
-  background-color: #ff6347;
+  box-shadow: inset 0 -0.3em #ff6347;
 }
 .tabs .tab-list button.current {
   flex-shrink: 0;
@@ -2131,8 +2130,8 @@ form > [class*="grid"] > .input {
 }
 .tabs .tab-panel {
   position: relative;
-  z-index: -1;
   top: -1px;
+  margin-bottom: 0.5em;
   padding: calc(.5em + 1px) 1em .5em;
   border: 1px solid #8f8f8f;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);

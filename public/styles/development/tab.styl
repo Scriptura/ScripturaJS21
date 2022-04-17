@@ -1,53 +1,55 @@
-_tabsColor1 = _colorG + 40%
-_tabsColor2 = _colorG + 20%
-_tabsColor3 = _color2
-_tabsColor4 = #fff
-_tabsSize1 = 1px
+_tabColor1 = _colorG + 40%
+_tabColor2 = _colorG + 20%
+_tabColor3 = _color2
+_tabColor4 = #fff
+_tabSize1 = 1px
 
 .tabs
-  & .tab-list // & > .tablist
-    position relative
+  & .tab-list
     display flex
-    margin-bottom 0
+    margin-top .5em // Si onglets imbriqués.
+    //margin-bottom 0
     padding 0
     & button
-      overflow hidden // @note Pour couper les textes longs
+      z-index 1
+      overflow hidden
       display block
-      //width content-box
       height 2.5em
-      //max-width 12em
       padding .5em 1em
       white-space nowrap
       text-overflow ellipsis
       text-decoration none
       color inherit
       background-color _colorG + 7%
-      border _tabsSize1 solid _tabsColor2
-      border-bottom-color _tabsColor1
+      border _tabSize1 solid _tabColor2
+      border-bottom-color _tabColor1
       border-radius .5em .5em 0 0
       cursor pointer
-      transition .3s background-color ease-in-out
+      transition .2s box-shadow ease-in-out
       &:focus-visible
       &:hover
       //&:active
         outline none
-        color _tabsColor4
-        background-color _tabsColor3
+        //color _tabColor4
+        //background-color _tabColor3
+        //border-bottom .2em solid _tabColor3
+        box-shadow inset 0 -.3em _tabColor3
+        //transform translateY(-1px)
       &.current
         flex-shrink 0
         max-width 60%
         background-color _color0
-        border-color _tabsColor1
+        border-color _tabColor1
         border-bottom none
         pointer-events none
       &:not(.current)
         user-select none
-  & .tab-panel // & > .tabpanel
+  & .tab-panel
     position relative
-    z-index -1 // @note Passe sous les onglets
-    top - _tabsSize1 // @note Idem
-    padding 'calc(.5em + %s) 1em .5em' % _tabsSize1 // Compensation de la bordure inférieure des onglets.
-    border _tabsSize1 solid _tabsColor1
+    top - _tabSize1 // Compensation de la bordure inférieure des onglets.
+    margin-bottom .5em
+    padding 'calc(.5em + %s) 1em .5em' % _tabSize1 // @note Idem
+    border _tabSize1 solid _tabColor1
     box-shadow .5rem .5rem 2rem rgba(0, 0, 0, .25)
     & + .tab-panel
       display none
