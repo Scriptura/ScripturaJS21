@@ -19,9 +19,8 @@ const tabs = (() => {
     }
   })()
   const transformationIntoTabs = (() => {
-    const summarys = document.querySelectorAll('.tabs > details > summary')
     let i = 0
-    for (const summary of summarys) {
+    document.querySelectorAll('.tabs > details > summary').forEach(summary => {
       i++
       const html = summary.innerHTML,
             tabSummary = document.createElement('button'),
@@ -34,12 +33,11 @@ const tabs = (() => {
       tablist.appendChild(tabSummary) // insertion du bouton
       tabSummary.insertAdjacentHTML('beforeend', html) // insertion de son contenu
       summary.parentElement.removeChild(summary) // retrait de l'élément d'origine
-    }
+    })
   })()
   const transformationIntoPannels = (() => {
-    const panels = document.querySelectorAll('.tabs > details > div')
     let i = 0
-    for (const panel of panels) {
+    document.querySelectorAll('.tabs > details > div').forEach(panel => {
       i++
       panel.id = 'tab-panel-' + i
       panel.classList.add('tab-panel')
@@ -47,16 +45,15 @@ const tabs = (() => {
       panel.setAttribute('aria-labelledby', 'tabsummary-' + i)
       panel.parentElement.parentElement.appendChild(panel) // déplacement du contenu du panneau
       panel.parentElement.querySelector('details').remove() // retrait de l'élément d'origine
-    }
+    })
   })()
   const currentTab = (() => {
-    const firstSummarys = document.querySelectorAll('.tab-list > .tab-summary:first-child')
-    for (const firstSummary of firstSummarys) {
+    document.querySelectorAll('.tab-list > .tab-summary:first-child').forEach(firstSummary => {
       firstSummary.disabled = true
       firstSummary.classList.add('current')
       firstSummary.setAttribute('aria-selected', 'true') // TODO : à vérifier
-    }
-    for (const tabSummary of document.querySelectorAll('.tab-list > .tab-summary')) {
+    })
+    document.querySelectorAll('.tab-list > .tab-summary').forEach(tabSummary => {
       tabSummary.addEventListener('click', () => {
         const tabList = tabSummary.parentElement.parentElement.firstElementChild // .querySelector('.tab-list')
         //const tabpanels = tabSummary.parentElement.querySelectorAll('.tab-panel')
@@ -80,7 +77,7 @@ const tabs = (() => {
         panel.setAttribute('aria-hidden', 'false')
         */
       })
-    }
+    })
   })()
   const currentPanel = (() => {
     const tabSummarys = document.querySelectorAll('.tab-summary')

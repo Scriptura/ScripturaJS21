@@ -1,6 +1,7 @@
 _codeBlocksColor1 = _colorG
 _codeBlocksColor2 = _colorG + 27.5% // Oui c'est trivial : c'est pour étalonner sur #777.
 _codeBlocksColor3 = _colorG - 45%
+_codeBlocksColor4 = _colorT2
 
 code
 kbd
@@ -8,7 +9,7 @@ samp
   font-family monospace, monospace // @bugfix Correct the inheritance and scaling of font size @affected All browsers.
   font-size 1em // @bugfix Correct the odd `em` font sizing @affected All browsers.
   word-break break-all
-  color _colorT2
+  color _codeBlocksColor4
   border-radius _r2
 
 // @note 1. Pas d'effet de transparence sur le background ni de bordures en raison des chevauchements possibles des balises code au sein d'un même paragraphe de texte, puisque nous avons opté pour un padding légèrement supérieur au ligne-height de base.
