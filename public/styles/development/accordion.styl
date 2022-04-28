@@ -6,7 +6,7 @@ _accordionColor2 = _color5
 
 .accordion summary
 .accordion .accordion-summary
-  padding 1em
+  padding .75em 1em
   color _colorT
   background-color _accordionColor1
   //background _accordionColor1 linear-gradient(to top, rgba(0, 0, 0, .1), rgba(255, 255, 255, .05))
@@ -24,17 +24,26 @@ _accordionColor2 = _color5
 
 .accordion > * > :first-child
   display flex
-  &:focus
-  &:hover
-  &:active
-    background-color _accordionColor2
+  align-items center
   &::after
-    content '\002B'
-    font-weight bold
+    content '\2039'
+    content url('data:image/svg+xml;charset=UTF-8, <svg class="icon icon-arrow-back-ios" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>')
+    //background-size 2em 2em
+    //background-color red
     margin-left auto
+    font-weight bold
+    font-size 1.5em
+    //align-self center
+    transition transform .3s ease-out
 
-.accordion .open button
-  background-color _accordionColor2
+.no-touch .accordion > * > :first-child
+  &:focus-visible
+  &:hover
+  //&:active
+    background-color _accordionColor2
+
+//.accordion .open button
+//  background-color _accordionColor2
 
 .accordion > * > :last-child
   padding 0 1em
@@ -45,7 +54,8 @@ _accordionColor2 = _color5
 
 .accordion details[open] summary::after
 .accordion .open .accordion-summary::after
-  content '\2212'
+  //content '\2212'
+  transform rotate(-90deg)
 
 .accordion .accordion-panel
   max-height 0
