@@ -2047,7 +2047,7 @@ form > [class*="grid"] > .input {
   padding: 0.75em 1em;
   color: #e9dac5;
   background-color: #ff6347;
-  box-shadow: inset 0.5rem 0.5rem 2rem rgba(255,255,255,0.15);
+  box-shadow: inset 0.5rem 0.5rem 2rem rgba(255,255,255,0.07), inset -0.5rem -0.5rem 2rem rgba(0,0,0,0.18);
   cursor: pointer;
   outline: none;
 }
@@ -2065,11 +2065,11 @@ form > [class*="grid"] > .input {
 }
 .accordion > * > :first-child::after {
   content: '\2039';
-  content: url("data:image/svg+xml;charset=UTF-8, <svg class="icon icon-arrow-back-ios" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>");
+  content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>");
   margin-left: auto;
   font-weight: bold;
   font-size: 1.5em;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.5s ease-out;
 }
 .no-touch .accordion > * > :first-child:focus-visible,
 .no-touch .accordion > * > :first-child:hover {

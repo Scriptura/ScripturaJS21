@@ -1,5 +1,6 @@
 _accordionColor1 = _color2
 _accordionColor2 = _color5
+_accordionTime1 = .5s
 
 .accordion
   box-shadow 0 0 2rem rgba(0, 0, 0, .25)
@@ -8,9 +9,9 @@ _accordionColor2 = _color5
 .accordion .accordion-summary
   padding .75em 1em
   color _colorT
-  background-color _accordionColor1
   //background _accordionColor1 linear-gradient(to top, rgba(0, 0, 0, .1), rgba(255, 255, 255, .05))
-  box-shadow inset .5rem .5rem 2rem rgba(255, 255, 255, .15)
+  background-color _accordionColor1
+  box-shadow inset .5rem .5rem 2rem rgba(255, 255, 255, .07), inset -.5rem -.5rem 2rem rgba(0, 0, 0, .18)
   cursor pointer
   outline none
 
@@ -27,14 +28,11 @@ _accordionColor2 = _color5
   align-items center
   &::after
     content '\2039'
-    content url('data:image/svg+xml;charset=UTF-8, <svg class="icon icon-arrow-back-ios" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>')
-    //background-size 2em 2em
-    //background-color red
+    content url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>')
     margin-left auto
     font-weight bold
     font-size 1.5em
-    //align-self center
-    transition transform .3s ease-out
+    transition transform _accordionTime1 ease-out
 
 .no-touch .accordion > * > :first-child
   &:focus-visible
@@ -50,7 +48,7 @@ _accordionColor2 = _color5
   //color #555
   //background-color #f8f7f5
   overflow hidden
-  transition max-height .5s ease-out
+  transition max-height _accordionTime1 ease-out
 
 .accordion details[open] summary::after
 .accordion .open .accordion-summary::after
