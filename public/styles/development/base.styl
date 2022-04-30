@@ -179,11 +179,16 @@ sup
 details
   display block // @bugfix Add the correct display @affected Edge, IE 10+, and Firefox.
 
+details details
+  margin-left 2em
+
 summary
   display list-item // @bugfix Add the correct display @affected All browsers.
   //display inline-block
   cursor pointer
   &:focus-visible
+  &:hover
+    color _color5
     outline none
     &::marker
       color _color5

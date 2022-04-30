@@ -175,14 +175,20 @@ sup {
 details {
   display: block;
 }
+details details {
+  margin-left: 2em;
+}
 summary {
   display: list-item;
   cursor: pointer;
 }
-summary:focus-visible {
+summary:focus-visible,
+summary:hover {
+  color: #ffa500;
   outline: none;
 }
-summary:focus-visible::marker {
+summary:focus-visible::marker,
+summary:hover::marker {
   color: #ffa500;
 }
 template {
@@ -787,9 +793,6 @@ samp {
 p[class*=message] {
   padding: 1em;
 }
-[class*=message-] {
-  color: #fff;
-}
 .message-primary {
   background-color: #696969;
 }
@@ -797,16 +800,16 @@ p[class*=message] {
   background-color: #515151;
 }
 .message-info {
-  background-color: #628099;
+  background-color: #4e667a;
 }
 .message-success {
-  background-color: #629940;
+  background-color: #4e7a33;
 }
 .message-danger {
-  background-color: #ff6347;
+  background-color: #e63256;
 }
 .message-warning {
-  background-color: #ffa500;
+  background-color: #c9741c;
 }
 ul {
   list-style-type: square;
@@ -1196,86 +1199,86 @@ audio:not([controls]) {
     transform: translate(0, 0);
   }
 }
-.table {
+[class*=table] {
   width: 100%;
   border-collapse: collapse;
   font-weight: normal;
   word-wrap: break-word;
   text-align: left;
 }
-.table th {
+[class*=table] th {
   font-weight: normal;
 }
 .table-fixed {
   table-layout: fixed;
 }
 @media (max-width: 50.01em) {
-  .table {
+  [class*=table] {
     border-collapse: separate;
     border-spacing: 0 1em;
   }
-  .table thead,
-  .table tfoot {
+  [class*=table] thead,
+  [class*=table] tfoot {
     display: none;
   }
-  .table th,
-  .table td {
+  [class*=table] th,
+  [class*=table] td {
     display: block;
     background-color: #515151;
   }
-  .table tr > :first-child {
+  [class*=table] tr > :first-child {
     padding-top: 1em;
   }
-  .table td:last-child {
+  [class*=table] td:last-child {
     padding-bottom: 1em;
   }
-  .table tfoot :empty {
+  [class*=table] tfoot :empty {
     display: none;
   }
-  .table tbody tr {
+  [class*=table] tbody tr {
     border-radius: 0.2em;
     box-shadow: 0 0 2rem rgba(0,0,0,0.3);
   }
-  .table tbody tr > * {
+  [class*=table] tbody tr > * {
     padding: 0 1em;
   }
-  .table tbody th::before,
-  .table tbody td::before {
+  [class*=table] tbody th::before,
+  [class*=table] tbody td::before {
     content: attr(data-thead) ' ';
     color: #d2b48c;
   }
-  .table tbody td:empty::before {
+  [class*=table] tbody td:empty::before {
     content: attr(data-thead) ' ● ● ●';
   }
 }
 @media (min-width: 50.01em) {
-  .table {
+  [class*=table] {
     box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
   }
-  .table th,
-  .table td {
+  [class*=table] th,
+  [class*=table] td {
     vertical-align: top;
     padding: 0.5em 1em;
     box-shadow: inset 0 0 1px #222;
   }
-  .table thead th {
+  [class*=table] thead th {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1;
     background-color: #ff6347;
   }
-  .table tbody th,
-  .table tfoot {
+  [class*=table] tbody th,
+  [class*=table] tfoot {
     background-color: #303030;
   }
-  .table tbody tr:nth-child(odd) {
+  [class*=table] tbody tr:nth-child(odd) {
     background-color: #515151;
   }
-  .table tbody tr:nth-child(even) {
+  [class*=table] tbody tr:nth-child(even) {
     background-color: #3d3d3d;
   }
-  .table tbody :empty::after {
+  [class*=table] tbody :empty::after {
     content: '● ● ●';
   }
 }
@@ -2042,7 +2045,7 @@ form > [class*="grid"] > .input {
 .accordion {
   box-shadow: 0 0 2rem rgba(0,0,0,0.25);
 }
-.accordion summary,
+.accordion > summary,
 .accordion .accordion-summary {
   padding: 0.75em 1em;
   color: #e9dac5;
@@ -2080,7 +2083,7 @@ form > [class*="grid"] > .input {
   overflow: hidden;
   transition: max-height 0.5s ease-out;
 }
-.accordion details[open] summary::after,
+.accordion > details[open] summary::after,
 .accordion .open .accordion-summary::after {
   transform: rotate(-90deg);
 }
@@ -2383,19 +2386,19 @@ html,
 .card svg,
 .article,
 .message,
-[class*=alert],
-[class*=alert]::before,
+[class*=message],
 [class*=demo-items] > *,
 [class*=list-stripe] > :not([class*=-links]),
 [class*=figure],
 [class*=button],
 .search button,
-.table thead th,
-.table tfoot,
-.table tbody th,
-.table tbody td,
+[class*=table],
+thead th,
+tfoot,
+tbody th,
+tbody td,
 .switch + label::after,
-.accordion summary,
+.accordion > * > summary,
 .accordion-summary,
 .tab-summary,
 .audio-player,

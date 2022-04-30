@@ -29,7 +29,7 @@
 const accordion = (() => {
   document.querySelectorAll('.accordion').forEach(e => e.setAttribute('role', 'tablist'))
   const transformationOfDetails = (() => {
-    document.querySelectorAll('.accordion details').forEach(details => {
+    document.querySelectorAll('.accordion > details').forEach(details => {
       const html = details.innerHTML,
             substitute = document.createElement('div')
       substitute.classList.add('accordion-details')
@@ -43,7 +43,7 @@ const accordion = (() => {
  })()
   const transformationOfSummarys = (() => {
     let i = 0
-    document.querySelectorAll('.accordion summary').forEach(summary => {
+    document.querySelectorAll('.accordion > * > summary').forEach(summary => {
       i++
       const html = summary.innerHTML,
             substitute = document.createElement('button')

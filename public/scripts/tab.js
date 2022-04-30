@@ -12,7 +12,7 @@ const tabs = (() => {
   })()
   const transformationOfSummariesIntoTabs = (() => {
     let i = 0
-    for (const summary of document.querySelectorAll('.tabs summary')) {
+    for (const summary of document.querySelectorAll('.tabs > * > summary')) {
       i++
       const tablist = summary.parentElement.parentElement.firstElementChild,
             summaryHtml = summary.innerHTML,
@@ -29,7 +29,7 @@ const tabs = (() => {
   })()
   const transformationOfElementsIntoPannels = (() => {
     let i = 0
-    for (const panel of document.querySelectorAll('.tabs details > *')) {
+    for (const panel of document.querySelectorAll('.tabs > details > *')) {
       i++
       panel.id = 'tab-panel-' + i
       panel.classList.add('tab-panel')

@@ -5,7 +5,7 @@ _accordionTime1 = .5s
 .accordion
   box-shadow 0 0 2rem rgba(0, 0, 0, .25)
 
-.accordion summary
+.accordion > summary
 .accordion .accordion-summary
   padding .75em 1em
   color _colorT
@@ -50,7 +50,7 @@ _accordionTime1 = .5s
   overflow hidden
   transition max-height _accordionTime1 ease-out
 
-.accordion details[open] summary::after
+.accordion > details[open] summary::after
 .accordion .open .accordion-summary::after
   //content '\2212'
   transform rotate(-90deg)

@@ -4,7 +4,7 @@ _tablesColor2 = _color2
 _tablesColor3 = _colorG - 30%
 _tablesColor4 = _colorG - 10%
 
-.table
+[class*=table]
   width 100%
   border-collapse collapse // separate
   //border-spacing .2em
@@ -19,7 +19,7 @@ _tablesColor4 = _colorG - 10%
 
 @media (max-width _sizeS)
 
-  .table
+  [class*=table]
     border-collapse separate
     border-spacing 0 1em
     & thead
@@ -49,7 +49,7 @@ _tablesColor4 = _colorG - 10%
 
 @media (min-width _sizeS)
 
-  .table
+  [class*=table]
     box-shadow _shadow5
     & th
     & td
