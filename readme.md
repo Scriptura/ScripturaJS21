@@ -56,7 +56,7 @@ Ensuite, pour lancer le projet en mode développement :
 $ yarn dev
 ```
 
-Une fenêtre s'ouvre alors dans votre navigateur. L'application est consultables avec un smatphone sur le port `localhost:9001` si vous disposez du wifi.
+Une fenêtre s'ouvre alors dans votre navigateur et l'application se charge sur le port `localhost:9001`. Si vous disposez du wifi, l'application est aussi consultable avec un terminal mobile - smatphone ou tablette - sur le port `192.168.1.89:9001`.
 
 Bonne exploration !
 
