@@ -16,7 +16,7 @@ Scriptura est une application web sous Node.js utilisant :
 
 ### Postgres
 
-Dans `settings/` copiez/collez le fichier `variablesModel.js`, renommez-le `variables.js` et vérifier/modifier ses variables en fonction de vos préférences, notamment celle liées à la base de données :
+Dans `settings/` dupliquez le fichier `variablesModel.js`, renommez-le `variables.js` et vérifier/modifier ses variables en fonction de vos préférences, notamment celles liées à la base de données :
 
 ```
 // database :
