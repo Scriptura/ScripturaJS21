@@ -6,7 +6,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
 .main-nav(role='navigation' aria-label='Main')
   ul
     li
-      if data._current == 2
+      if data._url.path === '/login'
         .active
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#login')
@@ -17,7 +17,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
             use(xlink:href='/medias/sprites/utils.svg#login')
           | Login
     li
-      if data._current == 3
+      if data._url.path === '/register'
         .active
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#bookmark')
@@ -28,7 +28,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
             use(xlink:href='/medias/sprites/utils.svg#bookmark')
           | Register
     li
-      if data._current == 4
+      if data._url.path === '/account/admin'
         .active
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#user')
@@ -39,7 +39,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
             use(xlink:href='/medias/sprites/utils.svg#user')
           | Account
     li
-      if data._current == 5
+      if data._url.path === '/person/1'
         .active
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#frame')
@@ -50,7 +50,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
             use(xlink:href='/medias/sprites/utils.svg#frame')
           | Person 1
     li
-      if data._current == 6
+      if data._url.path === '/place/1'
         .active
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#location')
@@ -61,31 +61,61 @@ button.cmd-nav(type='button' aria-label='Main Menu')
             use(xlink:href='/medias/sprites/utils.svg#location')
           | Place 1
     li
-      a(href='/article/1')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#quill')
-        | Article 1
+      if data._url.path === '/article/1'
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#quill')
+          | Article 1
+      else
+        a(href='/article/1')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#quill')
+          | Article 1
     li
-      a(href='/keyword/lion')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#sharp')
-        | Keyword
+      if data._url.path === '/keyword/lion'
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#sharp')
+          | Keyword
+      else
+        a(href='/keyword/lion')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#sharp')
+          | Keyword
     li
-      a(href='/imageGallery')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#picture')
-        | Images
+      if data._url.path === '/imageGallery'
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#picture')
+          | Images
+      else
+        a(href='/imageGallery')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#picture')
+          | Images
     li
       - const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
-      a(href='/calendar/' + currentDate + '')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#calendar')
-        | Calendar
+      if data._url.path === '/calendar/' + currentDate + ''
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#calendar')
+          | Calendar
+      else
+        a(href='/calendar/' + currentDate + '')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#calendar')
+          | Calendar
     li
-      a(href='/styleGuide')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#ampersand')
-        | Style Guide
+      if data._url.path === '/styleGuide'
+        .active
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#ampersand')
+          | Style Guide
+      else
+        a(href='/styleGuide')
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#ampersand')
+          | Style Guide
     li
       a(href='//github.com/Scriptura/ScripturaJS21')
         svg.icon(role='img' focusable='false')

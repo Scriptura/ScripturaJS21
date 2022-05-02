@@ -8,6 +8,7 @@ router.get('/calendar/:year([0-9]{1,4})/:month(0[1-9]|1[0-2])/:day(0[1-9]|[12][0
   const data = await getCalendarDay(req.params.year, req.params.month, req.params.day)
     .then(data => {
       if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
+      data._url = req
       res.render('calendarDay', {data})
     })
     .catch(error => next())

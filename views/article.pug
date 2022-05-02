@@ -8,19 +8,22 @@ block main
       section.add-line-marks.add-drop-cap.decorative-hr!= data._content
       footer
         div
-          p
-            if data._author
+          if data._author
+            p
               svg.icon(role='img' focusable='false')
                 use(xlink:href='/medias/sprites/utils.svg#quill')
               | Auteur&nbsp;: #{data._author}
-          p
-            svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#calendar')
-            |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
-          p
-            svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#info')
-            != data._description
+          if data._creation
+            p
+              svg.icon(role='img' focusable='false')
+                use(xlink:href='/medias/sprites/utils.svg#calendar')
+              |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
+          if data._description
+            p
+              svg.icon(role='img' focusable='false')
+                use(xlink:href='/medias/sprites/utils.svg#info')
+              != data._description
+          //-if data._keywords
           p.keywords
             svg.icon(role='img' focusable='false')
               use(xlink:href='/medias/sprites/utils.svg#old-key')

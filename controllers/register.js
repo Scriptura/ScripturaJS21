@@ -9,9 +9,10 @@ const express = require('express'),
 router.get('/register', (req, res, next) => {
   res.render('register', {
     data: {
-    _title: 'Inscription . ' + vv.siteName,
-    _name: 'Inscription',
-    _description: 'Page d\'enregistrement des utilisateurs'
+      _url: req,
+      _title: 'Inscription . ' + vv.siteName,
+      _name: 'Inscription',
+      _description: 'Page d\'enregistrement des utilisateurs'
     }
   })
 })

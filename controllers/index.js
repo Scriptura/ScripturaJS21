@@ -9,6 +9,7 @@ const express = require('express'),
 router.get('/', (req, res, next) => { // GET home page
   res.render('index', {
     data: {
+      _url: req,
       _title: vv.siteName,
       _name: vv.siteName + ' <span>.&nbsp;Un framework pour le web</span>',
       _description: vv.siteName + ', page d\'accueil',
