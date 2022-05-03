@@ -70,6 +70,7 @@ app.use((req, res, next) => {
   res.status(404)
   res.render('404', {
     data: {
+      _url: req.url,
       _title: 'Error 404 . ' + vv.siteName,
       _description: 'Erreur 404, page non trouvée'
     }
@@ -85,8 +86,9 @@ app.use((err, req, res, next) => { // Gestionnaire d'erreurs.
   res.status(err.status || 500)
   res.render('error', {
     data: {
-    _title: 'Error 500 . ' + vv.siteName,
-    _dev: vv.dev
+      _url: req.url,
+      _title: 'Error 500 . ' + vv.siteName,
+      _dev: vv.dev
     }
   })
 })
