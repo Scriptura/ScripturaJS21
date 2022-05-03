@@ -14,7 +14,7 @@ script(type='application/ld+json').
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@id": "http://localhost:9001",
+          "@id": "#{data._url.headers.host}",
           "name": "Accueil"
         }
       },{
@@ -28,7 +28,7 @@ script(type='application/ld+json').
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "http://localhost:9001/article/1",
+          "@id": "#{data._url.path}",
           "name": "#{data._name}"
         }
       }]

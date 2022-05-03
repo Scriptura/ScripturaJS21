@@ -26,6 +26,7 @@ _tabBoxShadow1 = 0 -.5rem .5rem rgba(0, 0, 0, .1)
       border-bottom-color _tabColor1
       border-radius .5em .5em 0 0
       box-shadow _tabBoxShadow1
+      //filter drop-shadow(0 -.5rem .5rem rgba(0, 0, 0, .1))
       cursor pointer
       transition .2s box-shadow ease-in-out
       &.current
@@ -33,7 +34,6 @@ _tabBoxShadow1 = 0 -.5rem .5rem rgba(0, 0, 0, .1)
         flex-shrink 0
         max-width 60%
         background-color _color0
-        //border-color _tabColor1
         border-bottom none
         pointer-events none
       &:not(.current)
@@ -51,10 +51,5 @@ _tabBoxShadow1 = 0 -.5rem .5rem rgba(0, 0, 0, .1)
 .no-touch .tabs .tab-list button
   &:focus-visible
   &:hover
-  //&:active
     outline none
-    //color _tabColor4
-    //background-color _tabColor3
-    //border-bottom .2em solid _tabColor3
     box-shadow inset 0 -.3em _tabColor3, _tabBoxShadow1
-    //transform translateY(-1px)

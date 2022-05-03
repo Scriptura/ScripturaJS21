@@ -4,5 +4,5 @@ ol.breadcrumb(role='navigation' aria-label='Breadcrumb')
   li
     a(href='/persons') Persons
   li 
-    a(href='/person/1' aria-current='page')
-      span Henri Sonier de Lubac
+    a(href=data._url.path aria-current='page')
+      span!= data._name

@@ -670,7 +670,6 @@ main.main-bottom-none {
 }
 .breadcrumb {
   display: flex;
-  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   background-color: #2d2d2d;
@@ -685,6 +684,17 @@ main.main-bottom-none {
 }
 .breadcrumb li:nth-child(2) {
   z-index: 1;
+}
+.breadcrumb li:nth-child(3) {
+  flex-shrink: 1;
+  max-height: 2.5em;
+  margin-right: 3em;
+  overflow: hidden;
+}
+.breadcrumb li:nth-child(3) a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .breadcrumb a {
   position: relative;
@@ -712,11 +722,6 @@ main.main-bottom-none {
 .breadcrumb li a:active {
   color: #fff;
   background-color: #ff6347;
-}
-@media (max-width: 36.01em) {
-  .breadcrumb > :last-child {
-    display: none;
-  }
 }
 code,
 kbd,
