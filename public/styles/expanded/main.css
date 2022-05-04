@@ -476,7 +476,7 @@ main.main-bottom-none {
 .logo-nav:focus,
 .logo-nav:hover,
 .logo-nav:active {
-  background-color: #ff6347;
+  background-color: #ffa500;
 }
 .logo-nav::after {
   content: '';
@@ -675,33 +675,44 @@ main.main-bottom-none {
   background-color: #2d2d2d;
 }
 .breadcrumb li {
-  margin-right: -1em;
   list-style: none;
   filter: drop-shadow(0.5rem 0.5rem 0.5rem rgba(0,0,0,0.25));
-}
-.breadcrumb li:nth-child(1) {
-  z-index: 2;
-}
-.breadcrumb li:nth-child(2) {
-  z-index: 1;
-}
-.breadcrumb li:nth-child(3) {
-  flex-shrink: 1;
-  max-height: 2.5em;
-  margin-right: 3em;
   overflow: hidden;
 }
-.breadcrumb li:nth-child(3) a {
+.breadcrumb li a:focus,
+.breadcrumb li a:hover,
+.breadcrumb li a:active {
+  color: #fff;
+  background-color: #ff6347;
+}
+.breadcrumb li:first-child {
+  z-index: 2;
+}
+.breadcrumb li:first-child a {
+  padding-left: 1em;
+}
+.breadcrumb li:nth-last-child(2) {
+  z-index: 1;
+  flex-shrink: 0;
+}
+.breadcrumb li:last-child {
+  max-height: 2.5em;
+  margin-right: 3em;
+}
+.breadcrumb li:last-child a {
+  color: #e9dac5;
+}
+.breadcrumb li + li {
+  margin-left: -1em;
+}
+.breadcrumb a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-.breadcrumb a {
   position: relative;
   display: block;
   line-height: 2.5em;
-  padding: 0 1.875em;
-  font-size: 1em;
+  padding: 0 1.88em;
   text-decoration: none;
   background-size: cover;
   background-repeat: no-repeat;
@@ -711,17 +722,10 @@ main.main-bottom-none {
   -webkit-clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
 }
-.breadcrumb li:first-child a {
-  padding-left: 1em;
-}
-.breadcrumb li:last-child a {
-  color: #e9dac5;
-}
-.breadcrumb li a:focus,
-.breadcrumb li a:hover,
-.breadcrumb li a:active {
-  color: #fff;
-  background-color: #ff6347;
+@media (max-width: 91.01em) {
+  .breadcrumb > :first-child {
+    display: none;
+  }
 }
 code,
 kbd,
@@ -808,10 +812,10 @@ p[class*=message] {
   background-color: #4e667a;
 }
 .message-success {
-  background-color: #4e7a33;
+  background-color: #43682b;
 }
 .message-danger {
-  background-color: #e63256;
+  background-color: #cc4e2f;
 }
 .message-warning {
   background-color: #bf7c00;
@@ -2383,6 +2387,7 @@ html,
 .main-nav a,
 .main-nav .active,
 .main-nav .active::after,
+.breadcrumb,
 .breadcrumb ol,
 .breadcrumb a,
 .footer,

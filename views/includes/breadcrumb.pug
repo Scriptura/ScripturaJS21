@@ -1,8 +1,18 @@
 ol.breadcrumb(role='navigation' aria-label='Breadcrumb')
   li
     a(href='/') Home
+  if documentType === 'article'
+    li
+      a(href='/articles') Articles
+  else if documentType === 'keyword'
+    li
+      a(href='/keywords') Keywords
+  else if documentType === 'person'
+    li
+      a(href='/persons') Persons
+  else if documentType === 'place'
+    li
+      a(href='/places') Places
   li
-    a(href='/persons') Persons
-  li 
-    a(href=data._url.path aria-current='page')
-      span!= data._name
+    //- @note Le lien pour la page courante est nécessaire pour l'accessibilité.
+    a(href=data._url.path aria-current='page')!= data._name

@@ -5,6 +5,20 @@
   @see https://schema.org/Article
   @see https://schema.org/WebPage
 
+
+if documentType === 'article'
+  - var parentPath = '/articles'
+  - var parentName = 'Articles'
+else if documentType === 'keyword'
+  - var parentPath = '/keywords'
+  - var parentName = 'Keywords'
+else if documentType === 'person'
+  - var parentPath = '/persons'
+  - var parentName = 'Persons'
+else if documentType === 'place'
+  - var parentPath = '/places'
+  - var parentName = 'Places'
+
 script(type='application/ld+json').
   [
     {
@@ -21,15 +35,15 @@ script(type='application/ld+json').
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@id": "http://localhost:9001/articles",
-          "name": "Articles"
+          "@id": "#{parentPath}",
+          "name": "!{parentName}"
         }
       },{
         "@type": "ListItem",
         "position": 3,
         "item": {
           "@id": "#{data._url.path}",
-          "name": "#{data._name}"
+          "name": "!{data._name}"
         }
       }]
     },

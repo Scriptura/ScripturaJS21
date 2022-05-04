@@ -3,6 +3,7 @@ _mainNavFix = 177px
 _mainNavColor1 = _colorG - 34%
 _mainNavColor2 = _colorT2
 _mainNavColor3 = _color2
+_mainNavColor4 = _color2 //_colorG - 34%
 _logoNavSizeWidth = 4em
 
 .nav
@@ -11,18 +12,17 @@ _logoNavSizeWidth = 4em
 .logo-nav
   grid-row span 2
   display block
-  background-color _color2 //_mainNavColor1
+  background-color _mainNavColor4
   box-shadow _shadow2
   &:focus
   &:hover
   &:active
-    background-color _color2
+    background-color _color5
   &::after
     content ''
     display block
     width 100%
     height 100%
-    //background-color _color2
     background-image url(../medias/images/logo/195v.svg)
     background-repeat no-repeat
     background-position 50% 50%

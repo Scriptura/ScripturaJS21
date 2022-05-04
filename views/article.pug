@@ -1,5 +1,8 @@
 extends layout
 
+block variables
+  - var documentType = 'article'
+
 block main
   main#main(role='main')
     article.article
@@ -34,3 +37,6 @@ block main
             a(href='/keyword/lion') Antilope
             |  • 
             a(href='/keyword/lion') Crocodile
+
+block structuredData
+  include includes/structuredData

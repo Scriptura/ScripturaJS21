@@ -1,5 +1,8 @@
 extends layout
 
+block variables
+  - var documentType = 'imageGallery'
+
 block main
   main#main(role='main').main-bottom-none
     h1.main-heading!= data._name

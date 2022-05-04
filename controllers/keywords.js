@@ -7,8 +7,9 @@ const express = require('express'),
 router.get('/keywords', async (req, res, next) => {
   const data = await getKeywords()
     .then(data => {
-      console.log(data)
+      //console.log(data)
       if (data === undefined) throw new Error('Error: the query did not return anything because it did not match with data.')
+      data._url = req
       res.render('keywords', {data})
     })
     .catch(error => next())
