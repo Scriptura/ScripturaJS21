@@ -70,10 +70,11 @@ figure
   [class*=-align] ~ h3
   [class*=-align] ~ hr
   [class*=-align] ~ aside
-    clear both // @Note Ciblage de certains éléments faisants suite à une image flotante @todo Le margin-top de ces éléments n'est pas pris en compte sous l'image...
+    clear both // @note Ééments faisants suite à une image flotante @todo Le margin-top de ces éléments n'est pas pris en compte sous l'image...
 
 .js [class*=-focus]
   position relative
+  z-index 1 // @note Évite un conflit avec d'autres éléments html positionnés en relatifs, tel que les ancres line-mark.
   cursor zoom-in
   transition .15s transform
 

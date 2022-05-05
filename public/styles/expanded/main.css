@@ -945,6 +945,7 @@ figure {
 }
 .js [class*=-focus] {
   position: relative;
+  z-index: 1;
   cursor: zoom-in;
   transition: 0.15s transform;
 }
