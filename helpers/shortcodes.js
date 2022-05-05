@@ -56,10 +56,12 @@ const shortcodes = (data) => {
 
   const shortcodeAttributes = (...matchs) => matchs[1].replace(/\s+(.+?)="(.*?)"/g, shortcodeImages)
 
+  /*
   data = data.replace( // Images
     /{{img(.*?)\s*}}/g,
     shortcodes
   )
+  */
  
   data = data.replace( // Map Leaflet
     // /{{map\s+(.+?)?}}/g,
