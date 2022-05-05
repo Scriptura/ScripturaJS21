@@ -1,12 +1,12 @@
-_colorProgress1 = _color2
-_colorProgress2 = rgba(0, 0, 0, .2) //_colorG
-_colorProgress3 = rgba(255, 255, 255, .2)
+_colorProgressBar1 = _color2
+_colorProgressBar2 = rgba(0, 0, 0, .2) //_colorG
+_colorProgressBar3 = rgba(255, 255, 255, .2)
 
 .progress-bar
   position relative
   height 2em
   //margin 2em 0
-  background-color _colorProgress2
+  background-color _colorProgressBar2
   border-radius 1em
 
 .progress-bar div
@@ -18,7 +18,7 @@ _colorProgress3 = rgba(255, 255, 255, .2)
   height 100%
   min-width 2em
   max-width 100%
-  background-color _colorProgress1
+  background-color _colorProgressBar1
   box-shadow inset 0 2px 9px rgba(255, 255, 255, .3), inset 0 -2px 6px rgba(0, 0, 0, .4)
 
 .progress-bar div::after
@@ -28,7 +28,7 @@ _colorProgress3 = rgba(255, 255, 255, .2)
   left 0
   bottom 0
   right 0
-  background-image linear-gradient(-45deg, _colorProgress3 25%, transparent 25%, transparent 50%, _colorProgress3 50%, _colorProgress3 75%, transparent 75%, transparent)
+  background-image linear-gradient(-45deg, _colorProgressBar3 25%, transparent 25%, transparent 50%, _colorProgressBar3 50%, _colorProgressBar3 75%, transparent 75%, transparent)
   background-size 3em 3em
   animation animProgress 1.5s linear infinite
 
@@ -47,11 +47,11 @@ progress[value]
   margin 0 // @bugfix @affected Chrome @note Alignement vertical décalé
   color $color1 // @affected IE10
   border 0 // @affected Firefox
-  background _colorProgress1 // @affected Opera
+  background _colorProgressBar1 // @affected Opera
 
 progress::-webkit-progress-bar
-  background _colorProgress1
+  background _colorProgressBar1
 
 progress::-webkit-progress-value
-  background _colorProgress1
+  background _colorProgressBar1
 */
