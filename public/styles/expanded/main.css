@@ -1246,7 +1246,7 @@ audio:not([controls]) {
   }
   [class*=table] tbody tr {
     border-radius: 0.2em;
-    box-shadow: 0 0 2rem rgba(0,0,0,0.3);
+    box-shadow: 0 0 2rem rgba(0,0,0,0.2);
   }
   [class*=table] tbody tr > * {
     padding: 0 1em;

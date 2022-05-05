@@ -72,7 +72,8 @@ app.use((req, res, next) => {
     data: {
       _url: req.url,
       _title: 'Error 404 . ' + vv.siteName,
-      _description: 'Erreur 404, page non trouvée'
+      _description: 'Erreur 404, page non trouvée',
+      _name: 'Error 404'
     }
   })
   //next(createError(404)) // catch 404 and forward to error handler
@@ -88,7 +89,8 @@ app.use((err, req, res, next) => { // Gestionnaire d'erreurs.
     data: {
       _url: req.url,
       _title: 'Error 500 . ' + vv.siteName,
-      _dev: vv.dev
+      _dev: vv.dev,
+      _name: 'Error 500'
     }
   })
 })
