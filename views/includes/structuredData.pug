@@ -42,7 +42,7 @@ script(type='application/ld+json').
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "#{data._url.path}",
+          "@id": "#{data._url.headers.host + data._url.path}",
           "name": "!{data._name}"
         }
       }]

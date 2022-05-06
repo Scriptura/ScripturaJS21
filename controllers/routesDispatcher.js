@@ -30,6 +30,10 @@ router.use(
 )
 router.use(
   '/',
+  require(path.join(__dirname, 'places'))
+)
+router.use(
+  '/',
   require(path.join(__dirname, 'place'))
 )
 router.use(
