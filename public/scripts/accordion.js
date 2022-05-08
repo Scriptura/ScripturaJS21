@@ -92,7 +92,7 @@ const accordion = (() => {
           accordionSummary.setAttribute('aria-expanded', 'false')
         if (singleTab) siblingStateManagement(accordionSummary.parentElement)
         const accordionPanel = accordionSummary.nextElementSibling
-        if (accordionPanel.style.maxHeight) {
+        if (accordionPanel.getAttribute('aria-hidden') === 'false') {
           accordionPanel.style.maxHeight = null
           accordionPanel.setAttribute('aria-hidden', 'true')
         }
