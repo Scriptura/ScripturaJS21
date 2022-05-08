@@ -2,6 +2,7 @@ _breadcrumbSize = 2.5em
 _breadcrumbColor = _colorT2
 _breadcrumbColor1 = _colorG - 34%
 _breadcrumbColor2 = _color2
+_breadcrumbColor3 = _colorG
 
 .breadcrumb
   display flex
@@ -28,11 +29,13 @@ _breadcrumbColor2 = _color2
   & li:last-child
     max-height _breadcrumbSize
     margin-right 3em
-    & a
+    & div
       color _colorT
+      //background-color _breadcrumbColor3
   & li + li
     margin-left -1em
   & a
+  & div
     overflow hidden
     white-space nowrap
     text-overflow ellipsis
@@ -50,5 +53,5 @@ _breadcrumbColor2 = _color2
 
 @media (max-width _sizeNav)
 
-  .breadcrumb > :first-child
+  .breadcrumb > :nth-last-child(3) // @note Ne pas mettre :first-child, il faut penser à la page index.
     display none

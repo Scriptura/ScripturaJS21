@@ -530,7 +530,7 @@ main.main-bottom-none {
   .logo-nav {
     position: absolute;
     z-index: 10;
-    width: 4em;
+    width: 3em;
     height: 2.5em;
   }
   .main-nav ul {
@@ -583,7 +583,7 @@ main.main-bottom-none {
     transition-delay: 1s;
   }
   .breadcrumb {
-    padding-left: 4em !important;
+    padding-left: 3em !important;
   }
 }
 @media (min-width: 91.01em) {
@@ -699,13 +699,14 @@ main.main-bottom-none {
   max-height: 2.5em;
   margin-right: 3em;
 }
-.breadcrumb li:last-child a {
+.breadcrumb li:last-child div {
   color: #e9dac5;
 }
 .breadcrumb li + li {
   margin-left: -1em;
 }
-.breadcrumb a {
+.breadcrumb a,
+.breadcrumb div {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -723,7 +724,7 @@ main.main-bottom-none {
           clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
 }
 @media (max-width: 91.01em) {
-  .breadcrumb > :first-child {
+  .breadcrumb > :nth-last-child(3) {
     display: none;
   }
 }
@@ -955,7 +956,7 @@ figure {
   transform: scale(1.01);
 }
 .js [class*=-focus]:focus-within {
-  background-color: Orange;
+  background-color: #ffa500;
 }
 .js [class*=-focus]:focus-within svg {
   fill: Orange;
@@ -970,6 +971,11 @@ figure {
   border: none;
   outline: none;
   cursor: zoom-in;
+}
+[class*=-focus] button svg,
+.focus-off button svg {
+  width: 100%;
+  height: 100%;
 }
 [class*=-focus] button {
   top: 1em;
@@ -1001,11 +1007,6 @@ figure {
   width: 2em;
   height: 2em;
   cursor: zoom-out;
-}
-[class*=-focus] button svg,
-.focus-off button svg {
-  width: 100%;
-  height: 100%;
 }
 audio,
 video,
@@ -2463,6 +2464,12 @@ html,
 }
 .invisible {
   visibility: hidden;
+}
+a[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+a[aria-disabled="true"]:active {
+  pointer-events: none;
 }
 .sr-only {
   position: absolute;

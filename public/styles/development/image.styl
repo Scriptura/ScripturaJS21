@@ -77,19 +77,14 @@ figure
   z-index 1 // @note Évite un conflit avec d'autres éléments html positionnés en relatifs dans la mise en page, tel que les ancres line-mark.
   cursor zoom-in
   transition .15s transform
-
-.js [class*=-focus]:focus-within
-.js [class*=-focus]:hover
-//.js [class*=-focus]:active
-  //z-index 30
-  box-shadow _shadow12
-  transform scale(1.01)
-
-.js [class*=-focus]:focus-within
-  background-color Orange
-
-.js [class*=-focus]:focus-within svg
-  fill Orange
+  &:focus-within
+  &:hover
+    box-shadow _shadow12
+    transform scale(1.01)
+  &:focus-within
+    background-color _color5
+    & svg
+      fill Orange
 
 [class*=-focus] button
 .focus-off button
@@ -102,6 +97,11 @@ figure
   outline none
   cursor zoom-in
 
+[class*=-focus] button svg
+.focus-off button svg
+  width 100%
+  height 100%
+
 [class*=-focus] button
   top _gap
   right _gap
@@ -113,30 +113,22 @@ figure
   display flex
   align-items center
   //justify-content center // @todo Nécessité de cette règle à évaluer...
-  z-index 4001 // @note Doit passer au dessus de tout autre élément, notamment le scroll top
+  z-index 4001 // @note Doit passer au dessus de tout autre élément, notamment le scroll top.
   top 0
   left 0
   bottom 0
   right 0
-  padding 0 // @note Annule une règle du template
-  //color #aaa
+  padding 0 // @note Annule une règle du template.
   //background-color #222 // @bugfix @affected Chrome mobile @note box-shadox sur l'image plutôt qu'un background sur le conteneur afin d'éviter un décalage d'environ 1px en bottom.
   cursor zoom-out
-
-.focus-off img
-  margin auto
-  max-height 100vh
-  background-color #000 // @note Pour les .png transparents
-  box-shadow _shadow13
-
-.focus-off button
-  bottom _gap
-  right _gap
-  width 2em
-  height 2em
-  cursor zoom-out
-
-[class*=-focus] button svg
-.focus-off button svg
-  width 100%
-  height 100%
+  & img
+    margin auto
+    max-height 100vh
+    background-color #000 // @note Pour les .png transparents.
+    box-shadow _shadow13
+  & button
+    bottom _gap
+    right _gap
+    width 2em
+    height 2em
+    cursor zoom-out
