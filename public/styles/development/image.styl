@@ -81,10 +81,11 @@ figure
   &:hover
     box-shadow _shadow12
     transform scale(1.01)
-  &:focus-within
-    background-color _color5
-    & svg
-      fill Orange
+
+.no-touch [class*=-focus]:focus-within
+  background-color _color5
+  & svg
+    fill Orange
 
 [class*=-focus] button
 .focus-off button

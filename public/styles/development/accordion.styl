@@ -3,6 +3,8 @@ _accordionColor2 = _color5
 _accordionTime1 = .5s
 
 .accordion
+  display flex
+  flex-direction column
   box-shadow 0 0 2rem rgba(0, 0, 0, .25)
 
 .accordion > summary
@@ -16,11 +18,9 @@ _accordionTime1 = .5s
   outline none
 
 .accordion .accordion-summary
-  display block
   width 100%
-  font-family Arial
-  font-size 1em
-  text-align left
+  //font-size 1em
+  //text-align left
   border none
 
 .accordion > * > :first-child

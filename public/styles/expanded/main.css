@@ -476,6 +476,7 @@ main.main-bottom-none {
 .logo-nav:focus,
 .logo-nav:hover,
 .logo-nav:active {
+  fill: #222;
   background-color: #ffa500;
 }
 .logo-nav::after {
@@ -955,10 +956,10 @@ figure {
   box-shadow: 0.5em 0.5em 2em rgba(0,0,0,0.3);
   transform: scale(1.01);
 }
-.js [class*=-focus]:focus-within {
+.no-touch [class*=-focus]:focus-within {
   background-color: #ffa500;
 }
-.js [class*=-focus]:focus-within svg {
+.no-touch [class*=-focus]:focus-within svg {
   fill: Orange;
 }
 [class*=-focus] button,
@@ -2054,6 +2055,8 @@ form > [class*="grid"] > .input {
   width: 1em;
 }
 .accordion {
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 2rem rgba(0,0,0,0.25);
 }
 .accordion > summary,
@@ -2066,11 +2069,7 @@ form > [class*="grid"] > .input {
   outline: none;
 }
 .accordion .accordion-summary {
-  display: block;
   width: 100%;
-  font-family: Arial;
-  font-size: 1em;
-  text-align: left;
   border: none;
 }
 .accordion > * > :first-child {
@@ -2391,7 +2390,7 @@ html,
 .main-nav .active::after,
 .breadcrumb,
 .breadcrumb ol,
-.breadcrumb a,
+.breadcrumb li > *,
 .footer,
 .card h2,
 .card p,
