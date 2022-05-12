@@ -271,7 +271,8 @@ main {
 }
 .type-articles main,
 .type-imageGallery main,
-.type-keyword main {
+.type-keyword main,
+.type-place main {
   padding-bottom: 0;
 }
 [class*=grid] {
