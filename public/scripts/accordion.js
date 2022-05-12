@@ -18,8 +18,7 @@
 // @option 'singleTab' : un seul onglet s'ouvre à la fois ; à définir sur la div.accordion via l'attribut data-singletab
 
 // 1. Option 'open'
-// 2. 'inherit' évite une animation au chargement de la page, il est donc nécessaire, la valeur doit cependant être passée en pixels pour le calcul de l'animation. D'où la double déclaration.
-// 3. Option 'singleTab'
+// 2. Option 'singleTab'
 
 // Inspiration pour les rôles et les attributs aria :
 // @see https://www.w3.org/TR/wai-aria-practices-1.1/examples/accordion/accordion.html
@@ -73,8 +72,7 @@ const accordion = (() => {
             accordionPanel = details.children[1]
       if (details.classList.contains('open')) {
         accordionSummary.setAttribute('aria-expanded', 'true')
-        accordionPanel.style.maxHeight = 'inherit' // 2
-        accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px' // 2
+        accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
         accordionPanel.setAttribute('aria-hidden', 'false')
       }
       else {
@@ -84,7 +82,7 @@ const accordion = (() => {
     })
     document.querySelectorAll('.accordion-summary').forEach(accordionSummary => {
       accordionSummary.addEventListener('click', () => {
-        const singleTab = accordionSummary.parentElement.parentElement.dataset.singletab // 3
+        const singleTab = accordionSummary.parentElement.parentElement.dataset.singletab // 2
         accordionSummary.parentElement.classList.toggle('open')
         if (accordionSummary.parentElement.classList.contains('open'))
           accordionSummary.setAttribute('aria-expanded', 'true')
@@ -92,12 +90,14 @@ const accordion = (() => {
           accordionSummary.setAttribute('aria-expanded', 'false')
         if (singleTab) siblingStateManagement(accordionSummary.parentElement)
         const accordionPanel = accordionSummary.nextElementSibling
+        accordionPanel.addEventListener('click', () =>  accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px') //...
         if (accordionPanel.getAttribute('aria-hidden') === 'false') {
           accordionPanel.style.maxHeight = null
           accordionPanel.setAttribute('aria-hidden', 'true')
         }
         else {
           accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
+          //accordionPanel.ontransitionend = () => accordionPanel.style.maxHeight = null //...
           accordionPanel.setAttribute('aria-hidden', 'false')
         }
       })
@@ -108,8 +108,8 @@ const accordion = (() => {
       if (sibling !== el) {
         sibling.classList.remove('open')
         sibling.firstElementChild.setAttribute('aria-expanded', 'false')
-        sibling.lastElementChild.style.maxHeight = null
         sibling.lastElementChild.setAttribute('aria-hidden', 'true')
+        sibling.lastElementChild.style.maxHeight = null
       }
     }
   }

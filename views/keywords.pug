@@ -1,12 +1,11 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'keywords'
 
 block main
-  main#main(role='main')
-    h1.main-heading!= data._name
-    ul.list-stripe-links.grid3
-      each e in data
-        li
-          a(href='/keyword/' + e._slug)= e._name
+  h1.main-heading!= data._name
+  ul.list-stripe-links.grid3
+    each e in data
+      li
+        a(href='/keyword/' + e._slug)= e._name

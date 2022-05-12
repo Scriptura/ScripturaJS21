@@ -1,21 +1,20 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'error'
 
 block main
-  main#main(role='main')
-    h1.main-heading Error 500 
-      span . Internal Server Error
-      //-#{error.status}
-      //-#{error.message}
-    if data._dev
-      pre.pre
-        code(translate='no' data-select='Select and copy')= error.stack
-    else
-      p.message-warning(role='alert')
-        svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#warning')
-        | Le serveur a rencontré un problème inattendu qui l'empêche de répondre à la requête.
-    hr
-    include includes/link
+  h1.main-heading Error 500 
+    span . Internal Server Error
+    //-#{error.status}
+    //-#{error.message}
+  if data._dev
+    pre.pre
+      code(translate='no' data-select='Select and copy')= error.stack
+  else
+    p.message-warning(role='alert')
+      svg.icon(role='img' focusable='false')
+        use(xlink:href='/medias/sprites/utils.svg#warning')
+      | Le serveur a rencontré un problème inattendu qui l'empêche de répondre à la requête.
+  hr
+  include includes/link

@@ -20,7 +20,7 @@ html.no-js(lang='fr')
     link(rel='manifest', href='/site.webmanifest')
     meta(name='msapplication-TileColor', content='#da532c')
     meta(name='msapplication-config' content='/browserconfig.xml')
-  body
+  body(class='type-' + documentType)
     a(href='#main').sr-only Aller au contenu
     block nav
       nav.nav
@@ -28,8 +28,8 @@ html.no-js(lang='fr')
           span.sr-only Scriptura
         include includes/mainNav
         include includes/breadcrumb
-    block main
-      main#main(role='main')
+    main#main(role='main')
+      block main
     //-block aside
       //-aside.aside aside
       //-include aside

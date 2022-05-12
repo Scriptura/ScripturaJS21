@@ -254,9 +254,6 @@ main {
   padding: 1em 0;
   word-break: break-word;
 }
-main.main-bottom-none {
-  padding-bottom: 0;
-}
 .nav {
   grid-area: nav;
 }
@@ -271,6 +268,11 @@ main.main-bottom-none {
 }
 [tabindex=-1]:focus:not(:focus-visible) {
   outline: 0 !important;
+}
+.type-articles main,
+.type-imageGallery main,
+.type-keyword main {
+  padding-bottom: 0;
 }
 [class*=grid] {
   display: grid;
@@ -2084,10 +2086,6 @@ form > [class*="grid"] > .input {
   font-size: 1.5em;
   transition: transform 0.5s ease-out;
 }
-.no-touch .accordion > * > :first-child:focus-visible,
-.no-touch .accordion > * > :first-child:hover {
-  background-color: #ffa500;
-}
 .accordion > * > :last-child {
   padding: 0 1em;
   overflow: hidden;
@@ -2097,8 +2095,12 @@ form > [class*="grid"] > .input {
 .accordion .open .accordion-summary::after {
   transform: rotate(-90deg);
 }
-.accordion .accordion-panel {
+.accordion .accordion-panel[aria-hidden=true] {
   max-height: 0;
+}
+.no-touch .accordion > * > :first-child:focus-visible,
+.no-touch .accordion > * > :first-child:hover {
+  background-color: #ffa500;
 }
 .tabs .tab-list {
   display: flex;
@@ -2396,7 +2398,6 @@ html,
 .card p,
 .card svg,
 .article,
-.message,
 [class*=message],
 [class*=demo-items] > *,
 [class*=list-stripe] > :not([class*=-links]),
@@ -2464,10 +2465,10 @@ html,
 .invisible {
   visibility: hidden;
 }
-a[aria-disabled="true"] {
+a[aria-disabled=true] {
   cursor: not-allowed;
 }
-a[aria-disabled="true"]:active {
+a[aria-disabled=true]:active {
   pointer-events: none;
 }
 .sr-only {

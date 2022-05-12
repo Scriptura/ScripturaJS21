@@ -1,20 +1,19 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'calendarMonth'
 
 block main
-  main#main(role='main')
-    h1.main-heading!= data._name
-    .grid2.gap
-      div
-        .message.flex.gap
-          div
-            if data._calendar.date
-              p #{data._calendar.date}
-            .center
-              svg.size4(role='img' focusable='false')
-                use(xlink:href='/medias/sprites/moons.svg#' + data._moonPhase)
-      .center
-        svg.size25.decorative-svg(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/silos/182r-d1-1.1.svg#1')
+  h1.main-heading!= data._name
+  .grid2.gap
+    div
+      .message.flex.gap
+        div
+          if data._calendar.date
+            p #{data._calendar.date}
+          .center
+            svg.size4(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/moons.svg#' + data._moonPhase)
+    .center
+      svg.size25.decorative-svg(role='img' focusable='false')
+        use(xlink:href='/medias/sprites/silos/182r-d1-1.1.svg#1')

@@ -1,16 +1,15 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'keyword'
 
 block main
-  main#main(role='main').main-bottom-none
-    h1.main-heading!= data._name
-    .column4.gap
-      each e in data
-        article.card
-          h2.h2!= e._name
-          a(href='/article/' + e._id)
-            svg
-              use(xlink:href='/medias/sprites/silos/131v-d1.svg#1')
-          p!= e._description
+  h1.main-heading!= data._name
+  .column4.gap
+    each e in data
+      article.card
+        h2.h2!= e._name
+        a(href='/article/' + e._id)
+          svg
+            use(xlink:href='/medias/sprites/silos/131v-d1.svg#1')
+        p!= e._description

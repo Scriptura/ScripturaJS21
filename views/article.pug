@@ -1,42 +1,41 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'article'
 
 block main
-  main#main(role='main')
-    article.article
-      header(role='banner')
-        h1.main-heading!= data._name
-      section.add-line-marks.add-drop-cap.decorative-hr!= data._content
-      footer
-        div
-          if data._author
-            p
-              svg.icon(role='img' focusable='false')
-                use(xlink:href='/medias/sprites/utils.svg#quill')
-              | Auteur&nbsp;: #{data._author}
-          if data._creation
-            p
-              svg.icon(role='img' focusable='false')
-                use(xlink:href='/medias/sprites/utils.svg#calendar')
-              |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
-          if data._description
-            p
-              svg.icon(role='img' focusable='false')
-                use(xlink:href='/medias/sprites/utils.svg#info')
-              != data._description
-          //-if data._keywords
-          p.keywords
+  article.article
+    header(role='banner')
+      h1.main-heading!= data._name
+    section.add-line-marks.add-drop-cap.decorative-hr!= data._content
+    footer
+      div
+        if data._author
+          p
             svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#old-key')
-            |  Mots clefs&nbsp;: 
-            |  
-            a(href='/keyword/lion') Lion
-            |  • 
-            a(href='/keyword/lion') Antilope
-            |  • 
-            a(href='/keyword/lion') Crocodile
+              use(xlink:href='/medias/sprites/utils.svg#quill')
+            | Auteur&nbsp;: #{data._author}
+        if data._creation
+          p
+            svg.icon(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/utils.svg#calendar')
+            |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
+        if data._description
+          p
+            svg.icon(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/utils.svg#info')
+            != data._description
+        //-if data._keywords
+        p.keywords
+          svg.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#old-key')
+          |  Mots clefs&nbsp;: 
+          |  
+          a(href='/keyword/lion') Lion
+          |  • 
+          a(href='/keyword/lion') Antilope
+          |  • 
+          a(href='/keyword/lion') Crocodile
 
 block structuredData
   include includes/structuredData

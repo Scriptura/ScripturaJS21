@@ -1,45 +1,44 @@
-extends layout
+extends patternLayout
 
 block variables
   - var documentType = 'imageGallery'
 
 block main
-  main#main(role='main').main-bottom-none
-    h1.main-heading!= data._name
-    .column4.gap.gap-bottom-none
-      -
-        const items = [
-          ['LotusTest', 'Lotus test', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
-          ['OldMechanism', 'Old Mechanism', 'Vel maiores placeat est repudiandae culpa qui eaque amet non magnam asperiores non quis placeat a sunt inventore aut cumque repellendus.'],
-          ['ColorfulLeaf', 'Colorful leaf', 'Qui ratione Quis est dolore magnam est magnam quia aut possimus tempore qui doloribus numquam ad repellat exercitationem.'],
-          ['GrassLeaf', 'Grass leaf', 'Eum atque aperiam et expedita cupiditate aut quos quisquam et similique harum aut galisum maxime.'],
-          ['PacificCity', 'Pacific city', 'Et modi praesentium qui necessitatibus beatae qui rerum maxime et dolores laborum.'],
-          ['ColorfulLeaf', 'Colorful leaf', 'Ea eaque fugit et galisum molestiae ad itaque quaerat sit odio temporibus ?'],
-          ['LotusMacro', 'Lotus', 'Qui facilis placeat ut doloribus adipisci qui omnis ipsa eum reiciendis repellendus aut sint repellat ab ratione aliquid eos sunt magni.'],
-          ['OldMechanism', 'Old Mechanism', 'At inventore consequatur et voluptates dolorem aut dolorum voluptas.'],
-          ['GrassLeaf', 'Grass leaf', 'Non officiis voluptates vel quibusdam laborum non quod ducimus ut iure nulla ut veniam rerum.'],
-          ['PacificCity', 'Pacific city', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
-          ['FlowerMacro', 'Flower', 'Ex eveniet consequatur aut expedita incidunt non quaerat galisum et corporis nostrum.'],
-          ['OldMechanism', 'Old Mechanism', 'Cum quisquam voluptatem est tenetur et tempora impedit qui vitae repellendus aut reprehenderit nisi.'],
-          ['FlowerMacro', 'Flower', 'Et saepe recusandae vel voluptatem nostrum qui quidem explicabo et voluptatum omnis id eius saepe in ducimus ipsa quo tenetur labore.'],
-          ['LotusMacro', 'Lotus', 'Aut temporibus laborum aut neque dignissimos eum delectus quia et rerum commodi et omnis vitae ab natus dolor hic repellat autem.'],
-          ['ColorfulLeaf', 'Colorful leaf', 'Qui nihil assumenda a incidunt quia ea eligendi quae et ipsam amet ea harum assumenda.'],
-          ['GrassLeaf', 'Grass leaf', 'Ut aspernatur nesciunt non exercitationem consequatur quo harum quas eos officia pariatur.'],
-          ['OldMechanism', 'Old Mechanism', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
-          ['PacificCity', 'Pacific city', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
-          ['FlowerMacro', 'Flower', 'Sed dignissimos itaque eum facilis doloremque et soluta excepturi qui labore culpa sed repellat neque sed officia.'],
-          ['LotusMacro', 'Lotus', 'Et commodi perspiciatis aut iure praesentium aut rerum dolorem ex rerum delectus aut sint voluptatem.'],
-          ['OldMechanism', 'Old Mechanism', 'Ea tempore itaque eum tenetur provident in accusantium distinctio.'],
-          ['ColorfulLeaf', 'Colorful leaf', 'Et consectetur inventore et omnis porro vel dignissimos accusamus eum quod nesciunt.'],
-          ['GrassLeaf', 'Grass leaf', 'Sit veritatis commodi et voluptate nisi ut sequi quae in provident aliquam et dolor provident deleniti placeat hic quibusdam quasi.'],
-          ['PacificCity', 'Pacific city', 'Rem praesentium esse eos eaque incidunt sit doloremque inventore sed natus labore sit sapiente dolor non exercitationem dolor.'],
-          ['FlowerMacro', 'Flower', 'Est nisi accusamus et excepturi numquam ex enim earum.'],
-          ['OldMechanism', 'Old Mechanism', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.']
-        ]
-      each item in items
-        div
-          figure.figure-focus
-            - const img = '/medias/images/demo/' + item[0]
-            - const alt = item[1]
-            include helpers/picture
-            figcaption= item[2]
+  h1.main-heading!= data._name
+  .column4.gap.gap-bottom-none
+    -
+      const items = [
+        ['LotusTest', 'Lotus test', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+        ['OldMechanism', 'Old Mechanism', 'Vel maiores placeat est repudiandae culpa qui eaque amet non magnam asperiores non quis placeat a sunt inventore aut cumque repellendus.'],
+        ['ColorfulLeaf', 'Colorful leaf', 'Qui ratione Quis est dolore magnam est magnam quia aut possimus tempore qui doloribus numquam ad repellat exercitationem.'],
+        ['GrassLeaf', 'Grass leaf', 'Eum atque aperiam et expedita cupiditate aut quos quisquam et similique harum aut galisum maxime.'],
+        ['PacificCity', 'Pacific city', 'Et modi praesentium qui necessitatibus beatae qui rerum maxime et dolores laborum.'],
+        ['ColorfulLeaf', 'Colorful leaf', 'Ea eaque fugit et galisum molestiae ad itaque quaerat sit odio temporibus ?'],
+        ['LotusMacro', 'Lotus', 'Qui facilis placeat ut doloribus adipisci qui omnis ipsa eum reiciendis repellendus aut sint repellat ab ratione aliquid eos sunt magni.'],
+        ['OldMechanism', 'Old Mechanism', 'At inventore consequatur et voluptates dolorem aut dolorum voluptas.'],
+        ['GrassLeaf', 'Grass leaf', 'Non officiis voluptates vel quibusdam laborum non quod ducimus ut iure nulla ut veniam rerum.'],
+        ['PacificCity', 'Pacific city', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+        ['FlowerMacro', 'Flower', 'Ex eveniet consequatur aut expedita incidunt non quaerat galisum et corporis nostrum.'],
+        ['OldMechanism', 'Old Mechanism', 'Cum quisquam voluptatem est tenetur et tempora impedit qui vitae repellendus aut reprehenderit nisi.'],
+        ['FlowerMacro', 'Flower', 'Et saepe recusandae vel voluptatem nostrum qui quidem explicabo et voluptatum omnis id eius saepe in ducimus ipsa quo tenetur labore.'],
+        ['LotusMacro', 'Lotus', 'Aut temporibus laborum aut neque dignissimos eum delectus quia et rerum commodi et omnis vitae ab natus dolor hic repellat autem.'],
+        ['ColorfulLeaf', 'Colorful leaf', 'Qui nihil assumenda a incidunt quia ea eligendi quae et ipsam amet ea harum assumenda.'],
+        ['GrassLeaf', 'Grass leaf', 'Ut aspernatur nesciunt non exercitationem consequatur quo harum quas eos officia pariatur.'],
+        ['OldMechanism', 'Old Mechanism', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+        ['PacificCity', 'Pacific city', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
+        ['FlowerMacro', 'Flower', 'Sed dignissimos itaque eum facilis doloremque et soluta excepturi qui labore culpa sed repellat neque sed officia.'],
+        ['LotusMacro', 'Lotus', 'Et commodi perspiciatis aut iure praesentium aut rerum dolorem ex rerum delectus aut sint voluptatem.'],
+        ['OldMechanism', 'Old Mechanism', 'Ea tempore itaque eum tenetur provident in accusantium distinctio.'],
+        ['ColorfulLeaf', 'Colorful leaf', 'Et consectetur inventore et omnis porro vel dignissimos accusamus eum quod nesciunt.'],
+        ['GrassLeaf', 'Grass leaf', 'Sit veritatis commodi et voluptate nisi ut sequi quae in provident aliquam et dolor provident deleniti placeat hic quibusdam quasi.'],
+        ['PacificCity', 'Pacific city', 'Rem praesentium esse eos eaque incidunt sit doloremque inventore sed natus labore sit sapiente dolor non exercitationem dolor.'],
+        ['FlowerMacro', 'Flower', 'Est nisi accusamus et excepturi numquam ex enim earum.'],
+        ['OldMechanism', 'Old Mechanism', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.']
+      ]
+    each item in items
+      div
+        figure.figure-focus
+          - const img = '/medias/images/demo/' + item[0]
+          - const alt = item[1]
+          include helpers/picture
+          figcaption= item[2]
