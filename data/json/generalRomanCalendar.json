@@ -1226,6 +1226,13 @@
     "type": 2,
     "priority": 7
   },
+  "0112": {
+    "key": "charlesDeFoucauld",
+    "name": "Saint Charles de Foucauld",
+    "color": "red",
+    "type": 4,
+    "priority": 12
+  },
   "0312": {
     "key": "francisXavier",
     "name": "Saint François-Xavier, prêtre, jésuite",

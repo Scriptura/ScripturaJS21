@@ -538,6 +538,8 @@ main {
     height: 2.5em;
   }
   .main-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     position: absolute;
     z-index: 800;
     transform: translateX(-100vw);
