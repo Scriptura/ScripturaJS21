@@ -73,6 +73,7 @@ const accordion = (() => {
       if (details.classList.contains('open')) {
         accordionSummary.setAttribute('aria-expanded', 'true')
         accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
+        //window.onresize = () => accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px' //...
         accordionPanel.setAttribute('aria-hidden', 'false')
       }
       else {
@@ -94,10 +95,11 @@ const accordion = (() => {
         if (accordionPanel.getAttribute('aria-hidden') === 'false') {
           accordionPanel.style.maxHeight = null
           accordionPanel.setAttribute('aria-hidden', 'true')
+          //accordionPanel.ontransitionend = () => accordionPanel.style.display = 'none'
         }
         else {
+          //accordionPanel.style.display = 'block' //...
           accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px'
-          //accordionPanel.ontransitionend = () => accordionPanel.style.maxHeight = null //...
           accordionPanel.setAttribute('aria-hidden', 'false')
         }
       })
