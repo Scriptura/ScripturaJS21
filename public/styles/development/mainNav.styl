@@ -49,6 +49,8 @@ _logoNavSizeWidth = 3em
       padding 0 1em
       line-height unit(_mainNavSize, '')
       box-shadow _shadow3
+  & .current
+    background-color _mainNavColor3
   & a
     color _mainNavColor2
     text-decoration none
@@ -73,6 +75,7 @@ _logoNavSizeWidth = 3em
     //aspect-ratio 1.2/1
 
   .main-nav
+    top 2.5em
     & ul
       display grid
       grid-template-columns repeat(2, minmax(0, 1fr))
@@ -105,9 +108,9 @@ _logoNavSizeWidth = 3em
 
   .main-nav ul
     display flex
-    & .active
+    & .current
       position relative
-      background-color _mainNavColor3
+      //background-color _mainNavColor3
       &::after
         content ''
         position absolute
@@ -131,9 +134,8 @@ _logoNavSizeWidth = 3em
 
   .cmd-nav
     position absolute
-    //top 0
     right 0
-    z-index 2001
+    //z-index 2001
     width _mainNavSize
     height _mainNavSize
     padding (_mainNavSize / 10)

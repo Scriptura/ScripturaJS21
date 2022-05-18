@@ -7,7 +7,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
   ul
     li
       if data._url.path === '/login'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#login')
           | Login
@@ -18,7 +18,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Login
     li
       if data._url.path === '/register'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#bookmark')
           | Register
@@ -29,7 +29,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Register
     li
       if data._url.path === '/account/admin'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#user')
           | Account
@@ -40,7 +40,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Account
     li
       if data._url.path === '/person/1'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#frame')
           | Person 1
@@ -51,7 +51,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Person 1
     li
       if data._url.path === '/place/1'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#location')
           | Place 1
@@ -62,7 +62,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Place 1
     li
       if data._url.path === '/article/1'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#quill')
           | Article 1
@@ -73,7 +73,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Article 1
     li
       if data._url.path === '/keyword/lion'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#sharp')
           | Keyword
@@ -84,7 +84,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Keyword
     li
       if data._url.path === '/imageGallery'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#picture')
           | Images
@@ -96,7 +96,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
     li
       - const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
       if data._url.path === '/calendar/' + currentDate + ''
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#calendar')
           | Calendar
@@ -107,7 +107,7 @@ button.cmd-nav(type='button' aria-label='Main Menu')
           | Calendar
     li
       if data._url.path === '/styleGuide'
-        .active
+        .current
           svg.icon(role='img' focusable='false')
             use(xlink:href='/medias/sprites/utils.svg#ampersand')
           | Style Guide

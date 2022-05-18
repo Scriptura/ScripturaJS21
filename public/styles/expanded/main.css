@@ -514,6 +514,9 @@ main {
   line-height: 2.5;
   box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
 }
+.main-nav .current {
+  background-color: #ff6347;
+}
 .main-nav a {
   color: #d2b48c;
   text-decoration: none;
@@ -536,6 +539,9 @@ main {
     z-index: 10;
     width: 3em;
     height: 2.5em;
+  }
+  .main-nav {
+    top: 2.5em;
   }
   .main-nav ul {
     display: grid;
@@ -600,11 +606,10 @@ main {
   .main-nav ul {
     display: flex;
   }
-  .main-nav ul .active {
+  .main-nav ul .current {
     position: relative;
-    background-color: #ff6347;
   }
-  .main-nav ul .active::after {
+  .main-nav ul .current::after {
     content: '';
     position: absolute;
     top: 2.5em;
@@ -633,7 +638,6 @@ main {
   .cmd-nav {
     position: absolute;
     right: 0;
-    z-index: 2001;
     width: 2.5rem;
     height: 2.5rem;
     padding: 0.25rem;
@@ -2396,8 +2400,8 @@ html,
 .cmd-nav:hover,
 .main-nav ul,
 .main-nav a,
-.main-nav .active,
-.main-nav .active::after,
+.main-nav .current,
+.main-nav .current::after,
 .breadcrumb,
 .breadcrumb ol,
 .breadcrumb li > *,
