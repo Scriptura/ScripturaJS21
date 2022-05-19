@@ -66,7 +66,6 @@ _logoNavSizeWidth = 3em
 
 @media (max-width _sizeNav)
 
-
   .logo-nav
     position absolute // @todo Solution à revoir.
     z-index 10
@@ -87,8 +86,6 @@ _logoNavSizeWidth = 3em
       transform rotate(90deg)
       transition transform .4s ease-in-out
     &.active li
-      //left 0
-      //margin-left 100vw
       transform translateX(100vw) rotate(0deg)
 
   _x = 12
@@ -99,6 +96,16 @@ _logoNavSizeWidth = 3em
 
   .breadcrumb
     padding-left _logoNavSizeWidth !important // @todo Solution à revoir.
+
+@media (min-width _sizeXS) and (max-width _sizeNav)
+
+  .main-nav ul
+    grid-template-columns repeat(3, minmax(0, 1fr))
+
+@media (min-width _sizeS) and (max-width _sizeNav)
+
+  .main-nav ul
+    grid-template-columns repeat(4, minmax(0, 1fr))
 
 @media (min-width _sizeNav)
 

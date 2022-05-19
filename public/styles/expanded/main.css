@@ -598,6 +598,16 @@ main {
     padding-left: 3em !important;
   }
 }
+@media (min-width: 36.01em) and (max-width: 91.01em) {
+  .main-nav ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 50.01em) and (max-width: 91.01em) {
+  .main-nav ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 @media (min-width: 91.01em) {
   .nav {
     display: grid;
