@@ -1,4 +1,4 @@
-_mainNavSize = 2.5rem
+_mainNavSizeHeight = 2.5rem
 _mainNavFix = 177px
 _mainNavColor1 = _colorG - 34%
 _mainNavColor2 = _colorT2
@@ -35,7 +35,7 @@ _logoNavSizeWidth = 3em
   position relative
   display flex
   z-index 2000 // @note Permet de passer au-dessus de certains éléments définis par des sources externes, comme les Maps Leaflet.
-  //height _mainNavSize
+  //height _mainNavSizeHeight
   //font-size 1em
   box-shadow _shadow2
   & ul
@@ -46,9 +46,12 @@ _logoNavSizeWidth = 3em
   & li
     list-style none
     & > *
+      overflow hidden
       display block
+      white-space nowrap
+      text-overflow ellipsis
       padding 0 1em
-      line-height unit(_mainNavSize, '')
+      line-height unit(_mainNavSizeHeight, '') // @todo Ou _mainNavSizeHeight tout simplement...
       box-shadow _shadow3
   & .current
     background-color _mainNavColor3
@@ -71,18 +74,20 @@ _logoNavSizeWidth = 3em
     position absolute // @todo Solution à revoir.
     z-index 10
     width _logoNavSizeWidth
-    height 2.5em
+    height _mainNavSizeHeight
     //aspect-ratio 1.2/1
 
   .main-nav
-    top 2.5em
+    top _mainNavSizeHeight
     & ul
-      display grid
-      grid-template-columns repeat(2, minmax(0, 1fr))
+      display flex
+      flex-wrap wrap
       position absolute
       z-index 800
       transform translateX(-100vw)
     & li
+      flex 1
+      flex-basis 50%
       background-color _mainNavColor1
       transform rotate(90deg)
       transition transform .4s ease-in-out
@@ -100,13 +105,13 @@ _logoNavSizeWidth = 3em
 
 @media (min-width _sizeXS) and (max-width _sizeNav)
 
-  .main-nav ul
-    grid-template-columns repeat(3, minmax(0, 1fr))
+  .main-nav li
+    flex-basis 33%
 
 @media (min-width _sizeS) and (max-width _sizeNav)
 
-  .main-nav ul
-    grid-template-columns repeat(4, minmax(0, 1fr))
+  .main-nav li
+    flex-basis 25%
 
 @media (min-width _sizeNav)
 
@@ -144,9 +149,9 @@ _logoNavSizeWidth = 3em
     position absolute
     right 0
     //z-index 2001
-    width _mainNavSize
-    height _mainNavSize
-    padding (_mainNavSize / 10)
+    width _mainNavSizeHeight
+    height _mainNavSizeHeight
+    padding (_mainNavSizeHeight / 10)
     cursor pointer
     background-color transparent
     //fill #000

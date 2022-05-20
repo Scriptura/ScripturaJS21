@@ -509,7 +509,10 @@ main {
   list-style: none;
 }
 .main-nav li > * {
+  overflow: hidden;
   display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   padding: 0 1em;
   line-height: 2.5;
   box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
@@ -538,19 +541,21 @@ main {
     position: absolute;
     z-index: 10;
     width: 3em;
-    height: 2.5em;
+    height: 2.5rem;
   }
   .main-nav {
-    top: 2.5em;
+    top: 2.5rem;
   }
   .main-nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
     z-index: 800;
     transform: translateX(-100vw);
   }
   .main-nav li {
+    flex: 1;
+    flex-basis: 50%;
     background-color: #2d2d2d;
     transform: rotate(90deg);
     transition: transform 0.4s ease-in-out;
@@ -599,13 +604,13 @@ main {
   }
 }
 @media (min-width: 36.01em) and (max-width: 91.01em) {
-  .main-nav ul {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .main-nav li {
+    flex-basis: 33%;
   }
 }
 @media (min-width: 50.01em) and (max-width: 91.01em) {
-  .main-nav ul {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .main-nav li {
+    flex-basis: 25%;
   }
 }
 @media (min-width: 91.01em) {
