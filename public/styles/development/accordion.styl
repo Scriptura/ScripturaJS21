@@ -27,7 +27,7 @@ _accordionTime1 = .5s
       background-color _listsColor2
       box-shadow _shadow15
       outline none
-      animation animAccordion .05s ease-in-out
+      animation animAccordion .1s ease-in-out
     &::after
       content '\2039'
       //content url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>')
@@ -47,8 +47,8 @@ _accordionTime1 = .5s
     transition max-height _accordionTime1 ease-in-out
     &[aria-hidden=true] // @note Cette spécificité empêche le lancement d'une animation au chargement de la page via le JS.
       max-height 0
-      border-color transparent // @note La bordure apparait encore lorsque le panneau est fermé.
-      transition max-height _accordionTime1 ease-in-out, border-color _accordionTime1 cubic-bezier(1, 0, 1, 0) // @note Fait disparaître la bordure au dernier moment.
+      border-color transparent // @note "Efface" la bordure, sinon elle apparait encore lorsque le panneau est fermé.
+      transition max-height _accordionTime1 ease-in-out, border-color _accordionTime1 cubic-bezier(1, 0, 1, 0) // @note "Efface" la bordure au dernier moment, avant la fermeture du panneau ; mais oblige aussi à répéter la propriété max-height sinon écrasement de cette propriété.
   & > details[open] summary::after
   & .open .accordion-summary::after
     transform rotate(-90deg)

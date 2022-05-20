@@ -2101,8 +2101,8 @@ form > [class*="grid"] > .input {
   background-color: #ff6347;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
   outline: none;
-  -webkit-animation: animAccordion 0.05s ease-in-out;
-          animation: animAccordion 0.05s ease-in-out;
+  -webkit-animation: animAccordion 0.1s ease-in-out;
+          animation: animAccordion 0.1s ease-in-out;
 }
 .accordion > * > :first-child::after {
   content: '\2039';
