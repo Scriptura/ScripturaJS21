@@ -9,13 +9,14 @@
 const jsDetect = (() => document.documentElement.classList.replace('no-js', 'js'))()
 
 // @see https://stackoverflow.com/questions/4817029/whats-the-best-way-to-detect-a-touch-screen-device-using-javascript
-
+// @deprecated Script remplacé par règle CSS @media (hover hover) and (pointer fine)
+/*
 const touchDetect = (() => {
   const html = document.documentElement,
         touch = 'ontouchstart' in window || navigator.msMaxTouchPoints // @todo Condition à réévaluer
   touch ? html.classList.add('touch') : html.classList.add('no-touch')
 })()
-
+*/
 
 // -----------------------------------------------------------------------------
 // @section     Get Scripts

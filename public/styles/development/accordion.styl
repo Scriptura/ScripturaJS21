@@ -1,4 +1,4 @@
-_accordionColor1 = _color2
+_accordionColor1 = _colorG + 7% //_color2
 _accordionColor2 = _color5
 _accordionColor3 = rgba(255, 255, 255, .1)
 _accordionTime1 = .5s
@@ -28,24 +28,27 @@ _accordionTime1 = .5s
       font-weight bold
       font-size 1.5em
   & .accordion-summary::after
-    transition transform _accordionTime1 ease-out // @note Sprécifique aux éléments remplacés.
+    transition transform _accordionTime1 ease-in-out // @note Sprécifique aux éléments remplacés.
   & > * > :last-child
     overflow hidden
     padding 0 1em
     background-color _color0
-    box-shadow 0 0 2rem rgba(0, 0, 0, .25)
+    //box-shadow 0 0 2rem rgba(0, 0, 0, .25)
     border 1px solid _accordionColor3
     border-top none
     border-radius _r2
-    transition max-height _accordionTime1 ease-out
+    transition max-height _accordionTime1 ease-in-out
     &[aria-hidden=true] // @note Cette spécificité empêche le lancement d'une animation au chargement de la page via le JS.
       max-height 0
+      border-color transparent // @note La bordure apparait encore lorsque le panneau est fermé.
+      transition max-height _accordionTime1 ease-in-out, border-color _accordionTime1 cubic-bezier(1, 0, 1, 0) // @note Fait disparaître la bordure au dernier moment.
   & > details[open] summary::after
   & .open .accordion-summary::after
     transform rotate(-90deg)
 
-.no-touch .accordion > * > :first-child
-  &:focus-visible
-  &:hover
-  &:active
-    background-color _accordionColor2
+@media (hover hover) and (pointer fine)
+  .accordion > * > :first-child
+    &:focus-visible
+    &:hover
+    &:active
+      background-color _accordionColor2
