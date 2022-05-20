@@ -1,5 +1,5 @@
 _accordionColor1 = _colorG + 7% //_color2
-_accordionColor2 = _color5
+_accordionColor2 = _color2 //_color5
 _accordionColor3 = rgba(255, 255, 255, .1)
 _accordionTime1 = .5s
 
@@ -19,8 +19,15 @@ _accordionTime1 = .5s
     background-color _accordionColor1
     border none
     border-radius _r2
+    box-shadow 0 1rem 1rem rgba(0, 0, 0, .1)
     cursor pointer
     outline none
+    &:focus-within
+    &:hover
+      background-color _listsColor2
+      box-shadow _shadow15
+      outline none
+      animation animAccordion .05s ease-in-out
     &::after
       content '\2039'
       //content url('data:image/svg+xml;charset=UTF-8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"></path></svg>')
@@ -33,10 +40,10 @@ _accordionTime1 = .5s
     overflow hidden
     padding 0 1em
     background-color _color0
-    //box-shadow 0 0 2rem rgba(0, 0, 0, .25)
     border 1px solid _accordionColor3
     border-top none
     border-radius _r2
+    box-shadow 0 1rem 1rem rgba(0, 0, 0, .1)
     transition max-height _accordionTime1 ease-in-out
     &[aria-hidden=true] // @note Cette spécificité empêche le lancement d'une animation au chargement de la page via le JS.
       max-height 0
@@ -52,3 +59,7 @@ _accordionTime1 = .5s
     &:hover
     &:active
       background-color _accordionColor2
+
+@keyframes animAccordion
+  to
+    transform scale(1.01) translateZ(0)

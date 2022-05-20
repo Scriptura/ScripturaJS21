@@ -2092,8 +2092,17 @@ form > [class*="grid"] > .input {
   background-color: #515151;
   border: none;
   border-radius: 0.2em;
+  box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
   cursor: pointer;
   outline: none;
+}
+.accordion > * > :first-child:focus-within,
+.accordion > * > :first-child:hover {
+  background-color: #ff6347;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
+  outline: none;
+  -webkit-animation: animAccordion 0.05s ease-in-out;
+          animation: animAccordion 0.05s ease-in-out;
 }
 .accordion > * > :first-child::after {
   content: '\2039';
@@ -2111,6 +2120,7 @@ form > [class*="grid"] > .input {
   border: 1px solid rgba(255,255,255,0.1);
   border-top: none;
   border-radius: 0.2em;
+  box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
   transition: max-height 0.5s ease-in-out;
 }
 .accordion > * > :last-child[aria-hidden=true] {
@@ -2126,7 +2136,17 @@ form > [class*="grid"] > .input {
   .accordion > * > :first-child:focus-visible,
   .accordion > * > :first-child:hover,
   .accordion > * > :first-child:active {
-    background-color: #ffa500;
+    background-color: #ff6347;
+  }
+}
+@-webkit-keyframes animAccordion {
+  to {
+    transform: scale(1.01) translateZ(0);
+  }
+}
+@keyframes animAccordion {
+  to {
+    transform: scale(1.01) translateZ(0);
   }
 }
 .tabs .tab-list {

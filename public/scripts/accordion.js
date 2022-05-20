@@ -91,7 +91,7 @@ const accordion = (() => {
           accordionSummary.setAttribute('aria-expanded', 'false')
         if (singleTab) siblingStateManagement(accordionSummary.parentElement)
         const accordionPanel = accordionSummary.nextElementSibling
-        accordionPanel.addEventListener('click', () =>  accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px') //...
+        //accordionPanel.addEventListener('click', () =>  accordionPanel.style.maxHeight = accordionPanel.scrollHeight + 'px') //... <<<<<<<<
         if (accordionPanel.getAttribute('aria-hidden') === 'false') {
           accordionPanel.style.maxHeight = null
           accordionPanel.setAttribute('aria-hidden', 'true')
