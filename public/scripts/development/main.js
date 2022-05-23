@@ -18,6 +18,7 @@ const touchDetect = (() => {
 })()
 */
 
+
 // -----------------------------------------------------------------------------
 // @section     Get Scripts
 // @description Appel de scripts
@@ -261,14 +262,15 @@ window.scrollTo({top: 0})
 
 const mainMenu = (() => {
   const button = document.querySelector('.cmd-nav'),
-        navigation = document.querySelector('.main-nav')
+        mainNav = document.querySelector('.main-nav')
 
   //const pannel = navigation.querySelector('a')
   //if (window.innerWidth < '1372') Array.from(pannel).map(a => a.tabIndex = -1)
 
   button.addEventListener('click', () => {
     button.classList.toggle('active')
-    navigation.classList.toggle('active')
+    mainNav.classList.toggle('active')
+    document.body.classList.toggle('active')
   })
 })()
 

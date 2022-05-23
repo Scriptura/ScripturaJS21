@@ -599,6 +599,17 @@ main {
   .nav li:nth-child(12) {
     transition-delay: 1s;
   }
+  body.active {
+    overflow: hidden;
+  }
+  body.active main,
+  body.active footer,
+  body.active aside {
+    pointer-events: none;
+  }
+  .main-nav.active {
+    box-shadow: 0 100vh 0 100vh rgba(0,0,0,0.5);
+  }
   .breadcrumb {
     padding-left: 3em !important;
   }
