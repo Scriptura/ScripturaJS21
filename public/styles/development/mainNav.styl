@@ -98,7 +98,7 @@ _logoNavSizeWidth = 3em
   for _i in 1.._x
     _abstr = _i / _x
     .nav li:nth-child({_i})
-      transition-delay '%ss' % _abstr
+      transition-delay '%ss' % round(_abstr, 2)
 
   body.active
     overflow hidden
@@ -110,11 +110,6 @@ _logoNavSizeWidth = 3em
 
   .main-nav.active
     box-shadow 0 100vh 0 100vh rgba(0, 0, 0, .5)
-
-  /*
-  .main-nav
-    transition box-shadow .5s linear
-  */
 
   .breadcrumb
     padding-left _logoNavSizeWidth !important // @todo Solution à revoir.
@@ -184,7 +179,6 @@ _logoNavSizeWidth = 3em
     &:focus svg *
     &:hover svg *
       fill #fff
-      //animation .6s ease-in-out colorChange forwards
     &.active svg :nth-child(1)
       transform translate(- _mainNavFix, _mainNavFix) rotate(45deg)
     &.active svg :nth-child(2)
@@ -192,13 +186,22 @@ _logoNavSizeWidth = 3em
     &.active svg :nth-child(3)
       transform translate(- _mainNavFix, - _mainNavFix) rotate(-45deg)
 
-  /*
-  @keyframes colorChange
-    to
-      fill #fff
-  */
-
 @media (min-width _sizeNav)
 
   .cmd-nav
     display none
+
+/*
+@media (max-width _sizeNav)
+
+  .logo-nav
+    position absolute // @todo Solution à revoir.
+    //z-index 10
+    left 1em
+    width _logoNavSizeWidth
+    //height _mainNavSizeHeight
+    aspect-ratio 1/1.2
+    clip-path polygon(100% 0, 100% 100%, 50% 75%, 0 100%, 0% 0%) // polygon(100% 0, 100% 75%, 50% 100%, 0 75%, 0% 0%)
+    //filter drop-shadow(0 0 .1em rgba(0, 0, 0, .3))
+    filter drop-shadow(0 0 1rem rgba(0, 0, 0, 1))
+*/

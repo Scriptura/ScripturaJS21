@@ -40,7 +40,7 @@ _breadcrumbColor2 = _color2
     text-overflow ellipsis
     position relative
     display block
-    line-height _breadcrumbSize // @todo enlever les unités
+    line-height unit(_breadcrumbSize, '') // @todo enlever les unités
     padding 0 ceil(_breadcrumbSize * .75, 2)
     text-decoration none
     background-size cover
@@ -50,7 +50,7 @@ _breadcrumbColor2 = _color2
     transition background-color .3s ease-in-out
     clip-path polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%)
 
-@media (max-width _sizeNav)
+@media (max-width _sizeXS)
 
   .breadcrumb > :nth-last-child(3) // @note Ne pas mettre :first-child, il faut penser à la page index.
     display none
