@@ -707,7 +707,7 @@ main {
 .breadcrumb {
   display: flex;
   margin: 0;
-  padding: 0;
+  padding: 0 3em 0 0;
   background-color: #2d2d2d;
 }
 .breadcrumb li {
@@ -721,28 +721,18 @@ main {
   color: #fff;
   background-color: #ff6347;
 }
-.breadcrumb li:first-child {
+.breadcrumb li:nth-last-child(3) {
   z-index: 2;
-}
-.breadcrumb li:first-child a {
-  padding-left: 1em;
+  flex-shrink: 0;
 }
 .breadcrumb li:nth-last-child(2) {
   z-index: 1;
   flex-shrink: 0;
 }
-.breadcrumb li:last-child {
-  max-height: 2.5em;
-  margin-right: 3em;
-}
 .breadcrumb li:last-child div {
   color: #e9dac5;
 }
-.breadcrumb li + li {
-  margin-left: -1em;
-}
-.breadcrumb a,
-.breadcrumb div {
+.breadcrumb li > * {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -758,6 +748,12 @@ main {
   transition: background-color 0.3s ease-in-out;
   -webkit-clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
+}
+.breadcrumb li:first-child > * {
+  padding-left: 1em;
+}
+.breadcrumb li + li {
+  margin-left: -1em;
 }
 @media (max-width: 36.01em) {
   .breadcrumb > :nth-last-child(3) {
