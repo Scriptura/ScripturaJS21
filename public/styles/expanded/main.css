@@ -509,10 +509,7 @@ main {
   list-style: none;
 }
 .main-nav li > * {
-  overflow: hidden;
   display: block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   padding: 0 1em;
   line-height: 2.5;
   box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
@@ -521,6 +518,9 @@ main {
   background-color: #ff6347;
 }
 .main-nav a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #d2b48c;
   text-decoration: none;
 }
@@ -638,7 +638,7 @@ main {
   .main-nav ul .current::after {
     content: '';
     position: absolute;
-    top: 2.5em;
+    top: 100%;
     left: calc(50% - 1em);
     width: 2em;
     height: 1em;

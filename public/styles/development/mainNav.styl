@@ -46,16 +46,16 @@ _logoNavSizeWidth = 3em
   & li
     list-style none
     & > *
-      overflow hidden
       display block
-      white-space nowrap
-      text-overflow ellipsis
       padding 0 1em
       line-height unit(_mainNavSizeHeight, '') // @todo Ou _mainNavSizeHeight tout simplement...
       box-shadow _shadow3
   & .current
     background-color _mainNavColor3
   & a
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
     color _mainNavColor2
     text-decoration none
     &:focus
@@ -138,7 +138,7 @@ _logoNavSizeWidth = 3em
       &::after
         content ''
         position absolute
-        top 2.5em
+        top 100%
         left calc(50% - 1em)
         width 2em
         height 1em
