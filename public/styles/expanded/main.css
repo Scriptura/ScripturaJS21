@@ -1154,10 +1154,8 @@ audio:not([controls]) {
   border-radius: 0.2em;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.1);
 }
-@media (max-width: 36.01em) {
-  .leaflet-popup-content {
-    max-width: calc(100% - 6em);
-  }
+.leaflet-popup-content {
+  max-width: calc(100vw - 6em);
 }
 .leaflet-popup-close-button {
   box-shadow: none !important;
