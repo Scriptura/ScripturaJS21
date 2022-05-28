@@ -250,11 +250,10 @@ hr[data-hr]::after,
   color: #ff6347;
 }
 .links p a:not([href^="#"])::after {
-  content: '↗';
-  display: inline-block;
-  position: relative;
-  margin-left: 0.1em;
-  transform: translate(0, -0.2em) scale(0.8);
+  content: ' ↩';
+}
+.links p a[href*="//"]::after {
+  content: ' ↗';
 }
 body {
   display: grid;
