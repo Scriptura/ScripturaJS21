@@ -52,4 +52,8 @@ hr[data-hr]::after
   color _color2
 
 .links p a:not([href^="#"])::after
-  content ' ↗' // ↩
+  content '↗'
+  display inline-block
+  position relative
+  margin-left .1em
+  transform translate(0, -.2em) scale(0.8)
