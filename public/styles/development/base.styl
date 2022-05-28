@@ -21,6 +21,7 @@ html
   color _colorT
   background-color _color0
   font-family _fontList // Georgia, Serif
+  //text-shadow 0 0 0.125rem _color0
   line-height 1.5 // @bugfix Correct the line height @affected All browsers.
   scroll-behavior smooth // Défilement fluide. @todo En conflit avec script retour vers le haut...
 
@@ -38,8 +39,7 @@ html
   background-color _colorSelection
 
 a
-  color lighten(_color2, 20%)
-  // background-color transparent // @bugfix Remove the gray background on active links @affected IE 10.
+  color _colorT2 //lighten(_color2, 25%)
   text-decoration none
   // transition all .5s
 
@@ -130,19 +130,25 @@ em
   font-style italic
 
 blockquote
+  position relative
   margin 0
   padding-left 2em
   background repeating-linear-gradient(-45deg, transparent 0 _hrSize, rgba(255, 255, 255, .1) _hrSize _hrSize * 2) no-repeat
   background-size .5em 100%
+  &::before
   &::after
-    content '\201C' // '\201C' '\275D' '\201D' '\275E'
-    display block
-    width 3rem
-    height 3rem
-    line-height 1
-    font-size 6em
-    color rgba(255, 255, 255, .1) //_color2
+    position absolute
+    left -.1em
+    line-height .5
+    font-size 3rem
+    color _color2
     font-family _fontList2
+  &::before
+    content '\00AB' // '\201D'
+    top -.1em
+  &::after
+    content '\00BB' //'\201C'
+    bottom 0
   & footer
     margin-top .75em
     margin-bottom .75em
@@ -157,7 +163,7 @@ q
 
 mark
   color currentColor
-  background-color _color2
+  background-color _color3
 
 small
   font-size 80% // @bugfix Add the correct font size @affected All browsers.

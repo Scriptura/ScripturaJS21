@@ -3,7 +3,10 @@
   height 100vh
   margin auto
   background-color #e6e4e0 // Couleur en lien avec le background dominant des tuiles choisies pour les cartes Leaflet.
-  overflow hidden // Si problème de chargement des styles Leaflet, évite un débordement des tuiles.
+  overflow hidden // Évite à l'occasion un débordement des tuiles. Solution imparfaite.
+
+//.leaflet-container
+  //outline-color _color5 !important
 
 :root .map .leaflet-control
   border none
@@ -17,9 +20,6 @@
 
 .leaflet-popup-content
   max-width calc(100vw - 6em)
-
-.leaflet-popup-close-button
-  box-shadow none !important
 
 .leaflet-popup-tip
   box-shadow _shadow14

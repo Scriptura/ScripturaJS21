@@ -44,10 +44,12 @@ hr[data-hr]::after
   content '✻ ✻ ✻'
 
 //:lang(grc) // @note Grec ancien (grec moderne : 'el')
-//  color orange
 
 :lang(he) // @note Hébreu
     direction rtl
 
 .verse
   color _color2
+
+.links p a:not([href^="#"])::after
+  content ' ↗' // ↩
