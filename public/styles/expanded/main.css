@@ -259,29 +259,29 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto) 1fr;
   grid-template-columns: minmax(1em, 1fr) minmax(0, 92em) minmax(1em, 1fr);
-  grid-template-areas: 'nav nav nav' '. header .' 'noscript noscript noscript' '. main .' 'aside aside aside' 'footer footer footer';
+  grid-template-areas: 'n n n' '. h .' 's s s' '. m .' 'a a a' 'f f f';
   min-height: 100vh;
   margin: 0;
 }
 main {
-  grid-area: main;
+  grid-area: m;
   padding: 1em 0;
   word-break: break-word;
 }
 .nav {
-  grid-area: nav;
+  grid-area: n;
 }
 .header {
-  grid-area: header;
+  grid-area: h;
 }
 .noscript {
-  grid-area: noscript;
+  grid-area: s;
 }
 .aside {
-  grid-area: aside;
+  grid-area: a;
 }
 .footer {
-  grid-area: footer;
+  grid-area: f;
 }
 [tabindex=-1]:focus:not(:focus-visible) {
   outline: 0 !important;

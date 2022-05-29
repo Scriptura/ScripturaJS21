@@ -203,6 +203,10 @@ describe("Liturgical calendar", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('17052020', 'ddMMyyyy'), 'france')).toMatchObject({key: "sixSundayEaster"})
   })
 
+  it("Septième dimanche du Temps Pascal le 24 mai 2020", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('24052020', 'ddMMyyyy'), 'france')).toMatchObject({key: "sevenSundayEaster"})
+  })
+
   it("Ascension le 30 mai 2019, à la place de Sainte Jeanne d'Arc", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('30052019', 'ddMMyyyy'), 'france')).toMatchObject({key: "ascension"})
   })
