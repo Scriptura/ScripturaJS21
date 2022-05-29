@@ -255,6 +255,13 @@
     "type": 1,
     "priority": 2
   },
+  "sevenSundayEaster": {
+    "key": "sevenSundayEaster",
+    "name": "Septième dimanche de Pâques",
+    "color": "white",
+    "type": 1,
+    "priority": 2
+  },
   "pentecost": {
     "key": "pentecost",
     "name": "Pentecôte",

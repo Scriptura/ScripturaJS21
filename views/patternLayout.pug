@@ -22,19 +22,26 @@ html.no-js(lang='fr')
     meta(name='msapplication-config' content='/browserconfig.xml')
   body(class='type-' + documentType)
     a(href='#main').sr-only Aller au contenu
+    main#main(role='main')
+      block main
+    //-block aside
+      //-aside.aside aside
+      //-include aside
     block nav
       nav.nav
         a(href='/').logo-nav
           span.sr-only Scriptura
         include includes/mainNav
         include includes/breadcrumb
-    main#main(role='main')
-      block main
-    //-block aside
-      //-aside.aside aside
-      //-include aside
-    footer.footer(role='contentinfo')
-      block footer
+    block footer
+      footer.footer(role='contentinfo')
         include includes/footer
+    noscript#noscript.noscript
+      .message-warning(role='alert')
+        p
+          svg.blink.icon(role='img' focusable='false')
+            use(xlink:href='/medias/sprites/utils.svg#warning')
+          | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans vos préférences utilisateur.
+        //-p Javascript is disabled on your browser, enable it to benefit from all the site's features.
     script(src='/scripts/development/main.js' async)
     block structuredData

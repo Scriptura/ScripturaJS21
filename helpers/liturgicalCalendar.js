@@ -92,6 +92,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         fiveSundayEaster = easter.plus({days: 28}),
         sixSundayEaster = easter.plus({days: 35}),
         ascension = easter.plus({days: 39}),
+        sevenSundayEaster = easter.plus({days: 42}),
         pentecost = easter.plus({days: 49}),
         maryMotherOfTheChurch = easter.plus({days: 50}),
         holyTrinity = easter.plus({days: 56}),
@@ -169,6 +170,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
     if (fiveSundayEaster.hasSame(date, 'day')) data.m = dataM.fiveSundayEaster
     if (sixSundayEaster.hasSame(date, 'day')) data.m = dataM.sixSundayEaster
     if (ascension.hasSame(date, 'day')) data.m = dataM.ascension
+    if (sevenSundayEaster.hasSame(date, 'day')) data.m = dataM.sevenSundayEaster
     if (pentecost.hasSame(date, 'day')) data.m = dataM.pentecost
     if (maryMotherOfTheChurch.hasSame(date, 'day')) data.m = dataM.maryMotherOfTheChurch
     if (holyTrinity.hasSame(date, 'day')) data.m = dataM.holyTrinity

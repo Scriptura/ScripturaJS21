@@ -1,36 +1,31 @@
-_messageBoxesColor0 = _colorG + 7%
-_messageBoxesColor1 = _colorG + 20%
-_messageBoxesColor2 = _messageBoxesColor0
-_messageBoxesColor3 = _color6
-_messageBoxesColor4 = _color4
-_messageBoxesColor5 = _color3
-_messageBoxesColor6 = _color7
-
 [class*=message]
   margin-bottom 1em
   padding 0 1em
-  background-color _messageBoxesColor0
+  background-color _colorG + 7%
   box-shadow _shadow5
-  border-radius _r2
   overflow hidden // @note Evite un conflit avec les margins et padding des éléments enfants.
+
+main [class*=message] // @note Seulement pour les messages dans le main. Ailleurs, utiliser le style global.
+  border-radius _r2
 
 p[class*=message]
   padding 1em
 
 .message-primary
-  background-color _messageBoxesColor1
+  background-color _colorG + 20%
 
 .message-secondary
-  background-color _messageBoxesColor2
+  background-color _colorG + 3%
 
 .message-info
-  background-color _messageBoxesColor3
+  background-color _color6
 
 .message-success
-  background-color _messageBoxesColor4
+  background-color _color4
 
-.message-danger
-  background-color _messageBoxesColor5
+.message-error
+  background-color _color3
 
 .message-warning
-  background-color _messageBoxesColor6
+  color invert(_colorT)
+  background-color _color5

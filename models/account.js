@@ -7,6 +7,13 @@ const getAccount = async username => await db.one('SELECT * FROM __account WHERE
   .then(data => accountFormat(data))
   .catch(error => console.log(error.message || error))
 
+  /*
+  // passport.js posrtresql
+  const getAccountByPassport = async (username, password) => await db.one('SELECT * FROM __account WHERE _username = $1 AND _password = $2', [username, password])
+  .then(data => accountFormat(data))
+  .catch(error => console.log(error.message || error))
+  */
+  
   const postAccount = async (username, password) => await db.one('INSERT INTO __account (_username, _password) VALUES ($1, $2) RETURNING _username', [username, password])
   .then(data => data)
   .catch(error => console.log(error.message || error))
