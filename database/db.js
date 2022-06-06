@@ -2,8 +2,9 @@
 
 // @note Initialisation unique sur le site pour la base de donnée.
 
-const vv = require('../settings/variables'), // Importation des données confidentielles.
-      options = {
+require('dotenv').config()
+
+const options = {
         // Global event notification.
         error(error, e) {
           if (e.cn) { // Erreur liée à la connexion. Les connextions sont rapportées avec le mot de passe, celui-ci est haché afin de ne pas l'exposer et de produire une journalisation sûre.
@@ -14,11 +15,11 @@ const vv = require('../settings/variables'), // Importation des données confide
       },
       pgp = require('pg-promise')(options),
       cn = { // Détail de la connexion.
-        host: vv.host,
-        port: vv.port,
-        database: vv.database,
-        user: vv.user,
-        password: vv.password
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        database: process.env.DB_DATABASE,
+        user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD
       },
       db = pgp(cn) // Instanciation de la base de donnée.
 

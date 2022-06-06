@@ -37,19 +37,19 @@ audio:not([controls])
 //  object-fit cover // @affected Firefox @note Influence sur l'image des posters
 
 .video
-  position relative
-  padding-bottom 56.25% // Ratio 16:9 par défaut
+  position relative // [1] Évite un léger resize entre le thumbnail et le chargement de la vidéo.
+  aspect-ratio 16/9
   user-select none
   & iframe
-  & embed
-  & object
-    position absolute
+  //& embed
+  //& object
+  & .thumbnail-youtube
+    position absolute // [1]
+    width 100%
+    height 100%
+    background-size cover
 
 .thumbnail-youtube
-  position absolute
-  width 100%
-  height 100%
-  background-size cover
   &:focus-within
   &:hover
     outline 5px solid _color5

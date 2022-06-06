@@ -3,17 +3,8 @@
 const pkg = require( '../package.json' )
 
 exports.dev = true
-
-// projet :
 exports.siteName = 'Site Name'
 exports.name = pkg.name
 exports.version = pkg.version
 exports.author = pkg.author
 exports.themeColor = '#333333'
-
-// database :
-exports.host = 'localhost'
-exports.port = 5432
-exports.database = 'scriptura_db'
-exports.user = 'scriptura_user'
-exports.password = 'root'

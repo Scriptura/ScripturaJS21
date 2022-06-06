@@ -799,7 +799,7 @@ samp {
   box-shadow: 0 0 2rem rgba(0,0,0,0.3);
 }
 .pre code {
-  color: #777;
+  color: #d2b48c;
   transition: color 0.5s ease-in-out;
 }
 .pre code:focus-within {
@@ -814,14 +814,14 @@ samp {
   right: 1em;
   display: flex;
   font-size: 1em;
-  color: #777;
+  color: #d2b48c;
   gap: 0.5em;
 }
 .pre svg {
   display: block;
   width: 1em;
   height: 1em;
-  fill: #777;
+  fill: #d2b48c;
 }
 .pre button {
   position: absolute;
@@ -829,7 +829,7 @@ samp {
   right: 1em;
   padding: 0;
   border: none;
-  color: #777;
+  color: #d2b48c;
   background-color: transparent;
 }
 .pre button:focus,
@@ -843,10 +843,9 @@ samp {
 }
 [class*=message] {
   margin-bottom: 1em;
-  padding: 0 1em;
+  padding: 0.25em 1em;
   background-color: #515151;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
-  overflow: hidden;
 }
 main [class*=message] {
   border-radius: 0.2em;
@@ -872,6 +871,9 @@ p[class*=message] {
 .message-warning {
   color: #16253a;
   background-color: #ffa500;
+}
+.message-warning a {
+  color: #fff;
 }
 ul {
   list-style-type: square;
@@ -1089,18 +1091,14 @@ audio:not([controls]) {
 }
 .video {
   position: relative;
-  padding-bottom: 56.25%;
+  aspect-ratio: 16/9;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
 .video iframe,
-.video embed,
-.video object {
-  position: absolute;
-}
-.thumbnail-youtube {
+.video .thumbnail-youtube {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -1552,10 +1550,10 @@ select {
 :focus::placeholder {
   color: transparent;
 }
-.invalid + [class*=alert] {
+.invalid + [class*=message] {
   position: relative;
 }
-.invalid + [class*=alert]::before {
+.invalid + [class*=message]::before {
   content: '';
   position: absolute;
   top: -0.7em;
@@ -2209,7 +2207,7 @@ form > [class*="grid"] > .input {
   border: 1px solid rgba(255,255,255,0.1);
   border-bottom-color: rgba(255,255,255,0.1);
   border-radius: 0.5em 0.5em 0 0;
-  box-shadow: 0 -0.5rem 0.5rem rgba(0,0,0,0.1);
+  box-shadow: 0 -1rem 1rem rgba(0,0,0,0.05);
   cursor: pointer;
   transition: 0.2s box-shadow ease-in-out;
 }
@@ -2233,7 +2231,7 @@ form > [class*="grid"] > .input {
   margin-bottom: 0.5em;
   padding: calc(.5em + 1px) 1em .5em;
   border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
+  box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
 }
 .tabs .tab-panel + .tab-panel {
   display: none;
@@ -2242,7 +2240,7 @@ form > [class*="grid"] > .input {
   .tabs .tab-list button:focus-visible,
   .tabs .tab-list button:hover {
     outline: none;
-    box-shadow: inset 0 -0.3em #ff6347, 0 -0.5rem 0.5rem rgba(0,0,0,0.1);
+    box-shadow: inset 0 -0.3em #ff6347, 0 -1rem 1rem rgba(0,0,0,0.05);
   }
 }
 .scroll-top {
@@ -2487,6 +2485,7 @@ html,
 .card svg,
 .article,
 [class*=message],
+[class*=message]::before,
 [class*=demo-items] > *,
 [class*=list-stripe] > :not([class*=-links]),
 [class*=figure],

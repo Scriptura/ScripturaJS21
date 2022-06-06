@@ -19,9 +19,9 @@ html
   -webkit-text-size-adjust 100% // @bugfix Prevent adjustments of font size after orientation changes @affected iOS.
   //-webkit-tap-highlight-color Transparent // Change the default tap highlight to be completely transparent. @affected iOS.
   color _colorT
-  background-color _color0
+  background-color _color1
   font-family _fontList // Georgia, Serif
-  //text-shadow 0 0 0.125rem _color0
+  //text-shadow 0 0 0.125rem _color1
   line-height 1.5 // @bugfix Correct the line height @affected All browsers.
   scroll-behavior smooth // Défilement fluide. @todo En conflit avec script retour vers le haut...
 
@@ -36,12 +36,11 @@ html
 
 ::selection
   color #fff
-  background-color _colorSelection
+  background-color _colorS
 
 a
-  color _colorT2 //lighten(_color2, 25%)
+  color _colorT2
   text-decoration none
-  // transition all .5s
 
 a:focus
 a:hover

@@ -36,12 +36,14 @@ html.no-js(lang='fr')
     block footer
       footer.footer(role='contentinfo')
         include includes/footer
-    noscript#noscript.noscript
-      .message-warning(role='alert')
-        p
-          svg.blink.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#warning')
-          | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans vos préférences utilisateur.
-        //-p Javascript is disabled on your browser, enable it to benefit from all the site's features.
-    script(src='/scripts/development/main.js' async)
+    block noscript
+      noscript#noscript.noscript
+        .message-warning(role='alert')
+          p
+            svg.blink.icon(role='img' focusable='false')
+              use(xlink:href='/medias/sprites/utils.svg#warning')
+            | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans les paramètres de votre navigateur.
+          //-p Javascript is disabled on your browser, enable it to benefit from all the site's features.
+    block script
+      script(src='/scripts/development/main.js' async)
     block structuredData
