@@ -9,7 +9,7 @@ samp
   font-family monospace, monospace // @bugfix Correct the inheritance and scaling of font size @affected All browsers.
   font-size 1em // @bugfix Correct the odd `em` font sizing @affected All browsers.
   word-break break-all
-  color _codeBlocksColor4
+  color _codeBlocksColor2
   border-radius _r2
 
 // @note 1. Pas d'effet de transparence sur le background ni de bordures en raison des chevauchements possibles des balises code au sein d'un même paragraphe de texte, puisque nous avons opté pour un padding légèrement supérieur au ligne-height de base.
@@ -28,7 +28,7 @@ samp
   border-radius _r2
   box-shadow _shadow1
   & code
-    color _codeBlocksColor2
+    color _codeBlocksColor4
     transition color .5s ease-in-out
     &:focus-within
       color _colorW
