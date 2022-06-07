@@ -788,7 +788,7 @@ samp {
 }
 :not(pre) > code {
   padding: 0.2em;
-  background-color: #444;
+  background-color: #303030;
 }
 .pre {
   position: relative;
@@ -799,7 +799,7 @@ samp {
   box-shadow: 0 0 2rem rgba(0,0,0,0.3);
 }
 .pre code {
-  color: #d2b48c;
+  color: #e9dac5;
   transition: color 0.5s ease-in-out;
 }
 .pre code:focus-within {
