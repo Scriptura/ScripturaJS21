@@ -4,7 +4,8 @@ block variables
   - var documentType = 'person'
 
 block main
-  h1.main-heading!= data._name
+  h1.main-heading !{data._name} 
+    span .&nbsp;Personnalité
   .grid2.gap.media-s-grid1
     div
       ul

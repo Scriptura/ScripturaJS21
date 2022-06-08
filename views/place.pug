@@ -4,7 +4,8 @@ block variables
   - var documentType = 'place'
 
 block main
-  h1.main-heading!= data._name
+  h1.main-heading !{data._name} 
+    span .&nbsp;Localisation
   ul
     if data._street && data._postal_code && data._locality
       li Adresse : #{data._street}, #{data._postal_code}, #{data._locality}
