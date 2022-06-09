@@ -1,11 +1,11 @@
 [class*=message]
-  margin-bottom 1em
   padding .25em 1em // @note Harmonisation avec p.message
   background-color _colorG + 7%
   box-shadow _shadow5
   //overflow hidden // @note Evite un conflit avec les margins et padding des éléments enfants. Mais pose des problèmes avec les pseudo-éléments.
 
-main [class*=message] // @note Seulement pour les messages dans le main. Ailleurs, utiliser le style global.
+:not('.alert') [class*=message]
+  margin-bottom 1em
   border-radius _r2
 
 p[class*=message]

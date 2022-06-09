@@ -36,14 +36,40 @@ html.no-js(lang='fr')
     block footer
       footer.footer(role='contentinfo')
         include includes/footer
-    block noscript
-      noscript#noscript.noscript
-        .message-warning(role='alert')
-          p
-            svg.blink.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#warning')
-            | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans les paramètres de votre navigateur.
-          //-p Javascript is disabled on your browser, enable it to benefit from all the site's features.
+    block alert
+      .alert
+        block rgpd
+          //- @see https://www.cnil.fr/fr/reglement-europeen-protection-donnees
+          .rgpd
+            .message-info(role='alert')
+              p
+                svg.icon(role='img' focusable='false')
+                  use(xlink:href='/medias/sprites/utils.svg#info')
+                | Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer&nbsp;:
+              ul.list-stripe-links.grid4.gap.gap-bottom
+                li
+                  a(href='#')
+                    svg.icon(role='img' focusable='false')
+                      use(xlink:href='/medias/sprites/utils.svg#checkmark')
+                    | Tout accepter
+                li
+                  a(href='#')
+                    svg.icon(role='img' focusable='false')
+                      use(xlink:href='/medias/sprites/utils.svg#mark')
+                    | Tout refuser
+                li
+                  a(href='#')
+                    svg.icon(role='img' focusable='false')
+                      use(xlink:href='/medias/sprites/utils.svg#quill')
+                    | Personnaliser
+        block noscript
+          noscript.noscript
+            .message-warning(role='alert')
+              p
+                svg.blink.icon(role='img' focusable='false')
+                  use(xlink:href='/medias/sprites/utils.svg#warning')
+                | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans vos paramètres.
+              //-p Javascript is disabled on your browser, enable it to benefit from all the site's features.
     block script
       script(src='/scripts/development/main.js' async)
     block structuredData
