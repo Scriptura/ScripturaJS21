@@ -131,6 +131,17 @@ const cmdPrint = (() => {
   for (const print of prints) print.onclick = startPrint
 })()
 
+// -----------------------------------------------------------------------------
+// @section     RGPD
+// @description Règlement Général sur la Protection des Données
+// -----------------------------------------------------------------------------
+
+const rgpd = (() => { // @note Date du jour si présence de la classe 'today-date' @see https://css-tricks.com/prefilling-date-input/
+  const see = document.getElementById('rgpd')
+  const trueConsent = document.getElementById('rgpd-true-consent')
+  trueConsent.addEventListener('click', () => see.style.display = 'none', false)
+})()
+
 
 // -----------------------------------------------------------------------------
 // @section     Dates

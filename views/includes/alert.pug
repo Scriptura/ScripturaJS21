@@ -1,0 +1,29 @@
+
+//- @see https://www.cnil.fr/fr/reglement-europeen-protection-donnees
+#rgpd.message-info(role='alert')
+  p
+    svg.icon(role='img' focusable='false')
+      use(xlink:href='/medias/sprites/utils.svg#info')
+    | Ce site utilise des cookies et vous donne le contrôle sur ceux que vous souhaitez activer&nbsp;:
+  ul.list-stripe-links.grid4.gap.gap-bottom
+    li
+      a(href='#')#rgpd-true-consent
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#checkmark')
+        | Tout accepter
+    li
+      a(href='#')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#mark')
+        | Tout refuser
+    li
+      a(href='#')
+        svg.icon(role='img' focusable='false')
+          use(xlink:href='/medias/sprites/utils.svg#quill')
+        | Personnaliser
+noscript
+  .message-warning(role='alert')
+    p
+      svg.blink.icon(role='img' focusable='false')
+        use(xlink:href='/medias/sprites/utils.svg#warning')
+      | Javascript est désactivé dans votre navigateur. Afin de bénéficier de toutes les fonctionnalités du site, réactivez cette option dans vos paramètres.

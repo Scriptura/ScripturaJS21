@@ -259,7 +259,7 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto) 1fr;
   grid-template-columns: minmax(1em, 1fr) minmax(0, 92em) minmax(1em, 1fr);
-  grid-template-areas: 'n n n' '. h .' 's s s' '. m .' 'a a a' 'f f f';
+  grid-template-areas: 'n n n' '. h .' 'i i i' '. m .' 'a a a' 'f f f';
   min-height: 100vh;
   margin: 0;
 }
@@ -275,7 +275,7 @@ main {
   grid-area: h;
 }
 .alert {
-  grid-area: s;
+  grid-area: i;
 }
 .aside {
   grid-area: a;
