@@ -449,7 +449,7 @@ main {
   margin: 0;
   padding: 2rem;
   background-color: #515151;
-  box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+  box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
 }
 .card h2 {
   margin-bottom: 0;
@@ -471,7 +471,7 @@ main {
   padding: 1em 0;
   color: #d2b48c;
   background-color: #515151;
-  box-shadow: 0 0 2rem rgba(0,0,0,0.1);
+  box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
 }
 .card svg {
   transition: background-color 0.5s, fill 0.5s;
@@ -2319,7 +2319,6 @@ form > [class*="grid"] > .input {
 }
 .article {
   display: grid;
-  background-color: #444;
 }
 .article [class*=grid] > * {
   margin-top: 0;
@@ -2359,19 +2358,14 @@ form > [class*="grid"] > .input {
   }
 }
 @media (min-width: 50.01em) and (max-width: 90.01em) {
-  .article > section,
-  .article > footer {
+  .article > *:not(header) {
     max-width: 55em;
-  }
-}
-@media (max-width: 90.01em) {
-  .article > footer > :first-child {
-    margin-top: 0;
   }
 }
 @media (min-width: 90.01em) {
   .article {
-    gap: 0 2em;
+    -moz-column-gap: 2em;
+         column-gap: 2em;
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .article > header {
@@ -2483,7 +2477,6 @@ html,
 .card h2,
 .card p,
 .card svg,
-.article,
 [class*=message],
 [class*=message]::before,
 [class*=demo-items] > *,

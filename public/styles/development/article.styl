@@ -2,7 +2,6 @@ _articlesColor = _colorG
 
 .article
   display grid
-  background-color _articlesColor
   & [class*=grid] > *
     margin-top 0
   & [class*=grid]
@@ -27,7 +26,7 @@ _articlesColor = _colorG
   .article
     & > section
       padding 4em 6em
-      box-shadow 0 0 1.5rem rgba(0, 0, 0, .15)
+      box-shadow _shadow8
     & > footer > div
       position sticky
       top 2em
@@ -40,22 +39,13 @@ _articlesColor = _colorG
 @media (min-width _sizeS) and (max-width _sizeL)
 
   .article
-    & > section
-    & > footer
+    & > *:not(header)
       max-width 55em
-
-@media (max-width _sizeL)
-
-  .article
-    //& > section
-    //  order 2
-    & > footer > :first-child
-      margin-top 0
 
 @media (min-width _sizeL)
 
   .article
-    gap 0 _gap * 2
+    column-gap _gap * 2
     grid-template-columns repeat(5, minmax(0, 1fr))
     & > header
       grid-column span 5
