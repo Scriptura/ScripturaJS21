@@ -137,9 +137,15 @@ const cmdPrint = (() => {
 // -----------------------------------------------------------------------------
 
 const rgpd = (() => { // @note Date du jour si présence de la classe 'today-date' @see https://css-tricks.com/prefilling-date-input/
-  const see = document.getElementById('rgpd')
-  const trueConsent = document.getElementById('rgpd-true-consent')
-  trueConsent.addEventListener('click', () => see.style.display = 'none', false)
+  const pannel = document.getElementById('rgpd')
+  const trueConsentButton = document.getElementById('rgpd-true-consent')
+  const falseConsentButton = document.getElementById('rgpd-false-consent')
+  const rgpdConsent = localStorage.getItem('rgpdConsent')
+  if (rgpdConsent === 'yes') pannel.style.display = 'none'
+  trueConsentButton.addEventListener('click', () => {
+    localStorage.setItem('rgpdConsent', 'yes')
+    pannel.style.display = 'none'
+  }, false)
 })()
 
 

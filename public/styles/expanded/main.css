@@ -846,7 +846,7 @@ samp {
   background-color: #515151;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
 }
-:not('.alert') [class*=message] {
+main [class*=message] {
   margin-bottom: 1em;
   border-radius: 0.2em;
 }
@@ -2371,7 +2371,7 @@ form > [class*="grid"] > .input {
 }
 @media (min-width: 90.01em) {
   .article {
-    gap: 0 1em;
+    gap: 0 2em;
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
   .article > header {
@@ -2585,7 +2585,7 @@ a[aria-disabled=true]:active {
   margin-bottom: 1em;
 }
 .center {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
 }

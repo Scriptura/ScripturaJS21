@@ -52,9 +52,11 @@ a[aria-disabled=true] // @tod En expérimentation.
   margin-bottom _gap
 
 .center
-  display flex
+  display grid
   align-items center
   justify-content center
+  //& > *
+  //  place-self center // @support @see https://caniuse.com/?search=place-self
 
 //.centerX // @todo
 
