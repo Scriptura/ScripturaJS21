@@ -4,16 +4,18 @@ p
 .grid4.gap.gap-bottom-none
   -
     const itemsImg = [
-      ['LotusTest', 'Lotus test', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'],
-      ['GrassLeaf', 'Grass leaf', 'Non officiis voluptates vel quibusdam laborum non quod ducimus ut iure nulla ut veniam rerum.'],
-      ['FlowerMacro', 'Flower', 'Ex eveniet consequatur aut expedita incidunt non quaerat galisum et corporis nostrum.'],
-      ['ColorfulLeaf', 'Colorful leaf', 'Qui nihil assumenda a incidunt quia ea eligendi quae et ipsam amet ea harum assumenda.']
+      ['LotusTest', 'Lotus test', 'Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.', '2560', '1600'],
+      ['GrassLeaf', 'Grass leaf', 'Non officiis voluptates vel quibusdam laborum non quod ducimus ut iure nulla ut veniam rerum.', '1920', '1200'],
+      ['FlowerMacro', 'Flower', 'Ex eveniet consequatur aut expedita incidunt non quaerat galisum et corporis nostrum.', '1920', '1200'],
+      ['ColorfulLeaf', 'Colorful leaf', 'Qui nihil assumenda a incidunt quia ea eligendi quae et ipsam amet ea harum assumenda.', '1920', '1200']
     ]
   each item in itemsImg
     div
       figure.figure-focus
         - const img = '/medias/images/demo/' + item[0]
         - const alt = item[1]
+        - const width = item[3]
+        - const height = item[4]
         include ../../helpers/picture
         figcaption= item[2]
 hr(data-hr='✻ ✻ ✻')
@@ -22,6 +24,8 @@ hr(data-hr='✻ ✻ ✻')
     figure.figure-focus-thumbnail-alignleft
       - let img = '/medias/images/demo/PacificCity'
       - let alt = 'Pacific City'
+      - let width = '2560'
+      - let height = '1600'
       include ../../helpers/picture
       figcaption Nam perferendis soluta quo fuga repudiandae vel perferendis suscipit et impedit voluptatum qui reprehenderit aliquid non iure ipsam.
     p
@@ -33,6 +37,8 @@ hr(data-hr='✻ ✻ ✻')
     figure.figure-focus-thumbnail-alignright
       - img = '/medias/images/demo/OldMechanism'
       - alt = 'Old Mechanism'
+      - width = '2848'
+      - height = '4236'
       include ../../helpers/picture
       figcaption In iusto adipisci qui voluptates quidem sit galisum doloremque in doloribus ipsum est ducimus soluta non amet maiores qui enim tempore.
     p

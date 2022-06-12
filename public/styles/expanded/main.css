@@ -964,9 +964,6 @@ figure {
       -ms-user-select: none;
           user-select: none;
 }
-[class*=figure] img {
-  min-height: 10vh;
-}
 [class*=figure] figcaption {
   padding-top: 0.5em;
   text-align: center;
@@ -1013,8 +1010,8 @@ figure {
   [class*=-focus]:focus-within {
     background-color: #ffa500;
   }
-  [class*=-focus]:focus-within svg {
-    fill: Orange;
+  [class*=-focus]:focus-within button {
+    color: #ffa500;
   }
 }
 [class*=-focus] button,
@@ -1023,7 +1020,7 @@ figure {
   z-index: 1;
   padding: 0;
   color: #aaa;
-  background-color: Transparent;
+  background-color: transparent;
   border: none;
   outline: none !important;
   cursor: zoom-in;
@@ -1041,18 +1038,17 @@ figure {
 }
 .focus-off {
   position: fixed;
-  display: flex;
+  display: grid;
   align-items: center;
+  justify-content: center;
   z-index: 4001;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 0;
   cursor: zoom-out;
 }
 .focus-off img {
-  margin: auto;
   max-height: 100vh;
   background-color: #000;
   box-shadow: 0 0 0 1000em #222;

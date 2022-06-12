@@ -27,6 +27,8 @@ const imageFocus = (() => {
   const cloneImage = image => {
     const imgTag = image.querySelector('img')
     let clone = imgTag.cloneNode(true)
+    clone.removeAttribute('width') // Les valeurs d'atributs peuvent déformer les images, notamment celles en portrait.
+    clone.removeAttribute('height') // Idem.
     document.body.appendChild(clone)
     clone = wrapClone(clone)
     clone = clickFocusRemove(image)
