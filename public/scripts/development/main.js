@@ -136,15 +136,26 @@ const cmdPrint = (() => {
 // @description Règlement Général sur la Protection des Données
 // -----------------------------------------------------------------------------
 
-const rgpd = (() => { // @note Date du jour si présence de la classe 'today-date' @see https://css-tricks.com/prefilling-date-input/
-  const pannel = document.getElementById('rgpd')
+const rgpd = (() => {
+  const rgpdConsent = localStorage.getItem('rgpdConsent')
+  const template = document.getElementById('rgpd')
+  console.log(template)
+  //const target = document.getElementsByTagName('main')[0]
+  const target = document.querySelector('.alert')
+  //document.importNode(panel.content, true)
+  const clone = template.content.cloneNode(true)
+  target.appendChild(clone)
+  const panel = document.getElementById('rgpd-see')
   const trueConsentButton = document.getElementById('rgpd-true-consent')
   const falseConsentButton = document.getElementById('rgpd-false-consent')
-  const rgpdConsent = localStorage.getItem('rgpdConsent')
-  if (rgpdConsent === 'yes') pannel.style.display = 'none'
+  if (localStorage.getItem('rgpdConsent') === 'yes') panel.style.display = 'none'
   trueConsentButton.addEventListener('click', () => {
     localStorage.setItem('rgpdConsent', 'yes')
-    pannel.style.display = 'none'
+    panel.style.display = 'none'
+  }, false)
+  falseConsentButton.addEventListener('click', () => {
+    localStorage.setItem('rgpdConsent', 'no')
+    panel.style.display = 'block'
   }, false)
 })()
 
