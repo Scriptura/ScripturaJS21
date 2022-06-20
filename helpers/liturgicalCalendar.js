@@ -239,7 +239,6 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
     return data.type
   })()
 
-
   return data
 }
 
