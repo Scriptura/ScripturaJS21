@@ -37,15 +37,15 @@ block main
               use(xlink:href='/medias/sprites/moons.svg#' + data._moonPhase)
       ul.list-stripe-links.grid2
         li
-          a(href='/calendar/' + data._previousDay)
+          a(href=data._previousPage)
             svg.icon(role='img' focusable='false')
               use(xlink:href='/medias/sprites/utils.svg#arrow-left')
-            = data._previousDay
+            = data._previousPageInfo
         li(style='direction:rtl;text-align:right')
-          a(href='/calendar/' + data._nextDay)
+          a(href=data._nextPage)
             svg.icon(role='img' focusable='false' style='margin-right:0;margin-left:0.5em')
               use(xlink:href='/medias/sprites/utils.svg#arrow-right')
-            = data._nextDay
+            = data._nextPageInfo
     .center
       svg.size25.decorative-svg(role='img' focusable='false')
         use(xlink:href='/medias/sprites/silos/182r-d1-1.1.svg#1')
