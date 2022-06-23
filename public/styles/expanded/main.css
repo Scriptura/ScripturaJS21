@@ -2408,6 +2408,7 @@ form > [class*="grid"] > .input {
     font-size: 1rem;
     font-weight: normal;
     text-decoration: none;
+    color: #777;
     outline: none;
     transition: color 0.2s ease-in-out;
     -webkit-user-select: none;
