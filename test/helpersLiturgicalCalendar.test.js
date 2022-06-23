@@ -19,7 +19,7 @@ const { liturgicalCalendar } = require('../helpers/liturgicalCalendar'),
  * 9. Saint Joseph, époux. Si la fête tombe un dimanche, autre que le Dimanche des Rameaux, celle-ci est célébrée le jour suivant, généralement le lundi 20 mars, mais seulement si une autre solennité (par exemple, un autre Saint patron de l'Église) n'est pas célébrée durant cette journée. Depuis 2008, si le jour de la Fête de Saint Joseph tombe pendant la Semaine Sainte, la célébration de sa fête est déplacée vers le jour le plus proche possible avant le 19 mars, généralement le samedi précédant la Semaine Sainte.
  * 10. Annonciation du Seigneur à Marie. Le 25 mars. Le premier lundi qui suit le deuxième dimanche de Pâques si le 25 mars se situe pendant la Semaine Sainte. Décalée au 26, si le 25 est un dimanche.
  * 11. Fête-Dieu célébrée le jeudi qui suit la Sainte-Trinité, c'est-à-dire soixante jours après Pâques, reportée au dimanche qui suit la Sainte-Trinité dans les pays où elle n'est pas inscrite au nombre des jours fériés (France).
- * 12. Nativité de Saint Jean-Baptiste : le 24 juin, reporté au 25 si le 24 juin tombe le jour de la solennité du Saint-Sacrement ou du Sacré-Coeur.
+ * 12. Nativité de Saint Jean-Baptiste : le 24 juin, reporté au 25 si le 24 juin tombe le jour de la solennité du Saint-Sacrement, le 23 juin si solennité du Sacré-Coeur, qui est lui-même suivit de la mémoire du Cœur Immaculé de Marie le 25.
  * 13. Avent du 17 au 24, n'a pas la même préséance que le début du temps de l'Avent (=> 9)
  * 14. La Mémoire de la bienheureuse Vierge Marie, Mère de l’Église étant liée à la Pentecôte, de même que la Mémoire du Cœur immaculé de la bienheureuse Vierge Marie est conjointe à la célébration du très saint Cœur de Jésus, en cas de coïncidence avec une autre Mémoire d’un saint ou d’un bienheureux, selon la tradition liturgique de la prééminence entre les personnes, c’est la Mémoire de la bienheureuse Vierge Marie qui prévaut. Congrégation pour le Culte divin et la Discipline des Sacrements, le 24 mars 2018.
 */
@@ -231,7 +231,7 @@ describe("Liturgical calendar", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('07062020', 'ddMMyyyy'), 'france')).toMatchObject({key: "holyTrinity"})
   })
 
-  it("Saint Sacrement le 14 juin 2020", () => {
+  it("Saint Sacrement (Fête Dieu) le 14 juin 2020", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('14062020', 'ddMMyyyy'), 'france')).toMatchObject({key: "corpusChristi"})
   })
 
@@ -251,12 +251,12 @@ describe("Liturgical calendar", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('24062020', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
   })
 
-  it("24 juin 2057 jour du Saint-Sacrement, alors Nativité de Saint Jean-Baptiste le 25 juin", () => { // @todo A déterminer...
-    expect(liturgicalCalendar(DateTime.fromFormat('25062057', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
+  it("Nativité de Saint Jean-Baptiste le 23 juin si Sacré-Coeur le 24 juin et donc Cœur Immaculé de Marie le 25", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('23062022', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
   })
 
-  it("24 juin 2022 jour du Sacré-Coeur, alors Nativité de Saint Jean-Baptiste le 25 juin, qui prend le pas sur le Cœur Immaculé de Marie", () => {
-    expect(liturgicalCalendar(DateTime.fromFormat('25062022', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
+  it("Nativité de Saint Jean-Baptiste le 25 juin 2057 si Saint Sacrement (Fête Dieu) le 24", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('25062057', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
   })
 
   it("Saints Pierre et Paul le 29 juillet 2021", () => {

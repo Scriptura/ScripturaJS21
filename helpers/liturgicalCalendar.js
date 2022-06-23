@@ -96,7 +96,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         pentecost = easter.plus({days: 49}),
         maryMotherOfTheChurch = easter.plus({days: 50}),
         holyTrinity = easter.plus({days: 56}),
-        corpusChristi = easter.plus({days: 63}), // easter.plus({days: 60})
+        corpusChristi = easter.plus({days: 63}), // Pour la France (Concordat de Napoléon), dans le monde le jeudi qui précède : easter.plus({days: 60})
         sacredHeart = easter.plus({days: 68}),
         immaculateHeartOfMary = easter.plus({days: 69}),
         eastertide = Interval.fromDateTimes(easter, easter.plus({days: 50})),
@@ -110,7 +110,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         josephHusbandOfMary = march19InHolyWeek ? palmSunday.plus({days: -1}) : (march19InLentSunday ? march19.plus({days: 1}) : march19), // 9
         march25 = DateTime.fromFormat('2503' + year, 'ddMMyyyy'),
         annunciation = holyWeek.contains(march25) ? divineMercySunday.plus({days: 1}) : (march25.weekday === 7 ? march25.plus({days: 1}) : march25), // 10
-        nativityOfJohnTheBaptist = (corpusChristi.toFormat('ddMM') === '2406' || sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')
+        nativityOfJohnTheBaptist = (sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2306' + year, 'ddMMyyyy') : ((corpusChristi.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')) // 12
 
 
   data.p = {}
