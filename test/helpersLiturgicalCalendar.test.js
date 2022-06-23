@@ -8,6 +8,7 @@ const { liturgicalCalendar } = require('../helpers/liturgicalCalendar'),
  * Vérification @see https://www.aelf.org/calendrier/romain/2020/01
  * La préséance est déterminée par une valeur rank dans les fichiers .json, mais dans la pratique le calendrier romain sert de base et ses valeurs peuvent être écrasées par les propres qui sont chargés après lui, sans besoin de calcul logiciel.
  * Si une fête fixe du calendrier général devient votive dans le propre d'un pays, le .json du pays concerné mentionnera une valeur vide pour le nom en lieu et place de la date ({"name": ""}), ceci afin de permettre les traitements qui annuleront la fête, la fête votive sera au final déterminée par calcul logiciel.
+ * * Sur le principe les fêtes avec un degré de préséance suppérieur supplantent les inférieures, mais dans la pratique "ça dépend". Par exemple, la mémoire obligatoire au Cœur Immaculé de Marie à préséance sur la Nativité de Saint Jean-Baptiste, celle-ci étant une solennité déjà déplacée par celle du Sacré-Cœur de Jésus.
  * 1. Vérification des dates de Pâques @see http://5ko.free.fr/fr/easter.php
  * 2. Immaculée Conception le 08/12, si dimanche alors célébration le lundi 09/12.
  * 3. Sainte Famille le dimanche qui suit Noël, si Noël est un dimanche alors le 30/12.
@@ -259,12 +260,16 @@ describe("Liturgical calendar", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('25062057', 'ddMMyyyy'), 'france')).toMatchObject({key: "nativityOfJohnTheBaptist"})
   })
 
-  it("Saints Pierre et Paul le 29 juillet 2021", () => {
-    expect(liturgicalCalendar(DateTime.fromFormat('29072021', 'ddMMyyyy'), 'france')).toMatchObject({key: "marthaAndMaryAndLazarusOfBethany"})
+  it("Saints Pierre et Paul le 29 juin 2019, en lieu et place de la mémoire obligatoire du Cœur Immaculé de Marie", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('29062019', 'ddMMyyyy'), 'france')).toMatchObject({key: "peterAndPaul"})
   })
 
   it("Saints Pierre et Paul le 29 juin 2020", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('29062020', 'ddMMyyyy'), 'france')).toMatchObject({key: "peterAndPaul"})
+  })
+
+  it("Sainte Marthe, Sainte Marie et Saint Lazare le 29 juillet 2021", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('29072021', 'ddMMyyyy'), 'france')).toMatchObject({key: "marthaAndMaryAndLazarusOfBethany"})
   })
 
   it("Christ Roi le 22 novembre 2020", () => {
