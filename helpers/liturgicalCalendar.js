@@ -10,17 +10,17 @@ const fs = require('fs'),
 /**
  * Annotations et règles placées dans le fichier de test.
  * @see helpersLiturgicalCalendar.test.js
- * /
+ */
 
-/*
-* @todo Option à développer :
-* Implémentation des dimanches du temps ordinaire
-* const locale = locale || 'fr'
-* const epiphanyOnJan6 = epiphanyOnJan6 || false
-* const christmastideIncludesTheSeasonOfEpiphany = christmastideIncludesTheSeasonOfEpiphany || true
-* const corpusChristiOnThursday = corpusChristiOnThursday || false
-* const ascensionOnSunday = ascensionOnSunday || false
-*/
+/**
+ * @todo Option à développer :
+ * Implémentation des dimanches du temps ordinaire
+ * const locale = locale || 'fr'
+ * const epiphanyOnJan6 = epiphanyOnJan6 || false
+ * const christmastideIncludesTheSeasonOfEpiphany = christmastideIncludesTheSeasonOfEpiphany || true
+ * const corpusChristiOnThursday = corpusChristiOnThursday || false
+ * const ascensionOnSunday = ascensionOnSunday || false
+ */
 
 /**
  * @param {object} date, optional
@@ -110,8 +110,33 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         josephHusbandOfMary = march19InHolyWeek ? palmSunday.plus({days: -1}) : (march19InLentSunday ? march19.plus({days: 1}) : march19), // 9
         march25 = DateTime.fromFormat('2503' + year, 'ddMMyyyy'),
         annunciation = holyWeek.contains(march25) ? divineMercySunday.plus({days: 1}) : (march25.weekday === 7 ? march25.plus({days: 1}) : march25), // 10
-        nativityOfJohnTheBaptist = (sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2306' + year, 'ddMMyyyy') : ((corpusChristi.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')) // 12
-
+        nativityOfJohnTheBaptist = (sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2306' + year, 'ddMMyyyy') : ((corpusChristi.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')), // 12
+        // TEST dimanches du temps ordinaire :
+        ordinaryTimeSunday10 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -197}),
+        ordinaryTimeSunday11 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -190}),
+        ordinaryTimeSunday12 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -183}),
+        ordinaryTimeSunday13 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -176}),
+        ordinaryTimeSunday14 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -169}),
+        ordinaryTimeSunday15 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -162}),
+        ordinaryTimeSunday16 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -155}),
+        ordinaryTimeSunday17 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -148}),
+        ordinaryTimeSunday18 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -141}),
+        ordinaryTimeSunday19 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -134}),
+        ordinaryTimeSunday20 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -127}),
+        ordinaryTimeSunday21 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -120}),
+        ordinaryTimeSunday22 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -113}),
+        ordinaryTimeSunday23 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -106}),
+        ordinaryTimeSunday24 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -99}),
+        ordinaryTimeSunday25 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -92}),
+        ordinaryTimeSunday26 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -85}),
+        ordinaryTimeSunday27 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -78}),
+        ordinaryTimeSunday28 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -71}),
+        ordinaryTimeSunday29 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -64}),
+        ordinaryTimeSunday30 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -57}),
+        ordinaryTimeSunday31 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -50}),
+        ordinaryTimeSunday32 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -43}),
+        ordinaryTimeSunday33 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -36})
+        // END TEST
 
   data.p = {}
   data.f = {...dataF1[dayMonth], ...dataF2[dayMonth], ...dataF3[dayMonth]}
@@ -134,6 +159,32 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
 
 
   const moveableFeasts = (() => {
+    /*
+    if (ordinaryTimeSunday10.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday10
+    if (ordinaryTimeSunday11.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday11
+    if (ordinaryTimeSunday12.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday12
+    if (ordinaryTimeSunday13.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday13
+    if (ordinaryTimeSunday14.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday14
+    if (ordinaryTimeSunday15.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday15
+    if (ordinaryTimeSunday16.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday16
+    if (ordinaryTimeSunday17.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday17
+    if (ordinaryTimeSunday18.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday18
+    if (ordinaryTimeSunday19.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday19
+    if (ordinaryTimeSunday20.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday20
+    if (ordinaryTimeSunday21.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday21
+    if (ordinaryTimeSunday22.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday22
+    if (ordinaryTimeSunday23.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday23
+    if (ordinaryTimeSunday24.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday24
+    if (ordinaryTimeSunday25.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday25
+    if (ordinaryTimeSunday26.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday26
+    if (ordinaryTimeSunday27.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday27
+    if (ordinaryTimeSunday28.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday28
+    if (ordinaryTimeSunday29.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday29
+    if (ordinaryTimeSunday30.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday30
+    if (ordinaryTimeSunday31.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday31
+    if (ordinaryTimeSunday32.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday32
+    if (ordinaryTimeSunday33.hasSame(date, 'day')) data.m = dataM.ordinaryTimeSunday33
+    */
     if (firstAdventSunday.hasSame(date, 'day')) data.m = dataM.firstAdventSunday
     if (secondAdventSunday.hasSame(date, 'day')) data.m = dataM.secondAdventSunday
     if (thirdAdventSunday.hasSame(date, 'day')) data.m = dataM.thirdAdventSunday
@@ -242,7 +293,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
   return data
 }
 
-/*
+
 const test0 = (() => { // @todo For test.
   const dayMonthYear = '01012020'
   const dateTest = DateTime.fromFormat(dayMonthYear, 'ddMMyyyy')
@@ -252,7 +303,7 @@ const test0 = (() => { // @todo For test.
     console.log(lc)
   }
 })()
-*/
+
 /*
 const test1 = (() => { // @todo For test.
   const begin = 2010

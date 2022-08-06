@@ -325,5 +325,173 @@
     "color": "white",
     "type": 1,
     "priority": 3
+  },
+  "ordinaryTimeSunday10": {
+    "key": "ordinaryTimeSunday10",
+    "name": "10<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday11": {
+    "key": "ordinaryTimeSunday11",
+    "name": "11<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday12": {
+    "key": "ordinaryTimeSunday12",
+    "name": "12<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday13": {
+    "key": "ordinaryTimeSunday13",
+    "name": "13<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday14": {
+    "key": "ordinaryTimeSunday14",
+    "name": "14<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday15": {
+    "key": "ordinaryTimeSunday15",
+    "name": "15<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday16": {
+    "key": "ordinaryTimeSunday16",
+    "name": "16<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday17": {
+    "key": "ordinaryTimeSunday17",
+    "name": "17<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday18": {
+    "key": "ordinaryTimeSunday18",
+    "name": "18<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday19": {
+    "key": "ordinaryTimeSunday19",
+    "name": "19<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday20": {
+    "key": "ordinaryTimeSunday20",
+    "name": "20<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday21": {
+    "key": "ordinaryTimeSunday21",
+    "name": "21<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday22": {
+    "key": "ordinaryTimeSunday22",
+    "name": "22<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday23": {
+    "key": "ordinaryTimeSunday23",
+    "name": "23<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday24": {
+    "key": "ordinaryTimeSunday24",
+    "name": "24<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday25": {
+    "key": "ordinaryTimeSunday25",
+    "name": "25<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday26": {
+    "key": "ordinaryTimeSunday26",
+    "name": "26<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday27": {
+    "key": "ordinaryTimeSunday27",
+    "name": "27<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday28": {
+    "key": "ordinaryTimeSunday28",
+    "name": "28<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday29": {
+    "key": "ordinaryTimeSunday29",
+    "name": "29<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday30": {
+    "key": "ordinaryTimeSunday30",
+    "name": "30<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday31": {
+    "key": "ordinaryTimeSunday31",
+    "name": "31<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday32": {
+    "key": "ordinaryTimeSunday32",
+    "name": "32<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
+  },
+  "ordinaryTimeSunday33": {
+    "key": "ordinaryTimeSunday33",
+    "name": "33<sup>ème</sup> dimanche du temps ordinaire",
+    "color": "green",
+    "type": 1,
+    "priority": 2
   }
 }

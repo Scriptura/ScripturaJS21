@@ -8,7 +8,8 @@ const { liturgicalCalendar } = require('../helpers/liturgicalCalendar'),
  * Vérification @see https://www.aelf.org/calendrier/romain/2020/01
  * La préséance est déterminée par une valeur rank dans les fichiers .json, mais dans la pratique le calendrier romain sert de base et ses valeurs peuvent être écrasées par les propres qui sont chargés après lui, sans besoin de calcul logiciel.
  * Si une fête fixe du calendrier général devient votive dans le propre d'un pays, le .json du pays concerné mentionnera une valeur vide pour le nom en lieu et place de la date ({"name": ""}), ceci afin de permettre les traitements qui annuleront la fête, la fête votive sera au final déterminée par calcul logiciel.
- * * Sur le principe les fêtes avec un degré de préséance suppérieur supplantent les inférieures, mais dans la pratique "ça dépend". Par exemple, la mémoire obligatoire au Cœur Immaculé de Marie à préséance sur la Nativité de Saint Jean-Baptiste, celle-ci étant une solennité déjà déplacée par celle du Sacré-Cœur de Jésus.
+ * Sur le principe les fêtes avec un degré de préséance suppérieur supplantent les inférieures, mais dans la pratique "ça dépend". Par exemple, la mémoire obligatoire au Cœur Immaculé de Marie à préséance sur la Nativité de Saint Jean-Baptiste, celle-ci étant une solennité déjà déplacée par celle du Sacré-Cœur de Jésus.
+ * Si plusieurs célébrations tombent le même jour, on fait celle qui a la préséance dans le tableau des jours liturgiques. Cependant, une solennité empêchée par un jour liturgique ayant la priorité, est transférée au jour le plus proche qui ne soit pas pris par les jours indiqués aux nn. 1-8 de la table de préséance (PGMR § 60).
  * 1. Vérification des dates de Pâques @see http://5ko.free.fr/fr/easter.php
  * 2. Immaculée Conception le 08/12, si dimanche alors célébration le lundi 09/12.
  * 3. Sainte Famille le dimanche qui suit Noël, si Noël est un dimanche alors le 30/12.
@@ -20,7 +21,7 @@ const { liturgicalCalendar } = require('../helpers/liturgicalCalendar'),
  * 9. Saint Joseph, époux. Si la fête tombe un dimanche, autre que le Dimanche des Rameaux, celle-ci est célébrée le jour suivant, généralement le lundi 20 mars, mais seulement si une autre solennité (par exemple, un autre Saint patron de l'Église) n'est pas célébrée durant cette journée. Depuis 2008, si le jour de la Fête de Saint Joseph tombe pendant la Semaine Sainte, la célébration de sa fête est déplacée vers le jour le plus proche possible avant le 19 mars, généralement le samedi précédant la Semaine Sainte.
  * 10. Annonciation du Seigneur à Marie. Le 25 mars. Le premier lundi qui suit le deuxième dimanche de Pâques si le 25 mars se situe pendant la Semaine Sainte. Décalée au 26, si le 25 est un dimanche.
  * 11. Fête-Dieu célébrée le jeudi qui suit la Sainte-Trinité, c'est-à-dire soixante jours après Pâques, reportée au dimanche qui suit la Sainte-Trinité dans les pays où elle n'est pas inscrite au nombre des jours fériés (France).
- * 12. Nativité de Saint Jean-Baptiste : le 24 juin, reporté au 25 si le 24 juin tombe le jour de la solennité du Saint-Sacrement, le 23 juin si solennité du Sacré-Coeur, qui est lui-même suivit de la mémoire du Cœur Immaculé de Marie le 25.
+ * 12. Nativité de Saint Jean-Baptiste : le 24 juin, reporté au 25 si le 24 juin tombe le jour de la solennité du Saint-Sacrement, le 23 juin en France, si solennité du Sacré-Coeur, qui est lui-même suivit de la mémoire du Cœur Immaculé de Marie le 25.
  * 13. Avent du 17 au 24, n'a pas la même préséance que le début du temps de l'Avent (=> 9)
  * 14. La Mémoire de la bienheureuse Vierge Marie, Mère de l’Église étant liée à la Pentecôte, de même que la Mémoire du Cœur immaculé de la bienheureuse Vierge Marie est conjointe à la célébration du très saint Cœur de Jésus, en cas de coïncidence avec une autre Mémoire d’un saint ou d’un bienheureux, selon la tradition liturgique de la prééminence entre les personnes, c’est la Mémoire de la bienheureuse Vierge Marie qui prévaut. Congrégation pour le Culte divin et la Discipline des Sacrements, le 24 mars 2018.
 */
@@ -282,6 +283,22 @@ describe("Liturgical calendar", () => {
 
   it("Noël le 25 descembre 2020", () => {
     expect(liturgicalCalendar(DateTime.fromFormat('25122020', 'ddMMyyyy'), 'france')).toMatchObject({key: "christmas"})
+  })
+
+  it("13ème dimanche du temps ordinaire", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('26062022', 'ddMMyyyy'), 'france')).toMatchObject({key: "ordinaryTimeSunday13"})
+  })
+
+  it("21ème dimanche du temps ordinaire", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('21082022', 'ddMMyyyy'), 'france')).toMatchObject({key: "ordinaryTimeSunday21"})
+  })
+
+  it("32ème dimanche du temps ordinaire", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('06112022', 'ddMMyyyy'), 'france')).toMatchObject({key: "ordinaryTimeSunday32"})
+  })
+
+  it("33ème dimanche du temps ordinaire", () => {
+    expect(liturgicalCalendar(DateTime.fromFormat('13112022', 'ddMMyyyy'), 'france')).toMatchObject({key: "ordinaryTimeSunday33"})
   })
 
   it("Sortie du type de célébration en language humain", () => {
