@@ -47,12 +47,12 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon ./bin/www",
     "dev": "yarn js | yarn css | yarn cssexp | yarn cssprint | yarn bs | yarn go",
-    "js": "uglifyjs public/scripts/development/main.js -o public/scripts/main.js -c -m",
+    "js": "uglifyjs assets/scripts/development/main.js -o assets/scripts/main.js -c -m",
     "test": "jest",
-    "css": "stylus -u autoprefixer-stylus -w public/styles/development/main.styl -o public/styles/main.css -c -m",
-    "cssexp": "stylus -u autoprefixer-stylus -w public/styles/development/main.styl -o public/styles/expanded/main.css",
-    "cssprint": "stylus -u autoprefixer-stylus -w public/styles/development/print.styl -o public/styles/print.css -c -m",
-    "bs": "browser-sync start --proxy 'localhost:3000' --port 9001 --reload-debounce 2000 --files 'public' 'views' --no-notify",
+    "css": "stylus -u autoprefixer-stylus -w assets/styles/development/main.styl -o assets/styles/main.css -c -m",
+    "cssexp": "stylus -u autoprefixer-stylus -w assets/styles/development/main.styl -o assets/styles/expanded/main.css",
+    "cssprint": "stylus -u autoprefixer-stylus -w assets/styles/development/print.styl -o assets/styles/print.css -c -m",
+    "bs": "browser-sync start --proxy 'localhost:3000' --port 9001 --reload-debounce 2000 --files 'assets' 'views' --no-notify",
     "go": "nodemon ./bin/www"
   }
 }

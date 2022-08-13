@@ -11,7 +11,10 @@ npm-debug.log
 # Yarn
 yarn-debug.log
 yarn-error.log
-# yarn.lock # à commit absolument si l'on veut profiter du verrouillage du versioning des packages
+# yarn.lock # versioning des packages
+
+# Debian/Ubuntu (Gnome)
+.goutputstream*
 
 # Mac os
 .DS_Store
