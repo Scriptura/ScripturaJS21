@@ -105,7 +105,7 @@ const fadeIn = (el, duration) => {
 // - `spriteId` : nom du sprite
 // - `svgFile` : nom du fichier de sprite (`utils.svg` par défaut)
 const injectSvgSprite = (targetElement, spriteId, svgFile) => {
-  const path = '/medias/sprites/' // Chemin des fichiers de sprites SVG
+  const path = '/sprites/' // Chemin des fichiers de sprites SVG
   if (svgFile === undefined) svgFile = 'utils'
   const icon = `<svg role="img" focusable="false"><use xlink:href="${path + svgFile}.svg#${spriteId}"></use></svg>`
   targetElement.insertAdjacentHTML('beforeEnd', icon)

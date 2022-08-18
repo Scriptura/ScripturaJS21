@@ -13,22 +13,22 @@ block main
         if data._author
           p
             svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#quill')
+              use(xlink:href='/sprites/utils.svg#quill')
             | Auteur&nbsp;: #{data._author}
         if data._creation
           p
             svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#calendar')
+              use(xlink:href='/sprites/utils.svg#calendar')
             |  Contenu publié le #{data._creation}, modifié le #{data._revision}.
         if data._description
           p
             svg.icon(role='img' focusable='false')
-              use(xlink:href='/medias/sprites/utils.svg#info')
+              use(xlink:href='/sprites/utils.svg#info')
             != data._description
         //-if data._keywords
         p.keywords
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#old-key')
+            use(xlink:href='/sprites/utils.svg#old-key')
           |  Mots clefs&nbsp;: 
           |  
           a(href='/keyword/lion') Lion

@@ -9,115 +9,115 @@ button.cmd-nav(type='button' aria-label='Main Menu')
       if data._url.path === '/login'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#login')
+            use(xlink:href='/sprites/utils.svg#login')
           | Login
       else
         a(href='/login')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#login')
+            use(xlink:href='/sprites/utils.svg#login')
           | Login
     li
       if data._url.path === '/register'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#bookmark')
+            use(xlink:href='/sprites/utils.svg#bookmark')
           | Register
       else
         a(href='/register')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#bookmark')
+            use(xlink:href='/sprites/utils.svg#bookmark')
           | Register
     li
       if data._url.path === '/account/admin'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#user')
+            use(xlink:href='/sprites/utils.svg#user')
           | Account
       else
         a(href='/account/admin')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#user')
+            use(xlink:href='/sprites/utils.svg#user')
           | Account
     li
       if data._url.path === '/person/1'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#frame')
+            use(xlink:href='/sprites/utils.svg#frame')
           | Person 1
       else
         a(href='/person/1')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#frame')
+            use(xlink:href='/sprites/utils.svg#frame')
           | Person 1
     li
       if data._url.path === '/place/1'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#location')
+            use(xlink:href='/sprites/utils.svg#location')
           | Place 1
       else
         a(href='/place/1')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#location')
+            use(xlink:href='/sprites/utils.svg#location')
           | Place 1
     li
       if data._url.path === '/article/1'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#quill')
+            use(xlink:href='/sprites/utils.svg#quill')
           | Article 1
       else
         a(href='/article/1')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#quill')
+            use(xlink:href='/sprites/utils.svg#quill')
           | Article 1
     li
       if data._url.path === '/keyword/lion'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#sharp')
+            use(xlink:href='/sprites/utils.svg#sharp')
           | Keyword
       else
         a(href='/keyword/lion')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#sharp')
+            use(xlink:href='/sprites/utils.svg#sharp')
           | Keyword
     li
       if data._url.path === '/imageGallery'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#picture')
+            use(xlink:href='/sprites/utils.svg#picture')
           | Images
       else
         a(href='/imageGallery')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#picture')
+            use(xlink:href='/sprites/utils.svg#picture')
           | Images
     li
       - const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '/')
       if data._url.path === '/calendar/' + currentDate + ''
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#calendar')
+            use(xlink:href='/sprites/utils.svg#calendar')
           | Calendar
       else
         a(href='/calendar/' + currentDate + '')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#calendar')
+            use(xlink:href='/sprites/utils.svg#calendar')
           | Calendar
     li
       if data._url.path === '/styleGuide'
         .current
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#ampersand')
+            use(xlink:href='/sprites/utils.svg#ampersand')
           | Style Guide
       else
         a(href='/styleGuide')
           svg.icon(role='img' focusable='false')
-            use(xlink:href='/medias/sprites/utils.svg#ampersand')
+            use(xlink:href='/sprites/utils.svg#ampersand')
           | Style Guide
     li
       a(href='//github.com/Scriptura/ScripturaJS21')
         svg.icon(role='img' focusable='false')
-          use(xlink:href='/medias/sprites/utils.svg#github')
+          use(xlink:href='/sprites/utils.svg#github')
         | Repository
