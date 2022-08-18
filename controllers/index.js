@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => { // GET home page
     data: {
       _url: req,
       _title: vv.siteName,
-      _name: vv.siteName + ' <span>.&nbsp;Un framework pour le web</span>',
+      _name: vv.siteName + ' <span>.&nbsp;un framework pour le web</span>',
       _description: vv.siteName + ', page d\'accueil',
       //_site_url: process.env.PORT,
       _node_version: process.version.replace('v', ''),

@@ -24,6 +24,11 @@ const touchDetect = (() => {
 // @description Appel de scripts
 // -----------------------------------------------------------------------------
 
+/**
+ * @param {string} url : une url de script
+ * @param {string} hook : le placement du script, 'head' ou 'footer'
+ */
+
 const getScript = (url, hook = 'footer') => new Promise((resolve, reject) => { // @see https://stackoverflow.com/questions/16839698#61903296
   const script = document.createElement('script')
   script.src = url
@@ -36,8 +41,9 @@ const getScript = (url, hook = 'footer') => new Promise((resolve, reject) => { /
     resolve()
   }
   if (hook == 'head') document.head.appendChild(script)
-  else if (hook == 'footer') document.body.appendChild(script)
-  else console.log('Error: the choice of the html tag for the hook is not correct.')
+  else document.body.appendChild(script)
+  //else if (hook == 'footer') document.body.appendChild(script)
+  //else console.log('Error: the choice of the html tag for the hook is not correct.')
 })
 
 const getScripts = (() => {
