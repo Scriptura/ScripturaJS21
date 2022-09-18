@@ -23,7 +23,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   color: #e9dac5;
-  background-color: #444;
+  background-color: #333;
   font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
   scroll-behavior: smooth;
@@ -448,7 +448,7 @@ main {
 .card p {
   margin: 0;
   padding: 2rem;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
 }
 .card h2 {
@@ -470,7 +470,7 @@ main {
   margin: 0 auto;
   padding: 1em 0;
   color: #d2b48c;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
 }
 .card svg {
@@ -520,7 +520,7 @@ main {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #2d2d2d;
+  background-color: #222;
 }
 .main-nav li {
   list-style: none;
@@ -573,7 +573,7 @@ main {
   .main-nav li {
     flex: 1;
     flex-basis: 50%;
-    background-color: #2d2d2d;
+    background-color: #222;
     transform: rotate(90deg);
     transition: transform 0.4s ease-in-out;
   }
@@ -725,7 +725,7 @@ main {
   display: flex;
   margin: 0;
   padding: 0 3em 0 0;
-  background-color: #2d2d2d;
+  background-color: #222;
 }
 .breadcrumb li {
   list-style: none;
@@ -761,7 +761,7 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   color: #d2b48c;
-  background-color: #2d2d2d;
+  background-color: #222;
   transition: background-color 0.3s ease-in-out;
   -webkit-clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 1em) 0, 100% 50%, calc(100% - 1em) 100%, 0 100%);
@@ -788,13 +788,13 @@ samp {
 }
 :not(pre) > code {
   padding: 0.2em;
-  background-color: #303030;
+  background-color: #242424;
 }
 .pre {
   position: relative;
   min-height: 3em;
   padding: 1em;
-  background-color: #252525;
+  background-color: #1c1c1c;
   border-radius: 0.2em;
   box-shadow: 0 0 2rem rgba(0,0,0,0.3);
 }
@@ -843,7 +843,7 @@ samp {
 }
 [class*=message] {
   padding: 0.25em 1em;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
 }
 main [class*=message] {
@@ -854,10 +854,10 @@ p[class*=message] {
   padding: 1em;
 }
 .message-primary {
-  background-color: #696969;
+  background-color: #5c5c5c;
 }
 .message-secondary {
-  background-color: #4a4a4a;
+  background-color: #393939;
 }
 .message-info {
   background-color: #4e667a;
@@ -898,7 +898,7 @@ ol ol ol {
 }
 [class*=list-stripe] > * {
   padding: 0.5em 1em;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.1);
 }
 [class*=-links] a {
@@ -957,7 +957,7 @@ figure {
   width: 100%;
   padding: 0.5em;
   color: #e9dac5;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0 0 2rem rgba(0,0,0,0.2);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1114,7 +1114,7 @@ audio:not([controls]) {
   min-width: 16em;
   height: 4em;
   color: #d2b48c;
-  background-color: #2d2d2d;
+  background-color: #222;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
   border-radius: 2em;
 }
@@ -1289,7 +1289,7 @@ audio:not([controls]) {
   [class*=table] th,
   [class*=table] td {
     display: block;
-    background-color: #515151;
+    background-color: #414141;
   }
   [class*=table] tr > :first-child {
     padding-top: 1em;
@@ -1335,13 +1335,13 @@ audio:not([controls]) {
   }
   [class*=table] tbody th,
   [class*=table] tfoot {
-    background-color: #303030;
+    background-color: #242424;
   }
   [class*=table] tbody tr:nth-child(odd) {
-    background-color: #515151;
+    background-color: #414141;
   }
   [class*=table] tbody tr:nth-child(even) {
-    background-color: #3d3d3d;
+    background-color: #2e2e2e;
   }
   [class*=table] tbody :empty::after {
     content: '● ● ●';
@@ -1529,13 +1529,13 @@ select {
   transition-delay: 1000000s;
 }
 ::-moz-placeholder {
-  color: #868686;
+  color: #7f7f7f;
 }
 :-ms-input-placeholder {
-  color: #868686;
+  color: #7f7f7f;
 }
 ::placeholder {
-  color: #868686;
+  color: #7f7f7f;
 }
 :focus::-moz-placeholder {
   color: transparent;
@@ -1685,7 +1685,7 @@ form > [class*="grid"] > .input {
   color: #777;
 }
 .input.disabled input {
-  background: #363636 repeating-linear-gradient(-45deg, transparent 0 3px, #555 3px 6px);
+  background: #292929 repeating-linear-gradient(-45deg, transparent 0 3px, #555 3px 6px);
   background-size: 100% 100%;
   cursor: not-allowed;
 }
@@ -1833,8 +1833,8 @@ form > [class*="grid"] > .input {
   width: 1em;
   height: 1em;
   box-sizing: border-box;
-  background-color: #303030;
-  border: 0.1em solid #444;
+  background-color: #242424;
+  border: 0.1em solid #333;
   outline: 0;
   box-shadow: inset 0 0.1em 0.3em rgba(0,0,0,0.3);
   border-radius: 0;
@@ -1883,7 +1883,7 @@ form > [class*="grid"] > .input {
 }
 .checkbox:disabled + label::before {
   cursor: not-allowed;
-  background: #363636 repeating-linear-gradient(-45deg, transparent 0 2px, #555 2px 4px);
+  background: #292929 repeating-linear-gradient(-45deg, transparent 0 2px, #555 2px 4px);
 }
 .switch {
   position: absolute;
@@ -1902,7 +1902,7 @@ form > [class*="grid"] > .input {
   left: 0;
   height: 2.6em;
   width: 5.5em;
-  background-color: #303030;
+  background-color: #242424;
   border: 0.1em solid transparent;
   border-radius: 0.4em;
   box-shadow: inset 0 0.2em 0.5em rgba(0,0,0,0.2);
@@ -1947,7 +1947,7 @@ form > [class*="grid"] > .input {
   color: #777 !important;
 }
 .switch:disabled + label::after {
-  background-color: #444;
+  background-color: #333;
 }
 .switch:checked + label span,
 .switch:not(:checked) + label span::before,
@@ -2125,7 +2125,7 @@ form > [class*="grid"] > .input {
   line-height: 1;
   padding: 0.75em 1em;
   color: #e9dac5;
-  background-color: #515151;
+  background-color: #414141;
   border: none;
   border-radius: 0.2em;
   box-shadow: 0 1rem 1rem rgba(0,0,0,0.1);
@@ -2148,7 +2148,7 @@ form > [class*="grid"] > .input {
 .accordion > * > :last-child {
   overflow: hidden;
   padding: 0 1em;
-  background-color: #444;
+  background-color: #333;
   border-radius: calc(0.2em + 1px);
   box-shadow: 0 1rem 1rem rgba(0,0,0,0.1), inset 0 -1px 0 1px rgba(255,255,255,0.1);
   transition: max-height 0.5s ease-in-out;
@@ -2199,7 +2199,7 @@ form > [class*="grid"] > .input {
   text-overflow: ellipsis;
   text-decoration: none;
   color: inherit;
-  background-color: #515151;
+  background-color: #414141;
   border: 1px solid rgba(255,255,255,0.1);
   border-bottom-color: rgba(255,255,255,0.1);
   border-radius: 0.5em 0.5em 0 0;
@@ -2211,7 +2211,7 @@ form > [class*="grid"] > .input {
   z-index: 2;
   flex-shrink: 0;
   max-width: 60%;
-  background-color: #444;
+  background-color: #333;
   border-bottom: none;
   pointer-events: none;
 }
@@ -2269,7 +2269,7 @@ form > [class*="grid"] > .input {
 .footer {
   padding: 0 1em;
   color: #d2b48c;
-  background-color: #2d2d2d;
+  background-color: #222;
 }
 .footer a {
   color: #e9dac5;
@@ -2408,7 +2408,7 @@ form > [class*="grid"] > .input {
     font-size: 1rem;
     font-weight: normal;
     text-decoration: none;
-    color: #777;
+    color: #6b6b6b;
     outline: none;
     transition: color 0.2s ease-in-out;
     -webkit-user-select: none;
@@ -2502,7 +2502,7 @@ html,
 [class*=demo-items] > * {
   box-sizing: border-box;
   padding: 0 0.5em;
-  background-color: #515151;
+  background-color: #414141;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.15);
 }
 [class*=demo-items] > * code {
