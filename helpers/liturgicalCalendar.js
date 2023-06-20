@@ -1,6 +1,6 @@
 'use strict'
 
-const fs = require('fs'),
+const { readFileSync } = require('fs'),
       { DateTime, Interval } = require('luxon'),
       easterDate = require('date-easter'),
       currentDate = DateTime.local(),
@@ -41,11 +41,11 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         dayMonth = day + month,
         // Chargement des .json et fusion des données :
         data = {},
-        dataP = JSON.parse(fs.readFileSync('./data/json/periods.json')),
-        dataF1 = JSON.parse(fs.readFileSync('./data/json/generalRomanCalendar.json')),
-        dataF2 = JSON.parse(fs.readFileSync('./data/json/europeRomanCalendar.json')),
-        dataF3 = JSON.parse(fs.readFileSync('./data/json/' + country + 'RomanCalendar.json')),
-        dataM = JSON.parse(fs.readFileSync('./data/json/movableFeasts.json')),
+        dataP = JSON.parse(readFileSync('./data/json/periods.json')),
+        dataF1 = JSON.parse(readFileSync('./data/json/generalRomanCalendar.json')),
+        dataF2 = JSON.parse(readFileSync('./data/json/europeRomanCalendar.json')),
+        dataF3 = JSON.parse(readFileSync('./data/json/' + country + 'RomanCalendar.json')),
+        dataM = JSON.parse(readFileSync('./data/json/movableFeasts.json')),
         // Variables pour les fêtes mobiles :
         ge = easterDate.gregorianEaster(year),
         christmas = DateTime.fromFormat('2512' + year, 'ddMMyyyy'),

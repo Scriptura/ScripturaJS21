@@ -1,7 +1,7 @@
 extends patternLayout
 
 block variables
-  - var documentType = 'error'
+  - const documentType = 'error'
 
 block main
   h1.main-heading Error 500 
@@ -13,7 +13,7 @@ block main
       code(translate='no' data-select='Select and copy')= error.stack
   else
     p.message-warning(role='alert')
-      svg.icon(role='img' focusable='false')
+      svg.icon-inline(role='img' focusable='false')
         use(xlink:href='/sprites/utils.svg#warning')
       | Le serveur a rencontré un problème inattendu qui l'empêche de répondre à la requête.
   hr
