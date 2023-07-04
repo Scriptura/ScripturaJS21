@@ -484,7 +484,6 @@ main {
 .nav {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .logo-nav {
@@ -550,8 +549,7 @@ main {
 .main-nav a:focus svg,
 .main-nav a:hover svg,
 .main-nav a:active svg {
-  -webkit-animation: animJump 0.5s ease-in-out;
-          animation: animJump 0.5s ease-in-out;
+  animation: animJump 0.5s ease-in-out;
 }
 @media (max-width: 91.01em) {
   .logo-nav {
@@ -666,11 +664,6 @@ main {
   .nav ul > :last-child {
     margin-left: auto;
   }
-@-webkit-keyframes animJump {
-    30% {
-      transform: translateY(-0.3em);
-    }
-}
 @keyframes animJump {
     30% {
       transform: translateY(-0.3em);
@@ -911,13 +904,7 @@ ol ol ol {
   background-color: #ff6347;
   box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
   outline: none;
-  -webkit-animation: animList 0.05s ease-in-out;
-          animation: animList 0.05s ease-in-out;
-}
-@-webkit-keyframes animList {
-  to {
-    transform: scale(1.03) translateZ(0);
-  }
+  animation: animList 0.05s ease-in-out;
 }
 @keyframes animList {
   to {
@@ -947,7 +934,6 @@ img {
   border-style: none;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 figure {
@@ -961,7 +947,6 @@ figure {
   box-shadow: 0 0 2rem rgba(0,0,0,0.2);
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 [class*=figure] figcaption {
@@ -1090,7 +1075,6 @@ audio:not([controls]) {
   aspect-ratio: 16/9;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .video iframe,
@@ -1192,12 +1176,10 @@ audio:not([controls]) {
 }
 .leaflet-marker-icon:focus .marker-icon,
 .leaflet-marker-icon:hover .marker-icon {
-  -webkit-animation: animBounce 0.35s ease infinite alternate;
-          animation: animBounce 0.35s ease infinite alternate;
+  animation: animBounce 0.35s ease infinite alternate;
 }
 .start-map .marker-icon {
-  -webkit-animation: animDrop 1s ease;
-          animation: animDrop 1s ease;
+  animation: animDrop 1s ease;
 }
 .marker-icon {
   filter: drop-shadow(0.3em 0.3em 0.3em rgba(0,0,0,0.5));
@@ -1226,28 +1208,9 @@ audio:not([controls]) {
 .map:nth-child(4) .marker-icon > :last-child {
   fill: DeepPink;
 }
-@-webkit-keyframes animBounce {
-  to {
-    transform: translate(0, -16px);
-  }
-}
 @keyframes animBounce {
   to {
     transform: translate(0, -16px);
-  }
-}
-@-webkit-keyframes animDrop {
-  0% {
-    transform: translate(0, -100vh);
-  }
-  50% {
-    transform: translate(0, 0);
-  }
-  75% {
-    transform: translate(0, -40px);
-  }
-  100% {
-    transform: translate(0, 0);
   }
 }
 @keyframes animDrop {
@@ -1327,7 +1290,6 @@ audio:not([controls]) {
     box-shadow: inset 0 0 1px #222;
   }
   [class*=table] thead th {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -1531,16 +1493,10 @@ select {
 ::-moz-placeholder {
   color: #7f7f7f;
 }
-:-ms-input-placeholder {
-  color: #7f7f7f;
-}
 ::placeholder {
   color: #7f7f7f;
 }
 :focus::-moz-placeholder {
-  color: transparent;
-}
-:focus:-ms-input-placeholder {
   color: transparent;
 }
 :focus::placeholder {
@@ -1678,8 +1634,7 @@ form > [class*="grid"] > .input {
 .input textarea:focus:not(:disabled),
 .input textarea:hover:not(:disabled),
 .input textarea:active:not(:disabled) {
-  -webkit-animation: animInput 0.05s ease-in-out;
-          animation: animInput 0.05s ease-in-out;
+  animation: animInput 0.05s ease-in-out;
 }
 .input.disabled label {
   color: #777;
@@ -1693,8 +1648,7 @@ form > [class*="grid"] > .input {
   background-position: right 0.7em center;
 }
 .input .invalid {
-  -webkit-animation: animInvalidInput 2s ease-in-out infinite !important;
-          animation: animInvalidInput 2s ease-in-out infinite !important;
+  animation: animInvalidInput 2s ease-in-out infinite !important;
 }
 :root .input-password input {
   padding-right: 3em;
@@ -1749,8 +1703,7 @@ form > [class*="grid"] > .input {
 .search input:hover,
 .search input:active {
   border-color: #ffa500;
-  -webkit-animation: animInput 0.05s ease-in-out;
-          animation: animInput 0.05s ease-in-out;
+  animation: animInput 0.05s ease-in-out;
 }
 .search button {
   min-width: 3.5em;
@@ -1764,26 +1717,15 @@ form > [class*="grid"] > .input {
 .search button:hover,
 .search button:active {
   color: #fff;
-  -webkit-animation: animSearch 0.2s ease-in-out;
-          animation: animSearch 0.2s ease-in-out;
+  animation: animSearch 0.2s ease-in-out;
 }
 .search button svg {
   width: 1em;
   height: 1em;
 }
-@-webkit-keyframes animInput {
-  to {
-    transform: scale(1.03) translateZ(0);
-  }
-}
 @keyframes animInput {
   to {
     transform: scale(1.03) translateZ(0);
-  }
-}
-@-webkit-keyframes animInvalidInput {
-  50% {
-    border-color: #ffa500;
   }
 }
 @keyframes animInvalidInput {
@@ -1791,20 +1733,9 @@ form > [class*="grid"] > .input {
     border-color: #ffa500;
   }
 }
-@-webkit-keyframes animInput {
-  to {
-    transform: scale(1.03) translateZ(0);
-  }
-}
 @keyframes animInput {
   to {
     transform: scale(1.03) translateZ(0);
-  }
-}
-@-webkit-keyframes animSearch {
-  50% {
-    background-color: #ffa500;
-    transform: scale(1.1) translateZ(0);
   }
 }
 @keyframes animSearch {
@@ -2066,7 +1997,6 @@ form > [class*="grid"] > .input {
   outline: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .button:focus-visible,
@@ -2170,13 +2100,7 @@ form > [class*="grid"] > .input {
   .accordion > * > :first-child:hover {
     background-color: #ff6347;
     box-shadow: 0.5rem 0.5rem 2rem rgba(0,0,0,0.25);
-    -webkit-animation: animAccordion 0.1s ease-in-out;
-            animation: animAccordion 0.1s ease-in-out;
-  }
-}
-@-webkit-keyframes animAccordion {
-  to {
-    transform: scale(1.01) translateZ(0);
+    animation: animAccordion 0.1s ease-in-out;
   }
 }
 @keyframes animAccordion {
@@ -2218,7 +2142,6 @@ form > [class*="grid"] > .input {
 .tabs .tab-list button:not(.current) {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .tabs .tab-panel {
@@ -2343,7 +2266,6 @@ form > [class*="grid"] > .input {
     box-shadow: 0 0 1.5rem rgba(0,0,0,0.15);
   }
   .article > footer > div {
-    position: -webkit-sticky;
     position: sticky;
     top: 2em;
   }
@@ -2413,7 +2335,6 @@ form > [class*="grid"] > .input {
     transition: color 0.2s ease-in-out;
     -webkit-user-select: none;
        -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
   .line-mark:focus,
@@ -2563,7 +2484,6 @@ a[aria-disabled=true]:active {
 .protected {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .onaline {
@@ -2780,13 +2700,7 @@ a[aria-disabled=true]:active {
   font-size: 1rem;
 }
 .blink {
-  -webkit-animation: animBlink 2s linear infinite;
-          animation: animBlink 2s linear infinite;
-}
-@-webkit-keyframes animBlink {
-  50% {
-    opacity: 0.1;
-  }
+  animation: animBlink 2s linear infinite;
 }
 @keyframes animBlink {
   50% {
@@ -2820,16 +2734,7 @@ a[aria-disabled=true]:active {
   right: 0;
   background-image: linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
   background-size: 3em 3em;
-  -webkit-animation: animProgress 1.5s linear infinite;
-          animation: animProgress 1.5s linear infinite;
-}
-@-webkit-keyframes animProgress {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 3em 3em;
-  }
+  animation: animProgress 1.5s linear infinite;
 }
 @keyframes animProgress {
   0% {
@@ -2846,16 +2751,14 @@ a[aria-disabled=true]:active {
   height: 2em;
   border: 0.2em solid transparent;
   border-radius: 50%;
-  -webkit-animation: animLoader 2s linear infinite;
-          animation: animLoader 2s linear infinite;
+  animation: animLoader 2s linear infinite;
 }
 .loader {
   position: relative;
   border-color: transparent;
   border-top-color: #ff6347;
   border-left-color: #ff6347;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-duration: 3s;
 }
 .loader::before {
   position: absolute;
@@ -2866,14 +2769,6 @@ a[aria-disabled=true]:active {
   border-top-color: #d2b48c;
   border-left-color: #d2b48c;
   border-radius: 50%;
-}
-@-webkit-keyframes animLoader {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 @keyframes animLoader {
   from {
