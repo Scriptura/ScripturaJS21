@@ -10,7 +10,7 @@ Scriptura est une application web sous Node.js utilisant :
 
 * PostgreSQL 14.1
 * Node.js 17.4.0
-* Yarn 1.22.17
+* pnpm 8
 
 ## Pour démarrer
 
@@ -47,13 +47,13 @@ postgres=# \i /chemin_du_fichier/database/logicalDataModel.pgsql
 Dans le dossier racine du projet, ouvrez un terminal et tapez ces instructions pour installer les dépendances du projet :
 
 ```
-$ yarn install
+$ pnpn install
 ```
 
 Ensuite, pour lancer le projet en mode développement :
 
 ```
-$ yarn dev
+$ pn dev
 ```
 
 Une fenêtre s'ouvre alors dans votre navigateur et l'application se charge sur le port `localhost:9001`. Si vous disposez du wifi, l'application est aussi consultable avec un terminal mobile - smatphone ou tablette - sur le port `192.168.1.89:9001`.

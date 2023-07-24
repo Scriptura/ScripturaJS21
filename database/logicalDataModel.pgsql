@@ -72,7 +72,7 @@ CREATE TABLE __account (
   _person_id          INT               NULL,                            -- référence éventuelle à __person
   _username           VARCHAR(32)       NOT NULL,                        -- nom utilisateur ; "username" est le terme technique consacré, et non pas "user name"
   _password           CHAR(40)          NOT NULL,                        -- mot de passe crypté en SHA1
-  _role               SMALLINT          NULL,                            -- rôles : 1 = administrateur, 2 = modérateur/webmestre, 3 = contributeur/rédacteur, 4 = abonné/utilisateur authentifié, 5 = visiteur anony      me
+  _role               SMALLINT          NULL,                            -- rôles : 1 = administrateur, 2 = modérateur/webmestre, 3 = contributeur/rédacteur, 4 = abonné/utilisateur authentifié, 5 = visiteur anonyme
   _status             SMALLINT          NULL,                            -- ex : compte actif, bannis
   _display_name       SMALLINT          NULL,                            -- nom public choisi dans la table __person
   _language           VARCHAR(5)        NULL,                            -- choix de la langue (format code langue : ISO639-1 alpha-2 + ISO3166-1 alpha-2 ; ex : fr_FR)

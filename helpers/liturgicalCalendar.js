@@ -110,8 +110,9 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         josephHusbandOfMary = march19InHolyWeek ? palmSunday.plus({days: -1}) : (march19InLentSunday ? march19.plus({days: 1}) : march19), // 9
         march25 = DateTime.fromFormat('2503' + year, 'ddMMyyyy'),
         annunciation = holyWeek.contains(march25) ? divineMercySunday.plus({days: 1}) : (march25.weekday === 7 ? march25.plus({days: 1}) : march25), // 10
-        nativityOfJohnTheBaptist = (sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2306' + year, 'ddMMyyyy') : ((corpusChristi.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')), // 12
+        nativityOfJohnTheBaptist = (sacredHeart.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2306' + year, 'ddMMyyyy') : ((corpusChristi.toFormat('ddMM') === '2406') ? DateTime.fromFormat('2506' + year, 'ddMMyyyy') : DateTime.fromFormat('2406' + year, 'ddMMyyyy')) // 12
         // TEST dimanches du temps ordinaire :
+        /*
         ordinaryTimeSunday10 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -197}),
         ordinaryTimeSunday11 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -190}),
         ordinaryTimeSunday12 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -183}),
@@ -136,6 +137,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
         ordinaryTimeSunday31 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -50}),
         ordinaryTimeSunday32 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -43}),
         ordinaryTimeSunday33 = (date < pentecost) ? false : sundayBeforeChristmas.plus({days: -36})
+        */
         // END TEST
 
   data.p = {}
@@ -270,7 +272,7 @@ const liturgicalCalendar = (date = currentDate, country = 'france') => {
     data.fullName = [data.name, lowercaseToFirstLetter(data.extra)].filter(Boolean).join(', ')
     data.link = (data.f.priority >= data.m.priority) ? data.m.link : data.f.link
     if (typeof data.link === 'undefined') data.link = ''
-    if (Array.isArray(data.f.color)) data.f.color = data.f.color[0] // si valeurs en tableau seule la première couleur sera prise en compte
+    if (Array.isArray(data.f.color)) data.f.color = data.f.color[0] // Si valeurs en tableau seule la première couleur sera prise en compte
     data.color = [...[data.p.color].concat([data.m.color]).concat([data.f.color])].filter(Boolean)
     data.type = (data.f.priority >= data.m.priority) ? data.m.type : data.f.type
     if (typeof data.type === 'undefined') data.type = ''
